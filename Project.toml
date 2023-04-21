@@ -1,0 +1,9 @@
+name = "Madagascar"
+uuid = "de1a7838-e64b-4715-8e96-f45059f9a2fe"
+authors = ["mloubout <mathias.louboutin@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+RSF_jll = "8fe49bee-c3ce-53a1-a36a-15cc8abd9544"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

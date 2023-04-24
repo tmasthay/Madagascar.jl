@@ -9,4 +9,4 @@ RSF_jll = "8fe49bee-c3ce-53a1-a36a-15cc8abd9544"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
-RSF_jll = "1.0.0"
+RSF_jll = "1.0.1"

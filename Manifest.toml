@@ -2,7 +2,7 @@
 
 julia_version = "1.8.2"
 manifest_format = "2.0"
-project_hash = "ffddd196ae91b907be327a0a3154d8907b39ebe2"
+project_hash = "4e1a32179ec3c7339b93337a7338935c354703cd"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -292,11 +292,11 @@ uuid = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
 
 [[deps.RSF_jll]]
 deps = ["Artifacts", "Cairo_jll", "CompilerSupportLibraries_jll", "FFMPEG_jll", "FFTW_jll", "JLLWrappers", "LAPACK32_jll", "Libdl", "MPICH_jll", "MicrosoftMPI_jll", "OpenBLAS32_jll", "SuiteSparse_jll"]
-git-tree-sha1 = "361e70acead5642ad0b96c247b1f30cbf4487419"
+git-tree-sha1 = "1a5f86e69fd041f572d21efef5b9910818cc6c20"
 repo-rev = "main"
 repo-url = "https://github.com/mloubout/RSF_jll.jl"
 uuid = "8fe49bee-c3ce-53a1-a36a-15cc8abd9544"
-version = "1.0.0+0"
+version = "1.0.1"
 
 [[deps.Random]]
 deps = ["SHA", "Serialization"]

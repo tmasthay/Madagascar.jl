@@ -1,0 +1,31 @@
+.TH sfcrazgathc3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcrazgathc3 \- Collapse/stack (partially) azimuthal axis of 3-D angle-domain migration angle gathers. 
+.SH SYNOPSIS
+.B sfcrazgathc3 < gath.rsf > rgath.rsf verb=y norm=n nth=10 wd=5
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B norm
+.B =n
+.R  [y/n]	y - normalize after stacking
+.TP
+.I int    
+.B nth
+.B =10
+.R  	leave every nth azimuth
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.TP
+.I int    
+.B wd
+.B =5
+.R  	half-width of stacking base (total base is 2*wd + 1)
+.SH SOURCE
+.I user/cram/Mcrazgathc3.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,66 @@
+.TH sfslschain2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfslschain2d \- Separable LS - Find a symmetric chain of 2D-Fourier weighting and scaling
+.SH SYNOPSIS
+.B sfslschain2d < src.rsf > wht.rsf target=tgt.rsf init_w=w0.rsf init_wf=wf0.rsf fweight=fwht.rsf match=mch.rsf niter=0 liter=50 rect1=1 rect2=1 frect1=1 frect2=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B frect1
+.B =1
+.R  	smoothing in frequency dim1
+.TP
+.I int    
+.B frect2
+.B =1
+.R  	smoothing in frequency dim2
+.TP
+.I file   
+.B fweight
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B init_w
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B init_wf
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B liter
+.B =50
+.R  	number of linear iterations
+.TP
+.I file   
+.B match
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B niter
+.B =0
+.R  	number of iterations
+.TP
+.I int    
+.B rect1
+.B =1
+.R  	smoothing in time dim1
+.TP
+.I int    
+.B rect2
+.B =1
+.R  	smoothing in time dim2
+.TP
+.I file   
+.B target
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/fomels/Mslschain2d.c
+.SH VERSION
+4.2-git

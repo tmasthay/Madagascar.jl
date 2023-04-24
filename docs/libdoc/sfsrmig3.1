@@ -1,0 +1,177 @@
+.TH sfsrmig3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsrmig3 \- 3-D S/R migration with extended SSF 
+.SH SYNOPSIS
+.B sfsrmig3 slo=Fs_s.rsf sls=Fs_r.rsf < Fw_s.rsf rwf=Fw_r.rsf > Fi.rsf cig=Fc.rsf ompchunk=1 ompnth=0 verb=y eps=0.01 twoway=n nrmax=1 dtmax=0.004 pmx=0 pmy=0 tmx=0 tmy=0 vpvs=1. hsym=n nht=1 oht=0 dht=0.1 nht=1 oht=0 dht=0.1 hsym=n nhh=1 ohh=0 dhh=0.1 nha=180 oha=0 dha=2.0 nhb=180 ohb=0 dhb=2.0 itype=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B cig
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B dha
+.B =2.0
+.R  
+.TP
+.I float  
+.B dhb
+.B =2.0
+.R  
+.TP
+.I float  
+.B dhh
+.B =0.1
+.R  
+.TP
+.I float  
+.B dht
+.B =0.1
+.R  
+.TP
+.I float  
+.B dtmax
+.B =0.004
+.R  	max time error
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stability parameter
+.TP
+.I bool   
+.B hsym
+.B =n
+.R  [y/n]
+.TP
+.I string 
+.B itype
+.B =
+.R  	imaging condition type
+       o = zero lag (default)
+       e = extended
+       x = space-lags
+       h = space-lags magnitude
+       t = time-lag
+.TP
+.I int    
+.B nha
+.B =180
+.R  
+.TP
+.I int    
+.B nhb
+.B =180
+.R  
+.TP
+.I int    
+.B nhh
+.B =1
+.R  
+.TP
+.I int    
+.B nht
+.B =1
+.R  
+.TP
+.I int    
+.B nrmax
+.B =1
+.R  	max number of refs
+.TP
+.I float  
+.B oha
+.B =0
+.R  
+.TP
+.I float  
+.B ohb
+.B =0
+.R  
+.TP
+.I float  
+.B ohh
+.B =0
+.R  
+.TP
+.I float  
+.B oht
+.B =0
+.R  
+.TP
+.I int    
+.B ompchunk
+.B =1
+.R  	OpenMP data chunk size
+.TP
+.I int    
+.B ompnth
+.B =0
+.R  	OpenMP available threads
+.TP
+.I int    
+.B pmx
+.B =0
+.R  	padding on x
+.TP
+.I int    
+.B pmy
+.B =0
+.R  	padding on y
+.TP
+.I file   
+.B rwf
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B slo
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B sls
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B tmx
+.B =0
+.R  	taper on x
+.TP
+.I int    
+.B tmy
+.B =0
+.R  	taper on y
+.TP
+.I bool   
+.B twoway
+.B =n
+.R  [y/n]	two-way traveltime
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B vpvs
+.B =1.
+.R  	Vp/Vs ratio
+.SH USED IN
+.TP
+.I cwp/geo2006TimeShiftImagingCondition/flat
+.TP
+.I cwp/geo2007StereographicImagingCondition/sigsbee2
+.TP
+.I cwp/geo2008NumericWEMVAoperators/flatWEMVA
+.TP
+.I cwp/geo2008NumericWEMVAoperators/saltWEMVA
+.SH SOURCE
+.I user/psava/Msrmig3.c
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfsrmig3
+.SH VERSION
+4.2-git

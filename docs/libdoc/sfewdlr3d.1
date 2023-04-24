@@ -1,0 +1,37 @@
+.TH sfewdlr3d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfewdlr3d \- 3D elastic recursive integral time extrapolation using KISS-FFT
+.SH SYNOPSIS
+.B sfewdlr3d < Finp.rsf rnk=Frnk.rsf lft=Flft.rsf rht=Frht.rsf > Fout.rsf verb=n
+.SH COMMENTS
+sou wavelet  (nx,ny,nc,nt)
+rec data     (nx,ny,nc,nt)
+sou geometry (nc,nx,ny)
+rec geometry (nc,nx,ny)
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B lft
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rht
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rnk
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/jsun/Mewdlr3d.c
+.SH VERSION
+4.2-git

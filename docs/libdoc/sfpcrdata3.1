@@ -1,0 +1,36 @@
+.TH sfpcrdata3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpcrdata3 \- Prepare data for 3-D angle-domain migration. 
+.SH SYNOPSIS
+.B sfpcrdata3 < data.rsf > out.rsf verb=n erefl=n filter=y KMAH=y diff=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B KMAH
+.B =y
+.R  [y/n]	y - account for phase shifts due to KMAH index
+.TP
+.I bool   
+.B diff
+.B =y
+.R  [y/n]	y - apply differentiation
+.TP
+.I bool   
+.B erefl
+.B =n
+.R  [y/n]	y - assume data modeled with exploding reflector
+.TP
+.I bool   
+.B filter
+.B =y
+.R  [y/n]	y - antialiasing filter for data
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/cram/Mpcrdata3.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,46 @@
+.TH sfmtres 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmtres \- Calculate apparent resistivity and phase of MT data. 
+.SH SYNOPSIS
+.B sfmtres < in.rsf Ey=Ey.rsf Hx=Hx.rsf Hy=Hy.rsf > out.rsf opt=y comp=y verb=n phase=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Ey
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Hx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Hy
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B comp
+.B =y
+.R  [y/n]	component selection
+.TP
+.I bool   
+.B opt
+.B =y
+.R  [y/n]	if y, determine optimal size for efficiency
+.TP
+.I bool   
+.B phase
+.B =n
+.R  [y/n]	if y, calculate apparent resistivity, otherwise calculate phase
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mmtres.c
+.SH VERSION
+4.2-git

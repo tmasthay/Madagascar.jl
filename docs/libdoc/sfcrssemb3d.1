@@ -1,0 +1,61 @@
+.TH sfcrssemb3d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcrssemb3d \- CRS-based semblance for 3D
+.SH SYNOPSIS
+.B sfcrssemb3d < inDags_.rsf dataSq=inDagsSq_.rsf > sembFile_.rsf xapp=1 yapp=1 dipappx=11 dipappy=11 coher=11 scatnum=1
+.SH COMMENTS
+Several CIGs are used simultaneously. Dip-angle sections corresponding to the same 
+dip-angle compose a subvolume. The subvolume allows calculating semblance in the
+scattering-angle direction along reflection boundaries.
+
+Input:
+inDags_.rsf   - 3D dip-angle gathers - stack in the scattering-angle direction
+inDagsSq_.rsf - stack of amplitude squares in the scattering-angle direction
+
+Working with just dip-angle gathers use default value of "scatnum" parameter
+
+Output:
+sembFile_.rsf - crs-based semblance file; has the same dimensions as the input files
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B coher
+.B =11
+.R  	height of a vertical window for semblance calculation
+.TP
+.I file   
+.B dataSq
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B dipappx
+.B =11
+.R  	number of traces in the x-dip direction processed simultaneously
+.TP
+.I int    
+.B dipappy
+.B =11
+.R  	number of traces in the y-dip direction processed simultaneously
+.TP
+.I int    
+.B scatnum
+.B =1
+.R  	shows how many traces were stacked in the scattering angle direction; 
+       if the stack was normalized use the default value
+.TP
+.I int    
+.B xapp
+.B =1
+.R  	number of CIGs in the inline-direction processed simultaneously
+.TP
+.I int    
+.B yapp
+.B =1
+.R  	number of CIGs in the crossline-direction processed simultaneously
+.SH SOURCE
+.I user/aklokov/Mcrssemb3d.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,41 @@
+.TH sfcramdd 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcramdd \- Daemon for distributed storage of prestack data for angle migration. 
+.SH SYNOPSIS
+.B sfcramdd < in.rsf > out.rsf data=data.rsf port=18003 ith=0 inet=1 nthreads=2*ncpu timeout=10
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B data
+.B =
+.R  	Grid of supercells of local escape solutions (auxiliary input file name)
+.TP
+.I int    
+.B inet
+.B =1
+.R  	Network interface index
+.TP
+.I int    
+.B ith
+.B =0
+.R  	Make every ith process a daemon
+.TP
+.I int    
+.B nthreads
+.B =2*ncpu
+.R  	Number of threads (connections) per daemon
+.TP
+.I int    
+.B port
+.B =18003
+.R  	TCP port for listening
+.TP
+.I int    
+.B timeout
+.B =10
+.R  	Inactivity time before shutdown (mins)
+.SH SOURCE
+.I user/cram/Mcramdd.c
+.SH VERSION
+4.2-git

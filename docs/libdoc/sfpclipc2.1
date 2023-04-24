@@ -1,0 +1,27 @@
+.TH sfpclipc2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpclipc2 \- One-or Two-sided Percentile Data clipping (C language).
+.SH SYNOPSIS
+.B sfpclipc2 < in.rsf > out.rsf upclip=99 lpclip=0
+.SH COMMENTS
+For example: 
+A=1,2,3,...,100 
+sfpclipc2 upclip=98 lpclip=3 
+A'=3,3,3,...,98,98,98	
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B lpclip
+.B =0
+.R  	percentile lower cliping value
+.TP
+.I float  
+.B upclip
+.B =99
+.R  	percentile upper cliping value
+.SH SOURCE
+.I user/chenyk/Mpclipc2.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,74 @@
+.TH sfdagap3a 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdagap3a \- Reflection event apex protector/removal for dip-angle gathers.
+.SH SYNOPSIS
+.B sfdagap3a < dagFile.rsf dips=dipFile.rsf > taperFile.rsf rms=rmsFile.rsf ddep=y pwidth1=10.f pwidth2=10.f drms=y fudge=10.f greyarea1=10.f greyarea2=10.f dz=20.f
+.SH COMMENTS
+
+May be used for migration aperture optimization or for reflected energy
+supression. For the last multiply the output on -1.
+
+Input:
+dagFile.rsf - input dip-angle gathers;
+dipFile.rsf - dips esitimated in the image domain. The dips are in degree (!)
+rmsFile.rsf - input rms;
+
+Output:
+taperFile.rsf - mask for input dip-angle gathers
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B ddep
+.B =y
+.R  [y/n]	if y, taper depends on depth; if n, no
+.TP
+.I string 
+.B dips
+.B =
+.R  	dips esitimated in the image domain (in degree) (auxiliary input file name)
+.TP
+.I bool   
+.B drms
+.B =y
+.R  [y/n]	if y, taper depends on rms; if n, no
+.TP
+.I float  
+.B dz
+.B =20.f
+.R  	half of a migrated wave length
+.TP
+.I float  
+.B fudge
+.B =10.f
+.R  	Fudge Factor
+.TP
+.I float  
+.B greyarea1
+.B =10.f
+.R  
+.TP
+.I float  
+.B greyarea2
+.B =10.f
+.R  	width of event tail taper (in degree)
+.TP
+.I float  
+.B pwidth1
+.B =10.f
+.R  
+.TP
+.I float  
+.B pwidth2
+.B =10.f
+.R  	protected width (in degree)
+.TP
+.I string 
+.B rms
+.B =
+.R  	RMS input for tapering variation (auxiliary input file name)
+.SH SOURCE
+.I user/luke/Mdagap3a.c
+.SH VERSION
+4.2-git

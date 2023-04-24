@@ -1,0 +1,61 @@
+.TH sfimpl3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfimpl3 \- 3-D anisotropic diffusion. 
+.SH SYNOPSIS
+.B sfimpl3 < in.rsf > out.rsf rect1= rect2= rect3= tau=0.1 pclip=50. up=n verb=n nsnap=1 dist= snap=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B dist
+.B =
+.R  	inverse distance file (input)
+.TP
+.I int    
+.B nsnap
+.B =1
+.R  	number of snapshots
+.TP
+.I float  
+.B pclip
+.B =50.
+.R  	percentage clip for the gradient
+.TP
+.I float  
+.B rect1
+.B =
+.R  
+.TP
+.I float  
+.B rect2
+.B =
+.R  
+.TP
+.I float  
+.B rect3
+.B =
+.R  	smoothing radius
+.TP
+.I string 
+.B snap
+.B =
+.R  	snapshot file (output)
+.TP
+.I float  
+.B tau
+.B =0.1
+.R  	smoothing time
+.TP
+.I bool   
+.B up
+.B =n
+.R  [y/n]	smoothing style
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I system/generic/Mimpl3.c
+.SH VERSION
+4.2-git

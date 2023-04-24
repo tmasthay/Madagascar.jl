@@ -1,0 +1,71 @@
+.TH sfgpufd3d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfgpufd3d \- GPU-based finite difference on 3-D grid
+.SH SYNOPSIS
+.B sfgpufd3d < Fv.rsf > Fw.rsf verb=n nt= kt= dt= fm=20 ns=1 szbeg= sxbeg= sybeg= jsz= jsx= jsy=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  	time sampling interval
+.TP
+.I float  
+.B fm
+.B =20
+.R  	dominant frequency of Ricker wavelet
+.TP
+.I int    
+.B jsx
+.B =
+.R  	source jump interval in x-axis
+.TP
+.I int    
+.B jsy
+.B =
+.R  	source jump interval in y-axis
+.TP
+.I int    
+.B jsz
+.B =
+.R  	source jump interval in z-axis
+.TP
+.I int    
+.B kt
+.B =
+.R  	record wavefield at time kt
+.TP
+.I int    
+.B ns
+.B =1
+.R  	number of sources
+.TP
+.I int    
+.B nt
+.B =
+.R  	total number of time steps
+.TP
+.I int    
+.B sxbeg
+.B =
+.R  	source beginning of x-axis
+.TP
+.I int    
+.B sybeg
+.B =
+.R  	source beginning of y-axis
+.TP
+.I int    
+.B szbeg
+.B =
+.R  	source beginning of z-axis
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosit2
+.SH SOURCE
+.I user/pyang/Mgpufd3d.cu
+.SH VERSION
+4.2-git

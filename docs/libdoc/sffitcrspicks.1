@@ -1,0 +1,30 @@
+.TH sffitcrspicks 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffitcrspicks \- 
+.SH SYNOPSIS
+.B sffitcrspicks < in.rsf > out_tcrs.rsf crsparams= mask=
+.SH COMMENTS
+Compute fitting of Non-hyperbolic CRS to first-arrivals T[m][h].
+
+Input: T[m][h] arrivals and in its sf-file  m[], Nm h[], Nh 
+Output: 
+tcrs=filname - t[m][h] crs surface
+prints three CRS parameters a[3] where: t[m][h] = a(0) m + a(1)m^2 + a(2) h^2
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B crsparams
+.B =
+.R  
+.TP
+.I string 
+.B mask
+.B =
+.R  
+.SH SOURCE
+.I user/roman/Mfitcrspicks.c
+.SH VERSION
+4.2-git

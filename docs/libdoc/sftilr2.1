@@ -1,0 +1,46 @@
+.TH sftilr2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftilr2 \- Lowrank decomposition for 2-D anisotropic wave propagation using exact phase velocity (2 step time marching). 
+.SH SYNOPSIS
+.B sftilr2 < velz.rsf fft=fft.rsf left=left.rsf > right.rsf type=1 seed=time(NULL eps=1.e-4 npk=20 dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B dt
+.B =
+.R  	time step
+.TP
+.I        
+.B eps
+.B =1.e-4
+.R  	tolerance
+.TP
+.I file   
+.B fft
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.TP
+.I        
+.B type
+.B =1
+.R  	wave mode (1=p wave, 2=Sv wave)
+.SH SOURCE
+.I user/jsun/Mtilr2.cc
+.SH VERSION
+4.2-git

@@ -1,0 +1,31 @@
+.TH sfanalytical 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfanalytical \- First-arrival traveltime table using analytical traveltimes 
+.SH SYNOPSIS
+.B sfanalytical < in.rsf > out.rsf vel=y order=3 yshot=x0 + 0.5*(nx-1)*dx zshot=z0
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B order
+.B =3
+.R  	interpolation accuracy for velocity
+.TP
+.I bool   
+.B vel
+.B =y
+.R  [y/n]	y, input is velocity; n, slowness
+.TP
+.I float  
+.B yshot
+.B =x0 + 0.5*(nx-1)*dx
+.R  
+.TP
+.I float  
+.B zshot
+.B =z0
+.R  	read velocity or slowness
+.SH SOURCE
+.I user/fomels/Manalytical.c
+.SH VERSION
+4.2-git

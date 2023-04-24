@@ -1,0 +1,26 @@
+.TH sfwave124 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwave124 \- 1-D finite-difference wave extrapolation 
+.SH SYNOPSIS
+.B sfwave124 < inp.rsf > out.rsf vel=vel.rsf grad=grad.rsf what=2
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B grad
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B what
+.B =2
+.R  	2nd or 4th order for FD
+.SH SOURCE
+.I user/songxl/Mwave124.c
+.SH VERSION
+4.2-git

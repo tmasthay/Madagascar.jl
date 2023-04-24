@@ -1,0 +1,46 @@
+.TH sftfchain 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftfchain \- Find a chain of Fourier weighting and scaling 
+.SH SYNOPSIS
+.B sftfchain < src.rsf > wht.rsf target=tgt.rsf fweight=fwht.rsf match=mch.rsf rect=1 frect=1 niter=0 liter=50
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B frect
+.B =1
+.R  	smoothing in frequency
+.TP
+.I file   
+.B fweight
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B liter
+.B =50
+.R  	number of linear iterations
+.TP
+.I file   
+.B match
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B niter
+.B =0
+.R  	number of iterations
+.TP
+.I int    
+.B rect
+.B =1
+.R  	smoothing in time
+.TP
+.I file   
+.B target
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/fomels/Mtfchain.c
+.SH VERSION
+4.2-git

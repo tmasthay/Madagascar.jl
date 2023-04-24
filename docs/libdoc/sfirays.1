@@ -1,0 +1,41 @@
+.TH sfirays 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfirays \- Fast marching for image rays 
+.SH SYNOPSIS
+.B sfirays < in.rsf > out.rsf t0=ot0.rsf x0=ox0.rsf f0=of0.rsf velocity=y order=1 thres=10.
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B f0
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B order
+.B =1
+.R  	fastmarching accuracy order
+.TP
+.I string 
+.B t0
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B thres
+.B =10.
+.R  	thresholding for caustics
+.TP
+.I bool   
+.B velocity
+.B =y
+.R  [y/n]	y, inputs are velocity / n, slowness-squared
+.TP
+.I string 
+.B x0
+.B =
+.R  	output upwind neighbor (auxiliary output file name)
+.SH SOURCE
+.I user/llisiw/Mirays.c
+.SH VERSION
+4.2-git

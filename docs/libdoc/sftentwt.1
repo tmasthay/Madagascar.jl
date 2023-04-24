@@ -1,0 +1,46 @@
+.TH sftentwt 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftentwt \- Tent-like weight for patching.
+.SH SYNOPSIS
+.B sftentwt > wallwt.rsf windwt=windwt.rsf w= k= a= center= dim=2 tent=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	filter size  [dim]
+.TP
+.I ints   
+.B center
+.B =
+.R  	 [dim]
+.TP
+.I int    
+.B dim
+.B =2
+.R  	number of dimensions
+.TP
+.I ints   
+.B k
+.B =
+.R  	number of windows  [dim]
+.TP
+.I bool   
+.B tent
+.B =y
+.R  [y/n]	if y, use tent-like weight; n, cosine weight
+.TP
+.I ints   
+.B w
+.B =
+.R  	window size  [dim]
+.TP
+.I file   
+.B windwt
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/gee/Mtentwt.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,66 @@
+.TH sfahpef 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfahpef \- Adaptive multidimensional nonstationary PEF. 
+.SH SYNOPSIS
+.B sfahpef < in.rsf > filt.rsf maskin=mask.rsf a= center= gap= n= dim=ndim na=0 niter=100 verb=y lag= res=
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	 [dim]
+.TP
+.I ints   
+.B center
+.B =
+.R  	 [dim]
+.TP
+.I int    
+.B dim
+.B =ndim
+.R  	number of dimensions
+.TP
+.I ints   
+.B gap
+.B =
+.R  	 [dim]
+.TP
+.I string 
+.B lag
+.B =
+.R  	output file for filter lags
+.TP
+.I string 
+.B maskin
+.B =
+.R  	optional input mask file (auxiliary input file name)
+.TP
+.I ints   
+.B n
+.B =
+.R  	 [dim]
+.TP
+.I int    
+.B na
+.B =0
+.R  	filter size
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I string 
+.B res
+.B =
+.R  	output residual (optional)
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/gee/Mahpef.c
+.SH VERSION
+4.2-git

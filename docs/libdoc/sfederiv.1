@@ -1,0 +1,36 @@
+.TH sfederiv 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfederiv \- 
+.SH SYNOPSIS
+.B sfederiv ccc=Fccc.rsf < Fspk.rsf zdel=Fzdel.rsf xdel=Fxdel.rsf verb=n stat=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B ccc
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B stat
+.B =y
+.R  [y/n]	stationary operator
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I file   
+.B xdel
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B zdel
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/jyan/Mederiv.c
+.SH VERSION
+4.2-git

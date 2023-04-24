@@ -1,0 +1,39 @@
+.TH sftahagc 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftahagc \- Read Trace And Header (tah) from standard input, MUTE 
+.SH SYNOPSIS
+.B sftahagc < in.rsf > out.rsf xstart= tstart= verbose=1 ntaper=12 wagc=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B ntaper
+.B =12
+.R  
+.TP
+.I floats 
+.B tstart
+.B =
+.R  	 [numtstart]
+.TP
+.I int    
+.B verbose
+.B =1
+.R  	
+
+       flag to control amount of print
+       0 terse, 1 informative, 2 chatty, 3 debug
+.TP
+.I float  
+.B wagc
+.B =
+.R  
+.TP
+.I floats 
+.B xstart
+.B =
+.R  	 [numxstart]
+.SH SOURCE
+.I user/karl/Mtahagc.c
+.SH VERSION
+4.2-git

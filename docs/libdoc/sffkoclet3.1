@@ -1,0 +1,61 @@
+.TH sffkoclet3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffkoclet3 \- 2-D seislet transform using frequency-wavenumber offset-azimuth continuation 
+.SH SYNOPSIS
+.B sffkoclet3 < in.rsf > out.rsf inv=n adj=n dwt=n amp=n verb=y eps=0.01 maxe=10. dir= type=
+.SH COMMENTS
+Forward transform (adj=n inv=y/n) m=T[d]
+Inverse transform (adj=y inv=y)   d=T^(-1)[d]
+Adjoint transform (adj=y inv=n)   d=T'[d]
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if y, do adjoint transform
+.TP
+.I bool   
+.B amp
+.B =n
+.R  [y/n]	if y, true amplitudes continuation
+.TP
+.I string 
+.B dir
+.B =
+.R  	[azimuth,offset,both] direction, the default is both directions
+.TP
+.I bool   
+.B dwt
+.B =n
+.R  [y/n]	if y, do wavelet transform
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, do inverse transform
+.TP
+.I float  
+.B maxe
+.B =10.
+.R  	stability constraint
+.TP
+.I string 
+.B type
+.B =
+.R  	[haar,linear,biorthogonal] wavelet type, the default is biorthogonal
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mfkoclet3.c
+.SH VERSION
+4.2-git

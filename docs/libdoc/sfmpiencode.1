@@ -1,0 +1,35 @@
+.TH sfmpiencode 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmpiencode \- shot encoding with arbitrary phase and amplitude weights using MPI on a distributed cluster 
+.SH SYNOPSIS
+.B sfmpiencode encode=Fencode.rsf verb=n dprefix= eprefix=
+.SH COMMENTS
+* axes are x-y-w
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B dprefix
+.B =
+.R  	printf like statement that can be evaluated to find the data files corresponding to shot records
+.TP
+.I file   
+.B encode
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B eprefix
+.B =
+.R  	printf like statement that can be evaluated for the output encodings
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/cwp/Mmpiencode.c
+.SH VERSION
+4.2-git

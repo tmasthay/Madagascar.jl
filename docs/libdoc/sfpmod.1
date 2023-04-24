@@ -1,0 +1,83 @@
+.TH sfpmod 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpmod \- Random plane wave modeling. 
+.SH SYNOPSIS
+.B sfpmod < inp.rsf > out.rsf np=1 gauss=0 type=1 ampmax=1. rc1=0.2 rc2=0.2 h1=200. h2=150. v1=2000. v2=3000. pmax=0.000332 phi=0.1 xloc=200. seed=time(NULL)
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B ampmax
+.B =1.
+.R  
+.TP
+.I int    
+.B gauss
+.B =0
+.R  
+.TP
+.I float  
+.B h1
+.B =200.
+.R  
+.TP
+.I float  
+.B h2
+.B =150.
+.R  
+.TP
+.I int    
+.B np
+.B =1
+.R  
+.TP
+.I float  
+.B phi
+.B =0.1
+.R  
+.TP
+.I float  
+.B pmax
+.B =0.000332
+.R  
+.TP
+.I float  
+.B rc1
+.B =0.2
+.R  
+.TP
+.I float  
+.B rc2
+.B =0.2
+.R  
+.TP
+.I int    
+.B seed
+.B =time(NULL)
+.R  	random seed
+.TP
+.I int    
+.B type
+.B =1
+.R  	1 single plane layer
+       2 two plane layers
+       3 point diffractor
+.TP
+.I float  
+.B v1
+.B =2000.
+.R  
+.TP
+.I float  
+.B v2
+.B =3000.
+.R  
+.TP
+.I float  
+.B xloc
+.B =200.
+.R  
+.SH SOURCE
+.I user/rickettj/Mpmod.c
+.SH VERSION
+4.2-git

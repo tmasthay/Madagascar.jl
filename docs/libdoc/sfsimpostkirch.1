@@ -1,0 +1,39 @@
+.TH sfsimpostkirch 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsimpostkirch \- 2-D simplest-form post-stack Kirchhoff time modeling and migration. 
+.SH SYNOPSIS
+.B sfsimpostkirch < in.rsf > out.rsf vel=vel.rsf adj=y aa=n sw=0 v0=
+.SH COMMENTS
+Suppose the input_image & output_data or input_data & output_image have the same dimensions, samplings.
+The dottest has been past. 
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B aa
+.B =n
+.R  [y/n]	yes: apply reciprocal antialiaising operator
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	yes: migration, no: modeling
+.TP
+.I int    
+.B sw
+.B =0
+.R  	if > 0, select a branch of the antialiasing operation
+.TP
+.I float  
+.B v0
+.B =
+.R  	constant velocity (if no velocity=)
+.TP
+.I string 
+.B vel
+.B =
+.R  	velocity file (auxiliary input file name)
+.SH SOURCE
+.I user/chenyk/Msimpostkirch.c
+.SH VERSION
+4.2-git

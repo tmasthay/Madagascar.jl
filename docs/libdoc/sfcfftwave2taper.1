@@ -1,0 +1,71 @@
+.TH sfcfftwave2taper 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcfftwave2taper \- Complex 2-D wave propagation (with multi-threaded FFTW3)
+.SH SYNOPSIS
+.B sfcfftwave2taper < Fw.rsf > Fo.rsf ref=Fr.rsf snaps=snaps.rsf left=left.rsf right=right.rsf verb=n cmplx=y os=y sub=n sub=y taper=0 thresh=0.92 snap=0 pad1=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B cmplx
+.B =y
+.R  [y/n]	outputs complex wavefield
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B os
+.B =y
+.R  [y/n]	one-step flag
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I file   
+.B ref
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B right
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B snap
+.B =0
+.R  	interval for snapshots
+.TP
+.I file   
+.B snaps
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B sub
+.B =y
+.R  [y/n]	subtraction flag
+.TP
+.I int    
+.B taper
+.B =0
+.R  	tapering in the frequency domain
+.TP
+.I float  
+.B thresh
+.B =0.92
+.R  	tapering threshold
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/jsun/Mcfftwave2taper.c
+.SH VERSION
+4.2-git

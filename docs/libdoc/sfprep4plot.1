@@ -1,0 +1,58 @@
+.TH sfprep4plot 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfprep4plot \- Resamples a 2-D dataset to the desired picture resolution, with antialias
+.SH SYNOPSIS
+.B sfprep4plot inp= out= verb=n h=768 w=1024 h= w= unit=px ppi= prar=y
+.SH COMMENTS
+Only one of the h and w parameters needs to be specified.
+If prar=n, no action will be taken on axis for which h/w was not specified
+If prar=y and only one par (h or w) is specified, the picture will scale
+along both axes until it is of the specified dimension.
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B h
+.B =
+.R  
+.TP
+.I string 
+.B inp
+.B =
+.R  	input file
+.TP
+.I string 
+.B out
+.B =
+.R  	output file
+.TP
+.I int    
+.B ppi
+.B =
+.R  	outp. resolution (px/in). Necessary when unit!=px
+.TP
+.I bool   
+.B prar
+.B =y
+.R  [y/n]	if y, PReserve Aspect Ratio of input
+.TP
+.I string 
+.B unit
+.B =px
+.R  	unit of h and w. Can be: px, mm, cm, in
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	if y, print system commands, outputs
+.TP
+.I string 
+.B w
+.B =
+.R  
+.SH SOURCE
+.I user/ivlad/Mprep4plot.py
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfprep4plot
+.SH VERSION
+4.2-git

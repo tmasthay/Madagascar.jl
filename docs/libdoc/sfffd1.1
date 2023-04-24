@@ -1,0 +1,31 @@
+.TH sfffd1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfffd1 \- 1-D Fourier finite-difference wave extrapolation 
+.SH SYNOPSIS
+.B sfffd1 < in.rsf vel=vel.rsf > out.rsf opt=y dt= nt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I bool   
+.B opt
+.B =y
+.R  [y/n]
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/songxl/Mffd1.c
+.SH VERSION
+4.2-git

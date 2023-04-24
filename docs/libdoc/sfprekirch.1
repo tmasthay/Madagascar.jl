@@ -1,0 +1,40 @@
+.TH sfprekirch 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfprekirch \- 2-D Prestack Kirchhoff time migration with antialiasing. 
+.SH SYNOPSIS
+.B sfprekirch < inp.rsf vel=vel.rsf > mig.rsf nz=nt dz=dt z0=t0 antialias=1.0
+.SH COMMENTS
+The axes in the input are {time,midpoint,offset}
+The axes in the output are {time,midpoint}
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B antialias
+.B =1.0
+.R  	antialiasing
+.TP
+.I float  
+.B dz
+.B =dt
+.R  
+.TP
+.I int    
+.B nz
+.B =nt
+.R  
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B z0
+.B =t0
+.R  
+.SH SOURCE
+.I user/chenyk/Mprekirch.c
+.SH VERSION
+4.2-git

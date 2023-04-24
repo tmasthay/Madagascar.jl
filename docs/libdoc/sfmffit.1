@@ -1,0 +1,31 @@
+.TH sfmffit 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmffit \- Fitting multi-focusing approximations 
+.SH SYNOPSIS
+.B sfmffit < in.rsf coef=coef.rsf > out.rsf fit=fit.rsf x0=m0 type=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B coef
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B fit
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B type
+.B =
+.R  	Type of approximation (crs,mf,nonhyperbolic)
+.TP
+.I float  
+.B x0
+.B =m0
+.R  	central midpoint
+.SH SOURCE
+.I user/fomels/Mmffit.c
+.SH VERSION
+4.2-git

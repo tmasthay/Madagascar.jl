@@ -1,0 +1,71 @@
+.TH sfcorrectwave2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcorrectwave2 \- Complex 2-D wave propagation using initial condition 
+.SH SYNOPSIS
+.B sfcorrectwave2 < Fi.rsf > Fo.rsf snaps=Fs.rsf left=left.rsf right=right.rsf alpha=Fa.rsf beta=Fb.rsf verb=y nt= dt= snap=0 correct=n pad1=1 mode=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B alpha
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B beta
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B correct
+.B =n
+.R  [y/n]	jingwei's correction
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B mode
+.B =
+.R  	default mode is pspi
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I file   
+.B right
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B snap
+.B =0
+.R  	interval for snapshots
+.TP
+.I file   
+.B snaps
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/jsun/Mcorrectwave2.c
+.SH VERSION
+4.2-git

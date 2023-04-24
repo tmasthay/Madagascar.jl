@@ -1,0 +1,131 @@
+.TH sfzomvti 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfzomvti \- acoustic VTI wavefield
+.SH SYNOPSIS
+.B sfzomvti vnmo=Fvnmo.rsf vz=Fvver.rsf eta=Fheta.rsf cr=Fcr.rsf wave=Fwave.rsf < Fimag.rsf > Fdata.rsf vmap=Fvmap.rsf sigm=Fsigm.rsf inv=n tau=n verb=n opt=n nt=1 dt=1. bzl=0 bzh=0 bxl=0 bxh=0 czl=1. czh=1. cxl=1. cxh=1. n3=nt eps=1
+.SH COMMENTS
+* exploding reflector modeling : < imag.rsf sfzomvti inv=y > data.rsf
+* zero-offset migration        : < data.rsf sfzomvti inv=n > imag.rsf
+* prestack forward modeling    : < data.rsf sfzomvti inv=n > imag.rsf
+Need (1) vnmo *= 2, vver *= 2 (2) nr=1 
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B bxh
+.B =0
+.R  
+.TP
+.I int    
+.B bxl
+.B =0
+.R  
+.TP
+.I int    
+.B bzh
+.B =0
+.R  
+.TP
+.I int    
+.B bzl
+.B =0
+.R  
+.TP
+.I file   
+.B cr
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B cxh
+.B =1.
+.R  
+.TP
+.I float  
+.B cxl
+.B =1.
+.R  
+.TP
+.I float  
+.B czh
+.B =1.
+.R  
+.TP
+.I float  
+.B czl
+.B =1.
+.R  
+.TP
+.I float  
+.B dt
+.B =1.
+.R  	time d (if inv=y)
+.TP
+.I float  
+.B eps
+.B =1
+.R  	regularize sigma
+.TP
+.I file   
+.B eta
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, modeling; if n, migration
+.TP
+.I int    
+.B n3
+.B =nt
+.R  	wave time n
+.TP
+.I int    
+.B nt
+.B =1
+.R  	time n (if inv=y)
+.TP
+.I bool   
+.B opt
+.B =n
+.R  [y/n]	optimze fft size
+.TP
+.I file   
+.B sigm
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B tau
+.B =n
+.R  [y/n]	if y, tau domain; if n, cartesian
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.TP
+.I file   
+.B vmap
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vnmo
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vz
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B wave
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/xuxin/Mzomvti.c
+.SH VERSION
+4.2-git

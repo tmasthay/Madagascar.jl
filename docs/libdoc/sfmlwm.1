@@ -1,0 +1,26 @@
+.TH sfmlwm 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmlwm \- 2D Multistage weighted median filtering. 
+.SH SYNOPSIS
+.B sfmlwm < in.rsf > out.rsf weights=weights.rsf nfw= boundary=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B boundary
+.B =n
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I int    
+.B nfw
+.B =
+.R  	filter-window length (positive and odd integer)
+.TP
+.I file   
+.B weights
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/yliu/Mmlwm.c
+.SH VERSION
+4.2-git

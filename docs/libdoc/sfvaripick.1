@@ -1,0 +1,45 @@
+.TH sfvaripick 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfvaripick \- 
+.SH SYNOPSIS
+.B sfvaripick lambda= niter= rho= epsilon= type= updates=
+.SH COMMENTS
+Performs automatic picking of a surface from a semblance-like volume.
+Input is semblance volume, also needs vo= starting model, dsemb= partial derivative of semblance with respect to v
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B epsilon
+.B =
+.R  	positive regularization parameter for gradient term
+.TP
+.I float  
+.B lambda
+.B =
+.R  	positive regularizaton parameter
+.TP
+.I int    
+.B niter
+.B =
+.R  	number of iterations
+.TP
+.I float  
+.B rho
+.B =
+.R  	step size limit
+.TP
+.I string 
+.B type
+.B =
+.R  	lbfgs, line, or grad
+.TP
+.I string 
+.B updates
+.B =
+.R  
+.SH SOURCE
+.I user/luke/Mvaripick.py
+.SH VERSION
+4.2-git

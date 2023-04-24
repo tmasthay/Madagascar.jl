@@ -1,0 +1,109 @@
+.TH sftkirinv 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftkirinv \- 2-D least-squares Kirchhoff pre-stack time migration with different regul..
+.SH SYNOPSIS
+.B sftkirinv < in.rsf vel=vel.rsf > out.rsf offset=offset.rsf fdip=fdip.rsf ompchunk=1 ompnth=0 verb=n half=y amp=y ncdp=ncmp dcdp=dcmp cdp0=cmp0 reg=0 antialias=1.0 apt=ncmp rho=1.-1./nt niter=5 nw=3 err=
+.SH COMMENTS
+regularization (or preconditioning) operator: 
+reg=0: no regularization; 
+reg=1: regularization => first derivative along offset axis;
+reg=2: precondition => causual integration along offset axis;
+reg=3: precondition => triangle smoother along offset axis, 
+reg=4: precondition => local slope constraints along t-x plane and smoothing along offset axis 
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B amp
+.B =y
+.R  [y/n]	if y, use amplitue factor
+.TP
+.I float  
+.B antialias
+.B =1.0
+.R  	antialiasing
+.TP
+.I float  
+.B apt
+.B =ncmp
+.R  	migration aperture
+.TP
+.I float  
+.B cdp0
+.B =cmp0
+.R  
+.TP
+.I float  
+.B dcdp
+.B =dcmp
+.R  
+.TP
+.I string 
+.B err
+.B =
+.R  	output file for error
+.TP
+.I string 
+.B fdip
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B half
+.B =y
+.R  [y/n]	if y, the third axis is half-offset instead of full offset
+.TP
+.I int    
+.B ncdp
+.B =ncmp
+.R  
+.TP
+.I int    
+.B niter
+.B =5
+.R  	number of iterations
+.TP
+.I int    
+.B nw
+.B =3
+.R  
+.TP
+.I string 
+.B offset
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B ompchunk
+.B =1
+.R  	OpenMP data chunk size
+.TP
+.I int    
+.B ompnth
+.B =0
+.R  	OpenMP available threads
+.TP
+.I int    
+.B reg
+.B =0
+.R  	regularization type
+.TP
+.I float  
+.B rho
+.B =1.-1./nt
+.R  	Leaky integration constant
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/seisinv/Mtkirinv.c
+.SH VERSION
+4.2-git

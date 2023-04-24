@@ -1,0 +1,51 @@
+.TH sfcfftexp2test 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcfftexp2test \- 2-D FFT-based zero-offset exploding reflector modeling/migration (outputs time volume, not just last image; can be used to generate movie) 
+.SH SYNOPSIS
+.B sfcfftexp2test < data.rsf > image.rsf left=left.rsf right=right.rsf mig=n pad1=1 nz= dz= nt= dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  	time sampling (if modeling)
+.TP
+.I float  
+.B dz
+.B =
+.R  	depth sampling (if migration)
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B mig
+.B =n
+.R  [y/n]	if n, modeling; if y, migration
+.TP
+.I int    
+.B nt
+.B =
+.R  	time samples (if modeling)
+.TP
+.I int    
+.B nz
+.B =
+.R  	depth samples (if migration)
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I file   
+.B right
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/jsun/Mcfftexp2test.c
+.SH VERSION
+4.2-git

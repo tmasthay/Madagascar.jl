@@ -1,0 +1,59 @@
+.TH sfseislet 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfseislet \- Seislet transform 
+.SH SYNOPSIS
+.B sfseislet < in.rsf > out.rsf dip=dip.rsf inv=n adj=n eps=0.01 unit=n order=1 verb=n type=
+.SH COMMENTS
+
+April 2017 program of the month:
+http://ahay.org/blog/2017/04/19/program-of-the-month-sfseislet/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if y, do adjoint transform
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, do inverse transform
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I string 
+.B type
+.B =
+.R  	[haar,linear,biorthogonal] wavelet type, the default is linear
+.TP
+.I bool   
+.B unit
+.B =n
+.R  [y/n]	if y, use unitary scaling
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH USED IN
+.TP
+.I cwp/geo2008InterferometricImagingCondition/circle
+.SH SOURCE
+.I user/pwd/Mseislet.c
+.SH VERSION
+4.2-git

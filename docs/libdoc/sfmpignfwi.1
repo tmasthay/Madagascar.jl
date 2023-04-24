@@ -1,0 +1,246 @@
+.TH sfmpignfwi 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmpignfwi \- Acoustic FWI using Gauss-Newton optimization 
+.SH SYNOPSIS
+.B sfmpignfwi Fvel=Fv.rsf Fwavelet=Fw.rsf output=Fdat.rsf output=Finv.rsf Ferr=Ferr.rsf Fmod=Fmod.rsf Fgrad=Fgrad.rsf function=2 verb=n nb=100 coef=0.002 acqui_type=1 ns= ds= s0= sz=3 nr=acpar->nx dr=acpar->dx r0=acpar->x0 rz=3 fhi=0.5/acpar->dt flo=0. frectx=2 frectz=2 onlygrad=n wt1=acpar->t0 wt2=acpar->t0+(acpar->nt-1)*acpar->dt woff1=acpar->r0 woff2=acpar->r0+(acpar->nr-1)*acpar->dr gain=1 waterz=51 grectx=3 grectz=3 drectx=1 drectz=1 nrepeat=1 tangent=0 sigma1=-1 sigma2=-1 v1=0. v2=10. lniter=10 niter= conv_error= nls=20 factor=10 repeat=5 err_type=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Ferr
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B Fgrad
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B Fmod
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B Fvel
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Fwavelet
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B acqui_type
+.B =1
+.R  	if 1, fixed acquisition; if 2, marine acquisition; if 3, symmetric acquisition
+.TP
+.I float  
+.B coef
+.B =0.002
+.R  	absorbing boundary coefficient
+.TP
+.I float  
+.B conv_error
+.B =
+.R  	final convergence error
+.TP
+.I float  
+.B dr
+.B =acpar->dx
+.R  	receiver interval
+.TP
+.I int    
+.B drectx
+.B =1
+.R  	smoothing kernel radius in x
+.TP
+.I int    
+.B drectz
+.B =1
+.R  	smoothing kernel radius in z
+.TP
+.I float  
+.B ds
+.B =
+.R  	shot interval
+.TP
+.I int    
+.B err_type
+.B =0
+.R  	if 0, true misfit function; if 1, both smoothing kernel and original L2 norm misfits
+.TP
+.I float  
+.B factor
+.B =10
+.R  	step length increase factor
+.TP
+.I float  
+.B fhi
+.B =0.5/acpar->dt
+.R  	high frequency in band, default is Nyquist
+.TP
+.I float  
+.B flo
+.B =0.
+.R  	low frequency in band, default is zero
+.TP
+.I int    
+.B frectx
+.B =2
+.R  	source smoothing in x
+.TP
+.I int    
+.B frectz
+.B =2
+.R  	source smoothing in z
+.TP
+.I int    
+.B function
+.B =2
+.R  	if 1, forward modeling; if 2, FWI
+.TP
+.I float  
+.B gain
+.B =1
+.R  	vertical gain power of data residual
+.TP
+.I int    
+.B grectx
+.B =3
+.R  	gradient smoothing radius in x
+.TP
+.I int    
+.B grectz
+.B =3
+.R  	gradient smoothing radius in z
+.TP
+.I int    
+.B lniter
+.B =10
+.R  	CG iteration number
+.TP
+.I int    
+.B nb
+.B =100
+.R  	boundary width
+.TP
+.I int    
+.B niter
+.B =
+.R  	iteration number
+.TP
+.I int    
+.B nls
+.B =20
+.R  	line search number
+.TP
+.I int    
+.B nr
+.B =acpar->nx
+.R  	number of receiver
+.TP
+.I int    
+.B nrepeat
+.B =1
+.R  	smoothing kernel repeat number
+.TP
+.I int    
+.B ns
+.B =
+.R  	shot number
+.TP
+.I bool   
+.B onlygrad
+.B =n
+.R  [y/n]	only calculate gradident or not
+.TP
+.I file   
+.B output
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B r0
+.B =acpar->x0
+.R  	receiver origin
+.TP
+.I int    
+.B repeat
+.B =5
+.R  	after how many iterations the step length goes back to 1
+.TP
+.I int    
+.B rz
+.B =3
+.R  	receiver depth
+.TP
+.I float  
+.B s0
+.B =
+.R  	shot origin
+.TP
+.I float  
+.B sigma1
+.B =-1
+.R  	smoothing kernel radius moving step in z
+.TP
+.I float  
+.B sigma2
+.B =-1
+.R  	smoothing kernel radius moving step in x
+.TP
+.I int    
+.B sz
+.B =3
+.R  	source depth
+.TP
+.I int    
+.B tangent
+.B =0
+.R  	if 1, calculate prediction corrector
+.TP
+.I float  
+.B v1
+.B =0.
+.R  	lower limit of estimated velocity
+.TP
+.I float  
+.B v2
+.B =10.
+.R  	upper limit of estimated velocity
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I int    
+.B waterz
+.B =51
+.R  	water layer depth
+.TP
+.I float  
+.B woff1
+.B =acpar->r0
+.R  	window data residual: rmin
+.TP
+.I float  
+.B woff2
+.B =acpar->r0+(acpar->nr-1)*acpar->dr
+.R  	window data residual: rmax
+.TP
+.I float  
+.B wt1
+.B =acpar->t0
+.R  	window data residual: tmin
+.TP
+.I float  
+.B wt2
+.B =acpar->t0+(acpar->nt-1)*acpar->dt
+.R  	window data residual: tmax
+.SH SOURCE
+.I user/zhiguang/Mmpignfwi.c
+.SH VERSION
+4.2-git

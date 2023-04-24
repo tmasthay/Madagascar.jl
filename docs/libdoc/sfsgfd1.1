@@ -1,0 +1,121 @@
+.TH sfsgfd1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsgfd1 \- 1-D staggered Grid Finite-difference wave extrapolation 
+.SH SYNOPSIS
+.B sfsgfd1 < Fsrc.rsf vel=Fvel.rsf den=Fden.rsf > Fwf.rsf rec=Frec.rsf ic=Fic.rsf presrc=Fpsrc.rsf velsrc=Fvsrc.rsf preinit=Fpint.rsf velinit=Fvint.rsf verb=n srcmms=n slx= srcdecay=n srctrunc=1000 inject=y gdep=0 snapinter=1 pmlsize=PMLOUT pmld0=PMLD0 decay=DECAY_FLAG decaybegin=DECAY_BEGIN freesurface=n size=4
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B decay
+.B =DECAY_FLAG
+.R  	Flag of decay boundary condtion: 1 = use ; 0 = not use
+.TP
+.I int    
+.B decaybegin
+.B =DECAY_BEGIN
+.R  	Begin time of using decay boundary condition
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B freesurface
+.B =n
+.R  [y/n]	free surface
+.TP
+.I float  
+.B gdep
+.B =0
+.R  	recorder depth
+.TP
+.I file   
+.B ic
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B inject
+.B =y
+.R  [y/n]	inject = y use inject source; inject =n use initial condition
+.TP
+.I int    
+.B pmld0
+.B =PMLD0
+.R  	PML parameter
+.TP
+.I int    
+.B pmlsize
+.B =PMLOUT
+.R  	size of PML layer
+.TP
+.I file   
+.B preinit
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B presrc
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rec
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B size
+.B =4
+.R  	FD half order
+.TP
+.I float  
+.B slx
+.B =
+.R  	source location in x
+.TP
+.I int    
+.B snapinter
+.B =1
+.R  	snap interval
+.TP
+.I bool   
+.B srcdecay
+.B =n
+.R  [y/n]	source decay y=use
+.TP
+.I bool   
+.B srcmms
+.B =n
+.R  [y/n]	source type: if y, use point source
+.TP
+.I float  
+.B srctrunc
+.B =1000
+.R  	source trunc time (s)
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B velinit
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B velsrc
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/fangg/Msgfd1.c
+.SH VERSION
+4.2-git

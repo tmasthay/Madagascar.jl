@@ -1,0 +1,141 @@
+.TH sfort3dhomodevK 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfort3dhomodevK \- 3D three-components projection deviation correction operators calculation in
+.SH SYNOPSIS
+.B sfort3dhomodevK > Fo1.rsf apvy=Fo2.rsf apvz=Fo3.rsf taper=Fo4.rsf vp0=3000.0 vs0=1500.0 de1=0.05 de2=-0.05 de3=0.15 ep1=0.2 ep2=0.05 ga1=0.1 ga2=0.1 alpha=0. the=0. phi=0. hnx=250 hny=250 hnz=250 dx=10. dy=10. dz=10. itaper=1
+.SH COMMENTS
+* homogeneous orthorhombic media
+Copyright (C) 2012 Tongji University, Shanghai, China 
+
+Authors: Jiubing Cheng and Tengfei Wang 
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B alpha
+.B =0.
+.R  
+.TP
+.I file   
+.B apvy
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apvz
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B de1
+.B =0.05
+.R  
+.TP
+.I float  
+.B de2
+.B =-0.05
+.R  
+.TP
+.I float  
+.B de3
+.B =0.15
+.R  
+.TP
+.I float  
+.B dx
+.B =10.
+.R  
+.TP
+.I float  
+.B dy
+.B =10.
+.R  
+.TP
+.I float  
+.B dz
+.B =10.
+.R  
+.TP
+.I float  
+.B ep1
+.B =0.2
+.R  
+.TP
+.I float  
+.B ep2
+.B =0.05
+.R  
+.TP
+.I float  
+.B ga1
+.B =0.1
+.R  
+.TP
+.I float  
+.B ga2
+.B =0.1
+.R  
+.TP
+.I int    
+.B hnx
+.B =250
+.R  
+.TP
+.I int    
+.B hny
+.B =250
+.R  
+.TP
+.I int    
+.B hnz
+.B =250
+.R  
+.TP
+.I int    
+.B itaper
+.B =1
+.R  
+.TP
+.I float  
+.B phi
+.B =0.
+.R  
+.TP
+.I file   
+.B taper
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B the
+.B =0.
+.R  
+.TP
+.I float  
+.B vp0
+.B =3000.0
+.R  
+.TP
+.I float  
+.B vs0
+.B =1500.0
+.R  
+.SH SOURCE
+.I user/chengjb/Mort3dhomodevK.c
+.SH VERSION
+4.2-git

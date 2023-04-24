@@ -1,0 +1,31 @@
+.TH sfxcor3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfxcor3 \- OpenMP time- or freq-domain cross-correlation on axes 1,2,3,4 
+.SH SYNOPSIS
+.B sfxcor3 < Fs.rsf uu=Fr.rsf > Fi.rsf verb=n axis=2 nbuf=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B axis
+.B =2
+.R  	stack axis
+.TP
+.I int    
+.B nbuf
+.B =1
+.R  	buffer size
+.TP
+.I file   
+.B uu
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/jsun/Mxcor3.c
+.SH VERSION
+4.2-git

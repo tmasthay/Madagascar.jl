@@ -1,0 +1,31 @@
+.TH sftxpnmo 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftxpnmo \- Normal moveout in TXP domain. 
+.SH SYNOPSIS
+.B sftxpnmo < cmp.rsf velocity=velocity.rsf > nmod.rsf str=0.5 mute=12 extend=4
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B extend
+.B =4
+.R  	trace extension
+.TP
+.I int    
+.B mute
+.B =12
+.R  	mute zone
+.TP
+.I float  
+.B str
+.B =0.5
+.R  	maximum stretch allowed
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I system/seismic/Mtxpnmo.c
+.SH VERSION
+4.2-git

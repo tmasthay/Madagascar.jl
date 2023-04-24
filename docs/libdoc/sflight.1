@@ -1,0 +1,26 @@
+.TH sflight 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflight \- Apply 2-D directional high-pass to highlight data.
+.SH SYNOPSIS
+.B sflight < in.rsf > out.rsf ax=1. ay=1. eps=0.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B ax
+.B =1.
+.R  	x direction
+.TP
+.I float  
+.B ay
+.B =1.
+.R  	y direction
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	highpass filter parameter; if eps=0, apply derivative
+.SH SOURCE
+.I user/gee/Mlight.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,64 @@
+.TH sfcell2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcell2 \- Second-order cell ray tracing with locally parabolic rays.
+.SH SYNOPSIS
+.B sfcell2 < vel.rsf > time.rsf shotfile=shots.rsf anglefile=angles.rsf vel=y order=4 lsint=n nt=nx*nz nr= a0=0. amax=360. traj= > rays.rsf
+.SH COMMENTS
+Rays and wavefronts can be displayed with sfplotrays.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B a0
+.B =0.
+.R  	First angle in degrees (if anglefile is not specified)
+.TP
+.I float  
+.B amax
+.B =360.
+.R  	Maximum angle in degrees (if anglefile is not specified)
+.TP
+.I string 
+.B anglefile
+.B =
+.R  	file with initial angles (auxiliary input file name)
+.TP
+.I bool   
+.B lsint
+.B =n
+.R  [y/n]	if use least-squares interpolation
+.TP
+.I int    
+.B nr
+.B =
+.R  	Number of angles (if anglefile is not specified)
+.TP
+.I int    
+.B nt
+.B =nx*nz
+.R  	number of time steps
+.TP
+.I int    
+.B order
+.B =4
+.R  	Interpolation accuracy
+.TP
+.I string 
+.B shotfile
+.B =
+.R  	file with shot locations (auxiliary input file name)
+.TP
+.I string 
+.B traj
+.B =
+.R  
+.TP
+.I bool   
+.B vel
+.B =y
+.R  [y/n]	If y, the input is velocity; if n, slowness
+.SH SOURCE
+.I system/seismic/Mcell2.c
+.SH VERSION
+4.2-git

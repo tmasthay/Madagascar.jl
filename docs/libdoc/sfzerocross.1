@@ -1,0 +1,19 @@
+.TH sfzerocross 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfzerocross \- Zero crossings. 
+.SH SYNOPSIS
+.B sfzerocross < in.rsf > out.rsf levels=3
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B levels
+.B =3
+.R  	levels of quantization [2,3,5].
+      levels=2	1: zero crossing or zero; 0: otherwise
+      levels=3	1: positive to negative zc; -1 negative to positive zc; 0: otherwise
+      levels=5	+/-2: positive/negative values; +/-1: as in levels=3; 0: zero.
+.SH SOURCE
+.I user/saragiotis/Mzerocross.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,36 @@
+.TH sfheatgmres1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfheatgmres1 \- Solution of 1-D heat equation with GMRES. 
+.SH SYNOPSIS
+.B sfheatgmres1 < tinitial.rsf > solution.rsf alpha= dt= nt= Ta=0 Tb=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B Ta
+.B =0
+.R  	Boundary condition on the left
+.TP
+.I float  
+.B Tb
+.B =0
+.R  	Boundary condition on the right
+.TP
+.I float  
+.B alpha
+.B =
+.R  	Conductivity
+.TP
+.I float  
+.B dt
+.B =
+.R  	Time step
+.TP
+.I int    
+.B nt
+.B =
+.R  	Number of time steps
+.SH SOURCE
+.I user/petsc/Mheatgmres1.c
+.SH VERSION
+4.2-git

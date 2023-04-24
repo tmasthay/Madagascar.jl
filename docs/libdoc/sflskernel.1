@@ -1,0 +1,39 @@
+.TH sflskernel 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflskernel \- 
+.SH SYNOPSIS
+.B sflskernel < _in.rsf > _out.rsf match=_match.rsf adj=n wrap=n nk1=5 nk2=5
+.SH COMMENTS
+find kernel for convolution in ls sense, this is assuming 3 dimensional data and a 2d kernel
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if n takes kernel and outputs function, if y takes function and outputs kernel
+.TP
+.I string 
+.B match
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nk1
+.B =5
+.R  	size of kernel in dimension 1
+.TP
+.I int    
+.B nk2
+.B =5
+.R  	size of kernel in dimension 2
+.TP
+.I bool   
+.B wrap
+.B =n
+.R  [y/n]	if y, perform doughnut wrapping.  if n, no wrapping
+.SH SOURCE
+.I user/luke/Mlskernel.c
+.SH VERSION
+4.2-git

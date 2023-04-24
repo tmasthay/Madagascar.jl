@@ -1,0 +1,55 @@
+.TH sffwi2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffwi2d \- Time domain full waveform inversion 
+.SH SYNOPSIS
+.B sffwi2d < vinit.rsf shots=shots.rsf > vupdates.rsf grads=grads.rsf illums=illums.rsf objs=objs.rsf verb=y precon=n niter=100 rbell=2
+.SH COMMENTS
+Note: This serial FWI is merely designed to help the understanding of 
+beginners. Enquist absorbing boundary condition (A2) is applied!
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B grads
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B illums
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I file   
+.B objs
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B precon
+.B =n
+.R  [y/n]	precondition or not
+.TP
+.I int    
+.B rbell
+.B =2
+.R  	radius of bell smooth
+.TP
+.I file   
+.B shots
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	vebosity
+.SH SOURCE
+.I user/pyang/Mfwi2d.c
+.SH VERSION
+4.2-git

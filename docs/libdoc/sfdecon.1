@@ -1,0 +1,35 @@
+.TH sfdecon 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdecon \- Deconvolution (N-dimensional).
+.SH SYNOPSIS
+.B sfdecon < in.rsf > out.rsf filt=filt.rsf predictive=n rect1=0 lag=
+.SH COMMENTS
+
+Uses the helix and patching technology.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B filt
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B lag
+.B =
+.R  
+.TP
+.I bool   
+.B predictive
+.B =n
+.R  [y/n]	if y, do predictive deconvolution
+.TP
+.I int    
+.B rect1
+.B =0
+.R  	smoothing in the first axis
+.SH SOURCE
+.I user/gee/Mdecon.c
+.SH VERSION
+4.2-git

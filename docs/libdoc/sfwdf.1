@@ -1,0 +1,43 @@
+.TH sfwdf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwdf \- Assymptotic Wigner distribution 
+.SH SYNOPSIS
+.B sfwdf < Fu.rsf > Fw.rsf ompchunk=1 verb=n nh1=0 nh2=0 nh3=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B nh1
+.B =0
+.R  
+.TP
+.I int    
+.B nh2
+.B =0
+.R  
+.TP
+.I int    
+.B nh3
+.B =0
+.R  
+.TP
+.I int    
+.B ompchunk
+.B =1
+.R  	OpenMP data chunk size
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH USED IN
+.TP
+.I cwp/geo2008InterferometricImagingCondition/circle
+.TP
+.I cwp/geo2008InterferometricImagingCondition/sact1
+.TP
+.I cwp/geo2008InterferometricImagingCondition/sigs2
+.SH SOURCE
+.I user/psava/Mwdf.c
+.SH VERSION
+4.2-git

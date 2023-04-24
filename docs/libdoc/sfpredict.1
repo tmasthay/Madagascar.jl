@@ -1,0 +1,26 @@
+.TH sfpredict 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpredict \- 2-D plane-wave prediction. 
+.SH SYNOPSIS
+.B sfpredict < in.rsf dip=dip.rsf > out.rsf adj=n order=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.SH SOURCE
+.I user/pwd/Mpredict.c
+.SH VERSION
+4.2-git Mtrismooth2.c 752 2004-08-22 21:57:40Z fomels

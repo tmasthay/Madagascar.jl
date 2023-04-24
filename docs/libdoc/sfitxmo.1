@@ -1,0 +1,56 @@
+.TH sfitxmo 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfitxmo \- Forward and inverse normal moveout with interval velocity. 
+.SH SYNOPSIS
+.B sfitxmo < inp.rsf > out.rsf velocity=velocity.rsf inv=n nx= dx= x0=0. np= dp= p0=0. eps=0.01
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dp
+.B =
+.R  	slope sampling
+.TP
+.I float  
+.B dx
+.B =
+.R  	offset sampling
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]
+.TP
+.I int    
+.B np
+.B =
+.R  	slope samples
+.TP
+.I int    
+.B nx
+.B =
+.R  	offset samples
+.TP
+.I float  
+.B p0
+.B =0.
+.R  	first slope
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B x0
+.B =0.
+.R  	first offset
+.SH SOURCE
+.I system/seismic/Mitxmo.c
+.SH VERSION
+4.2-git

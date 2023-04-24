@@ -1,0 +1,86 @@
+.TH sftraveltime2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftraveltime2d \- Oriented zero-offset migration. 
+.SH SYNOPSIS
+.B sftraveltime2d < dist.rsf time=time.rsf dept=dept.rsf len=lent.rsf > imagt.rsf xsrc= tolz= tolx= frontt0= frontdt= frontnt= fronteps= interpolate= timez0= minpath= front= eik=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dept
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B eik
+.B =
+.R  
+.TP
+.I string 
+.B front
+.B =
+.R  
+.TP
+.I float  
+.B frontdt
+.B =
+.R  
+.TP
+.I float  
+.B fronteps
+.B =
+.R  
+.TP
+.I int    
+.B frontnt
+.B =
+.R  
+.TP
+.I float  
+.B frontt0
+.B =
+.R  
+.TP
+.I int    
+.B interpolate
+.B =
+.R  	first arrivals
+.TP
+.I file   
+.B len
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B minpath
+.B =
+.R  
+.TP
+.I file   
+.B time
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B timez0
+.B =
+.R  
+.TP
+.I float  
+.B tolx
+.B =
+.R  
+.TP
+.I float  
+.B tolz
+.B =
+.R  
+.TP
+.I float  
+.B xsrc
+.B =
+.R  
+.SH SOURCE
+.I user/roman/Mtraveltime2d.c
+.SH VERSION
+4.2-git

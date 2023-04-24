@@ -1,0 +1,36 @@
+.TH sfrtm2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrtm2d \- 2-D zero-offset reverse-time migration
+.SH SYNOPSIS
+.B sfrtm2d vel=modl.rsf < data.rsf > imag.rsf adj=n n0=0 nt= dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if y, migration; else, modeling
+.TP
+.I float  
+.B dt
+.B =
+.R  	time sampling interval: dt
+.TP
+.I int    
+.B n0
+.B =0
+.R  	shot depth in the grid
+.TP
+.I int    
+.B nt
+.B =
+.R  	number of time steps
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/pyang/Mrtm2d.c
+.SH VERSION
+4.2-git

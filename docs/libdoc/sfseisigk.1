@@ -1,0 +1,60 @@
+.TH sfseisigk 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfseisigk \- Signal component separation using seislet transforms. 
+.SH SYNOPSIS
+.B sfseisigk < in.rsf dips=dips.rsf > out.rsf weight=weight.rsf niter=50 nliter=1 eps=0. eps0=0.01 verb=n order=1 type=
+.SH COMMENTS
+
+The program works with 2-D data. The second dimension should be a power of 2.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dips
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	regularization parameter
+.TP
+.I float  
+.B eps0
+.B =0.01
+.R  	regularization for seislet
+.TP
+.I int    
+.B niter
+.B =50
+.R  	maximum number of iterations
+.TP
+.I int    
+.B nliter
+.B =1
+.R  	number of reweighting iterations
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I string 
+.B type
+.B =
+.R  	wavelet type (haar,linear)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I string 
+.B weight
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/pwd/Mseisigk.c
+.SH VERSION
+4.2-git

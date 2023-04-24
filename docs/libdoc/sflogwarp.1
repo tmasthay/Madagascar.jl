@@ -1,0 +1,31 @@
+.TH sflogwarp 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflogwarp \- Log warping. 
+.SH SYNOPSIS
+.B sflogwarp < in.rsf > out.rsf inv=n pad=n1 t0=o1 eps=0.01
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	inversion flag
+.TP
+.I int    
+.B pad
+.B =n1
+.R  	output time samples
+.TP
+.I float  
+.B t0
+.B =o1
+.R  
+.SH SOURCE
+.I system/generic/Mlogwarp.c
+.SH VERSION
+4.2-git

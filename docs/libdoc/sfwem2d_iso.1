@@ -1,0 +1,66 @@
+.TH sfwem2d_iso 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwem2d_iso \- 2D ISOTROPIC wave-equation finite-difference migration 
+.SH SYNOPSIS
+.B sfwem2d_iso vel=Fvel.rsf < Fxig.rsf swf=Fswf.rsf rwf=Frwf.rsf > Fxigo.rsf swfout=Fswfo.rsf rwfout=Frwfo.rsf nxtap=40 verbose=n adj=y add=n wantwf=n nh=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B add
+.B =n
+.R  [y/n]
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	ADJOINT flag
+.TP
+.I int    
+.B nh
+.B =0
+.R  
+.TP
+.I int    
+.B nxtap
+.B =40
+.R  	TAPER size
+.TP
+.I file   
+.B rwf
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rwfout
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B swf
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B swfout
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verbose
+.B =n
+.R  [y/n]	VERBOSITY flag
+.TP
+.I bool   
+.B wantwf
+.B =n
+.R  [y/n]	Want output wavefields
+.SH SOURCE
+.I user/jeff/Mwem2d_iso.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,26 @@
+.TH sflocorr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflocorr \- Local correlation measure between two datasets. 
+.SH SYNOPSIS
+.B sflocorr < in.rsf > out.rsf other=other.rsf verb=n rect#=(1,1,1)
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B other
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B rect#
+.B =(1,1,1)
+.R  	smoothing radius on #-th axis
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/yliu/Mlocorr.c
+.SH VERSION
+4.2-git

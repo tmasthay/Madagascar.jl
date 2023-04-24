@@ -1,0 +1,68 @@
+.TH sfhpef 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhpef \- Multi-dimensional PEF (prediction error filter) estimation on a helix. 
+.SH SYNOPSIS
+.B sfhpef < in.rsf > filt.rsf maskin=mask.rsf a= center= gap= n= na=0 tol=1.e-6 niter=2*(aa->nh) lag= maskout=
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	 [dim]
+.TP
+.I ints   
+.B center
+.B =
+.R  	 [dim]
+.TP
+.I ints   
+.B gap
+.B =
+.R  	 [dim]
+.TP
+.I string 
+.B lag
+.B =
+.R  	output file for filter lags
+.TP
+.I string 
+.B maskin
+.B =
+.R  	optional input mask file (auxiliary input file name)
+.TP
+.I string 
+.B maskout
+.B =
+.R  	optional output mask file
+.TP
+.I ints   
+.B n
+.B =
+.R  	 [dim]
+.TP
+.I int    
+.B na
+.B =0
+.R  	filter size
+.TP
+.I int    
+.B niter
+.B =2*(aa->nh)
+.R  	number of iterations
+.TP
+.I float  
+.B tol
+.B =1.e-6
+.R  	tolerance for filter compression
+.SH USED IN
+.TP
+.I cup/rna2d/real
+.TP
+.I cup/rna2d/shot
+.TP
+.I cup/rna2d/simple
+.SH SOURCE
+.I user/gee/Mhpef.c
+.SH VERSION
+4.2-git

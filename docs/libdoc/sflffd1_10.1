@@ -1,0 +1,36 @@
+.TH sflffd1_10 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflffd1_10 \- 1-D Lowrank Fourier finite-difference wave extrapolation 
+.SH SYNOPSIS
+.B sflffd1_10 < in.rsf vel=vel.rsf G=Gmatrix.rsf > out.rsf nt= dt= factor=0.5
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B G
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I float  
+.B factor
+.B =0.5
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/songxl/Mlffd1_10.c
+.SH VERSION
+4.2-git

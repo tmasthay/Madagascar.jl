@@ -1,0 +1,41 @@
+.TH sfepot 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfepot \- compute quasi-static electric potential 
+.SH SYNOPSIS
+.B sfepot < Feso.rsf > Fepo.rsf con=Fcon.rsf verb=n cbnd=y csrf=n meth=0 nit=100000
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B cbnd
+.B =y
+.R  [y/n]	conductive boundary
+.TP
+.I file   
+.B con
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B csrf
+.B =n
+.R  [y/n]	conductive  surface
+.TP
+.I int    
+.B meth
+.B =0
+.R  	method flag
+.TP
+.I int    
+.B nit
+.B =100000
+.R  	Jacobi iterations
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/psava/Mepot.c
+.SH VERSION
+4.2-git

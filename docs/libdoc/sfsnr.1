@@ -1,0 +1,36 @@
+.TH sfsnr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsnr \- Display dataset signal-noise-ratio.
+.SH SYNOPSIS
+.B sfsnr < in.rsf ntw1=1 ntw2=n2 nsw1=1 nsw2=n1 type=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B nsw1
+.B =1
+.R  	sample-window beginning position (default=1)
+.TP
+.I int    
+.B nsw2
+.B =n1
+.R  	sample-window end position (default=n1)
+.TP
+.I int    
+.B ntw1
+.B =1
+.R  	trace-window beginning position (default=1)
+.TP
+.I int    
+.B ntw2
+.B =n2
+.R  	trace-window end position (default=n2)
+.TP
+.I string 
+.B type
+.B =
+.R  	[stack] method type, the default is stack
+.SH SOURCE
+.I user/yliu/Msnr.c
+.SH VERSION
+4.2-git

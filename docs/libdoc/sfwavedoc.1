@@ -1,0 +1,97 @@
+.TH sfwavedoc 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwavedoc \- Rice HPCSS seismic modeling and migration. 
+.SH SYNOPSIS
+.B sfwavedoc < vfile.rsf source=mfile.rsf > tfile.rsf receiver=rmfile.rsf > imfile.rsf nt= dt= nm=0 isz=1 isxbeg=(nx)/2 isxend=(nx)/2 iskip=1 igz=1 igxbeg=1 igxend=0 fpeak=0.01 ihmax=0 imbeg=ihmax imend=nx-ihmax-1 imskip=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  	step in t
+.TP
+.I float  
+.B fpeak
+.B =0.01
+.R  	center frequency of Ricker wavelet
+.TP
+.I int    
+.B igxbeg
+.B =1
+.R  	far left receiver x coord in units of dx
+.TP
+.I int    
+.B igxend
+.B =0
+.R  	far right receiver x coord in units of dx
+.TP
+.I int    
+.B igz
+.B =1
+.R  	recvr depth, in units of dz
+.TP
+.I int    
+.B ihmax
+.B =0
+.R  	offset radius, units of dx
+.TP
+.I int    
+.B imbeg
+.B =ihmax
+.R  	midpoint begin
+.TP
+.I int    
+.B imend
+.B =nx-ihmax-1
+.R  	midpoint end
+.TP
+.I int    
+.B imskip
+.B =1
+.R  	midpoint skip
+.TP
+.I int    
+.B iskip
+.B =1
+.R  	interval between sources in units of dx
+.TP
+.I int    
+.B isxbeg
+.B =(nx)/2
+.R  	far left source x coord in units of dx
+.TP
+.I int    
+.B isxend
+.B =(nx)/2
+.R  	far right source x coord in units of dx
+.TP
+.I int    
+.B isz
+.B =1
+.R  	source depth, in units of dz
+.TP
+.I int    
+.B nm
+.B =0
+.R  	number of time steps to skip between movie frames
+       (<=0 for no movie)
+.TP
+.I int    
+.B nt
+.B =
+.R  	number of time steps
+.TP
+.I string 
+.B receiver
+.B =
+.R  	receiver movie file (auxiliary output file name)
+.TP
+.I string 
+.B source
+.B =
+.R  	source movie file (auxiliary output file name)
+.SH SOURCE
+.I user/hpcss/Mwavedoc.c
+.SH VERSION
+4.2-git

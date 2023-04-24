@@ -1,0 +1,31 @@
+.TH sfgravcon 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfgravcon \- Continuation for gravity data by using FFT or intergral iteration 
+.SH SYNOPSIS
+.B sfgravcon < in.rsf > out.rsf verb=n iter=n z= niter=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B iter
+.B =n
+.R  [y/n]	if y, perform iteration method
+.TP
+.I int    
+.B niter
+.B =0
+.R  	continuation factor allocate memory
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B z
+.B =
+.R  	for iteration method
+.SH SOURCE
+.I user/yliu/Mgravcon.c
+.SH VERSION
+4.2-git

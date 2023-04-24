@@ -1,0 +1,130 @@
+.TH sftahspecbal 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftahspecbal \- Read Trace And Header (tah) from standard input, SPECtral BALance
+.SH SYNOPSIS
+.B sftahspecbal < in.rsf > out.rsf xstart= tstart= verbose=1 ntaper=12 wagc=-1 pnoise=0.01 fmin=5 fmax=95 finc=5
+.SH COMMENTS
+
+THIS PROGRAM WAS WRITEN, BUT NEVER SUCESSFULLY TESTED.  RESULTS LOOK 
+POOR, BUT UNABLE TO SPEND TIME ON THE ALGORITHM, I ADDED IT TO THE 
+REPOSOTORY AND HOPE TO RETURN TO WORK ON IT AGAIN... SOMEDAY!
+
+tah is the abbreviation of Trace And Header.  Madagascar programs 
+that begin with sftah are a designed to:
+1- read trace and headers from separate rsf files and write them to 
+standard output (ie sftahread)
+2- filter programs that read and write standard input/output and 
+process the tah data (eg sftahnmo, sftahstack)
+3- read tah data from standard input and write separate rsf files for 
+the trace and headers data (ie sftahwrite)
+
+These programs allow Seismic Unix (su) like processing in Madagascar.  
+Some programs have su like names.
+
+Some programs in this suite are sftahread, sftahgethw, ftahhdrmath, 
+and sftahwrite.
+
+The sftahspecbal program is designed to improve the resolution and 
+appearance of the final imaged seismic section (ie after migration 
+and stack.  When applied to noisey land data early in the processing 
+sequence (after surface consisntant decon and before migration and 
+stack) it attenuates noise on post migration and stack data.  There
+are several algorithms called spectral balancing, whitening, or 
+broading.  This program implenents a popular method.  Each input 
+trace is split into several narrow frequency bands by bandpass 
+filtering.  AGC is applied to rach frequency band, and the frequency
+bands are summed.  User parameters control the filter bands and the
+AGC length.  (reference http://www.xsgeo.com/course/spec.htm#content).
+
+EXAMPLE:
+
+sftahsort input=shots-receivers-23900_headfix.rsf        \
+sort="xline:600,601 offset"                              \
+| sftahspecbal fmin=5 fmax=95 finc=5 wagc=.250 noise=.05 \
+| sftahwrite                                             \
+verbose=1                                                \
+mode=seq                                                 \
+output=specbalcmps.rsf                                   \
+>/dev/null
+
+sfimage <specbalcmps.rsf | sfpen
+
+In this example the shot organized prestack data in the file 
+shots-receivers-23900_headfix.rsf are read in xline offset order by 
+sftahsort program.  The headers are in the file 
+shots-receivers-23900_headfix_hdr.rsf, the headers parameter default.
+The headers are merged with the trace amplitudes and the tah data sent 
+down the pipe for spectral balancing.  
+
+sftahspecbal, spectral balance, was run by dividing the data into 5 Hz
+frequency bands, applying .25 second agc, summing the scaled bands,
+and dividing by the sum of the scalars.
+
+Sftahwrite writes the the trace data to specbalcmp.rsf and the headers 
+are written to the file specbalcmp_hdr.rsf.  The output traces are just
+sequentially written to the output file.
+kls
+
+PARAMETERS
+
+float fmin= NULL
+
+Center of the first frequency band.
+	
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B finc
+.B =5
+.R  	frequency band increment
+.TP
+.I float  
+.B fmax
+.B =95
+.R  	maximum frequency band
+.TP
+.I float  
+.B fmin
+.B =5
+.R  	minimum frequency band
+.TP
+.I int    
+.B ntaper
+.B =12
+.R  
+.TP
+.I float  
+.B pnoise
+.B =0.01
+.R  	relative additive noise level
+.TP
+.I floats 
+.B tstart
+.B =
+.R  	 [numtstart]
+.TP
+.I int    
+.B verbose
+.B =1
+.R  	
+
+       flag to control amount of print
+       0 terse, 1 informative, 2 chatty, 3 debug
+.TP
+.I float  
+.B wagc
+.B =-1
+.R  	
+
+       length of the agc window in seconds
+.TP
+.I floats 
+.B xstart
+.B =
+.R  	 [numxstart]
+.SH SOURCE
+.I user/karl/Mtahspecbal.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,33 @@
+.TH sfinvalid 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfinvalid \- Finds RSF files with missing or incomplete binaries or headers.
+.SH SYNOPSIS
+.B sfinvalid verb=n dir=. rec=n chk4nan=n
+.SH COMMENTS
+Delete them all with shell constructs like: rm -f `sfinvalid dir=.`
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B chk4nan
+.B =n
+.R  [y/n]	Check for NaN values. Expensive!!
+.TP
+.I string 
+.B dir
+.B =.
+.R  	Directory with files
+.TP
+.I bool   
+.B rec
+.B =n
+.R  [y/n]	Whether to go down recursively
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	Display what is wrong with the dataset
+.SH SOURCE
+.I user/ivlad/Minvalid.py
+.SH VERSION
+4.2-git

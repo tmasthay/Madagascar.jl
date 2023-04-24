@@ -1,0 +1,41 @@
+.TH sfvirtualdata 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfvirtualdata \- Construction of virtual seismic data. 
+.SH SYNOPSIS
+.B sfvirtualdata < in.rsf > out.rsf dif=dif.rsf verb=n stack=n both=n jumpo=1 jumps=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B both
+.B =n
+.R  [y/n]	receiver flag, if y, receiver with both sides
+.TP
+.I string 
+.B dif
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B jumpo
+.B =1
+.R  	jump in offset dimension, only for stack=n
+.TP
+.I int    
+.B jumps
+.B =1
+.R  	jump in shot dimension, only for stack=n
+.TP
+.I bool   
+.B stack
+.B =n
+.R  [y/n]	stack flag, if y, no common multiple gather
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mvirtualdata.c
+.SH VERSION
+4.2-git

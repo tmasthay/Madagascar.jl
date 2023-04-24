@@ -1,0 +1,36 @@
+.TH sfcr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcr \- Column-row matrix decomposition 
+.SH SYNOPSIS
+.B sfcr < row_in.rsf col_in=col_in.rsf > row_out.rsf col_out=col_out.rsf niter=10 tol=0.0f prec=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B col_in
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B col_out
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B niter
+.B =10
+.R  	number of iterations
+.TP
+.I bool   
+.B prec
+.B =y
+.R  [y/n]	If apply preconditioning
+.TP
+.I float  
+.B tol
+.B =0.0f
+.R  	CG tolerance
+.SH SOURCE
+.I user/fomels/Mcr.c
+.SH VERSION
+4.2-git

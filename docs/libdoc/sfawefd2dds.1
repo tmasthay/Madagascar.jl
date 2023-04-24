@@ -1,0 +1,96 @@
+.TH sfawefd2dds 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfawefd2dds \- 2D acoustic time-domain FD modeling  for source perturbation -first order
+.SH SYNOPSIS
+.B sfawefd2dds < Fwav.rsf vel=Fvel.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf den=Fden.rsf verb=n snap=n free=n expl=n dabc=n dl=0.0 jdata=1 jsnap=nt nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax)
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B dabc
+.B =n
+.R  [y/n]	absorbing BC
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dl
+.B =0.0
+.R  	dl=0.0  perturbation distance
+.TP
+.I bool   
+.B expl
+.B =n
+.R  [y/n]	"exploding reflector"
+.TP
+.I bool   
+.B free
+.B =n
+.R  [y/n]	free surface flag
+.TP
+.I int    
+.B jdata
+.B =1
+.R  
+.TP
+.I int    
+.B jsnap
+.B =nt
+.R  
+.TP
+.I int    
+.B nqx
+.B =sf_n(ax)
+.R  
+.TP
+.I int    
+.B nqz
+.B =sf_n(az)
+.R  
+.TP
+.I float  
+.B oqx
+.B =sf_o(ax)
+.R  
+.TP
+.I float  
+.B oqz
+.B =sf_o(az)
+.R  
+.TP
+.I file   
+.B rec
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B snap
+.B =n
+.R  [y/n]	wavefield snapshots flag
+.TP
+.I file   
+.B sou
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I file   
+.B wfl
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/tariq/Mawefd2dds.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,76 @@
+.TH sfseismis2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfseismis2 \- Missing data interpolation in 2-D using seislet transform. 
+.SH SYNOPSIS
+.B sfseismis2 < in.rsf > out.rsf dip=dip.rsf mask=mask.rsf niter=20 order=1 verb=n cut=n eps=0.01 order=1 cnum=n2 orderc=1. perc=99. ordert=1. ordert=1. type= oper=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B cnum
+.B =n2
+.R  	Max cutting in cutting operator, default is n2
+.TP
+.I bool   
+.B cut
+.B =n
+.R  [y/n]	cutting flag, the default is shaping
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization parameter
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =20
+.R  	number of iterations
+.TP
+.I string 
+.B oper
+.B =
+.R  	[destruction,construction,shaping,pocs,bregman] method, the default is shaping
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I float  
+.B orderc
+.B =1.
+.R  	Curve order for cutting operator, default is linear
+.TP
+.I float  
+.B ordert
+.B =1.
+.R  	Curve order for thresholding operator, default is linear
+.TP
+.I float  
+.B perc
+.B =99.
+.R  	percentage for soft-thresholding
+.TP
+.I string 
+.B type
+.B =
+.R  	[haar,linear,biorthogonal] wavelet type, the default is biorthogonal
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mseismis2.c
+.SH VERSION
+4.2-git

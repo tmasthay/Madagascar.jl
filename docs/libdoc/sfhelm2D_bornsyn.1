@@ -1,0 +1,41 @@
+.TH sfhelm2D_bornsyn 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhelm2D_bornsyn \- 2D Born synthetic based on Helmholtz forward solver. 
+.SH SYNOPSIS
+.B sfhelm2D_bornsyn < in.rsf > out.rsf source=source.rsf refl=reflfile.rsf uts=0 hermite=n npml=20 order=
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B hermite
+.B =n
+.R  [y/n]	Hermite operator
+.TP
+.I int    
+.B npml
+.B =20
+.R  	PML width
+.TP
+.I string 
+.B order
+.B =
+.R  	discretization scheme (default optimal 9-point)
+.TP
+.I string 
+.B refl
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B source
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B uts
+.B =0
+.R  
+.SH SOURCE
+.I user/hzhu/Mhelm2D_bornsyn.c
+.SH VERSION
+4.2-git

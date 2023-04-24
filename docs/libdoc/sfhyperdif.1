@@ -1,0 +1,64 @@
+.TH sfhyperdif 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhyperdif \- Solving 1-D transportation equation using finite difference algorithm 
+.SH SYNOPSIS
+.B sfhyperdif > out.rsf dinit=dinit.rsf dtrue=dtrue.rsf wanttrue=n wantinit=n nt= dt= ox= nx= dx= type=
+.SH COMMENTS
+\partial(u)/\partial(t)+a(x,t)\partial(u)/\partial(x), 0<t<=T, x->unlimited,
+u(x,0)=f(x).  
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dinit
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B dt
+.B =
+.R  	temporal sampling
+.TP
+.I file   
+.B dtrue
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B dx
+.B =
+.R  	spatial sampling
+.TP
+.I int    
+.B nt
+.B =
+.R  	number of temporal points
+.TP
+.I int    
+.B nx
+.B =
+.R  	number of spatial points
+.TP
+.I float  
+.B ox
+.B =
+.R  	spatial starting point
+.TP
+.I string 
+.B type
+.B =
+.R  	[upwind, friedrichs, wendroff] get the type for solving hyperbola partial differential equation, the default is upwind
+.TP
+.I bool   
+.B wantinit
+.B =n
+.R  [y/n]	if want initial value. y: want, n: don't want.
+.TP
+.I bool   
+.B wanttrue
+.B =n
+.R  [y/n]	if want true solution. y: want, n: don't want.
+.SH SOURCE
+.I user/chenyk/Mhyperdif.c
+.SH VERSION
+4.2-git

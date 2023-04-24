@@ -1,0 +1,56 @@
+.TH sfofpwd2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfofpwd2 \- Objective function of two dips estimation with PWD filters. 
+.SH SYNOPSIS
+.B sfofpwd2 < in.rsf > of.rsf np=100 p0= dp=2*p0/(1.-np) nq=100 q0= dq=2*q0/(1.-nq) order=1 nj=1 drift=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dp
+.B =2*p0/(1.-np)
+.R  	first dip sampling
+.TP
+.I float  
+.B dq
+.B =2*q0/(1.-nq)
+.R  	second dip sampling
+.TP
+.I bool   
+.B drift
+.B =n
+.R  [y/n]	if shift filter
+.TP
+.I int    
+.B nj
+.B =1
+.R  	antialiasing
+.TP
+.I int    
+.B np
+.B =100
+.R  	number of dips
+.TP
+.I int    
+.B nq
+.B =100
+.R  	number of dips
+.TP
+.I int    
+.B order
+.B =1
+.R  [1,2,3]	accuracy order
+.TP
+.I float  
+.B p0
+.B =
+.R  	first dip origin
+.TP
+.I float  
+.B q0
+.B =
+.R  	second dip origin
+.SH SOURCE
+.I user/pwd/Mofpwd2.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,31 @@
+.TH sfxcorr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfxcorr \- Cross-correlation function  
+.SH SYNOPSIS
+.B sfxcorr < in.rsf match=match.rsf > out.rsf lagfile=lagfile.rsf l=n1y-1
+.SH COMMENTS
+C=XCORR(X,Y,L), computes the (auto/cross) correlation over the range of lags:
+-L to L, i.e., 2*L+1 lags. If L is left out, default is L=n1-1, 
+where n1 is the length of Y.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B l
+.B =n1y-1
+.R  	maxlag of auto/cross correlation function
+.TP
+.I string 
+.B lagfile
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B match
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/chenyk/Mxcorr.c
+.SH VERSION
+4.2-git

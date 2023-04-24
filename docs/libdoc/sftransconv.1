@@ -1,0 +1,39 @@
+.TH sftransconv 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftransconv \- 
+.SH SYNOPSIS
+.B sftransconv < _in.rsf > _out.rsf trans=_trans.rsf ker=_ker.rsf adj=n x1=0. x2=0.
+.SH COMMENTS
+program translates a 2D image then convolves it with arbitrary kernel
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if y reverse translation, if n, translation
+.TP
+.I string 
+.B ker
+.B =
+.R  	convolution kernel file (auxiliary input file name)
+.TP
+.I string 
+.B trans
+.B =
+.R  	variable translations file with same sampling as input, added ndim dimension (auxiliary input file name)
+.TP
+.I float  
+.B x1
+.B =0.
+.R  	fixed translation in first dimension
+.TP
+.I float  
+.B x2
+.B =0.
+.R  	fixed translation in second dimension
+.SH SOURCE
+.I user/luke/Mtransconv.c
+.SH VERSION
+4.2-git

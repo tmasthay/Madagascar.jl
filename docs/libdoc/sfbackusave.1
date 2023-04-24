@@ -1,0 +1,51 @@
+.TH sfbackusave 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfbackusave \- C-Wave Backus Averaging (See Marion et al., 1994)
+.SH SYNOPSIS
+.B sfbackusave < deptha.rsf < slowa.rsf < rhoba.rsf > depth_bkn.rsf vel_bk=vel_bkn.rsf slow_bk=slow_bkn.rsf rhob_bk=rhob_bkn.rsf slowness= density= ratio= peak_f= depthsample=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B density
+.B =
+.R  	Density from Logs
+.TP
+.I float  
+.B depthsample
+.B =
+.R  	Depth Sampling
+.TP
+.I float  
+.B peak_f
+.B =
+.R  	Dom wavelength
+.TP
+.I float  
+.B ratio
+.B =
+.R  	Percent of dom wavelength
+.TP
+.I file   
+.B rhob_bk
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B slow_bk
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B slowness
+.B =
+.R  	Slowness from Logs
+.TP
+.I file   
+.B vel_bk
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/sbader/Mbackusave.py
+.SH VERSION
+4.2-git

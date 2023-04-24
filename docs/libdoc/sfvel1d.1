@@ -1,0 +1,44 @@
+.TH sfvel1d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfvel1d \- Hungs a 1d velocity function from the Water bottom.
+.SH SYNOPSIS
+.B sfvel1d < in.rsf mask=mask1.rsf > out.rsf wb=wbot.rsf vel=1.5
+.SH COMMENTS
+Should work for 2D models
+
+
+
+stdin    1D velocity function to be used 
+file mask [required]   The water bottom is read from the mask file.
+1 above the WB
+0 bellow the WB
+
+stdout The output velocity model has dimensions of the mask file.
+vel [1.5]    velocity to use above the horizon (usually water velocity) 
+
+
+
+
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B vel
+.B =1.5
+.R  
+.TP
+.I file   
+.B wb
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/ediazp/Mvel1d.c
+.SH VERSION
+4.2-git

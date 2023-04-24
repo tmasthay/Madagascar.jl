@@ -1,0 +1,31 @@
+.TH sfdrayinte 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdrayinte \- 2D Dynamic Ray Tracing 
+.SH SYNOPSIS
+.B sfdrayinte < in.rsf > out.rsf deriv=deriv.rsf t0=0. shift=1. source=o[1]+(n[1]-1)/2*d[1]
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B deriv
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B shift
+.B =1.
+.R  	complex source shift
+.TP
+.I float  
+.B source
+.B =o[1]+(n[1]-1)/2*d[1]
+.R  	source location
+.TP
+.I float  
+.B t0
+.B =0.
+.R  	time origin at source
+.SH SOURCE
+.I user/llisiw/Mdrayinte.c
+.SH VERSION
+4.2-git

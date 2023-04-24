@@ -1,0 +1,72 @@
+.TH sfcheckptdemo 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcheckptdemo \- RTM with checkpointing in 2D acoustic media
+.SH SYNOPSIS
+.B sfcheckptdemo < Fv.rsf > Fw.rsf p1=Fp1.rsf p2=Fp2.rsf nb=20 nt= dt= fm=20.0 ft=0 jt=1 verb=n kt= nob=(int)log2f(nt)
+.SH COMMENTS
+The real value of checkpointing technology resides in the backpropagation with
+viscoacoustic and viscoelastic wave equation, where the wavefield 
+reconstruction method using saved boundaries fails. Here, we only
+demonstrate how to implement it in acoustic media without dissipation.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  	time sampling interval
+.TP
+.I float  
+.B fm
+.B =20.0
+.R  	dominant freq of Ricker wavelet
+.TP
+.I int    
+.B ft
+.B =0
+.R  	first recorded time
+.TP
+.I int    
+.B jt
+.B =1
+.R  	time interval
+.TP
+.I int    
+.B kt
+.B =
+.R  	output px and pz component at kt
+.TP
+.I int    
+.B nb
+.B =20
+.R  	thickness of PML ABC
+.TP
+.I int    
+.B nob
+.B =(int)log2f(nt)
+.R  	number of buffers, default=optimal value
+.TP
+.I int    
+.B nt
+.B =
+.R  	number of time steps
+.TP
+.I file   
+.B p1
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B p2
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity, if y, output px and pz
+.SH SOURCE
+.I user/pyang/Mcheckptdemo.c
+.SH VERSION
+4.2-git

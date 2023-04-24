@@ -1,0 +1,81 @@
+.TH sfinvrec1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfinvrec1 \- 1-D inverse interpolation with recursive filtering. 
+.SH SYNOPSIS
+.B sfinvrec1 < in.rsf > out.rsf filt=filt.rsf lag=lag.rsf nx= xmin= xmax= x0=xmin dx= spline=n nw=2 verb=n niter=nx eps=0.2 movie=n head=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dx
+.B =
+.R  	grid sampling
+.TP
+.I float  
+.B eps
+.B =0.2
+.R  	regularization parameter
+.TP
+.I file   
+.B filt
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B head
+.B =
+.R  
+.TP
+.I string 
+.B lag
+.B =
+.R  	optional input file with filter lags (auxiliary input file name)
+.TP
+.I bool   
+.B movie
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I int    
+.B niter
+.B =nx
+.R  	number of conjugate-gradient iterations
+.TP
+.I int    
+.B nw
+.B =2
+.R  	interpolator size
+.TP
+.I int    
+.B nx
+.B =
+.R  	number of bins
+.TP
+.I bool   
+.B spline
+.B =n
+.R  [y/n]	if use spline interpolation
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B x0
+.B =xmin
+.R  	grid origin
+.TP
+.I float  
+.B xmax
+.B =
+.R  
+.TP
+.I float  
+.B xmin
+.B =
+.R  	grid size
+.SH SOURCE
+.I user/gee/Minvrec1.c
+.SH VERSION
+4.2-git Minvbin1.c 2521 2007-02-02 00:25:42Z sfomel

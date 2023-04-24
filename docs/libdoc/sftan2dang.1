@@ -1,0 +1,41 @@
+.TH sftan2dang 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftan2dang \- 2-D slowness vector to angle transformation. 
+.SH SYNOPSIS
+.B sftan2dang < in.rsf > out.rsf na=360 da=0.5 oa=0.0 nr=2*nsx dr=0.5*dsx or=osx
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B da
+.B =0.5
+.R  
+.TP
+.I float  
+.B dr
+.B =0.5*dsx
+.R  	line summation sampling
+.TP
+.I int    
+.B na
+.B =360
+.R  
+.TP
+.I int    
+.B nr
+.B =2*nsx
+.R  	line summation samples
+.TP
+.I float  
+.B oa
+.B =0.0
+.R  
+.TP
+.I float  
+.B or
+.B =osx
+.R  	line summation origin
+.SH SOURCE
+.I user/browaeys/Mtan2dang.c
+.SH VERSION
+4.2-git

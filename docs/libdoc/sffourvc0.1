@@ -1,0 +1,46 @@
+.TH sffourvc0 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffourvc0 \- Velocity continuation after NMO. 
+.SH SYNOPSIS
+.B sffourvc0 < in.rsf > out.rsf eps=0.01 pad=n1 pad2=2*kiss_fft_next_fast_size((n2+1)/2) verb=n nv= dv= extend=4
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dv
+.B =
+.R  
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  
+.TP
+.I int    
+.B extend
+.B =4
+.R  	trace extension
+.TP
+.I int    
+.B nv
+.B =
+.R  
+.TP
+.I int    
+.B pad
+.B =n1
+.R  
+.TP
+.I int    
+.B pad2
+.B =2*kiss_fft_next_fast_size((n2+1)/2)
+.R  
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I system/seismic/Mfourvc0.c
+.SH VERSION
+4.2-git

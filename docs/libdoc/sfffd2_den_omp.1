@@ -1,0 +1,121 @@
+.TH sfffd2_den_omp 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfffd2_den_omp \- 2-D Fourier finite-difference wave extrapolation 
+.SH SYNOPSIS
+.B sfffd2_den_omp > out.rsf vel=vel.rsf den=den.rsf < source.rsf snaps=snaps.rsf dt= nt= isx= isz= irz=isz jm=20 ax=2.0 az=2.0 factor=2.0/3.0 snap=y nbt=0 nbb=0 nbl=0 nbr=0 sht=0 ct=0.01 cb=0.01 cl=0.01 cr=0.01
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B ax
+.B =2.0
+.R  	suppress HF parameter
+.TP
+.I float  
+.B az
+.B =2.0
+.R  	suppress HF parameter
+.TP
+.I float  
+.B cb
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B cl
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B cr
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B ct
+.B =0.01
+.R  	decaying parameter
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I float  
+.B factor
+.B =2.0/3.0
+.R  	suppress HF parameter
+.TP
+.I int    
+.B irz
+.B =isz
+.R  
+.TP
+.I int    
+.B isx
+.B =
+.R  
+.TP
+.I int    
+.B isz
+.B =
+.R  
+.TP
+.I int    
+.B jm
+.B =20
+.R  
+.TP
+.I int    
+.B nbb
+.B =0
+.R  
+.TP
+.I int    
+.B nbl
+.B =0
+.R  
+.TP
+.I int    
+.B nbr
+.B =0
+.R  
+.TP
+.I int    
+.B nbt
+.B =0
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I int    
+.B sht
+.B =0
+.R  
+.TP
+.I bool   
+.B snap
+.B =y
+.R  [y/n]	Output snapshots
+.TP
+.I file   
+.B snaps
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/songxl/Mffd2_den_omp.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,31 @@
+.TH sfvelan 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfvelan \- font.size
+.SH SYNOPSIS
+.B sfvelan < Fsemb.rsf cmp=Fcmp.rsf offset=Foff.rsf > Fout.rsf useoffset=y half=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B cmp
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B half
+.B =y
+.R  [y/n]	half or full offset?
+.TP
+.I file   
+.B offset
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B useoffset
+.B =y
+.R  [y/n]	if irregular offset, pass it
+.SH SOURCE
+.I user/ediazp/Mvelan.py
+.SH VERSION
+4.2-git

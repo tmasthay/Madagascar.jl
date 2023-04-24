@@ -1,0 +1,61 @@
+.TH sfradonoper 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfradonoper \- Linear Radon operator. 
+.SH SYNOPSIS
+.B sfradonoper < in.rsf > out.rsf adj=y verb=n np= dp= p0= nx= ox= dx= parab=n x0=1.
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	if y, perform adjoint operation
+.TP
+.I float  
+.B dp
+.B =
+.R  	p sampling (if adj=y)
+.TP
+.I float  
+.B dx
+.B =
+.R  
+.TP
+.I int    
+.B np
+.B =
+.R  	number of p values (if adj=y)
+.TP
+.I int    
+.B nx
+.B =
+.R  	number of offsets (if adj=n)
+.TP
+.I float  
+.B ox
+.B =
+.R  
+.TP
+.I float  
+.B p0
+.B =
+.R  	p origin (if adj=y)
+.TP
+.I bool   
+.B parab
+.B =n
+.R  [y/n]	if y, parabolic Radon transform
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B x0
+.B =1.
+.R  	reference offset
+.SH SOURCE
+.I user/yliu/Mradonoper.c
+.SH VERSION
+4.2-git

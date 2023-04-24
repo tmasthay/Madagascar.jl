@@ -1,0 +1,46 @@
+.TH sfafac 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfafac \- Wilson-Burg factorization  
+.SH SYNOPSIS
+.B sfafac < Fa.rsf > Ff.rsf lag=Fl.rsf ompchunk=1 verb=n stable=n niter=20 nn=1000 nf=32
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B lag
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B nf
+.B =32
+.R  	factor coefficients
+.TP
+.I int    
+.B niter
+.B =20
+.R  	Wilson iterations
+.TP
+.I int    
+.B nn
+.B =1000
+.R  	Helix diameter
+.TP
+.I int    
+.B ompchunk
+.B =1
+.R  	OMP chunk size
+.TP
+.I bool   
+.B stable
+.B =n
+.R  [y/n]	stability flag
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/gee/Mafac.c
+.SH VERSION
+4.2-git

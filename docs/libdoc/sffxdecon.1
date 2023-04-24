@@ -1,0 +1,53 @@
+.TH sffxdecon 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffxdecon \- Random noise attenuation using f-x deconvolution 
+.SH SYNOPSIS
+.B sffxdecon < in.rsf > out.rsf verb=n taper=.1 fmin=1. fmax=1./(2*dt) twlen=(float)(n1-1)*dt n2w=10 lenf=4
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B fmax
+.B =1./(2*dt)
+.R  	maximum frequency to process in Hz
+.TP
+.I float  
+.B fmin
+.B =1.
+.R  	minimum frequency to process in Hz
+.TP
+.I int    
+.B lenf
+.B =4
+.R  	number of traces for filter
+.TP
+.I int    
+.B n2w
+.B =10
+.R  	number of traces in window
+.TP
+.I float  
+.B taper
+.B =.1
+.R  	length of taper
+.TP
+.I float  
+.B twlen
+.B =(float)(n1-1)*dt
+.R  	time window length
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	flag to get advisory messages
+.SH USED IN
+.TP
+.I cup/rna2d/real
+.TP
+.I cup/rna2d/shot
+.TP
+.I cup/rna2d/simple
+.SH SOURCE
+.I user/chenyk/Mfxdecon.c
+.SH VERSION
+4.2-git

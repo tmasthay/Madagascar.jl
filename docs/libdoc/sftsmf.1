@@ -1,0 +1,74 @@
+.TH sftsmf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftsmf \- Two-step space varying median filtering. 
+.SH SYNOPSIS
+.B sftsmf < in.rsf > out.rsf L=lengthout.rsf boundary=n ns=0 ne=n2-1 N=(f2-f1+1)*n1 ael=0.0 verb=n nfw= l1=2 l2=0 l3=2 l4=4
+.SH COMMENTS
+In default case, sftsmf is equal to sftvmf.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B L
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B N
+.B =(f2-f1+1)*n1
+.R  	average energy level (AEL) computing number
+.TP
+.I float  
+.B ael
+.B =0.0
+.R  	get the average energy level (AEL) empirically defined
+.TP
+.I bool   
+.B boundary
+.B =n
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I int    
+.B l1
+.B =2
+.R  	space-varying window parameter "l1" (default=2)
+.TP
+.I int    
+.B l2
+.B =0
+.R  	space-varying window parameter "l2" (default=0)
+.TP
+.I int    
+.B l3
+.B =2
+.R  	space-varying window parameter "l3" (default=2)
+.TP
+.I int    
+.B l4
+.B =4
+.R  	space-varying window parameter "l4" (default=4)
+.TP
+.I int    
+.B ne
+.B =n2-1
+.R  	processing window ending point, corresponding to the temporal axis, n2 means transposed first-axis dimension.
+.TP
+.I int    
+.B nfw
+.B =
+.R  	reference filter-window length (>l4, positive and odd integer)
+.TP
+.I int    
+.B ns
+.B =0
+.R  	processing window starting point, corresponding to the temporal axis
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	if print the computed average energy level (AEL)
+.SH SOURCE
+.I user/chenyk/Mtsmf.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,196 @@
+.TH sflsmig3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflsmig3 \- Least-Squares 3D Path-Summation Integral, Azimuthal Plane-Wave Destruction and Kirchhoff Modeling/Migration Chain of Operators
+.SH SYNOPSIS
+.B sflsmig3 < inp.rsf > out.rsf dip=dip.rsf az=azin.rsf vx=fvx.rsf vy=fvy.rsf vel=velFile.rsf snapsf=snapsf.rsf adj=n v_1= v_2= v_3= v_4= passthr=0.001 eps=0.001 epst2=0.001 pad=nt vel= rho=1.-1./nt apt=nx angle=90.0 order=1 nj1=1 nj2=1 sm=y domod=y dopi=y doanisodiff=y dothr=y doomp=n snaps=n dsnaps=1 initer=2 oniter=1 niter=10 repeat=1 anisoeps=1. thr= antialias= mode=
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	Adjoint flag
+.TP
+.I float  
+.B angle
+.B =90.0
+.R  	angle aperture
+.TP
+.I float  
+.B anisoeps
+.B =1.
+.R  	Anisotropic diffusion: regularization parameter
+.TP
+.I string 
+.B antialias
+.B =
+.R  	antialiasing type [triangle,flat,steep,none]
+.TP
+.I int    
+.B apt
+.B =nx
+.R  	integral aperture
+.TP
+.I file   
+.B az
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B doanisodiff
+.B =y
+.R  [y/n]	if perform anisotropic diffusion regularization
+.TP
+.I bool   
+.B domod
+.B =y
+.R  [y/n]	if perform Kirchhoff modeling/migration
+.TP
+.I bool   
+.B doomp
+.B =n
+.R  [y/n]	OpenMP
+.TP
+.I bool   
+.B dopi
+.B =y
+.R  [y/n]	if perform PI filtering
+.TP
+.I bool   
+.B dothr
+.B =y
+.R  [y/n]	if perform sparse regularization
+.TP
+.I int    
+.B dsnaps
+.B =1
+.R  	snapshots interval
+.TP
+.I float  
+.B eps
+.B =0.001
+.R  	Damper for pi
+.TP
+.I float  
+.B epst2
+.B =0.001
+.R  	Damper for t2warp
+.TP
+.I int    
+.B initer
+.B =2
+.R  	inner iterations
+.TP
+.I string 
+.B mode
+.B =
+.R  	'soft', 'hard', 'nng' (default: soft)
+.TP
+.I int    
+.B niter
+.B =10
+.R  	Anisotropic diffusion: number of conjugate-gradient iterations
+.TP
+.I int    
+.B nj1
+.B =1
+.R  	antialiasing iline
+.TP
+.I int    
+.B nj2
+.B =1
+.R  	antialiasing xline
+.TP
+.I int    
+.B oniter
+.B =1
+.R  	outer iterations
+.TP
+.I int    
+.B order
+.B =1
+.R  [1,2,3]	accuracy order
+.TP
+.I int    
+.B pad
+.B =nt
+.R  	output time samples
+.TP
+.I float  
+.B passthr
+.B =0.001
+.R  	Threshold for tail elimination
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	Anisotropic diffusion: number of smoothing iterations
+.TP
+.I float  
+.B rho
+.B =1.-1./nt
+.R  	Leaky integration constant
+.TP
+.I bool   
+.B sm
+.B =y
+.R  [y/n]	if perform AzPWD filtering
+.TP
+.I bool   
+.B snaps
+.B =n
+.R  [y/n]	if do snapshots of outer iterations
+.TP
+.I file   
+.B snapsf
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B thr
+.B =
+.R  	Thresholding level
+.TP
+.I float  
+.B v_1
+.B =
+.R  	Path-integral range
+.TP
+.I float  
+.B v_2
+.B =
+.R  
+.TP
+.I float  
+.B v_3
+.B =
+.R  
+.TP
+.I float  
+.B v_4
+.B =
+.R  
+.TP
+.I float  
+.B vel
+.B =
+.R  	migration velocity for Kirchhoff
+.TP
+.I file   
+.B vx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vy
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/dmerzlikin/Mlsmig3.c
+.SH VERSION
+4.2-git

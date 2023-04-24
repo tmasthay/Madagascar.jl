@@ -1,0 +1,29 @@
+.TH sfblend 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfblend \- Seismic blending operator.
+.SH SYNOPSIS
+.B sfblend < in.rsf > out.rsf verbose=1 shot_time_in= shot_time_out=
+.SH COMMENTS
+Custom program to blend the seismic data.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B shot_time_in
+.B =
+.R  
+.TP
+.I string 
+.B shot_time_out
+.B =
+.R  
+.TP
+.I int    
+.B verbose
+.B =1
+.R  	0 terse, 1 informative, 2 chatty, 3 debug
+.SH SOURCE
+.I user/chenyk/Mblend.c
+.SH VERSION
+4.2-git

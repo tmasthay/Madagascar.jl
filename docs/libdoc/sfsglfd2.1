@@ -1,0 +1,66 @@
+.TH sfsglfd2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsglfd2 \- 2-D Low Rank Finite-difference wave extrapolation 
+.SH SYNOPSIS
+.B sfsglfd2 < fsource.rsf vel=fvel.rsf den=fden.rsf > fwf.rsf Gx=fGx.rsf Gz=fGz.rsf sxx=fsxx.rsf sxz=fsxz.rsf szx=fszx.rsf szz=fszz.rsf verb=n spx= spz=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Gx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gz
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B spx
+.B =
+.R  	source point in x
+.TP
+.I int    
+.B spz
+.B =
+.R  	source point in z
+.TP
+.I file   
+.B sxx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B sxz
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B szx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B szz
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/fangg/Msglfd2.c
+.SH VERSION
+4.2-git

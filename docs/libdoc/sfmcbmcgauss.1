@@ -1,0 +1,31 @@
+.TH sfmcbmcgauss 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmcbmcgauss \- Monte Carlo integration of cos(2t).P(x1,x2).P(y1,y2) 
+.SH SYNOPSIS
+.B sfmcbmcgauss < in.rsf > out.rsf n=100 m1=0.0 s1=1.0 iseed=-33
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B iseed
+.B =-33
+.R  	random generator seed
+.TP
+.I float  
+.B m1
+.B =0.0
+.R  	mean for deviates
+.TP
+.I int    
+.B n
+.B =100
+.R  	number of random deviates pairs
+.TP
+.I float  
+.B s1
+.B =1.0
+.R  	standard deviation for deviates
+.SH SOURCE
+.I user/browaeys/Mmcbmcgauss.c
+.SH VERSION
+4.2-git

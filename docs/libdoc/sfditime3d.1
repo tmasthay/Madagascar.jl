@@ -1,0 +1,146 @@
+.TH sfditime3d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfditime3d \- 3D Hybrid Radon transform for diffraction imaging in the time dip-angle domain 
+.SH SYNOPSIS
+.B sfditime3d < in.rsf > out.rsf dweight=fileDweight.rsf reflMod=fileRefl.rsf verb=n adj=n isAA=n liter=100 niter=0 eps=0. verb=n invMod=2 dip0n= dip0d= dip0o= sdip0n= sdip0d= sdip0o= xin= xid= xio= sxin= sxid= sxio= dipn= dipo= dipd= sdipn= sdipo= sdipd=
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I float  
+.B dip0d
+.B =
+.R  	dip0 sampling (if adj=y)
+.TP
+.I int    
+.B dip0n
+.B =
+.R  	number of dip0 values (if adj=y)
+.TP
+.I float  
+.B dip0o
+.B =
+.R  	dip0 origin (if adj=y)
+.TP
+.I float  
+.B dipd
+.B =
+.R  	dip sampling in x-direction
+.TP
+.I int    
+.B dipn
+.B =
+.R  	number of dips in x-direction
+.TP
+.I float  
+.B dipo
+.B =
+.R  	dip origin in x-direction
+.TP
+.I string 
+.B dweight
+.B =
+.R  	input file containing data weights (auxiliary input file name)
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	regularization parameter
+.TP
+.I int    
+.B invMod
+.B =2
+.R  	number of nonlinear iterations (for inversion)
+.TP
+.I bool   
+.B isAA
+.B =n
+.R  [y/n]	if y, apply anti-aliasing
+.TP
+.I int    
+.B liter
+.B =100
+.R  	number of linear iterations (for inversion)
+.TP
+.I int    
+.B niter
+.B =0
+.R  	number of nonlinear iterations (for inversion)
+.TP
+.I file   
+.B reflMod
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B sdip0d
+.B =
+.R  	sdip0 sampling (if adj=y)
+.TP
+.I int    
+.B sdip0n
+.B =
+.R  	number of sdip0 values (if adj=y)
+.TP
+.I float  
+.B sdip0o
+.B =
+.R  	sdip0 origin (if adj=y)
+.TP
+.I float  
+.B sdipd
+.B =
+.R  	dip sampling in y-direction
+.TP
+.I int    
+.B sdipn
+.B =
+.R  	number of dips in y-direction
+.TP
+.I float  
+.B sdipo
+.B =
+.R  	dip origin in y-direction
+.TP
+.I float  
+.B sxid
+.B =
+.R  	xi sampling (if adj=y)
+.TP
+.I int    
+.B sxin
+.B =
+.R  	number of xi values (if adj=y)
+.TP
+.I float  
+.B sxio
+.B =
+.R  	xi origin (if adj=y)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B xid
+.B =
+.R  	xi sampling (if adj=y)
+.TP
+.I int    
+.B xin
+.B =
+.R  	number of xi values (if adj=y)
+.TP
+.I float  
+.B xio
+.B =
+.R  	xi origin (if adj=y)
+.SH SOURCE
+.I user/aklokov/Mditime3d.c
+.SH VERSION
+4.2-git

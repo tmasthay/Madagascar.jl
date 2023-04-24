@@ -1,0 +1,46 @@
+.TH sfseiscut 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfseiscut \- Seislet Transform Denoising using Mask Operator
+.SH SYNOPSIS
+.B sfseiscut < in.rsf dip=dip.rsf > out.rsf slet=slet.rsf sletcut=sletcut.rsf cut=n2/4 eps=0.01 order1=1 eps=0.01 type=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B cut
+.B =n2/4
+.R  	cut threshold value
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I int    
+.B order1
+.B =1
+.R  	accuracy order for seislet transform
+.TP
+.I string 
+.B slet
+.B =
+.R  	seismic domain (auxiliary output file name)
+.TP
+.I string 
+.B sletcut
+.B =
+.R  	cutted seislet domain (auxiliary output file name)
+.TP
+.I string 
+.B type
+.B =
+.R  	[haar,linear,biorthogonal] wavelet type, the default is linear
+.SH SOURCE
+.I user/chenyk/Mseiscut.c
+.SH VERSION
+4.2-git

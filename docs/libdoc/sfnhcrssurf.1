@@ -1,0 +1,45 @@
+.TH sfnhcrssurf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfnhcrssurf \- Version 1.0 - Build Non-Hyperbolic CRS approximation surface giver RN, RNIP and BETA parameters.
+.SH SYNOPSIS
+.B sfnhcrssurf < in.rsf param=par.rsf > out.rsf m0=0 v0=1.5 t0=1.5 verb=0
+.SH COMMENTS
+
+Programer: Rodolfo A. C. Neves (Dirack) 19/09/2019
+
+Email:  rodolfo_profissional@hotmail.com
+
+License: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B m0
+.B =0
+.R  	central CMP of the approximation (Km)
+.TP
+.I file   
+.B param
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B t0
+.B =1.5
+.R  	Normal ray traveltime (s)
+.TP
+.I float  
+.B v0
+.B =1.5
+.R  	Near surface velocity (Km/s)
+.TP
+.I bool   
+.B verb
+.B =0
+.R  [y/n]	1: active mode; 0: quiet mode
+.SH SOURCE
+.I user/dirack/Mnhcrssurf.c
+.SH VERSION
+4.2-git

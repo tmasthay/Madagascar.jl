@@ -1,0 +1,81 @@
+.TH sfmkrcv 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmkrcv \- Make topography mask / receiver list / record list for first-arrival traveltime tomography 
+.SH SYNOPSIS
+.B sfmkrcv < in.rsf > out.rsf reco=reco.rsf shot=shot.rsf topo=topo.rsf time=time.rsf air=0.5 velocity=y order=2 fix=n plane=n offset1=0 offset2=0 np=1 p0=0. dp=1.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B air
+.B =0.5
+.R  	air velocity for thresholding topography
+.TP
+.I float  
+.B dp
+.B =1.
+.R  	ray-parameter increment
+.TP
+.I bool   
+.B fix
+.B =n
+.R  [y/n]	if y, fixed-spread; n, moving acquisition
+.TP
+.I int    
+.B np
+.B =1
+.R  	ray-parameter number
+.TP
+.I int    
+.B offset1
+.B =0
+.R  	receiver offset inline
+.TP
+.I int    
+.B offset2
+.B =0
+.R  	receiver offset crossline
+.TP
+.I int    
+.B order
+.B =2
+.R  	fast marching accuracy order
+.TP
+.I float  
+.B p0
+.B =0.
+.R  	ray-parameter start
+.TP
+.I bool   
+.B plane
+.B =n
+.R  [y/n]	if y, plane-wave source; n, point source
+.TP
+.I file   
+.B reco
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B shot
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B time
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B topo
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B velocity
+.B =y
+.R  [y/n]	if y, the input is velocity; n, slowness squared
+.SH SOURCE
+.I user/llisiw/Mmkrcv.c
+.SH VERSION
+4.2-git

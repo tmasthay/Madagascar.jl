@@ -1,0 +1,45 @@
+.TH sfjudgechaos 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfjudgechaos \- Judgement of chaos  
+.SH SYNOPSIS
+.B sfjudgechaos < in.rsf > out.rsf mask=mask.rsf gx=2.0 delta=0.01 verb=n fixgrid=n ma=n
+.SH COMMENTS
+Input  - Complex;
+Output - Float
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B delta
+.B =0.01
+.R  	The cell size of grid
+.TP
+.I bool   
+.B fixgrid
+.B =n
+.R  [y/n]	if y ,the total size of grid determined by gx
+.TP
+.I float  
+.B gx
+.B =2.0
+.R  	Total Size of fixed grid
+.TP
+.I bool   
+.B ma
+.B =n
+.R  [y/n]	if y ,output auxilily file = mask
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mjudgechaos.c
+.SH VERSION
+4.2-git

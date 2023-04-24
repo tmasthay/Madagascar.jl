@@ -1,0 +1,61 @@
+.TH sflsLU 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflsLU \- Local similarity filter (direct solving) 
+.SH SYNOPSIS
+.B sflsLU obs=dat.rsf < mat.rsf > flt.rsf adj1=adj1.rsf adj2=adj2.rsf verb=y shift=n adjsrc=n rect1=50 nw= dw= w0=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B adj1
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B adj2
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B adjsrc
+.B =n
+.R  [y/n]	use shift instead of stretch
+.TP
+.I float  
+.B dw
+.B =
+.R  	omega sampling
+.TP
+.I int    
+.B nw
+.B =
+.R  	number of omega values
+.TP
+.I file   
+.B obs
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B rect1
+.B =50
+.R  	smoothing along first axis
+.TP
+.I bool   
+.B shift
+.B =n
+.R  [y/n]	use shift instead of stretch
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B w0
+.B =
+.R  	omega origin
+.SH SOURCE
+.I user/zhiguang/MlsLU.c
+.SH VERSION
+4.2-git

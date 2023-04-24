@@ -1,0 +1,61 @@
+.TH sfewedc3p 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfewedc3p \- None
+.SH SYNOPSIS
+.B sfewedc3p < c11.rsf c14=c14.rsf theta=q1.rsf verb=false tilt=false tric=false seed=time(NULL eps=1.e-6 npk=20 nb=0 dt=1.e-3
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B c14
+.B =
+.R  	auxiliary input file name
+.TP
+.I        
+.B dt
+.B =1.e-3
+.R  	time step size
+.TP
+.I        
+.B eps
+.B =1.e-6
+.R  	tolerance
+.TP
+.I        
+.B nb
+.B =0
+.R  	boundary padding
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.TP
+.I file   
+.B theta
+.B =
+.R  	auxiliary input file name
+.TP
+.I        
+.B tilt
+.B =false
+.R  	tilting of TTI
+.TP
+.I        
+.B tric
+.B =false
+.R  	triclinic anisotropy
+.TP
+.I        
+.B verb
+.B =false
+.R  	verbosity flag
+.SH SOURCE
+.I user/jsun/Mewedc3p.cc
+.SH VERSION
+4.2-git

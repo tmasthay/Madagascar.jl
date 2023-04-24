@@ -1,0 +1,124 @@
+.TH sfefd3dmt 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfefd3dmt \- 3D 8-th order elastic wave propagation with sponge ABC and moment tensor source
+.SH SYNOPSIS
+.B sfefd3dmt < Fvp.rsf vs=Fvs.rsf rho=Frho.rsf > Frvz.rsf rvx=Frvx.rsf rvy=Frvy.rsf wavx=Fwavx.rsf wavy=Fwavy.rsf wavz=Fwavz.rsf M= verb=n ifwfd=n nb=30 nt= dt= fm=20.0 ft=0 jsnap=1 ct=0.01 sx=nxpad/2 sy=nypad/2 sz=nzpad/2 free=n
+.SH COMMENTS
+By Yangkang Chen, 2020
+Revised in July, 2021
+Currently still in a draft version
+
+DEMO:
+https://github.com/chenyk1990/tutorials/blob/main/demo/efd3dmt/SConstruct
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I floats 
+.B M
+.B =
+.R  	 [9]
+.TP
+.I float  
+.B ct
+.B =0.01
+.R  	for absorbing boundary
+.TP
+.I float  
+.B dt
+.B =
+.R  	time sampling interval
+.TP
+.I float  
+.B fm
+.B =20.0
+.R  	dominant freq of Ricker wavelet
+.TP
+.I bool   
+.B free
+.B =n
+.R  [y/n]	if free surface
+.TP
+.I int    
+.B ft
+.B =0
+.R  	first recorded time
+.TP
+.I bool   
+.B ifwfd
+.B =n
+.R  [y/n]	if output wavefield
+.TP
+.I int    
+.B jsnap
+.B =1
+.R  	interval for snapshots
+.TP
+.I int    
+.B nb
+.B =30
+.R  	thickness of ABC layer
+.TP
+.I int    
+.B nt
+.B =
+.R  	number of time steps
+.TP
+.I file   
+.B rho
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rvx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B rvy
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B sx
+.B =nxpad/2
+.R  
+.TP
+.I int    
+.B sy
+.B =nypad/2
+.R  
+.TP
+.I int    
+.B sz
+.B =nzpad/2
+.R  
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.TP
+.I file   
+.B vs
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B wavx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B wavy
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B wavz
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/chenyk/Mefd3dmt.c
+.SH VERSION
+4.2-git

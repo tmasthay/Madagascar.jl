@@ -1,0 +1,26 @@
+.TH sfslice 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfslice \- Extract a slice using picked surface (usually from a stack or a semblance).
+.SH SYNOPSIS
+.B sfslice < in.rsf pick=pick.rsf > out.rsf
+.SH COMMENTS
+
+See also: sfpick.
+
+June 2019 program of the month:
+http://ahay.org/blog/2019/06/12/program-of-the-month-sfslice/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B pick
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I bei/vela/vscan
+.SH SOURCE
+.I system/generic/Mslice.c
+.SH VERSION
+4.2-git

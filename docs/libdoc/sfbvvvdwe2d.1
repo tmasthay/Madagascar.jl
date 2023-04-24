@@ -1,0 +1,81 @@
+.TH sfbvvvdwe2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfbvvvdwe2d \- Born variable-density variable-velocity acoustic 2D time-domain FD modeling 
+.SH SYNOPSIS
+.B sfbvvvdwe2d < Fwav.rsf vel=Fvel.rsf den=Fden.rsf sou=Fsou.rsf rec=Frec.rsf vpert=Fvpert.rsf rpert=Frpert.rsf bwfl=Fbwfl.rsf bdat=Fbdat.rsf swfl=Fswfl.rsf > Fsdat.rsf verb=y free=n adj=n dabc=n nb=NOP
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I string 
+.B bdat
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B bwfl
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B dabc
+.B =n
+.R  [y/n]	Absorbing BC
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B free
+.B =n
+.R  [y/n]	free surface
+.TP
+.I int    
+.B nb
+.B =NOP
+.R  	thickness of the absorbing boundary: NOP is the width of the FD stencil
+.TP
+.I file   
+.B rec
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B rpert
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B sou
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B swfl
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.TP
+.I file   
+.B vpert
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/fperrone/Mbvvvdwe2d.c
+.SH VERSION
+4.2-git

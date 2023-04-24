@@ -1,0 +1,74 @@
+.TH sfcell3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcell3 \- Second-order cell ray tracing with locally parabolic rays in 3-D.
+.SH SYNOPSIS
+.B sfcell3 < vel.rsf > time.rsf shotfile=shots.rsf anglefile=angles.rsf vel=y order=4 nt=nx*nz na= nb= a0=0. amax=360. b0=0. bmax=180. traj= > rays.rsf
+.SH COMMENTS
+Rays and wavefronts can be displayed with sfplotrays.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B a0
+.B =0.
+.R  	First azimuth angle in degrees (if anglefile is not specified)
+.TP
+.I float  
+.B amax
+.B =360.
+.R  	Maximum azimuth angle in degrees (if anglefile is not specified)
+.TP
+.I string 
+.B anglefile
+.B =
+.R  	file with initial angles (auxiliary input file name)
+.TP
+.I float  
+.B b0
+.B =0.
+.R  	First inclination angle in degrees (if anglefile is not specified)
+.TP
+.I float  
+.B bmax
+.B =180.
+.R  	Maximum inclination angle in degrees (if anglefile is not specified)
+.TP
+.I int    
+.B na
+.B =
+.R  	Number of azimuths (if anglefile is not specified)
+.TP
+.I int    
+.B nb
+.B =
+.R  	Number of inclinations (if anglefile is not specified)
+.TP
+.I int    
+.B nt
+.B =nx*nz
+.R  	number of time steps
+.TP
+.I int    
+.B order
+.B =4
+.R  	Interpolation accuracy
+.TP
+.I string 
+.B shotfile
+.B =
+.R  	file with shot locations (auxiliary input file name)
+.TP
+.I string 
+.B traj
+.B =
+.R  
+.TP
+.I bool   
+.B vel
+.B =y
+.R  [y/n]	If y, the input is velocity; if n, slowness
+.SH SOURCE
+.I system/seismic/Mcell3.c
+.SH VERSION
+4.2-git

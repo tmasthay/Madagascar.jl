@@ -1,0 +1,41 @@
+.TH sfdivn 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdivn \- Smooth division. 
+.SH SYNOPSIS
+.B sfdivn < fnum.rsf den=fden.rsf > frat.rsf niter=100 verb=y eps=0.0f rect#=(1,1,...)
+.SH COMMENTS
+
+December 2015 program of the month:
+http://ahay.org/blog/2015/12/22/program-of-the-month-sfdivn/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.0f
+.R  	regularization
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I int    
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/fomels/Mdivn.c
+.SH VERSION
+4.2-git

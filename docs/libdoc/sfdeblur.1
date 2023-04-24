@@ -1,0 +1,36 @@
+.TH sfdeblur 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdeblur \- Non-stationary debluring by inversion 
+.SH SYNOPSIS
+.B sfdeblur < in.rsf > out.rsf rect=rect.rsf niter=100 nliter=1 verb=n eps=0.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	regularization parameter
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I int    
+.B nliter
+.B =1
+.R  	number of nonlinear iterations
+.TP
+.I file   
+.B rect
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/fomels/Mdeblur.c
+.SH VERSION
+4.2-git

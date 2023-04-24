@@ -1,0 +1,56 @@
+.TH sfmpipsp 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmpipsp \- Parallel Sweeping Preconditioner (PSP) for solving 3D Helmholtz equations.
+.SH SYNOPSIS
+.B sfmpipsp velocity=in.rsf source=src.rsf solution=out.rsf n1=origNx n2=origNy n3=origNz freq= sigma=1.5  pmlSize=5 
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B freq
+.B =
+.R  	frequency in HZ
+.TP
+.I        
+.B n1
+.B =origNx
+.R  
+.TP
+.I        
+.B n2
+.B =origNy
+.R  
+.TP
+.I        
+.B n3
+.B =origNz
+.R  
+.TP
+.I        
+.B pmlSize
+.B =5 
+.R  	number of grid points of PML
+.TP
+.I        
+.B sigma
+.B =1.5 
+.R  	magnitude of PML stretching
+.TP
+.I file   
+.B solution
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B source
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/poulsonj/Mmpipsp.cc
+.SH VERSION
+4.2-git

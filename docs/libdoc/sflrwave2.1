@@ -1,0 +1,66 @@
+.TH sflrwave2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflrwave2 \- 2-D FFT-based (point src) wave propagation and its adjoint 
+.SH SYNOPSIS
+.B sflrwave2 < data.rsf > image.rsf src=src.rsf snaps=snaps.rsf left=left.rsf right=right.rsf adj=n timer=n verb=n snap=0 pad1=1 nt= dt= nt= dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if n, modeling; if y, migration
+.TP
+.I float  
+.B dt
+.B =
+.R  	time sampling
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nt
+.B =
+.R  	time samples
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I file   
+.B right
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B snap
+.B =0
+.R  	interval for snapshots
+.TP
+.I file   
+.B snaps
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B src
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B timer
+.B =n
+.R  [y/n]
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/jsun/Mlrwave2.c
+.SH VERSION
+4.2-git

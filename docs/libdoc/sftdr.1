@@ -1,0 +1,41 @@
+.TH sftdr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftdr \- 
+.SH SYNOPSIS
+.B sftdr < sonica.rsf > tdrFo.rsf < tdrNewa.rsf sonicFo=sonicFo.rsf ms= stretch= dels= tdrNew=
+.SH COMMENTS
+Update sonic well log 
+
+Use the initial sonic well log and an updated TDR to generate and updated sonic log and TDR
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dels
+.B =
+.R  	Depth step (units of m or ft)
+.TP
+.I int    
+.B ms
+.B =
+.R  	(0 = Units of sonic in s); (1 = Units of sonic in ms)
+.TP
+.I file   
+.B sonicFo
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B stretch
+.B =
+.R  	(0 = Output TDR from input sonic log); (1 = Output updated sonic and TDR)
+.TP
+.I string 
+.B tdrNew
+.B =
+.R  
+.SH SOURCE
+.I user/sbader/Mtdr.py
+.SH VERSION
+4.2-git

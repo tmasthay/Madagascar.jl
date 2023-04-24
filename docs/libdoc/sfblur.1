@@ -1,0 +1,66 @@
+.TH sfblur 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfblur \- 2-D blurring and deblurring 
+.SH SYNOPSIS
+.B sfblur < in.rsf > out.rsf adj=n inv=n spk=y niter=100 eps=1. rect= rect2=1.0 repeat=1 ncycle=1 perc=50.0 fact=0.5
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I float  
+.B eps
+.B =1.
+.R  	scaling
+.TP
+.I float  
+.B fact
+.B =0.5
+.R  	factor for sharpening
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	inversion flag
+.TP
+.I int    
+.B ncycle
+.B =1
+.R  	number of nonlinear cycles
+.TP
+.I int    
+.B niter
+.B =100
+.R  	maximum number of iterations
+.TP
+.I float  
+.B perc
+.B =50.0
+.R  	percentage for sharpening
+.TP
+.I int    
+.B rect
+.B =
+.R  	blurring radius
+.TP
+.I float  
+.B rect2
+.B =1.0
+.R  	smoothing radius
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	repeat smoothing
+.TP
+.I bool   
+.B spk
+.B =y
+.R  [y/n]	spiky inversion
+.SH SOURCE
+.I user/fomels/Mblur.c
+.SH VERSION
+4.2-git

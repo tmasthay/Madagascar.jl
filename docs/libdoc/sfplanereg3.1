@@ -1,0 +1,71 @@
+.TH sfplanereg3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfplanereg3 \- Data regularization in 3-D using plane-wave destruction. 
+.SH SYNOPSIS
+.B sfplanereg3 < in.rsf > out.rsf dip=dip.rsf xkey= ykey= interp=2 niter=100 eps=0.01 order=1 nj1=1 nj2=1 drift=n verb=n head=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B drift
+.B =n
+.R  [y/n]	if shift filter
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization parameter
+.TP
+.I string 
+.B head
+.B =
+.R  
+.TP
+.I int    
+.B interp
+.B =2
+.R  	interpolation length
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I int    
+.B nj1
+.B =1
+.R  
+.TP
+.I int    
+.B nj2
+.B =1
+.R  	antialiasing
+.TP
+.I int    
+.B order
+.B =1
+.R  [1,2,3]	accuracy order
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I int    
+.B xkey
+.B =
+.R  	x key number
+.TP
+.I int    
+.B ykey
+.B =
+.R  	y key number
+.SH SOURCE
+.I user/pwd/Mplanereg3.c
+.SH VERSION
+4.2-git

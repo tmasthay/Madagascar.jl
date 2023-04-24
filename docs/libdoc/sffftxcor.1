@@ -1,0 +1,41 @@
+.TH sffftxcor 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffftxcor \- 
+.SH SYNOPSIS
+.B sffftxcor < Fa.rsf ref=Fb.rsf > Fc.rsf verb=n nt=1 ot=0.0 dt=1.0
+.SH COMMENTS
+Fourier domain cross-correlation
+Paul Sava
+Copyright (C) 2022 Colorado School of Mines
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =1.0
+.R  
+.TP
+.I int    
+.B nt
+.B =1
+.R  
+.TP
+.I float  
+.B ot
+.B =0.0
+.R  
+.TP
+.I file   
+.B ref
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/psava/Mfftxcor.c
+.SH VERSION
+4.2-git

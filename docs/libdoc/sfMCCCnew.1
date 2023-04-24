@@ -1,0 +1,31 @@
+.TH sfMCCCnew 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfMCCCnew \- None
+.SH SYNOPSIS
+.B sfMCCCnew < infile.rsf > outfile.rsf times=timefile.rsf maxshift= nlen= vel=1500.
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B maxshift
+.B =
+.R  	Maximum allowed time shift
+.TP
+.I        
+.B nlen
+.B =
+.R  	Window length of shift vector (in samples)
+.TP
+.I file   
+.B times
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B vel
+.B =1500.
+.R  	Rupture speed for linear shift
+.SH SOURCE
+.I user/jeff/MMCCCnew.f90
+.SH VERSION
+4.2-git

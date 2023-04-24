@@ -1,0 +1,78 @@
+.TH sffft1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffft1 \- Fast Fourier Transform along the first axis. 
+.SH SYNOPSIS
+.B sffft1 < Fin.rsf > Fou.rsf ot=Fot.rsf verb=n inv=n sym=n opt=y memsize=1000.0
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	y, inverse transform
+.TP
+.I float  
+.B memsize
+.B =1000.0
+.R  
+.TP
+.I bool   
+.B opt
+.B =y
+.R  [y/n]	y, determine optimal size for efficiency
+.TP
+.I string 
+.B ot
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B sym
+.B =n
+.R  [y/n]	y, symmetric scaling for Hermitian FFT
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH USED IN
+.TP
+.I bei/fdm/kjartjac
+.TP
+.I bei/ft1/autocor
+.TP
+.I bei/ft1/ft2d
+.TP
+.I bei/ft1/plane4
+.TP
+.I chen/test/fpca
+.TP
+.I cup/rna2d/real
+.TP
+.I cup/rna2d/shot
+.TP
+.I cup/rna2d/simple
+.TP
+.I cup/rna3d/real
+.TP
+.I cup/rna3d/shot
+.TP
+.I cup/rna3d/sin
+.TP
+.I cwp/geo2006TimeShiftImagingCondition/flat
+.TP
+.I cwp/geo2007StereographicImagingCondition/sigsbee2
+.TP
+.I cwp/geo2008NumericWEMVAoperators/flatWEMVA
+.TP
+.I cwp/geo2008NumericWEMVAoperators/saltWEMVA
+.TP
+.I cwp/geo2011WideAzimuthAngleDecomposition/flatEICangle
+.TP
+.I cwp/jse2006RWEImagingOverturningReflections/sigsbee
+.TP
+.I data/alaska/line31-81-m8r
+.SH SOURCE
+.I system/generic/Mfft1.c
+.SH VERSION
+4.2-git

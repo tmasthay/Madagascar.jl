@@ -1,0 +1,46 @@
+.TH sforthonc 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sforthonc \- Non-stationary orthogonalization for complex value
+.SH SYNOPSIS
+.B sforthonc < fnoi.rsf sig=fsig.rsf > fnoi2.rsf sig2=fsig2.rsf niter=100 verb=y eps=0.0f rect#= shift#=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.0f
+.R  	regularization
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I string 
+.B rect#
+.B =
+.R  	size of the smoothing stencil in #-th dimension /auxiliary input file/
+.TP
+.I string 
+.B shift#
+.B =
+.R  	shifting of the smoothing stencil in #-th dimension /auxiliary input file/
+.TP
+.I file   
+.B sig
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B sig2
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/chenyk/Morthonc.c
+.SH VERSION
+4.2-git

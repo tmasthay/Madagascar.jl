@@ -1,0 +1,71 @@
+.TH sffreqint 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffreqint \- 1-D data regularization using freqlet transform 
+.SH SYNOPSIS
+.B sffreqint < in.rsf > out.rsf freq=w.rsf coord=coord.rsf n1= d1= o1= niter=10 ncycle=1 eps=1.0 inv=n perc=50.0 fact=0.5 type=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B coord
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B d1
+.B =
+.R  	output sampling
+.TP
+.I float  
+.B eps
+.B =1.0
+.R  	regularization parameter
+.TP
+.I float  
+.B fact
+.B =0.5
+.R  	factor for sharpening
+.TP
+.I file   
+.B freq
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	inversion flag
+.TP
+.I int    
+.B n1
+.B =
+.R  	output samples
+.TP
+.I int    
+.B ncycle
+.B =1
+.R  	number of IRLS iterations
+.TP
+.I int    
+.B niter
+.B =10
+.R  	number of iterations for inversion
+.TP
+.I float  
+.B o1
+.B =
+.R  	output origin
+.TP
+.I float  
+.B perc
+.B =50.0
+.R  	percentage for sharpening
+.TP
+.I string 
+.B type
+.B =
+.R  	[haar,linear,biorthogonal] wavelet type, the default is linear
+.SH SOURCE
+.I system/seismic/Mfreqint.c
+.SH VERSION
+4.2-git

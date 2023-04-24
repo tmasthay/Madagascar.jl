@@ -1,0 +1,26 @@
+.TH sftestmatch 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftestmatch \- Test linear matching operator. 
+.SH SYNOPSIS
+.B sftestmatch < in.rsf > out.rsf filt=fil.rsf adj=y verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	if y, perform adjoint operation
+.TP
+.I file   
+.B filt
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mtestmatch.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,41 @@
+.TH sfdijkstra 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdijkstra \- Dijkstra shortest-path algorithm in 2-D 
+.SH SYNOPSIS
+.B sfdijkstra < cost.rsf > out.rsf fin1= fin2= paths= ref1=0 ref2=0 nf=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B fin1
+.B =
+.R  	 [nf]
+.TP
+.I ints   
+.B fin2
+.B =
+.R  	final points  [nf]
+.TP
+.I int    
+.B nf
+.B =0
+.R  	number of final points
+.TP
+.I strings
+.B paths
+.B =
+.R  	 [nf]
+.TP
+.I int    
+.B ref1
+.B =0
+.R  
+.TP
+.I int    
+.B ref2
+.B =0
+.R  	source point
+.SH SOURCE
+.I user/pwd/Mdijkstra.c
+.SH VERSION
+4.2-git

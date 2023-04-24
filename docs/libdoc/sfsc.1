@@ -1,0 +1,36 @@
+.TH sfsc 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsc \- Surface-consistent decomposition 
+.SH SYNOPSIS
+.B sfsc < inp.rsf pred=pred.rsf error=error.rsf index=index.rsf > out.rsf niter=0 prec=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B error
+.B =
+.R  	prediction (auxiliary output file name)
+.TP
+.I file   
+.B index
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =0
+.R  	number of iterations
+.TP
+.I bool   
+.B prec
+.B =y
+.R  [y/n]	if apply preconditioning
+.TP
+.I string 
+.B pred
+.B =
+.R  	prediction (auxiliary output file name)
+.SH SOURCE
+.I user/fomels/Msc.c
+.SH VERSION
+4.2-git

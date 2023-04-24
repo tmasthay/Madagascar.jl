@@ -1,0 +1,26 @@
+.TH sftslread 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftslread \- Convert a TSL (MT, V5-2000 of Phoenix Geophysics) dataset to RSF. 
+.SH SYNOPSIS
+.B sftslread > out.rsf tfile=tfile.rsf format=n data=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B data
+.B =
+.R  	input data
+.TP
+.I bool   
+.B format
+.B =n
+.R  [y/n]	data format: [false] (TSL,TSH: 16) or [true] (TSn: 32)
+.TP
+.I string 
+.B tfile
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/yliu/Mtslread.c
+.SH VERSION
+4.2-git

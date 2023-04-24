@@ -1,0 +1,36 @@
+.TH sffreshape 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffreshape \- Nonstationary spectral balancing in frequency domain. 
+.SH SYNOPSIS
+.B sffreshape < in.rsf in2=in2.rsf ma=ma.rsf ma2=ma2.rsf > out.rsf out2=out2.rsf dim=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B dim
+.B =1
+.R  	data dimensionality
+.TP
+.I string 
+.B in2
+.B =
+.R  	optional second input file (auxiliary input file name)
+.TP
+.I file   
+.B ma
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B ma2
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B out2
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/yliu/Mfreshape.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,36 @@
+.TH sfwavefft1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwavefft1 \- 1-D finite-difference wave extrapolation 
+.SH SYNOPSIS
+.B sfwavefft1 < inp.rsf > out.rsf vel=vel.rsf grad=grad.rsf opt=y dt= nt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I file   
+.B grad
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nt
+.B =
+.R  	if y, determine optimal size for efficiency
+.TP
+.I bool   
+.B opt
+.B =y
+.R  [y/n]
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/songxl/Mwavefft1.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,18 @@
+.TH sfsnr3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsnr3 \- Compute signal-noise-ratio.
+.SH SYNOPSIS
+.B sfsnr3 < signal.rsf noise=noise.rsf > snrf.rsf
+.SH COMMENTS
+SNR=10 log10(sum(clean)/sum(noise))
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B noise
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/chenyk/Msnr3.c
+.SH VERSION
+4.2-git

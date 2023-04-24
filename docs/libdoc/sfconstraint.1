@@ -1,0 +1,27 @@
+.TH sfconstraint 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfconstraint \- 
+.SH SYNOPSIS
+.B sfconstraint < logrefa.rsf > logref_co.rsf value= wind=
+.SH COMMENTS
+Hard constraint 2D map
+
+For use with LSIM if a specific alignment location is desired.
+Use with reference and real datasets and scale LSIM scan by output
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B value
+.B =
+.R  	Location of hard constraint
+.TP
+.I int    
+.B wind
+.B =
+.R  	Number of samples of hard constraint
+.SH SOURCE
+.I user/sbader/Mconstraint.py
+.SH VERSION
+4.2-git

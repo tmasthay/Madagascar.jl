@@ -1,0 +1,36 @@
+.TH sfofd1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfofd1 \- 1-D Optimized finite-difference wave extrapolation 
+.SH SYNOPSIS
+.B sfofd1 < in.rsf G=Gmatrix.rsf vel=vel.rsf > out.rsf isx=(int)(nx/2) nt= dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B G
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I int    
+.B isx
+.B =(int)(nx/2)
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/songxl/Mofd1.c
+.SH VERSION
+4.2-git

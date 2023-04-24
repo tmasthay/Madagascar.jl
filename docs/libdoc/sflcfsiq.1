@@ -1,0 +1,21 @@
+.TH sflcfsiq 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflcfsiq \- Estimate interval Q value between every two adjacent time sampling points by using Local centroid frequency shift (LCFS) method. 
+.SH SYNOPSIS
+.B sflcfsiq < inp.rsf > out.rsf var2=var2.rsf verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B var2
+.B =
+.R  	variance (auxiliary input file name)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/yliu/Mlcfsiq.c
+.SH VERSION
+4.2-git

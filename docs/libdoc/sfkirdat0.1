@@ -1,0 +1,41 @@
+.TH sfkirdat0 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfkirdat0 \- 2-D Post-stack Kirchhoff redatuming. 
+.SH SYNOPSIS
+.B sfkirdat0 < in.rsf > out.rsf green=green.rsf verb=n datum= aperture=50 taper=10 length=0.025
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B aperture
+.B =50
+.R  	aperture (number of traces)
+.TP
+.I float  
+.B datum
+.B =
+.R  	datum depth
+.TP
+.I file   
+.B green
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B length
+.B =0.025
+.R  	filter length (in seconds)
+.TP
+.I int    
+.B taper
+.B =10
+.R  	taper (number of traces)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/llisiw/Mkirdat0.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,111 @@
+.TH sfdbfmig 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdbfmig \- 
+.SH SYNOPSIS
+.B sfdbfmig < piFile.rsf escx=xEscFile.rsf esct=tEscFile.rsf > resFile.rsf ppn=pNum ppo=pStart ppd=pStep izn=zNum ixn=xNum izo=zStart ixo=xStart izd=zStep ixd=xStep sn=1 so=0.f sd=1.f isAA=y dx=xStep dt=0.008f xlim=2 * xStep xapert=xNum * xStep pj=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =0.008f
+.R  	time-range for point detection
+.TP
+.I float  
+.B dx
+.B =xStep
+.R  	x-range for point detection
+.TP
+.I string 
+.B esct
+.B =
+.R  	escape-time file (auxiliary input file name)
+.TP
+.I string 
+.B escx
+.B =
+.R  	escape-positions file (auxiliary input file name)
+.TP
+.I bool   
+.B isAA
+.B =y
+.R  [y/n]	if y, apply anti-aliasing
+.TP
+.I float  
+.B ixd
+.B =xStep
+.R  	step in positions (in meters)
+.TP
+.I int    
+.B ixn
+.B =xNum
+.R  	number of imaged positions
+.TP
+.I float  
+.B ixo
+.B =xStart
+.R  	first imaged position (in meters)
+.TP
+.I float  
+.B izd
+.B =zStep
+.R  	step in depth (in meters)
+.TP
+.I int    
+.B izn
+.B =zNum
+.R  	number of imaged depth samples
+.TP
+.I float  
+.B izo
+.B =zStart
+.R  	first imaged depth (in meters)
+.TP
+.I int    
+.B pj
+.B =1
+.R  	jump in points
+.TP
+.I float  
+.B ppd
+.B =pStep
+.R  	step in processed partial images
+.TP
+.I int    
+.B ppn
+.B =pNum
+.R  	number of processed partial images
+.TP
+.I float  
+.B ppo
+.B =pStart
+.R  	first processed partial image
+.TP
+.I float  
+.B sd
+.B =1.f
+.R  	step in scattering-angles
+.TP
+.I int    
+.B sn
+.B =1
+.R  	number of scattering-angles
+.TP
+.I float  
+.B so
+.B =0.f
+.R  	first scattering-angle
+.TP
+.I float  
+.B xapert
+.B =xNum * xStep
+.R  	migration aperture size
+.TP
+.I float  
+.B xlim
+.B =2 * xStep
+.R  	maximum distance between depth-line points
+.SH SOURCE
+.I user/aklokov/Mdbfmig.cc
+.SH VERSION
+4.2-git

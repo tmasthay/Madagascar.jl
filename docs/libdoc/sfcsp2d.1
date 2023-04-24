@@ -1,0 +1,120 @@
+.TH sfcsp2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcsp2d \- 2-D common scattering-point gathers mapping and its adjoint
+.SH SYNOPSIS
+.B sfcsp2d < in.rsf > out.rsf ompchunk=1 ompnth=0 adj=y weight=n linear=n v=2000. half=n verb=n nhe=nh dhe=dh he0=h0 nxs=nxm dxs=dxm xs0=xm0 nh=nhe dh=dhe h0=he0 nxm=nxs dxm=dxs xm0=xs0 apt=SF_MAX(fabsf(he0),fabsf(he0+(nhe-1)*dhe))
+.SH COMMENTS
+The axes in the data space are {time,offset,cmp}
+The axes in the image space are {time,equiv_offset,csp}
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	yes: CSP mapping, no: CMP building
+.TP
+.I float  
+.B apt
+.B =SF_MAX(fabsf(he0),fabsf(he0+(nhe-1)*dhe))
+.R  	aperture
+.TP
+.I float  
+.B dh
+.B =dhe
+.R  
+.TP
+.I float  
+.B dhe
+.B =dh
+.R  
+.TP
+.I float  
+.B dxm
+.B =dxs
+.R  
+.TP
+.I float  
+.B dxs
+.B =dxm
+.R  
+.TP
+.I float  
+.B h0
+.B =he0
+.R  
+.TP
+.I bool   
+.B half
+.B =n
+.R  [y/n]	half offset flag
+.TP
+.I float  
+.B he0
+.B =h0
+.R  
+.TP
+.I bool   
+.B linear
+.B =n
+.R  [y/n]	yes: linear interpolation, no: nearest-neighbor interpolation
+.TP
+.I int    
+.B nh
+.B =nhe
+.R  
+.TP
+.I int    
+.B nhe
+.B =nh
+.R  
+.TP
+.I int    
+.B nxm
+.B =nxs
+.R  
+.TP
+.I int    
+.B nxs
+.B =nxm
+.R  
+.TP
+.I int    
+.B ompchunk
+.B =1
+.R  	OpenMP data chunk size
+.TP
+.I int    
+.B ompnth
+.B =0
+.R  	OpenMP available threads
+.TP
+.I float  
+.B v
+.B =2000.
+.R  	velocity
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I bool   
+.B weight
+.B =n
+.R  [y/n]	weighting flag
+.TP
+.I float  
+.B xm0
+.B =xs0
+.R  
+.TP
+.I float  
+.B xs0
+.B =xm0
+.R  
+.SH SOURCE
+.I user/seisinv/Mcsp2d.c
+.SH VERSION
+4.2-git Mcsp2d.c 744 2013-07-11 18:46:07Z Yujin Liu

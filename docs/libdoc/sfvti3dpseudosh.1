@@ -1,0 +1,87 @@
+.TH sfvti3dpseudosh 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfvti3dpseudosh \- 3-D three-components wavefield modeling using pure mode SH-wave equation in 3D VTI media.
+.SH SYNOPSIS
+.B sfvti3dpseudosh < Fvp0.rsf vs0=Fvs0.rsf epsi=Fep.rsf del=Fde.rsf gam=Fga.rsf > Fo1.rsf SHy=Fo2.rsf SH=Fo3.rsf ns=301 dt=0.001 bd=20
+.SH COMMENTS
+* Note: The z-components of pure-mode qSV-wave are zero.
+
+Refernces:
+Cheng et al. (15th IWSA, 2012);
+Cheng and Kang (SEG Abstract, 2012);
+Kang and Cheng (SEG Abstract, 2012)
+Wang et al.(SEG Abstract, 2012)
+
+Copyright (C) 2012 Tongji University, Shanghai, China
+
+Authors: Jiubing Cheng, Tengfei Wang and Wei Kang
+
+This code is first written by Tengfei Wang at Tongji University,
+and then optimzied by Jiubing Cheng for Madagascar version at BEG,
+University of Texas at Austin.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B SH
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B SHy
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B bd
+.B =20
+.R  
+.TP
+.I file   
+.B del
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dt
+.B =0.001
+.R  
+.TP
+.I file   
+.B epsi
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B gam
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B ns
+.B =301
+.R  
+.TP
+.I file   
+.B vs0
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/chengjb/Mvti3dpseudosh.c
+.SH VERSION
+4.2-git

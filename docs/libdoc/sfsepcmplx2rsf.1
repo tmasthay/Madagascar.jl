@@ -1,0 +1,45 @@
+.TH sfsepcmplx2rsf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsepcmplx2rsf \- Convert legacy SEPlib complex datasets to RSF
+.SH SYNOPSIS
+.B sfsepcmplx2rsf file= preserve_t=y verb=n
+.SH COMMENTS
+
+I.e. from 
+
+esize=8 data_format=xdr_float
+
+to 
+
+esize=8 data_format=xdr_complex 
+
+This combination is tolerated by SEPlib versions released after 2011-01-20,
+and required by all versions of Madagascar. Previous to the date above, it
+was impossible to have a complex single-precision dataset that was valid both
+in SEPlib and Madagascar
+
+This program opens the SEPlib file in read-write mode!
+
+Handles in=stdin case (header and data in one file)
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B file
+.B =
+.R  	Name of file to process
+.TP
+.I bool   
+.B preserve_t
+.B =y
+.R  [y/n]	Whether to preserve timestamp
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	Say if file was converted or unchanged
+.SH SOURCE
+.I user/seplib_compat/Msepcmplx2rsf.py
+.SH VERSION
+4.2-git

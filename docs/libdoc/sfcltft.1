@@ -1,0 +1,81 @@
+.TH sfcltft 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcltft \- Complex local time-frequency transform. 
+.SH SYNOPSIS
+.B sfcltft < in.rsf > out.rsf basis=basis.rsf inv=n verb=n dip=n time=n decompose=n rect=10 niter=100 np= dp= p0= nw=kiss_fft_next_fast_size(n1) dw=1./(nw*d1) w0=-0.5/d1
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B basis
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B decompose
+.B =n
+.R  [y/n]	if y, output decomposition
+.TP
+.I bool   
+.B dip
+.B =n
+.R  [y/n]	if y, do dip decomposition
+.TP
+.I float  
+.B dp
+.B =
+.R  	slope step
+.TP
+.I float  
+.B dw
+.B =1./(nw*d1)
+.R  	frequency step
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, do inverse transform
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of inversion iterations
+.TP
+.I int    
+.B np
+.B =
+.R  	number of slopes
+.TP
+.I int    
+.B nw
+.B =kiss_fft_next_fast_size(n1)
+.R  	number of frequencies
+.TP
+.I float  
+.B p0
+.B =
+.R  	first slope
+.TP
+.I int    
+.B rect
+.B =10
+.R  	smoothing radius (in time, samples)
+.TP
+.I bool   
+.B time
+.B =n
+.R  [y/n]	if y, decompose in time
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B w0
+.B =-0.5/d1
+.R  	first frequency
+.SH SOURCE
+.I user/fomels/Mcltft.c
+.SH VERSION
+4.2-git

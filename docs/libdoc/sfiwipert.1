@@ -1,0 +1,26 @@
+.TH sfiwipert 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfiwipert \- Image-domain waveform tomography (image perturbation). 
+.SH SYNOPSIS
+.B sfiwipert < in.rsf > out.rsf pz=pz.rsf ph=ph.rsf thres=0.01
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B ph
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B pz
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B thres
+.B =0.01
+.R  	slope thresholding
+.SH SOURCE
+.I user/llisiw/Miwipert.c
+.SH VERSION
+4.2-git

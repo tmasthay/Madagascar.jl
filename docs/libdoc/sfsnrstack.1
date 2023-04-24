@@ -1,0 +1,31 @@
+.TH sfsnrstack 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsnrstack \- Stack a dataset over the second dimensions by SNR weighted method. 
+.SH SYNOPSIS
+.B sfsnrstack < in.rsf > out.rsf w=50 sft=1 ee=1.0 esp=1.0
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B ee
+.B =1.0
+.R  
+.TP
+.I float  
+.B esp
+.B =1.0
+.R  
+.TP
+.I float  
+.B sft
+.B =1
+.R  	weight shift
+.TP
+.I int    
+.B w
+.B =50
+.R  	sliding window size
+.SH SOURCE
+.I user/gchliu/Msnrstack.c
+.SH VERSION
+4.2-git

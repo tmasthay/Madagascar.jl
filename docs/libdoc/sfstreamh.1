@@ -1,0 +1,56 @@
+.TH sfstreamh 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfstreamh \- Streaming PEF on a helix 
+.SH SYNOPSIS
+.B sfstreamh < inp.rsf > out.rsf lag=lag.rsf pattern=pat.rsf a= n= inv=n adj=n jump=1 na=0 eps=
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	filter shape  [dim]
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag (for linear operator)
+.TP
+.I float  
+.B eps
+.B =
+.R  	regularization
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	inversion flag
+.TP
+.I int    
+.B jump
+.B =1
+.R  	jump > 1 is used for trace interpolation
+.TP
+.I string 
+.B lag
+.B =
+.R  	auxiliary input file name
+.TP
+.I ints   
+.B n
+.B =
+.R  	 [dim]
+.TP
+.I int    
+.B na
+.B =0
+.R  	PEF filter size (not including leading one)
+.TP
+.I string 
+.B pattern
+.B =
+.R  	pattern data (for linear operator) (auxiliary input file name)
+.SH SOURCE
+.I user/gee/Mstreamh.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,106 @@
+.TH sforthoa 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sforthoa \- Accelerated local orthogonalization 
+.SH SYNOPSIS
+.B sforthoa < fnoi.rsf sig=fsig.rsf w=fw.rsf > fnoi2.rsf sig2=fsig2.rsf ifns=y verb=y ifsm=y ifnm=y nrad=1 alpha=0.0 beta=0.0 gamma=0.0 n1win=n1 n2win=n2 n3win=n3 r1=0.5 r2=0.5 r3=0.5 rect#= shift#=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B alpha
+.B =0.0
+.R  	Regularization in t direction
+.TP
+.I float  
+.B beta
+.B =0.0
+.R  	Regularization in x direction
+.TP
+.I float  
+.B gamma
+.B =0.0
+.R  	Regularization in y direction
+.TP
+.I bool   
+.B ifnm
+.B =y
+.R  [y/n]	if normalize the weight
+.TP
+.I bool   
+.B ifns
+.B =y
+.R  [y/n]	if apply the non-stationary smoothing radius
+.TP
+.I bool   
+.B ifsm
+.B =y
+.R  [y/n]	if smooth the weight
+.TP
+.I int    
+.B n1win
+.B =n1
+.R  	first window length
+.TP
+.I int    
+.B n2win
+.B =n2
+.R  	second window length
+.TP
+.I int    
+.B n3win
+.B =n3
+.R  	second window length
+.TP
+.I int    
+.B nrad
+.B =1
+.R  	NO of smoothing
+.TP
+.I float  
+.B r1
+.B =0.5
+.R  	first overlapping ratio
+.TP
+.I float  
+.B r2
+.B =0.5
+.R  	second overlapping ratio
+.TP
+.I float  
+.B r3
+.B =0.5
+.R  	third overlapping ratio
+.TP
+.I string 
+.B rect#
+.B =
+.R  	size of the smoothing stencil in #-th dimension /auxiliary input file/
+.TP
+.I string 
+.B shift#
+.B =
+.R  	shifting of the smoothing stencil in #-th dimension /auxiliary input file/
+.TP
+.I file   
+.B sig
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B sig2
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity
+.TP
+.I file   
+.B w
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/chenyk/Morthoa.c
+.SH VERSION
+4.2-git

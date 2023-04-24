@@ -1,0 +1,36 @@
+.TH sfkarman2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfkarman2 \- Estimation of von Karman autocorrelation 2D spectrum by nonlinear separable least squares. 
+.SH SYNOPSIS
+.B sfkarman2 < in.rsf > out.rsf a0=1000. b0=0. c0=400. niter=100 verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B a0
+.B =1000.
+.R  	starting correlation length in xx
+.TP
+.I float  
+.B b0
+.B =0.
+.R  	starting correlation length in xy
+.TP
+.I float  
+.B c0
+.B =400.
+.R  	starting correlation length in yy
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/browaeys/Mkarman2.c
+.SH VERSION
+4.2-git

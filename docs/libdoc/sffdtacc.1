@@ -1,0 +1,31 @@
+.TH sffdtacc 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffdtacc \- 2-D Fourth-order Finite-difference wave extrapolation with timing option (no ABC)
+.SH SYNOPSIS
+.B sffdtacc < Fw.rsf vel=Fv.rsf ref=Fr.rsf > Fo.rsf verb=0 timer=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B ref
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B timer
+.B =0
+.R  [y/n]	setup I/O files
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =0
+.R  [y/n]
+.SH SOURCE
+.I user/jsun/Mfdtacc.c
+.SH VERSION
+4.2-git

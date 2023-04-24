@@ -1,0 +1,24 @@
+.TH sfigrad 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfigrad \- Gradient on the first axis. 
+.SH SYNOPSIS
+.B sfigrad < in.rsf > out.rsf square=n adj=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I bool   
+.B square
+.B =n
+.R  [y/n]	if y, use gradient squared
+.SH USED IN
+.TP
+.I cwp/jse2006RWEImagingOverturningReflections/sigsbee
+.SH SOURCE
+.I system/generic/Migrad.c
+.SH VERSION
+4.2-git

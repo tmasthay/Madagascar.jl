@@ -1,0 +1,31 @@
+.TH sfs2ofz 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfs2ofz \- Analytical point-source traveltime in a linear slowness squared model. 
+.SH SYNOPSIS
+.B sfs2ofz > out.rsf n= g=-6. v0=4 s=0.5
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B g
+.B =-6.
+.R  	slowness squared gradient
+.TP
+.I int    
+.B n
+.B =
+.R  	number of samples
+.TP
+.I float  
+.B s
+.B =0.5
+.R  	shot location at the surface
+.TP
+.I float  
+.B v0
+.B =4
+.R  	initial slowness squared
+.SH SOURCE
+.I system/seismic/Ms2ofz.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,121 @@
+.TH sfzanisolr2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfzanisolr2 \- Lowrank decomposition for 2-D anisotropic wave propagation (Complex). 
+.SH SYNOPSIS
+.B sfzanisolr2 < velz.rsf vels=vels.rsf fft=fft.rsf left=left.rsf > right.rsf mode=0 seed=time(NULL eps=1.e-4 npk=20 dt= os=true sub=false sub=true abc=0 nbt=0 nbb=0 nbl=0 nbr=0 ct=0.0 cb=0.0 cl=0.0 cr=0.0 taper=1.0 approx=2 relation=3
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B abc
+.B =0
+.R  	absorbing boundary condition (0=no abc, 1=direction dependent, 2=direction independent)
+.TP
+.I        
+.B approx
+.B =2
+.R  	Type of approximation (0=exact 1=zone 2=acoustic)
+.TP
+.I        
+.B cb
+.B =0.0
+.R  
+.TP
+.I        
+.B cl
+.B =0.0
+.R  
+.TP
+.I        
+.B cr
+.B =0.0
+.R  
+.TP
+.I        
+.B ct
+.B =0.0
+.R  
+.TP
+.I        
+.B dt
+.B =
+.R  	time step
+.TP
+.I        
+.B eps
+.B =1.e-4
+.R  	tolerance
+.TP
+.I file   
+.B fft
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B mode
+.B =0
+.R  	wave mode (0=p wave, 1=Sv wave)
+.TP
+.I        
+.B nbb
+.B =0
+.R  
+.TP
+.I        
+.B nbl
+.B =0
+.R  
+.TP
+.I        
+.B nbr
+.B =0
+.R  
+.TP
+.I        
+.B nbt
+.B =0
+.R  
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B os
+.B =true
+.R  
+.TP
+.I        
+.B relation
+.B =3
+.R  	Type of q relationship (0=shale, 1=sand, 2=carbonate, default being smallest error)
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.TP
+.I        
+.B sub
+.B =true
+.R  	for twostep, default true
+.TP
+.I        
+.B taper
+.B =1.0
+.R  	wavenumber tapering flag
+.TP
+.I file   
+.B vels
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/jsun/Mzanisolr2.cc
+.SH VERSION
+4.2-git

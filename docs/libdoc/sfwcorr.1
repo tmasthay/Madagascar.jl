@@ -1,0 +1,26 @@
+.TH sfwcorr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwcorr \- Stack a dataset over the second dimensions by SNR weighted method. 
+.SH SYNOPSIS
+.B sfwcorr < in.rsf other=other.rsf > out.rsf w=50 eps=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0
+.R  	stable parameter
+.TP
+.I file   
+.B other
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B w
+.B =50
+.R  	size of window
+.SH SOURCE
+.I user/gchliu/Mwcorr.c
+.SH VERSION
+4.2-git

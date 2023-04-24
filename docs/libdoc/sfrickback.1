@@ -1,0 +1,41 @@
+.TH sfrickback 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrickback \- None linear Ricker wavelet spectral fit. 
+.SH SYNOPSIS
+.B sfrickback < in.rsf > out.rsf ma=ma.rsf gamma=debug.rsf m= m= m= m= m= m= m= m= m= m= n= niter=100 verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B gamma
+.B =
+.R  	auxiliary output file name
+.TP
+.I floats 
+.B m
+.B =
+.R  	 [n]
+.TP
+.I file   
+.B ma
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B n
+.B =
+.R  
+.TP
+.I int    
+.B niter
+.B =100
+.R  
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/tsai/Mrickback.c
+.SH VERSION
+4.2-git

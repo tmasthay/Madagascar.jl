@@ -1,0 +1,37 @@
+.TH sfdealias2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdealias2 \- 2-D (inline) trace interpolation to a denser grid using PWD.
+.SH SYNOPSIS
+.B sfdealias2 < in.rsf > out.rsf dip=dip.rsf both=n eps=0.01 order=1
+.SH COMMENTS
+
+It may be necessary to bandpass the data before and after dealiasing 
+to ensure that the temporal spectrum is banded. Rule of thumb: if 
+max(jx,jy)=N, the temporal bandwidth should be 1/N of Nyquist.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B both
+.B =n
+.R  [y/n]	if use left and right slopes
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.SH SOURCE
+.I user/pwd/Mdealias2.c
+.SH VERSION
+4.2-git Mdealias2.c 1713 2006-03-03 08:21:29Z fomels

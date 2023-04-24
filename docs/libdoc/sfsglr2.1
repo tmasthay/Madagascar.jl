@@ -1,0 +1,101 @@
+.TH sfsglr2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsglr2 \- Simple 2-D wave propagation on staggered grid
+.SH SYNOPSIS
+.B sfsglr2 vel=Fvel.rsf den=Fden.rsf < Fsrc.rsf > Fo.rsf rec=Frec.rsf left=left.rsf right=right.rsf fft=Ffft.rsf verb=n cmplx=n pad1=1 gdep=0.0 slx=-1.0 spx=-1 slz=-1.0 spz=-1 gdep=-1.0 gp=0 srcdecay=n srcrange=10 srctrunc=100
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B cmplx
+.B =n
+.R  [y/n]	use complex FFT
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B fft
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B gdep
+.B =-1.0
+.R  	recorder depth on grid
+.TP
+.I int    
+.B gp
+.B =0
+.R  	recorder depth on index
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I file   
+.B rec
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B right
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B slx
+.B =-1.0
+.R  	source location x
+.TP
+.I float  
+.B slz
+.B =-1.0
+.R  	source location z
+.TP
+.I int    
+.B spx
+.B =-1
+.R  	source location x (index)
+.TP
+.I int    
+.B spz
+.B =-1
+.R  	source location z (index)
+.TP
+.I bool   
+.B srcdecay
+.B =n
+.R  [y/n]	source decay
+.TP
+.I int    
+.B srcrange
+.B =10
+.R  	source decay range
+.TP
+.I float  
+.B srctrunc
+.B =100
+.R  	trunc source after srctrunc time (s)
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/fangg/Msglr2.c
+.SH VERSION
+4.2-git

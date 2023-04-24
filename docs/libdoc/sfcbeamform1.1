@@ -1,0 +1,26 @@
+.TH sfcbeamform1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcbeamform1 \- Gaussian beam forming for complex data. 
+.SH SYNOPSIS
+.B sfcbeamform1 < in.rsf > out.rsf rect=3 adj=y repeat=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	adjoint flag
+.TP
+.I int    
+.B rect
+.B =3
+.R  	smoothing radius
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	repeat triangle smoothing
+.SH SOURCE
+.I user/fomels/Mcbeamform1.c
+.SH VERSION
+4.2-git

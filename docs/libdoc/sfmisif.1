@@ -1,0 +1,31 @@
+.TH sfmisif 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmisif \- Find MISSing Input values and Filter in 1-D. 
+.SH SYNOPSIS
+.B sfmisif < in.rsf > out.rsf filtout=flt.rsf nmiss=n1 na=3 lag=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B filtout
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B lag
+.B =1
+.R  	filter lag
+.TP
+.I int    
+.B na
+.B =3
+.R  	filter size
+.TP
+.I int    
+.B nmiss
+.B =n1
+.R  	number of iterations
+.SH SOURCE
+.I user/gee/Mmisif.c
+.SH VERSION
+4.2-git

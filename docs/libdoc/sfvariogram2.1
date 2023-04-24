@@ -1,0 +1,41 @@
+.TH sfvariogram2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfvariogram2 \- Compute a horizontal variogram of data slice. 
+.SH SYNOPSIS
+.B sfvariogram2 < in.rsf > out.rsf verb=n dh1=1 nh1=n1/dh1 dh2=1 nh2=n2/dh2 semi=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B dh1
+.B =1
+.R  	interval (jump) of variogram lag in first axis
+.TP
+.I int    
+.B dh2
+.B =1
+.R  	interval (jump) of variogram lag in second axis
+.TP
+.I int    
+.B nh1
+.B =n1/dh1
+.R  	number of variogram lag in first axis
+.TP
+.I int    
+.B nh2
+.B =n2/dh2
+.R  	number of variogram lag in second axis
+.TP
+.I bool   
+.B semi
+.B =y
+.R  [y/n]	if y, output semivariogram
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/yliu/Mvariogram2.c
+.SH VERSION
+4.2-git

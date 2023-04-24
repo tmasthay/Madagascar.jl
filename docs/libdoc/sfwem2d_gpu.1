@@ -1,0 +1,76 @@
+.TH sfwem2d_gpu 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwem2d_gpu \- 2D ISOTROPIC wave-equation finite-difference migration on GPU 
+.SH SYNOPSIS
+.B sfwem2d_gpu vel=Fvel.rsf < Fxig.rsf swf=Fswf.rsf rwf=Frwf.rsf > Fxigo.rsf swfout=Fswfo.rsf rwfout=Frwfo.rsf sillum=Fsillum.rsf rillum=Frillum.rsf gpu=0 nxtap=40 verbose=n wantwf=n wantillum=n nh=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B gpu
+.B =0
+.R  	ID of the GPU to be used
+.TP
+.I int    
+.B nh
+.B =0
+.R  
+.TP
+.I int    
+.B nxtap
+.B =40
+.R  	TAPER size
+.TP
+.I file   
+.B rillum
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B rwf
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rwfout
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B sillum
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B swf
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B swfout
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verbose
+.B =n
+.R  [y/n]	VERBOSITY flag
+.TP
+.I bool   
+.B wantillum
+.B =n
+.R  [y/n]	Want output wavefields
+.TP
+.I bool   
+.B wantwf
+.B =n
+.R  [y/n]	Want output wavefields
+.SH SOURCE
+.I user/rweiss/Mwem2d_gpu.cu
+.SH VERSION
+4.2-git

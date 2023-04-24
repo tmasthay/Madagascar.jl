@@ -1,0 +1,23 @@
+.TH sfsvd 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsvd \- Singular value decomposition (SVD)
+.SH SYNOPSIS
+.B sfsvd < in.rsf > out.rsf left=outu.rsf right=outv.rsf
+.SH COMMENTS
+Compute [U,O,V]=SVD(A), A=UOV, a little bit different from A=UoV' 
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B left
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B right
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/yliu/Msvd.c
+.SH VERSION
+4.2-git

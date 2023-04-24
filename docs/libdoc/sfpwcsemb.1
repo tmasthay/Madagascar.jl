@@ -1,0 +1,26 @@
+.TH sfpwcsemb 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpwcsemb \- Semblance from plane-wave construction datacube. 
+.SH SYNOPSIS
+.B sfpwcsemb < in.rsf > out.rsf nfw= boundary=n verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B boundary
+.B =n
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I int    
+.B nfw
+.B =
+.R  	calculation window in n1 direction (positive integer)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mpwcsemb.c
+.SH VERSION
+4.2-git

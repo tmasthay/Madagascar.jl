@@ -1,0 +1,61 @@
+.TH sfexplanesignoi 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfexplanesignoi \- Signal and noise separation using both frequency components and dips. 
+.SH SYNOPSIS
+.B sfexplanesignoi < in.rsf freq=freq.rsf ndip=ndip.rsf sdip=sdip.rsf > out.rsf niter=50 eps=1. verb=n order=1 nj1=1 nj2=1 drift=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B drift
+.B =n
+.R  [y/n]	if shift filter
+.TP
+.I float  
+.B eps
+.B =1.
+.R  	regularization parameter
+.TP
+.I file   
+.B freq
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B ndip
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =50
+.R  	maximum number of iterations
+.TP
+.I int    
+.B nj1
+.B =1
+.R  	antialiasing for first dip
+.TP
+.I int    
+.B nj2
+.B =1
+.R  	antialiasing for second dip
+.TP
+.I int    
+.B order
+.B =1
+.R  [1,2,3]	accuracy order
+.TP
+.I file   
+.B sdip
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/pwd/Mexplanesignoi.c
+.SH VERSION
+4.2-git

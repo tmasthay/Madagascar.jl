@@ -1,0 +1,26 @@
+.TH sfst 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfst \- S transform 
+.SH SYNOPSIS
+.B sfst < in.rsf > out.rsf inv=n flo= fhi=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B fhi
+.B =
+.R  	High frequency in band, default is Nyquist
+.TP
+.I float  
+.B flo
+.B =
+.R  	Low frequency in band, default is 0
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, do inverse transform
+.SH SOURCE
+.I user/yliu/Mst.c
+.SH VERSION
+4.2-git

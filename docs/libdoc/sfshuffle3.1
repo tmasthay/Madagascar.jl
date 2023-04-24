@@ -1,0 +1,31 @@
+.TH sfshuffle3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfshuffle3 \- shuffle the data
+.SH SYNOPSIS
+.B sfshuffle3 < pi.rsf pi2=pi2.rsf > po.rsf po2=po2.rsf axis=2 seed=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B axis
+.B =2
+.R  
+.TP
+.I file   
+.B pi2
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B po2
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B seed
+.B =
+.R  	inv=par.bool("inv", False)
+.SH SOURCE
+.I user/fomels/Mshuffle3.py
+.SH VERSION
+4.2-git

@@ -1,0 +1,26 @@
+.TH sfmiss3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmiss3 \- Missing data interpolation (N-dimensional) using shaping regularization. 
+.SH SYNOPSIS
+.B sfmiss3 < in.rsf > out.rsf mask=mask.rsf niter=100 force=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B force
+.B =y
+.R  [y/n]	if y, keep known values
+.TP
+.I string 
+.B mask
+.B =
+.R  	optional input mask file for known data (auxiliary input file name)
+.TP
+.I int    
+.B niter
+.B =100
+.R  	Number of iterations
+.SH SOURCE
+.I user/fomels/Mmiss3.c
+.SH VERSION
+4.2-git

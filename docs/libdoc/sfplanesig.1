@@ -1,0 +1,46 @@
+.TH sfplanesig 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfplanesig \- Signal separation using plane-wave destruction filters. 
+.SH SYNOPSIS
+.B sfplanesig < in.rsf dips=dips.rsf > out.rsf eps= niter=50 order=1 nj=1 drift=n verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dips
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B drift
+.B =n
+.R  [y/n]	if shift filter
+.TP
+.I floats 
+.B eps
+.B =
+.R  	 [nc]
+.TP
+.I int    
+.B niter
+.B =50
+.R  	maximum number of iterations
+.TP
+.I int    
+.B nj
+.B =1
+.R  	antialiasing
+.TP
+.I int    
+.B order
+.B =1
+.R  
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/pwd/Mplanesig.c
+.SH VERSION
+4.2-git

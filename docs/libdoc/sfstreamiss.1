@@ -1,0 +1,31 @@
+.TH sfstreamiss 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfstreamiss \- Missing data interpolation using streaming PEF 
+.SH SYNOPSIS
+.B sfstreamiss < inp.rsf > out.rsf pef=pef.rsf known=known.rsf na= eps=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =
+.R  	regularization
+.TP
+.I file   
+.B known
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B na
+.B =
+.R  	PEF filter size (not including leading one)
+.TP
+.I string 
+.B pef
+.B =
+.R  	output PEF (optional) (auxiliary output file name)
+.SH SOURCE
+.I user/fomels/Mstreamiss.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,141 @@
+.TH sfsgelfd2dpml2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsgelfd2dpml2 \- A k-space staggered-grid lowrank finite-difference for elastic and viscoelastic seismic-wave modeling
+.SH SYNOPSIS
+.B sfsgelfd2dpml2 < vpfp.rsf vs=vsfp.rsf rho=rhofp.rsf Gpx=Gpxfp.rsf Gpz=Gpzfp.rsf Gsx=Gsxfp.rsf Gsz=Gszfp.rsf sxx=sxxfp.rsf sxz=sxzfp.rsf szx=szxfp.rsf szz=szzfp.rsf > snapfpx.rsf snapz=snapfpz.rsf snappx=snapfppx.rsf snappz=snapfppz.rsf snapsx=snapfpsx.rsf snapsz=snapfpsz.rsf order=12 dt= nt= fpeak=20.0 isrcx= isrcz= npml=30 verb=1 freesurface=0 igz=1 snap=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Gpx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gpz
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gsx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gsz
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I float  
+.B fpeak
+.B =20.0
+.R  
+.TP
+.I int    
+.B freesurface
+.B =0
+.R  	recerver
+.TP
+.I int    
+.B igz
+.B =1
+.R  
+.TP
+.I int    
+.B isrcx
+.B =
+.R  
+.TP
+.I int    
+.B isrcz
+.B =
+.R  
+.TP
+.I int    
+.B npml
+.B =30
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I int    
+.B order
+.B =12
+.R  	source
+.TP
+.I file   
+.B rho
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B snap
+.B =1
+.R  
+.TP
+.I file   
+.B snappx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B snappz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B snapsx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B snapsz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B snapz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B sxx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B sxz
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B szx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B szz
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B verb
+.B =1
+.R  	freesurface
+.TP
+.I file   
+.B vs
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/junyan/Msgelfd2dpml2.c
+.SH VERSION
+4.2-git

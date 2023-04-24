@@ -1,0 +1,26 @@
+.TH sfslopescan 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfslopescan \- slope estimation by stack scan 
+.SH SYNOPSIS
+.B sfslopescan < in.rsf > out.rsf nw=5 rect1=2 rect2=2
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B nw
+.B =5
+.R  	window size is 2*nw+1
+.TP
+.I int    
+.B rect1
+.B =2
+.R  	window size on the 1st dimension
+.TP
+.I int    
+.B rect2
+.B =2
+.R  	window size on the 2nd dimension
+.SH SOURCE
+.I user/chen/Mslopescan.c
+.SH VERSION
+4.2-git

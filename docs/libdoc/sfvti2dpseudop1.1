@@ -1,0 +1,155 @@
+.TH sfvti2dpseudop1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfvti2dpseudop1 \- 2-D two-components wavefield modeling using pseudo-pure mode P-wave equation in VTI media.
+.SH SYNOPSIS
+.B sfvti2dpseudop1 < Fvp0.rsf vs0=Fvs0.rsf epsi=Feps.rsf del=Fdel.rsf > Fo1.rsf PseudoPurePz=Fo2.rsf PseudoPureP=Fo3.rsf adx=Fo4.rsf adz=Fo5.rsf apx=Fo6.rsf apz=Fo7.rsf apvx=Fo8.rsf apvz=Fo9.rsf adxx=Fo10.rsf adzz=Fo11.rsf apxx=Fo12.rsf apzz=Fo13.rsf apvxx=Fo14.rsf apvzz=Fo15.rsf PseudoPureSepP=Fo16.rsf ns=301 dt=0.001 isep=0 ihomo=0 itaper=0 nstep=2 tapertype=
+.SH COMMENTS
+
+Copyright (C) 2012 Tongji University, Shanghai, China 
+Authors: Jiubing Cheng, Wei Kang and Tengfei Wang
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B PseudoPureP
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B PseudoPurePz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B PseudoPureSepP
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B adx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B adxx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B adz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B adzz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apvx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apvxx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apvz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apvzz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apxx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apzz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B del
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dt
+.B =0.001
+.R  
+.TP
+.I file   
+.B epsi
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B ihomo
+.B =0
+.R  	if ihomo=1, homogeneous medium
+.TP
+.I int    
+.B isep
+.B =0
+.R  	if isep=1, separate wave-modes
+.TP
+.I int    
+.B itaper
+.B =0
+.R  	if itaper=1, taper the wavenumber domain p=operators
+.TP
+.I int    
+.B ns
+.B =301
+.R  
+.TP
+.I int    
+.B nstep
+.B =2
+.R  
+.TP
+.I string 
+.B tapertype
+.B =
+.R  	taper type
+.TP
+.I file   
+.B vs0
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/chengjb/Mvti2dpseudop1.c
+.SH VERSION
+4.2-git

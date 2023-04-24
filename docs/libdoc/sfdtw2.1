@@ -1,0 +1,54 @@
+.TH sfdtw2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdtw2 \- 
+.SH SYNOPSIS
+.B sfdtw2 < _in.rsf ref=_ref.rsf > _out.rsf accum=_accum.rsf shifts=_shifts.rsf maxshift= exp=2 strain1=1.0 strain2=1.0 nalter=2
+.SH COMMENTS
+program warps a 2D input image to a 2D reference image
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B accum
+.B =
+.R  	optional output for accumulation errors (auxiliary output file name)
+.TP
+.I float  
+.B exp
+.B =2
+.R  	error exponent (g-f)^exp
+.TP
+.I int    
+.B maxshift
+.B =
+.R  	maximum shift to be tested
+.TP
+.I int    
+.B nalter
+.B =2
+.R  	number of horizontal and vertical smoothings
+.TP
+.I string 
+.B ref
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B shifts
+.B =
+.R  	optional output for shifts (auxiliary output file name)
+.TP
+.I float  
+.B strain1
+.B =1.0
+.R  	maximum strain in first axis
+.TP
+.I float  
+.B strain2
+.B =1.0
+.R  	maximum strain in second axis, if > 1 no strain limit
+.SH SOURCE
+.I user/luke/Mdtw2.c
+.SH VERSION
+4.2-git

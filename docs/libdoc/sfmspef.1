@@ -1,0 +1,56 @@
+.TH sfmspef 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmspef \- Multi-scale PEF estimation.
+.SH SYNOPSIS
+.B sfmspef < in.rsf > pef.rsf maskin=mask.rsf a= center= gap= jump= ns= niter=nh*2 lag= maskout=
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	 [dim]
+.TP
+.I ints   
+.B center
+.B =
+.R  	 [dim]
+.TP
+.I ints   
+.B gap
+.B =
+.R  	 [dim]
+.TP
+.I ints   
+.B jump
+.B =
+.R  	 [ns]
+.TP
+.I string 
+.B lag
+.B =
+.R  	output file for filter lags
+.TP
+.I string 
+.B maskin
+.B =
+.R  	optional input mask file (auxiliary input file name)
+.TP
+.I string 
+.B maskout
+.B =
+.R  	optional output mask file
+.TP
+.I int    
+.B niter
+.B =nh*2
+.R  
+.TP
+.I int    
+.B ns
+.B =
+.R  	number of scales
+.SH SOURCE
+.I user/gee/Mmspef.c
+.SH VERSION
+4.2-git

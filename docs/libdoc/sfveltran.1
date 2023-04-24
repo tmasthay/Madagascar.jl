@@ -1,0 +1,34 @@
+.TH sfveltran 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfveltran \- Hyperbolic Radon transform 
+.SH SYNOPSIS
+.B sfveltran < in.rsf > out.rsf adj=n anti=1. s02=0. pull=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I float  
+.B anti
+.B =1.
+.R  	antialiasing
+.TP
+.I bool   
+.B pull
+.B =y
+.R  [y/n]	pull or push operator
+.TP
+.I float  
+.B s02
+.B =0.
+.R  	reference slowness squared (for antialiasing)
+.SH USED IN
+.TP
+.I bei/trimo/veltran
+.SH SOURCE
+.I system/seismic/Mveltran.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,45 @@
+.TH sfrickerfit 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrickerfit \- Model wavelet spectrum by fitting spectral components of ricker wavelet.
+.SH SYNOPSIS
+.B sfrickerfit < in.rsf > out.rsf ma1=ma1.rsf ma2=ma2.rsf m= n= niter=100 verb=n
+.SH COMMENTS
+
+n is the number of components. ma1 is amplitude, ma2 is peak frequency.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I floats 
+.B m
+.B =
+.R  	 [n]
+.TP
+.I file   
+.B ma1
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B ma2
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B n
+.B =
+.R  
+.TP
+.I int    
+.B niter
+.B =100
+.R  
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/tsai/Mrickerfit.c
+.SH VERSION
+4.2-git

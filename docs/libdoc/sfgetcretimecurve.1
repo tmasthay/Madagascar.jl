@@ -1,0 +1,70 @@
+.TH sfgetcretimecurve 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfgetcretimecurve \- Calculate CRE traveltime curve t(m,h) given CRS zero-offset parameters (RN, RNIP, BETA)
+.SH SYNOPSIS
+.B sfgetcretimecurve < in.rsf param=par.rsf > out.rsf nm0= om0= dm0= nt0= ot0= dt0= v0=1.5 verb=0 cds=0
+.SH COMMENTS
+
+Programmer: Rodolfo A. C. Neves (Dirack) 14/09/2019
+
+Email:  rodolfo_profissional@hotmail.com 
+
+License: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>. 
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B cds
+.B =0
+.R  [y/n]	1: Non-hyperbolic CRS using CDS condition; 0: cre approximation
+.TP
+.I float  
+.B dm0
+.B =
+.R  	central CMP sampling (Km) in parameters file
+.TP
+.I float  
+.B dt0
+.B =
+.R  	t0s sampling (s) in parameters file
+.TP
+.I int    
+.B nm0
+.B =
+.R  	Numbers of central CMPs in parameters file
+.TP
+.I int    
+.B nt0
+.B =
+.R  	Numbers of t0s in parameters file
+.TP
+.I float  
+.B om0
+.B =
+.R  	First central CMP (Km) in parameters file
+.TP
+.I float  
+.B ot0
+.B =
+.R  	First t0 (s) in parameters file
+.TP
+.I file   
+.B param
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B v0
+.B =1.5
+.R  	Near surface velocity (Km/s)
+.TP
+.I bool   
+.B verb
+.B =0
+.R  [y/n]	1: active mode; 0: quiet mode
+.SH SOURCE
+.I user/dirack/Mgetcretimecurve.c
+.SH VERSION
+4.2-git

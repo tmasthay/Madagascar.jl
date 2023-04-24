@@ -1,0 +1,136 @@
+.TH sfsglfd2pml 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsglfd2pml \- 2-D Lowrank Finite-difference wave extrapolation on staggered grid
+.SH SYNOPSIS
+.B sfsglfd2pml < fsource.rsf vel=fvel.rsf den=fden.rsf > fwf.rsf rec=frec.rsf Gx=fGx.rsf Gz=fGz.rsf sxx=fsxx.rsf sxz=fsxz.rsf szx=fszx.rsf szz=fszz.rsf verb=n srcdecay=n srcrange=10 srctrunc=100 snapinter=1 pmlsize=PMLOUT pmld0=PMLD0 decay=DECAY_FLAG decaybegin=DECAY_BEGIN freesurface=n slx=-1.0 spx=-1 slz=-1.0 spz=-1 gdep=-1.0 gp=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Gx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gz
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B decay
+.B =DECAY_FLAG
+.R  	Flag of decay boundary condtion: 1 = use ; 0 = not use
+.TP
+.I int    
+.B decaybegin
+.B =DECAY_BEGIN
+.R  	Begin time of using decay boundary condition
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B freesurface
+.B =n
+.R  [y/n]	free surface
+.TP
+.I float  
+.B gdep
+.B =-1.0
+.R  	recorder depth on grid
+.TP
+.I int    
+.B gp
+.B =0
+.R  	recorder depth on index
+.TP
+.I int    
+.B pmld0
+.B =PMLD0
+.R  	PML parameter
+.TP
+.I int    
+.B pmlsize
+.B =PMLOUT
+.R  	size of PML layer
+.TP
+.I file   
+.B rec
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B slx
+.B =-1.0
+.R  	source location x
+.TP
+.I float  
+.B slz
+.B =-1.0
+.R  	source location z
+.TP
+.I int    
+.B snapinter
+.B =1
+.R  	snap interval
+.TP
+.I int    
+.B spx
+.B =-1
+.R  	source location x (index)
+.TP
+.I int    
+.B spz
+.B =-1
+.R  	source location z (index)
+.TP
+.I bool   
+.B srcdecay
+.B =n
+.R  [y/n]	source decay
+.TP
+.I int    
+.B srcrange
+.B =10
+.R  	source decay range
+.TP
+.I float  
+.B srctrunc
+.B =100
+.R  	trunc source after srctrunc time (s)
+.TP
+.I file   
+.B sxx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B sxz
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B szx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B szz
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/fangg/Msglfd2pml.c
+.SH VERSION
+4.2-git

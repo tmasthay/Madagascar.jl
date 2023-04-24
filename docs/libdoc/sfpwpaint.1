@@ -1,0 +1,36 @@
+.TH sfpwpaint 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpwpaint \- Painting by plane-wave construction. 
+.SH SYNOPSIS
+.B sfpwpaint < dip.rsf > out.rsf seed=seed.rsf verb=n eps=0.01 i0=0 order=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I int    
+.B i0
+.B =0
+.R  	reference trace
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I string 
+.B seed
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/pwd/Mpwpaint.c
+.SH VERSION
+4.2-git Mflat.c 1131 2005-04-20 18:19:10Z fomels

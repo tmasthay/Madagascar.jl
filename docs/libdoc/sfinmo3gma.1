@@ -1,0 +1,35 @@
+.TH sfinmo3gma 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfinmo3gma \- 3-D Inverse generalized normal moveout.
+.SH SYNOPSIS
+.B sfinmo3gma < cmp.rsf > nmod.rsf velocity=vel.rsf half=n eps=0.01 extend=8
+.SH COMMENTS
+Velocity file contains slowness squared with n2=16 (wx,wxy,wy,A1,A2,A3,A4,A5,B1,B2,B3,C1,C2,C3,C4,C5)
+following Sripanich and Fomel (2015).
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.TP
+.I int    
+.B extend
+.B =8
+.R  	trace extension
+.TP
+.I bool   
+.B half
+.B =n
+.R  [y/n]	if x,y , the second and third axes are half-offset instead of full offset
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I system/seismic/Minmo3gma.c
+.SH VERSION
+4.2-git

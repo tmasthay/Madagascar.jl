@@ -1,0 +1,26 @@
+.TH sfftoper 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfftoper \- First-arrival Traveltime Tomography (linear operator) 
+.SH SYNOPSIS
+.B sfftoper < in.rsf > out.rsf time=time.rsf mask=mask.rsf adj=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B time
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/llisiw/Mftoper.c
+.SH VERSION
+4.2-git

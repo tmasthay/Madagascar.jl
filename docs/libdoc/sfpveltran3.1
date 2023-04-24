@@ -1,0 +1,104 @@
+.TH sfpveltran3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpveltran3 \- Slope-based tau-p 3D velocity transform for elliptical anisotropy.
+.SH SYNOPSIS
+.B sfpveltran3 < input.rsf > velx.rsf vely=vely.rsf velxy=velxy.rsf cmp=cmp.rsf dipx=dipx.rsf dipy=dipy.rsf dipxy=dipxy.rsf map=n interval=n nvx= vx0= dvx= nvy=nvx vy0=vx0 dvy=dvx nvxy=101 vxy0=-0.1 dvxy=0.1 nw=4
+.SH COMMENTS
+* The program returns the squared velocity vx,vy,vxy spectra or maps
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B cmp
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B dipx
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B dipxy
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B dipy
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dvx
+.B =
+.R  	vx squared velocity sampling
+.TP
+.I float  
+.B dvxy
+.B =0.1
+.R  	vxy   velocity sampling
+.TP
+.I float  
+.B dvy
+.B =dvx
+.R  	vy squared  velocity sampling
+.TP
+.I bool   
+.B interval
+.B =n
+.R  [y/n]	interval values by 3D stripping equations
+.TP
+.I bool   
+.B map
+.B =n
+.R  [y/n]	output maps instead of coherency panels
+.TP
+.I int    
+.B nvx
+.B =
+.R  	number of vx squared velocities
+.TP
+.I int    
+.B nvxy
+.B =101
+.R  	number of vxy velocities
+.TP
+.I int    
+.B nvy
+.B =nvx
+.R  	number of vy squared velocities
+.TP
+.I int    
+.B nw
+.B =4
+.R  	interpolator size (2,3,4,6,8)
+.TP
+.I file   
+.B velxy
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B vely
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B vx0
+.B =
+.R  	vx squared velocity origin
+.TP
+.I float  
+.B vxy0
+.B =-0.1
+.R  	vxy   velocity origin
+.TP
+.I float  
+.B vy0
+.B =vx0
+.R  	vy squared  velocity origin
+.SH SOURCE
+.I system/seismic/Mpveltran3.c
+.SH VERSION
+4.2-git

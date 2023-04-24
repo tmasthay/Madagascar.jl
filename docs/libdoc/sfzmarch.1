@@ -1,0 +1,46 @@
+.TH sfzmarch 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfzmarch \- Phase-space traveltime (marching in z) 
+.SH SYNOPSIS
+.B sfzmarch < vel.rsf > out.rsf na= da= a0= order=3 scheme=2 verb=n what=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B a0
+.B =
+.R  	starting velocity
+.TP
+.I float  
+.B da
+.B =
+.R  	angle sampling
+.TP
+.I int    
+.B na
+.B =
+.R  	angle samples
+.TP
+.I int    
+.B order
+.B =3
+.R  	interpolation order
+.TP
+.I int    
+.B scheme
+.B =2
+.R  	finite-difference order
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.TP
+.I string 
+.B what
+.B =
+.R  	what to compute (t,x,z,a)
+.SH SOURCE
+.I user/fomels/Mzmarch.c
+.SH VERSION
+4.2-git

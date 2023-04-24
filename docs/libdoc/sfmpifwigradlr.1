@@ -1,0 +1,166 @@
+.TH sfmpifwigradlr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmpifwigradlr \- Conventional FWI misfit and gradient calculation using one-step low-rank wave extrapolation 
+.SH SYNOPSIS
+.B sfmpifwigradlr Fvel=Fvel.rsf Fsrc=Fsrc.rsf Fleft=Fleft.rsf Fright=Fright.rsf Fdat=Fdat.rsf Fmisfit=Fmisfit.rsf Fleftb=Fleftb.rsf Frightb=Frightb.rsf Fq=Fq.rsf Fgrad=Fgrad.rsf Fwav=Fwav.rsf Fwav2=Fwav2.rsf Fres=Fres.rsf function=3 ns= ds= s0= sz=5 nr=rnx dr=dx r0=x0 rz=5 verb=n scomp=n adjtest=n pad1=1 nb= w0= rectx=3 rectz=3 scalet=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Fdat
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B Fgrad
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B Fleft
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Fleftb
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Fmisfit
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B Fq
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Fres
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B Fright
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Frightb
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Fsrc
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Fvel
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Fwav
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B Fwav2
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B adjtest
+.B =n
+.R  [y/n]	test of adjointness
+.TP
+.I float  
+.B dr
+.B =dx
+.R  	receiver interval
+.TP
+.I float  
+.B ds
+.B =
+.R  	shot interval
+.TP
+.I int    
+.B function
+.B =3
+.R  	if 1, forward modeling; if 2, only calculate misfit; if 3, calculate gradient
+.TP
+.I int    
+.B nb
+.B =
+.R  
+.TP
+.I int    
+.B nr
+.B =rnx
+.R  	number of receiver
+.TP
+.I int    
+.B ns
+.B =
+.R  	shot number
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I float  
+.B r0
+.B =x0
+.R  	receiver origin
+.TP
+.I int    
+.B rectx
+.B =3
+.R  
+.TP
+.I int    
+.B rectz
+.B =3
+.R  
+.TP
+.I int    
+.B rz
+.B =5
+.R  	receiver depth
+.TP
+.I float  
+.B s0
+.B =
+.R  	shot origin
+.TP
+.I int    
+.B scalet
+.B =1
+.R  	time interval
+.TP
+.I bool   
+.B scomp
+.B =n
+.R  [y/n]	source wavefield compensation flag
+.TP
+.I int    
+.B sz
+.B =5
+.R  	source depth
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B w0
+.B =
+.R  	reference frequency
+.SH SOURCE
+.I user/zhiguang/Mmpifwigradlr.c
+.SH VERSION
+4.2-git

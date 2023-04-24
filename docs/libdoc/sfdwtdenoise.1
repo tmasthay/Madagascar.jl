@@ -1,0 +1,21 @@
+.TH sfdwtdenoise 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdwtdenoise \- 2D Digital Wavelet Transoform Denoising 
+.SH SYNOPSIS
+.B sfdwtdenoise < in.rsf > out.rsf pclip=99. type=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B pclip
+.B =99.
+.R  	data clip percentile (default is 99)
+.TP
+.I string 
+.B type
+.B =
+.R  	[haar,linear,biorthogonal] wavelet type, the default is linear
+.SH SOURCE
+.I user/chenyk/Mdwtdenoise.c
+.SH VERSION
+4.2-git

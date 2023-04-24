@@ -1,0 +1,66 @@
+.TH sflopef 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflopef \- Local Prediction-Error Filter (1-D, 2-D, and 3-D). 
+.SH SYNOPSIS
+.B sflopef < dat.rsf > pef.rsf mask=known.rsf w= a= k= gap= center= dim=dim steepdip=n vel=1.7 tgap=0.030 lag=
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	filter size  [dim1]
+.TP
+.I ints   
+.B center
+.B =
+.R  	filter center  [dim1]
+.TP
+.I int    
+.B dim
+.B =dim
+.R  	PEF dimensionality
+.TP
+.I ints   
+.B gap
+.B =
+.R  	filter gap  [dim1]
+.TP
+.I ints   
+.B k
+.B =
+.R  	number of windows  [dim1]
+.TP
+.I string 
+.B lag
+.B =
+.R  	output file for filter lags
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B steepdip
+.B =n
+.R  [y/n]	if y, do steep-dip PEF estimation
+.TP
+.I float  
+.B tgap
+.B =0.030
+.R  	time gap for steep-dip decon
+.TP
+.I float  
+.B vel
+.B =1.7
+.R  	velocity for steep-dip decon
+.TP
+.I ints   
+.B w
+.B =
+.R  	window size  [dim1]
+.SH SOURCE
+.I user/gee/Mlopef.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,76 @@
+.TH sfycvelinvww 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfycvelinvww \- Inverse velocity spectrum with interpolation by modeling from inversion result (C version) 
+.SH SYNOPSIS
+.B sfycvelinvww < in.rsf > out.rsf velout=vout.rsf ns=nh ds= os= huber=0 irls=0 nstep=1 niter=20 savevel=0 rwt=0.0 mwt=0.0 epw=0.01 srate=0.01
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B ds
+.B =
+.R  
+.TP
+.I float  
+.B epw
+.B =0.01
+.R  
+.TP
+.I int    
+.B huber
+.B =0
+.R  
+.TP
+.I int    
+.B irls
+.B =0
+.R  
+.TP
+.I float  
+.B mwt
+.B =0.0
+.R  
+.TP
+.I int    
+.B niter
+.B =20
+.R  
+.TP
+.I int    
+.B ns
+.B =nh
+.R  
+.TP
+.I int    
+.B nstep
+.B =1
+.R  
+.TP
+.I float  
+.B os
+.B =
+.R  
+.TP
+.I float  
+.B rwt
+.B =0.0
+.R  
+.TP
+.I int    
+.B savevel
+.B =0
+.R  
+.TP
+.I float  
+.B srate
+.B =0.01
+.R  
+.TP
+.I file   
+.B velout
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/chenyk/Mycvelinvww.c
+.SH VERSION
+4.2-git

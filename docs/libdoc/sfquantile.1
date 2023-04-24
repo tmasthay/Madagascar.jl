@@ -1,0 +1,23 @@
+.TH sfquantile 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfquantile \- Computes what clip value corresponds to a given pclip.
+.SH SYNOPSIS
+.B sfquantile < in.rsf pclip= memsize=sf_memsize()
+.SH COMMENTS
+Loads the entire dataset in core. Use it to find a clip= parameter for sfclip, given a wanted pclip=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B memsize
+.B =sf_memsize()
+.R  	Max amount of RAM (in Mb) to be used
+.TP
+.I float  
+.B pclip
+.B =
+.R  	Percentage clip, between 0 and 100
+.SH SOURCE
+.I user/ivlad/Mquantile.c
+.SH VERSION
+4.2-git

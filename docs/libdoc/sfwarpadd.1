@@ -1,0 +1,26 @@
+.TH sfwarpadd 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwarpadd \- Add a perturbation to the warping function. 
+.SH SYNOPSIS
+.B sfwarpadd < in.rsf add=add.rsf > sum.rsf accuracy= m1=n1*2
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B accuracy
+.B =
+.R  	Interpolation accuracy order
+.TP
+.I file   
+.B add
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B m1
+.B =n1*2
+.R  	Trace pading
+.SH SOURCE
+.I user/fomels/Mwarpadd.c
+.SH VERSION
+4.2-git

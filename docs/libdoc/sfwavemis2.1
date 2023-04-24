@@ -1,0 +1,51 @@
+.TH sfwavemis2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwavemis2 \- Missing data interpolation in 2-D using wavelet transform and compressive sensing. 
+.SH SYNOPSIS
+.B sfwavemis2 < in.rsf > out.rsf mask=mask.rsf niter=20 perc=99. verb=n ordert=1. ordert=1. nbreg=1 oper= type=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nbreg
+.B =1
+.R  	number of iterations for Bregman iteration
+.TP
+.I int    
+.B niter
+.B =20
+.R  	number of iterations
+.TP
+.I string 
+.B oper
+.B =
+.R  	[shaping,pocs,bregman] method, the default is shaping
+.TP
+.I float  
+.B ordert
+.B =1.
+.R  	Curve order for thresholding parameter, default is linear
+.TP
+.I float  
+.B perc
+.B =99.
+.R  	percentage for soft-thresholding
+.TP
+.I string 
+.B type
+.B =
+.R  	[haar,linear,biorthogonal] wavelet type, the default is linear
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mwavemis2.c
+.SH VERSION
+4.2-git

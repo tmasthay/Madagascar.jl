@@ -1,0 +1,46 @@
+.TH sfycvelxf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfycvelxf \- Velocity transform for generating velocity spectra and its corresponding hyperbolic modeling (C version) 
+.SH SYNOPSIS
+.B sfycvelxf < in.rsf > out.rsf adj=n nx= dx= ox= ns= ds= os=
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if implement the adjoint transform instead of the inverse transform
+.TP
+.I float  
+.B ds
+.B =
+.R  
+.TP
+.I float  
+.B dx
+.B =
+.R  
+.TP
+.I int    
+.B ns
+.B =
+.R  
+.TP
+.I int    
+.B nx
+.B =
+.R  
+.TP
+.I float  
+.B os
+.B =
+.R  
+.TP
+.I float  
+.B ox
+.B =
+.R  
+.SH SOURCE
+.I user/chenyk/Mycvelxf.c
+.SH VERSION
+4.2-git

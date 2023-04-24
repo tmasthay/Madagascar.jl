@@ -1,0 +1,31 @@
+.TH sfresample 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfresample \- 2D data resampling. 
+.SH SYNOPSIS
+.B sfresample < in.rsf > out.rsf o1=o[0] d1=d[0] o2=o[1] d2=d[1]
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d1
+.B =d[0]
+.R  	sample interval on 1st axis
+.TP
+.I float  
+.B d2
+.B =d[1]
+.R  	sample interval on 2nd axis
+.TP
+.I float  
+.B o1
+.B =o[0]
+.R  	first sample sample on 1st axis
+.TP
+.I float  
+.B o2
+.B =o[1]
+.R  	first sample on 2nd axis
+.SH SOURCE
+.I user/chen/Mresample.c
+.SH VERSION
+4.2-git

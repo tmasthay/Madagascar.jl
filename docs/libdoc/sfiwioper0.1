@@ -1,0 +1,66 @@
+.TH sfiwioper0 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfiwioper0 \- Image-domain waveform tomography (linear operator). 
+.SH SYNOPSIS
+.B sfiwioper0 < in.rsf > out.rsf model=model.rsf us=us.rsf ur=ur.rsf weight=weight.rsf precon=precon.rsf adj=n nh=0 uts=0 npml=10 mass=n order=
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I bool   
+.B mass
+.B =n
+.R  [y/n]	if y, use discretization-based mass term
+.TP
+.I string 
+.B model
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nh
+.B =0
+.R  	horizontal space-lag
+.TP
+.I int    
+.B npml
+.B =10
+.R  	PML width
+.TP
+.I string 
+.B order
+.B =
+.R  	discretization scheme (default optimal 9-point)
+.TP
+.I string 
+.B precon
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B ur
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B us
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B uts
+.B =0
+.R  	number of OMP threads
+.TP
+.I string 
+.B weight
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/sparse/Miwioper0.c
+.SH VERSION
+4.2-git

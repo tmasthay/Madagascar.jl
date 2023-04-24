@@ -1,0 +1,26 @@
+.TH sfmute 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmute \- Mute a triangle region 
+.SH SYNOPSIS
+.B sfmute < in.rsf > out.rsf t1=t0 v1=v0+(n2-1)*dv band=20*dt
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B band
+.B =20*dt
+.R  	start time
+.TP
+.I float  
+.B t1
+.B =t0
+.R  	start time
+.TP
+.I float  
+.B v1
+.B =v0+(n2-1)*dv
+.R  	end velocity
+.SH SOURCE
+.I user/dmerzlikin/Mmute.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,46 @@
+.TH sfepisort 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfepisort \- Sort microseismic surface array recording traces by their distances or azimuths to a given epicenter. 
+.SH SYNOPSIS
+.B sfepisort < in.rsf x=x_file.rsf y=y_file.rsf > out.rsf dist=dist_file.rsf theta=theta_file.rsf epi_x= epi_y= sort=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dist
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B epi_x
+.B =
+.R  	referenced epicenter coordinate x.
+.TP
+.I float  
+.B epi_y
+.B =
+.R  	referenced epicenter coordinate y.
+.TP
+.I string 
+.B sort
+.B =
+.R  	sort distance[d] (default) or angle[a]
+.TP
+.I file   
+.B theta
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B x
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B y
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/yunzhi/Mepisort.c
+.SH VERSION
+4.2-git

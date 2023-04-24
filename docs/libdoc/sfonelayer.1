@@ -1,0 +1,39 @@
+.TH sfonelayer 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfonelayer \- One layer NN training.
+.SH SYNOPSIS
+.B sfonelayer < x_train_obj.rsf ytrain=y_train_obj.rsf xval=x_val_obj.rsf yval=y_val_obj.rsf > loss_train_obj.rsf lossval=loss_val_obj.rsf
+.SH COMMENTS
+
+Reproducing the training process of the following example:
+https://github.com/seg/tutorials-2018/tree/master/1808_Neural_networks
+This is a minimal one-layer network:
+x -> a -> z == y
+The training uses L2 loss function.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B lossval
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B xval
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B ytrain
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B yval
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/fomels/Monelayer.py
+.SH VERSION
+4.2-git

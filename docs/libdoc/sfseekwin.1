@@ -1,0 +1,32 @@
+.TH sfseekwin 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfseekwin \- Test for the seek wrapper function in the F90 API
+.SH SYNOPSIS
+.B sfseekwin < in.rsf > out.rsf whence=sf_seek_set nseek=10          nread=10         
+.SH COMMENTS
+Works like sfwindow in 1-D. Extracts consecutive sequence of values in N-d.
+The following commands should output the integer sequence from 10 to 19:
+sfmath n1=20 o1=0 d1=1 type=float output=x1 > junk.rsf
+<junk.rsf sfseekwin | sfdisfil col=10 number=n
+Cannot take input from a pipe because stdin cannot be seeked through
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B nread
+.B =10         
+.R  
+.TP
+.I        
+.B nseek
+.B =10         
+.R  
+.TP
+.I        
+.B whence
+.B =sf_seek_set
+.R  
+.SH SOURCE
+.I user/ivlad/Mseekwin.f90
+.SH VERSION
+4.2-git

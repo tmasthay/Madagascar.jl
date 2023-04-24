@@ -1,0 +1,31 @@
+.TH sfitaupmo 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfitaupmo \- Inverse normal moveout in tau-p domain. 
+.SH SYNOPSIS
+.B sfitaupmo < cmp.rsf velocity=velocity.rsf > nmod.rsf eta=eta.rsf interval=y eps=0.01
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.TP
+.I string 
+.B eta
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B interval
+.B =y
+.R  [y/n]	use interval velocity
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I system/seismic/Mitaupmo.c
+.SH VERSION
+4.2-git

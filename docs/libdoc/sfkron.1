@@ -1,0 +1,46 @@
+.TH sfkron 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfkron \- Kroneker product with square matrices 
+.SH SYNOPSIS
+.B sfkron < in.rsf > out.rsf mat1=mat1.rsf mat2=mat2.rsf adj=n inv=n niter=100 eps=0. nliter=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	regularization
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	inversion flag
+.TP
+.I file   
+.B mat1
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B mat2
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	maximum number of iterations
+.TP
+.I int    
+.B nliter
+.B =1
+.R  	number of nonlinear iterations
+.SH SOURCE
+.I user/fomels/Mkron.c
+.SH VERSION
+4.2-git

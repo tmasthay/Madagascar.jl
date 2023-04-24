@@ -1,0 +1,41 @@
+.TH sfselfblend 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfselfblend \- Self blending for simple test.
+.SH SYNOPSIS
+.B sfselfblend < in.rsf > out.rsf seed=time(NULL) type=y var= range= mean=0 t0=n1*dt
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B mean
+.B =0
+.R  	noise mean
+.TP
+.I float  
+.B range
+.B =
+.R  	dithering time range (default=1)
+.TP
+.I int    
+.B seed
+.B =time(NULL)
+.R  	random seed
+.TP
+.I float  
+.B t0
+.B =n1*dt
+.R  	scheduled time interval between two consecutive shots in one source
+.TP
+.I bool   
+.B type
+.B =y
+.R  [y/n]	dithering time distribution, y: normal, n: uniform
+.TP
+.I float  
+.B var
+.B =
+.R  	dithering time variance
+.SH SOURCE
+.I user/chenyk/Mselfblend.c
+.SH VERSION
+4.2-git

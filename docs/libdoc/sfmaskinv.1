@@ -1,0 +1,36 @@
+.TH sfmaskinv 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmaskinv \- Missing data interpolation using one or two prediction-error filters. 
+.SH SYNOPSIS
+.B sfmaskinv < in.rsf > out.rsf mask=mask.rsf center= a= b= niter=80
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	first filter dimensions  [dim]
+.TP
+.I ints   
+.B b
+.B =
+.R  	second filter dimensions  [dim]
+.TP
+.I ints   
+.B center
+.B =
+.R  	filter center  [dim]
+.TP
+.I file   
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =80
+.R  	number of iterations
+.SH SOURCE
+.I user/gee/Mmaskinv.c
+.SH VERSION
+4.2-git

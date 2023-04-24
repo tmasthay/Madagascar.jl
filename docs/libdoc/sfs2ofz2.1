@@ -1,0 +1,31 @@
+.TH sfs2ofz2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfs2ofz2 \- Analytical plane-wave traveltime in a linear slowness squared model. 
+.SH SYNOPSIS
+.B sfs2ofz2 > out.rsf n= gz=-6. gx=2. v0=4
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B gx
+.B =2.
+.R  	slowness squared gradient
+.TP
+.I float  
+.B gz
+.B =-6.
+.R  
+.TP
+.I int    
+.B n
+.B =
+.R  	number of samples
+.TP
+.I float  
+.B v0
+.B =4
+.R  	initial slowness squared
+.SH SOURCE
+.I system/seismic/Ms2ofz2.c
+.SH VERSION
+4.2-git

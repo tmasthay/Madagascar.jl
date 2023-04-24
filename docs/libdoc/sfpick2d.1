@@ -1,0 +1,29 @@
+.TH sfpick2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpick2d \- 2D picking
+.SH SYNOPSIS
+.B sfpick2d < dataFile_.rsf > outFile_.rsf eps=0 xApp=1
+.SH COMMENTS
+
+Input:
+dataFile_.rsf - parameter spectrum (semblance) panel
+
+Output:
+outFile_.rsf - picked optimal values
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0
+.R  	smoothness measure
+.TP
+.I int    
+.B xApp
+.B =1
+.R  	x-aperture
+.SH SOURCE
+.I user/aklokov/Mpick2d.c
+.SH VERSION
+4.2-git

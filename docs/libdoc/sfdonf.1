@@ -1,0 +1,56 @@
+.TH sfdonf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdonf \- 2D dip-oriented nonlocal (bilateral) smoothing. 
+.SH SYNOPSIS
+.B sfdonf < in.rsf > out.rsf dip=dip.rsf nfw= nw= boundary=y verb=n bx= gauss=n repeat=1 ax=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B ax
+.B =
+.R  	Gaussian weight for the range distance
+.TP
+.I bool   
+.B boundary
+.B =y
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I float  
+.B bx
+.B =
+.R  	exponential weight for the domain distance (different if gaussian)
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B gauss
+.B =n
+.R  [y/n]	if y, Gaussian weight, whereas Triangle weight
+.TP
+.I int    
+.B nfw
+.B =
+.R  	filter-window length (positive and odd integer)
+.TP
+.I int    
+.B nw
+.B =
+.R  	data-window length (positive and odd integer)
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	repeat filtering several times
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mdonf.c
+.SH VERSION
+4.2-git

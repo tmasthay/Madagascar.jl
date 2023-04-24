@@ -1,0 +1,126 @@
+.TH sfiwilbfgs 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfiwilbfgs \- Image-domain waveform tomography (L-BFGS). 
+.SH SYNOPSIS
+.B sfiwilbfgs < in.rsf > out.rsf source=source.rsf data=data.rsf wdso=wdso.rsf wstk=wstk.rsf precon=precon.rsf grad=grad.rsf verb=y deriv=y nh=0 load=n uts=0 npml=10 beta=0. grect1=5 grect2=5 gscale=-1. nhess=6 miter=10 mline=5 epsilon=1.e-7 lower=1.5 upper=7.5 order=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B beta
+.B =0.
+.R  	stacking power cost function
+.TP
+.I string 
+.B data
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B deriv
+.B =y
+.R  [y/n]	if y, apply derivative in z
+.TP
+.I float  
+.B epsilon
+.B =1.e-7
+.R  	L-BFGS termination epsilon
+.TP
+.I string 
+.B grad
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B grect1
+.B =5
+.R  	gradient smoothing radius on axis 1
+.TP
+.I int    
+.B grect2
+.B =5
+.R  	gradient smoothing radius on axis 2
+.TP
+.I float  
+.B gscale
+.B =-1.
+.R  	gradient re-scale (enabled if (0,1))
+.TP
+.I bool   
+.B load
+.B =n
+.R  [y/n]	load LU
+.TP
+.I float  
+.B lower
+.B =1.5
+.R  	lower bound of feasible set
+.TP
+.I int    
+.B miter
+.B =10
+.R  	L-BFGS maximum # of iterations
+.TP
+.I int    
+.B mline
+.B =5
+.R  	L-BFGS maximum # of line search
+.TP
+.I int    
+.B nh
+.B =0
+.R  	horizontal space-lag
+.TP
+.I int    
+.B nhess
+.B =6
+.R  	L-BFGS # of Hessian corrections
+.TP
+.I int    
+.B npml
+.B =10
+.R  	PML width
+.TP
+.I string 
+.B order
+.B =
+.R  	discretization scheme (default optimal 9-point)
+.TP
+.I string 
+.B precon
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B source
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B upper
+.B =7.5
+.R  	upper bound of feasible set
+.TP
+.I int    
+.B uts
+.B =0
+.R  	number of OMP threads
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.TP
+.I string 
+.B wdso
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B wstk
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/sparse/Miwilbfgs.c
+.SH VERSION
+4.2-git

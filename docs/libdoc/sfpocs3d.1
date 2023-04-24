@@ -1,0 +1,31 @@
+.TH sfpocs3d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpocs3d \- POCS for 3D missing data interpolation
+.SH SYNOPSIS
+.B sfpocs3d < Fin.rsf mask=Fmask.rsf > Fout.rsf verb=n niter=100 pclip=99.
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	total number of POCS iterations
+.TP
+.I float  
+.B pclip
+.B =99.
+.R  	starting data clip percentile (default is 99)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/pyang/Mpocs3d.c
+.SH VERSION
+4.2-git

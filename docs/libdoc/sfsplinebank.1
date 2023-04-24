@@ -1,0 +1,46 @@
+.TH sfsplinebank 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsplinebank \- Prepare a filter bank for B-spline plane wave filters 
+.SH SYNOPSIS
+.B sfsplinebank > out.rsf nt=40 np= pmax=2. niter=20 eps=FLT_EPSILON nh= lag=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =FLT_EPSILON
+.R  	tolerance
+.TP
+.I string 
+.B lag
+.B =
+.R  
+.TP
+.I string 
+.B nh
+.B =
+.R  
+.TP
+.I int    
+.B niter
+.B =20
+.R  	number of iterations
+.TP
+.I int    
+.B np
+.B =
+.R  	number of dips
+.TP
+.I int    
+.B nt
+.B =40
+.R  	length of the fast axis
+.TP
+.I float  
+.B pmax
+.B =2.
+.R  	maximum dip
+.SH SOURCE
+.I user/gee/Msplinebank.c
+.SH VERSION
+4.2-git

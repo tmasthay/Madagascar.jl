@@ -1,0 +1,46 @@
+.TH sfapef2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfapef2 \- 2D adaptive nonstationary PEF on aliased traces. 
+.SH SYNOPSIS
+.B sfapef2 < mat.rsf > flt.rsf pred=pre.rsf maskin=maskin.rsf maskout=maskout.rsf a= jump=2 niter=100 verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	 [mdim]
+.TP
+.I int    
+.B jump
+.B =2
+.R  	Jump parameter
+.TP
+.I string 
+.B maskin
+.B =
+.R  	optional input mask file (auxiliary input file name)
+.TP
+.I string 
+.B maskout
+.B =
+.R  	optional output mask file (auxiliary output file name)
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I string 
+.B pred
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mapef2.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,100 @@
+.TH sfrrt3d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrrt3d \- 
+.SH SYNOPSIS
+.B sfrrt3d < Fv.rsf > Ft.rsf verb=n pick=2 fill=1 scaleray=1. nray=1 jray=1 gmin=-90 gmax=+90 hmin=0 hmax=180 nt=100 ot=0 dt=0.001 xsou=sf_o(ax) + sf_n(ax)*sf_d(ax)/2 ysou=sf_o(ay) + sf_n(ay)*sf_d(ay)/2 zsou=sf_o(az) + sf_n(az)*sf_d(az)/2 seed=time(NULL)
+.SH COMMENTS
+* 3-D ray tracing w/ random shooting directions
+* pcs 2005
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =0.001
+.R  
+.TP
+.I int    
+.B fill
+.B =1
+.R  
+.TP
+.I float  
+.B gmax
+.B =+90
+.R  
+.TP
+.I float  
+.B gmin
+.B =-90
+.R  
+.TP
+.I float  
+.B hmax
+.B =180
+.R  
+.TP
+.I float  
+.B hmin
+.B =0
+.R  
+.TP
+.I int    
+.B jray
+.B =1
+.R  
+.TP
+.I int    
+.B nray
+.B =1
+.R  
+.TP
+.I int    
+.B nt
+.B =100
+.R  
+.TP
+.I float  
+.B ot
+.B =0
+.R  
+.TP
+.I int    
+.B pick
+.B =2
+.R  
+.TP
+.I int    
+.B scaleray
+.B =1.
+.R  
+.TP
+.I int    
+.B seed
+.B =time(NULL)
+.R  	random seed
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.TP
+.I float  
+.B xsou
+.B =sf_o(ax) + sf_n(ax)*sf_d(ax)/2
+.R  
+.TP
+.I float  
+.B ysou
+.B =sf_o(ay) + sf_n(ay)*sf_d(ay)/2
+.R  
+.TP
+.I float  
+.B zsou
+.B =sf_o(az) + sf_n(az)*sf_d(az)/2
+.R  
+.SH SOURCE
+.I user/psava/Mrrt3d.c
+.SH VERSION
+4.2-git

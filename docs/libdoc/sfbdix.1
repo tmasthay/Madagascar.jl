@@ -1,0 +1,39 @@
+.TH sfbdix 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfbdix \- Convert RMS to interval velocity using LS and shaping regularization.
+.SH SYNOPSIS
+.B sfbdix < vrms.rsf > vint.rsf weight=weight.rsf block=block.rsf vrmsout=vout.rsf perc=50.0 niter=100 rect1= rect2= ...
+.SH COMMENTS
+rectN defines the size of the smoothing stencil in N-th dimension.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B block
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	maximum number of iterations
+.TP
+.I float  
+.B perc
+.B =50.0
+.R  	percentage for sharpening
+.TP
+.I string 
+.B vrmsout
+.B =
+.R  	optionally, output predicted vrms (auxiliary output file name)
+.TP
+.I file   
+.B weight
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/fomels/Mbdix.c
+.SH VERSION
+4.2-git Mdix.c 1131 2005-04-20 18:19:10Z fomels

@@ -1,0 +1,31 @@
+.TH sfescdiff 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfescdiff \- Compute distance and traveltime difference between two escape tables. 
+.SH SYNOPSIS
+.B sfescdiff < esct0.rsf > out.rsf esct=esct1.rsf maxd=SF_HUGE maxt=SF_HUGE mask=SF_HUGE
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B esct
+.B =
+.R  	Second set of escape tables (auxiliary input file name)
+.TP
+.I float  
+.B mask
+.B =SF_HUGE
+.R  	Mask for values above maxd= and maxt= thresholds
+.TP
+.I float  
+.B maxd
+.B =SF_HUGE
+.R  	Maximum allowed distance
+.TP
+.I float  
+.B maxt
+.B =SF_HUGE
+.R  	Maximum allowed time
+.SH SOURCE
+.I user/cram/Mescdiff.c
+.SH VERSION
+4.2-git

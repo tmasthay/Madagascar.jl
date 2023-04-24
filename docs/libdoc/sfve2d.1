@@ -1,0 +1,36 @@
+.TH sfve2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfve2d \- Convert interval velocity to Dix velocity 
+.SH SYNOPSIS
+.B sfve2d < fsc.rsf > fid.rsf x=fx.rsf z=fy.rsf nt= dt= order=4
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I int    
+.B order
+.B =4
+.R  	interpolation order
+.TP
+.I file   
+.B x
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B z
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/kourkina/Mve2d.c
+.SH VERSION
+4.2-git

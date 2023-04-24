@@ -1,0 +1,40 @@
+.TH sfovc 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfovc \- Oriented velocity continuation. 
+.SH SYNOPSIS
+.B sfovc < in.rsf > out.rsf eps=0.1 nv=1 lagrange=n v0=0. vmax=
+.SH COMMENTS
+
+Axis order: t, p, x
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.1
+.R  	stretch regularization
+.TP
+.I bool   
+.B lagrange
+.B =n
+.R  [y/n]	Use Lagrangian method
+.TP
+.I int    
+.B nv
+.B =1
+.R  	number of velocity steps
+.TP
+.I float  
+.B v0
+.B =0.
+.R  	starting velocity
+.TP
+.I float  
+.B vmax
+.B =
+.R  	end velocity
+.SH SOURCE
+.I system/seismic/Movc.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,66 @@
+.TH sfmkcmp 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmkcmp \- Make a synthtic two-layer CMP gather with known t0
+.SH SYNOPSIS
+.B sfmkcmp < in.rsf > spcmp.rsf n1=1000 n2=20 dt=0.001 dx=50 o1=0 o2=0 v01=1000 v02=1000 t01=0.4 t02=0.8 verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =0.001
+.R  	sampling on 1-th axis(time)
+.TP
+.I float  
+.B dx
+.B =50
+.R  	sampling on 2-th axis(offset)
+.TP
+.I int    
+.B n1
+.B =1000
+.R  	number of n1
+.TP
+.I int    
+.B n2
+.B =20
+.R  	number of n2
+.TP
+.I float  
+.B o1
+.B =0
+.R  
+.TP
+.I float  
+.B o2
+.B =0
+.R  
+.TP
+.I float  
+.B t01
+.B =0.4
+.R  	t01 start point
+.TP
+.I float  
+.B t02
+.B =0.8
+.R  	t02 start point
+.TP
+.I float  
+.B v01
+.B =1000
+.R  	first event rms vel
+.TP
+.I float  
+.B v02
+.B =1000
+.R  	second event rms vel
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	dimensions
+.SH SOURCE
+.I user/yliu/Mmkcmp.c
+.SH VERSION
+4.2-git

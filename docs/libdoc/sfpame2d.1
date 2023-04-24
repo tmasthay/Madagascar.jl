@@ -1,0 +1,116 @@
+.TH sfpame2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpame2d \- 2-D elasitc wave modeling and vector field decompostion using pseudo-analytical method 
+.SH SYNOPSIS
+.B sfpame2d vp=fvelp.rsf vs=fvels.rsf < fsource.rsf > fwavup.rsf wavwp=fwavwp.rsf wavus=fwavus.rsf wavws=fwavws.rsf wavu=fwavu.rsf wavw=fwavw.rsf opt=0 dt= nt= isx= isz= nbt=44 nbb=44 nxl=44 nxr=44 czt=0.01 czb=0.01 cxl=0.01 cxr=0.01 snap=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B cxl
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B cxr
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B czb
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B czt
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I int    
+.B isx
+.B =
+.R  
+.TP
+.I int    
+.B isz
+.B =
+.R  
+.TP
+.I int    
+.B nbb
+.B =44
+.R  
+.TP
+.I int    
+.B nbt
+.B =44
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I int    
+.B nxl
+.B =44
+.R  
+.TP
+.I int    
+.B nxr
+.B =44
+.R  	assume ABC pars are the same
+.TP
+.I int    
+.B opt
+.B =0
+.R  	if y, determine optimal size for efficiency
+.TP
+.I int    
+.B snap
+.B =1
+.R  
+.TP
+.I file   
+.B vp
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vs
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B wavu
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B wavus
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B wavw
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B wavwp
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B wavws
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/junyan/Mpame2d.c
+.SH VERSION
+4.2-git

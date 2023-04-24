@@ -1,0 +1,36 @@
+.TH sfdoeps 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdoeps \- 2D dip-oriented edge-preserving smoothing (DOEPS). 
+.SH SYNOPSIS
+.B sfdoeps < in.rsf > out.rsf dip=dip.rsf nfw= nw= boundary=y verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B boundary
+.B =y
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nfw
+.B =
+.R  	filter-window length (positive and odd integer)
+.TP
+.I int    
+.B nw
+.B =
+.R  	data-window length (positive and odd integer)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mdoeps.c
+.SH VERSION
+4.2-git

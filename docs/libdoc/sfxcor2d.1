@@ -1,0 +1,38 @@
+.TH sfxcor2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfxcor2d \- OpenMP time- or freq-domain cross-correlation on axes 1,2,3 
+.SH SYNOPSIS
+.B sfxcor2d < Fs.rsf uu=Fr.rsf > Fi.rsf verb=n axis=2 nbuf=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B axis
+.B =2
+.R  	stack axis
+.TP
+.I int    
+.B nbuf
+.B =1
+.R  	buffer size
+.TP
+.I file   
+.B uu
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH USED IN
+.TP
+.I cwp/geo2008InterferometricImagingCondition/sact1
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2allA
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2oneA
+.SH SOURCE
+.I user/psava/Mxcor2d.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,32 @@
+.TH sflistminmax 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflistminmax \- Construct incremental minimum or maximum lists from an RSF file.
+.SH SYNOPSIS
+.B sflistminmax < in.rsf > out.rsf mode=
+.SH COMMENTS
+
+Constructs the following set of minimum or maximum lists for each
+x2, x3, ... xn in the input RSF file:
+
+out[0] = in[0]
+out[i] = min or max of (in[i], out[i-1]) for i = 1, 2, 3, ... n1
+
+The input file data type must be float.
+The output file data type will be float.
+
+sflistminmax mode=min, can be used to simulate "erosion" for a set of 
+geological surfaces, producing a new set of surfaces that do not cross.
+
+See also: sfminmax, sfstack.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B mode
+.B =
+.R  	'min' (default) or 'max'
+.SH SOURCE
+.I user/jennings/Mlistminmax.c
+.SH VERSION
+4.2-git

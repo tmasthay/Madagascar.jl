@@ -1,0 +1,116 @@
+.TH sfkirmigsr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfkirmigsr \- 2-D Prestack Kirchhoff depth migration. 
+.SH SYNOPSIS
+.B sfkirmigsr < dat.rsf > mig.rsf stable=stim.rsf sderiv=sder.rsf rtable=rtim.rsf rderiv=rder.rsf adj=y cmp=y nt= nh=1 ns=1 t0=0.0 dt= h0=0.0 dh= s0=0.0 ds= tau=0. aperture=90. antialias=1.0 cig=n type=
+.SH COMMENTS
+
+October 2022 program of the month:
+https://reproducibility.org/blog/2022/10/12/program-of-the-month-sfkirmigsr/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	y for migration, n for modeling
+.TP
+.I float  
+.B antialias
+.B =1.0
+.R  	antialiasing
+.TP
+.I float  
+.B aperture
+.B =90.
+.R  	migration aperture (in degree)
+.TP
+.I bool   
+.B cig
+.B =n
+.R  [y/n]	y - output common offset gathers
+.TP
+.I bool   
+.B cmp
+.B =y
+.R  [y/n]	y for CMP gather, n for shot gather
+.TP
+.I float  
+.B dh
+.B =
+.R  	offset sampling
+.TP
+.I float  
+.B ds
+.B =
+.R  	shot sampling
+.TP
+.I float  
+.B dt
+.B =
+.R  	time sampling
+.TP
+.I float  
+.B h0
+.B =0.0
+.R  	offset origin
+.TP
+.I int    
+.B nh
+.B =1
+.R  	offset samples
+.TP
+.I int    
+.B ns
+.B =1
+.R  	shot samples
+.TP
+.I int    
+.B nt
+.B =
+.R  	time samples
+.TP
+.I file   
+.B rderiv
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rtable
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B s0
+.B =0.0
+.R  	shot origin
+.TP
+.I file   
+.B sderiv
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B stable
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B t0
+.B =0.0
+.R  	time origin
+.TP
+.I float  
+.B tau
+.B =0.
+.R  	static time-shift (in second)
+.TP
+.I string 
+.B type
+.B =
+.R  	type of interpolation (default Hermit)
+.SH SOURCE
+.I user/llisiw/Mkirmigsr.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,34 @@
+.TH sftranslate 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftranslate \- 
+.SH SYNOPSIS
+.B sftranslate < _in.rsf > _out.rsf trans=_trans.rsf adj=n x1=0. x2=0.
+.SH COMMENTS
+program translates a 2D image
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if y reverse translation, if n, translation
+.TP
+.I string 
+.B trans
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B x1
+.B =0.
+.R  	fixed translation in first dimension
+.TP
+.I float  
+.B x2
+.B =0.
+.R  	fixed translation in second dimension
+.SH SOURCE
+.I user/luke/Mtranslate.c
+.SH VERSION
+4.2-git

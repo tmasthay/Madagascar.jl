@@ -1,0 +1,72 @@
+.TH sfpwic 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpwic \- Least square imaging condition with pwc regularization. 
+.SH SYNOPSIS
+.B sfpwic < in.rsf dips=dips.rsf down=down.rsf > out.rsf weight=weight.rsf sparse=y reg=0 cut_p=n niter=50 nliter=1 eps=0. verb=y order=1
+.SH COMMENTS
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B cut_p
+.B =n
+.R  [y/n]	cut off value of precondition
+.TP
+.I file   
+.B dips
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B down
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	regularization parameter
+.TP
+.I int    
+.B niter
+.B =50
+.R  	maximum number of iterations
+.TP
+.I int    
+.B nliter
+.B =1
+.R  	number of reweighting iterations
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I int    
+.B reg
+.B =0
+.R  	cut off value of precondition
+.TP
+.I bool   
+.B sparse
+.B =y
+.R  [y/n]	if sparse = ture   sparse deconvolution cauchy-norm
+          if reg = 0: regularization A = |I|
+          if reg = 1:  regularization A = |PWD|
+       if sparse = false  2-norn deconvolution regularization A = ||I||
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.TP
+.I string 
+.B weight
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/gchliu/Mpwic.c
+.SH VERSION
+4.2-git

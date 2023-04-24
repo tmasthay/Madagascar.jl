@@ -1,0 +1,51 @@
+.TH sflpfL1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflpfL1 \- Local prediction filter (n-dimensional) in L1 norm. 
+.SH SYNOPSIS
+.B sflpfL1 < dat.rsf match=mat.rsf > flt.rsf pred=pre.rsf liter=10 niter=25 perc=90.0 verb=y pef= lag=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B lag
+.B =
+.R  	file with PEF lags (optional)
+.TP
+.I int    
+.B liter
+.B =10
+.R  	number of CG iterations
+.TP
+.I file   
+.B match
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =25
+.R  	number of POCS iterations [L1]
+.TP
+.I string 
+.B pef
+.B =
+.R  	signal PEF file (optional)
+.TP
+.I float  
+.B perc
+.B =90.0
+.R  	percentage for sharpening [L1]
+.TP
+.I string 
+.B pred
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/lcasasan/MlpfL1.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,26 @@
+.TH sfepfws 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfepfws \- Edge preserving (smoothing) filter by window selection 
+.SH SYNOPSIS
+.B sfepfws < in.rsf > out.rsf nfw=5 order=nfw-1 filter=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B filter
+.B =
+.R  	filter: mean,median,poly,fir
+.TP
+.I int    
+.B nfw
+.B =5
+.R  	window size
+.TP
+.I int    
+.B order
+.B =nfw-1
+.R  	filter order (<= nfw, only for polynomial and fir filters)
+.SH SOURCE
+.I user/chen/Mepfws.c
+.SH VERSION
+4.2-git

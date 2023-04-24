@@ -1,0 +1,41 @@
+.TH sfspefvstep 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfspefvstep \- Streaming prediction-error filter with variable step. 
+.SH SYNOPSIS
+.B sfspefvstep < inp.rsf > out.rsf infil=infil.rsf lag=lag.rsf verb=n na= lambda1= lambda2=0.0f
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B infil
+.B =
+.R  	initial filter (auxiliary input file name)
+.TP
+.I string 
+.B lag
+.B =
+.R  	variable step (auxiliary input file name)
+.TP
+.I float  
+.B lambda1
+.B =
+.R  	constant scale parameter in time axis
+.TP
+.I float  
+.B lambda2
+.B =0.0f
+.R  	constant scale parameter in space axis
+.TP
+.I int    
+.B na
+.B =
+.R  	filter size
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/yliu/Mspefvstep.c
+.SH VERSION
+4.2-git

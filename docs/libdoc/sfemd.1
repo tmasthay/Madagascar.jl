@@ -1,0 +1,31 @@
+.TH sfemd 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfemd \- Empirical Mode Decomposition 
+.SH SYNOPSIS
+.B sfemd < inp.rsf > outp.rsf threshold=DEFAULT_THRESHOLD tolerance=DEFAULT_TOLERANCE miter=MAX_ITERATIONS mimf=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B mimf
+.B =0
+.R  	Maximum number of IMFs, the default is as many as possible.
+.TP
+.I int    
+.B miter
+.B =MAX_ITERATIONS
+.R  	Maximum number of iterations during sifting, the default is 1000.
+.TP
+.I float  
+.B threshold
+.B =DEFAULT_THRESHOLD
+.R  	Sifting stoping parameter: threshold, the default is 0.05.
+.TP
+.I float  
+.B tolerance
+.B =DEFAULT_TOLERANCE
+.R  	Sifting stoping parameter: tolerance, the default is 0.05.
+.SH SOURCE
+.I user/chenyk/Memd.c
+.SH VERSION
+4.2-git

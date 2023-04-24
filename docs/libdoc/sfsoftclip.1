@@ -1,0 +1,38 @@
+.TH sfsoftclip 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsoftclip \- Soft clip the data.
+.SH SYNOPSIS
+.B sfsoftclip < in.rsf > out.rsf upper= lower= sharp=1.0/fmax(upper*upper,lower*lower)
+.SH COMMENTS
+Uses softplus function
+Performs lower clipping then upper clipping if both specified
+
+lower clipping:
+y = output, x = input, k = sharpness, c = lower clip value
+y = ln(1+exp(k*(x-c)))/k + c
+
+upper clipping:
+y = output, x = input, k = sharpness, c = upper clip value
+y = -ln(1+exp(k*(c-x)))/k + c
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B lower
+.B =
+.R  
+.TP
+.I float  
+.B sharp
+.B =1.0/fmax(upper*upper,lower*lower)
+.R  
+.TP
+.I float  
+.B upper
+.B =
+.R  
+.SH SOURCE
+.I user/luke/Msoftclip.c
+.SH VERSION
+4.2-git

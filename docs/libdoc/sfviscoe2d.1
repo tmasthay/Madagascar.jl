@@ -1,0 +1,81 @@
+.TH sfviscoe2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfviscoe2d \- 2D 4-th order visco-elastic wave propagation using sponge ABC
+.SH SYNOPSIS
+.B sfviscoe2d < Fvp.rsf vs=Fvs.rsf rho=Frho.rsf taup=Ftaup.rsf taus=Ftaus.rsf tauo=Ftauo.rsf > Fwavz.rsf wavx=Fwavx.rsf verb=n nb=30 nt= kt= dt= fm=20.0 ft=0 jt=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  	time sampling interval
+.TP
+.I float  
+.B fm
+.B =20.0
+.R  	dominant freq of Ricker wavelet
+.TP
+.I int    
+.B ft
+.B =0
+.R  	first recorded time
+.TP
+.I int    
+.B jt
+.B =1
+.R  	time interval
+.TP
+.I int    
+.B kt
+.B =
+.R  	record wavefield at time kt
+.TP
+.I int    
+.B nb
+.B =30
+.R  	thickness of sponge ABC
+.TP
+.I int    
+.B nt
+.B =
+.R  	number of time steps
+.TP
+.I file   
+.B rho
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B tauo
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B taup
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B taus
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.TP
+.I file   
+.B vs
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B wavx
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/pyang/Mviscoe2d.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,31 @@
+.TH sfmsmiss 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmsmiss \- Multiscale missing data interpolation (N-dimensional). 
+.SH SYNOPSIS
+.B sfmsmiss < in.rsf filt=filt.rsf > out.rsf mask=mask.rsf niter=100 lag=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B filt
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B lag
+.B =
+.R  	optional input file with filter lags
+.TP
+.I string 
+.B mask
+.B =
+.R  	optional input mask file for known data (auxiliary input file name)
+.TP
+.I int    
+.B niter
+.B =100
+.R  	Number of iterations
+.SH SOURCE
+.I user/gee/Mmsmiss.c
+.SH VERSION
+4.2-git

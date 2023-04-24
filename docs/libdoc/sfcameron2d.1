@@ -1,0 +1,50 @@
+.TH sfcameron2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcameron2d \- Convert Dix velocity to interval velocity. 
+.SH SYNOPSIS
+.B sfcameron2d < fv.rsf > fv2.rsf x0=fx.rsf t0=ft.rsf nz= dz= nc=100 neval=20 method=
+.SH COMMENTS
+
+Input in (x0,t0), output in (x,z).
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dz
+.B =
+.R  
+.TP
+.I string 
+.B method
+.B =
+.R  	method (chebyshev,lax-friedrichs)
+.TP
+.I int    
+.B nc
+.B =100
+.R  	number of chebyshev coefficients
+.TP
+.I int    
+.B neval
+.B =20
+.R  	numvber of used chebyshev coefficients
+.TP
+.I int    
+.B nz
+.B =
+.R  
+.TP
+.I file   
+.B t0
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B x0
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/kourkina/Mcameron2d.c
+.SH VERSION
+4.2-git

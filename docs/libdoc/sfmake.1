@@ -1,0 +1,51 @@
+.TH sfmake 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmake \- Simple 2-D synthetics with crossing plane waves.
+.SH SYNOPSIS
+.B sfmake > mod.rsf n1=100 n2=14 n3=1 second=y n=3 p=3 t1=4 t2=4
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B n
+.B =3
+.R  
+.TP
+.I int    
+.B n1
+.B =100
+.R  
+.TP
+.I int    
+.B n2
+.B =14
+.R  
+.TP
+.I int    
+.B n3
+.B =1
+.R  	dimensions
+.TP
+.I int    
+.B p
+.B =3
+.R  
+.TP
+.I bool   
+.B second
+.B =y
+.R  [y/n]	if n, only one plane wave is modeled
+.TP
+.I int    
+.B t1
+.B =4
+.R  	triangle smoother for first wave
+.TP
+.I int    
+.B t2
+.B =4
+.R  	triangle smoother for second wave
+.SH SOURCE
+.I user/gee/Mmake.c
+.SH VERSION
+4.2-git

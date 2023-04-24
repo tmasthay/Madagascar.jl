@@ -1,0 +1,53 @@
+.TH sfpwdsigk 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpwdsigk \- Signal component separation using plane-wave destruction. 
+.SH SYNOPSIS
+.B sfpwdsigk < in.rsf dips=dips.rsf > out.rsf weight=weight.rsf niter=50 nliter=1 eps=0. verb=n order=1
+.SH COMMENTS
+
+The program works with 2-D data.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dips
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	regularization parameter
+.TP
+.I int    
+.B niter
+.B =50
+.R  	maximum number of iterations
+.TP
+.I int    
+.B nliter
+.B =1
+.R  	number of reweighting iterations
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I string 
+.B weight
+.B =
+.R  	auxiliary output file name
+.SH USED IN
+.TP
+.I cwp/geo2006TimeShiftImagingCondition/zicig
+.SH SOURCE
+.I user/pwd/Mpwdsigk.c
+.SH VERSION
+4.2-git

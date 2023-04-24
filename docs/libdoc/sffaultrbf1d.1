@@ -1,0 +1,31 @@
+.TH sffaultrbf1d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffaultrbf1d \- Compute RBF across fault using fault attribute computed by Sobel filter. 
+.SH SYNOPSIS
+.B sffaultrbf1d < in.rsf > out.rsf i0= scale=1.0 r0=1.0 useinput=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B i0
+.B =
+.R  	Reference trace position.
+.TP
+.I float  
+.B r0
+.B =1.0
+.R  	Reference radial in RBF.
+.TP
+.I float  
+.B scale
+.B =1.0
+.R  	Fault attribute scaling factor (0.0 ~ factor).
+.TP
+.I bool   
+.B useinput
+.B =y
+.R  [y/n]	Flag: whether use the input fault attribute.
+.SH SOURCE
+.I user/yunzhi/Mfaultrbf1d.c
+.SH VERSION
+4.2-git

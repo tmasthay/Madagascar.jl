@@ -1,0 +1,115 @@
+.TH sfvti2dpseudop 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfvti2dpseudop \- 2-D two-components wavefield modeling using pseudo-pure mode P-wave equation in VTI media.
+.SH SYNOPSIS
+.B sfvti2dpseudop < Fvp0.rsf vs0=Fvs0.rsf epsi=Feps.rsf del=Fdel.rsf > Fo1.rsf PseudoPurePz=Fo2.rsf PseudoPureP=Fo3.rsf apvx=Fo4.rsf apvz=Fo5.rsf apvxx=Fo6.rsf apvzz=Fo7.rsf PseudoPureSepP=Fo8.rsf ns=301 dt=0.001 isep=0 ihomo=0 itaper=0 nstep=1 tapertype=
+.SH COMMENTS
+
+Copyright (C) 2012 Tongji University, Shanghai, China 
+Authors: Jiubing Cheng and Wei Kang
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B PseudoPureP
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B PseudoPurePz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B PseudoPureSepP
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apvx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apvxx
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apvz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B apvzz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B del
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dt
+.B =0.001
+.R  
+.TP
+.I file   
+.B epsi
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B ihomo
+.B =0
+.R  	if ihomo=1, homogeneous medium
+.TP
+.I int    
+.B isep
+.B =0
+.R  	if isep=1, separate wave-modes
+.TP
+.I int    
+.B itaper
+.B =0
+.R  	if itaper=1, taper the operator
+.TP
+.I int    
+.B ns
+.B =301
+.R  
+.TP
+.I int    
+.B nstep
+.B =1
+.R  	grid step to calculate operators: 1<=nstep<=5
+.TP
+.I string 
+.B tapertype
+.B =
+.R  	taper type
+.TP
+.I file   
+.B vs0
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/chengjb/Mvti2dpseudop.c
+.SH VERSION
+4.2-git

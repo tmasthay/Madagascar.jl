@@ -1,0 +1,46 @@
+.TH sfazspr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfazspr \- Combining Sprays: Simply Input Sprays in In-line And Cross-line 
+.SH SYNOPSIS
+.B sfazspr < in.rsf spry=in2.rsf az=azin.rsf > out.rsf order=1 nj1=1 nj2=1 sm=y adj=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I file   
+.B az
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nj1
+.B =1
+.R  	antialiasing iline
+.TP
+.I int    
+.B nj2
+.B =1
+.R  	antialiasing xline
+.TP
+.I int    
+.B order
+.B =1
+.R  [1,2,3]	accuracy order
+.TP
+.I bool   
+.B sm
+.B =y
+.R  [y/n]	if perform AzPWD filtering
+.TP
+.I file   
+.B spry
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/dmerzlikin/Mazspr.c
+.SH VERSION
+4.2-git

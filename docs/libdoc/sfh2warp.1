@@ -1,0 +1,26 @@
+.TH sfh2warp 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfh2warp \- Distance From Midpoint-squared warping. 
+.SH SYNOPSIS
+.B sfh2warp < in.rsf > out.rsf eps=0.01 pad=in_n2 mid=(float)(in_n2-1)*in_d2/2+in_o2
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.TP
+.I float  
+.B mid
+.B =(float)(in_n2-1)*in_d2/2+in_o2
+.R  	center for midpoint streching
+.TP
+.I int    
+.B pad
+.B =in_n2
+.R  	output time samples
+.SH SOURCE
+.I user/luke/Mh2warp.c
+.SH VERSION
+4.2-git

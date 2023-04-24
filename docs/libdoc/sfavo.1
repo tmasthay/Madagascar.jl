@@ -1,0 +1,21 @@
+.TH sfavo 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfavo \- Compute intercept and gradient by least squares. 
+.SH SYNOPSIS
+.B sfavo < cmp.rsf > avo.rsf offset=offset.rsf half=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B half
+.B =y
+.R  [y/n]	if y, the second axis is half-offset instead of full offset
+.TP
+.I string 
+.B offset
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I system/seismic/Mavo.c
+.SH VERSION
+4.2-git

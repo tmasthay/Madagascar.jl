@@ -1,0 +1,225 @@
+.TH sfaps3d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfaps3d \- 3D acoustic wavefield modeling using the pseudo-spectral method  
+.SH SYNOPSIS
+.B sfaps3d < Fi.rsf > Fo.rsf dat=Fd.rsf dat_v=Fd_v.rsf snaps=snaps.rsf spx= spy= spz= f0= t0= A= jsnap=0 cmplx=y pad1=1 abc=n nbt= nbb=nbt nblx=nbt nbrx=nbt nbly=nbt nbry=nbt ct= cb=ct clx=ct crx=ct cly=ct cry=ct verb=n ps=n tri=n vref=1500 nt= dt= gplx=-1 gply=-1 gpl_v=-1 src=0 ns=1 gpx=-1 gpy=-1 gpz=-1 gpx_v=-1 gpy_v=-1 gpz_v=-1
+.SH COMMENTS
+DEMO:
+https://github.com/chenyk1990/tutorials/blob/main/demo/aps3d/SConstruct
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I floats 
+.B A
+.B =
+.R  	wavelet amplitude  [ns]
+.TP
+.I bool   
+.B abc
+.B =n
+.R  [y/n]	absorbing flag
+.TP
+.I float  
+.B cb
+.B =ct
+.R  
+.TP
+.I float  
+.B clx
+.B =ct
+.R  
+.TP
+.I float  
+.B cly
+.B =ct
+.R  
+.TP
+.I bool   
+.B cmplx
+.B =y
+.R  [y/n]	use complex fft
+.TP
+.I float  
+.B crx
+.B =ct
+.R  
+.TP
+.I float  
+.B cry
+.B =ct
+.R  
+.TP
+.I float  
+.B ct
+.B =
+.R  
+.TP
+.I string 
+.B dat
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B dat_v
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I floats 
+.B f0
+.B =
+.R  	wavelet peak freq  [ns]
+.TP
+.I int    
+.B gpl_v
+.B =-1
+.R  	geophone height
+.TP
+.I int    
+.B gplx
+.B =-1
+.R  	geophone length X
+.TP
+.I int    
+.B gply
+.B =-1
+.R  	geophone length Y
+.TP
+.I int    
+.B gpx
+.B =-1
+.R  	geophone position x
+.TP
+.I int    
+.B gpx_v
+.B =-1
+.R  	geophone position x
+.TP
+.I int    
+.B gpy
+.B =-1
+.R  	geophone position y
+.TP
+.I int    
+.B gpy_v
+.B =-1
+.R  	geophone position y
+.TP
+.I int    
+.B gpz
+.B =-1
+.R  	geophone position z
+.TP
+.I int    
+.B gpz_v
+.B =-1
+.R  	geophone position z
+.TP
+.I int    
+.B jsnap
+.B =0
+.R  	interval for snapshots
+.TP
+.I int    
+.B nbb
+.B =nbt
+.R  
+.TP
+.I int    
+.B nblx
+.B =nbt
+.R  
+.TP
+.I int    
+.B nbly
+.B =nbt
+.R  
+.TP
+.I int    
+.B nbrx
+.B =nbt
+.R  
+.TP
+.I int    
+.B nbry
+.B =nbt
+.R  
+.TP
+.I int    
+.B nbt
+.B =
+.R  
+.TP
+.I int    
+.B ns
+.B =1
+.R  	source type
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I bool   
+.B ps
+.B =n
+.R  [y/n]	use pseudo-spectral
+.TP
+.I file   
+.B snaps
+.B =
+.R  	auxiliary output file name
+.TP
+.I ints   
+.B spx
+.B =
+.R  	shot position x  [ns]
+.TP
+.I ints   
+.B spy
+.B =
+.R  	shot position y  [ns]
+.TP
+.I ints   
+.B spz
+.B =
+.R  	shot position z  [ns]
+.TP
+.I int    
+.B src
+.B =0
+.R  	source type
+.TP
+.I floats 
+.B t0
+.B =
+.R  	wavelet time lag  [ns]
+.TP
+.I bool   
+.B tri
+.B =n
+.R  [y/n]	if choose time reversal imaging
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.TP
+.I float  
+.B vref
+.B =1500
+.R  	reference velocity (default using water)
+.SH SOURCE
+.I user/chenyk/Maps3d.c
+.SH VERSION
+4.2-git

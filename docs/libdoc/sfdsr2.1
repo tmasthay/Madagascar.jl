@@ -1,0 +1,66 @@
+.TH sfdsr2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdsr2 \- 2-D prestack modeling/migration with split-step DSR. 
+.SH SYNOPSIS
+.B sfdsr2 < in.rsf > out.rsf slowness=vel.rsf inv=n verb=n eps=0.01 nt=1 nr=1 dt=0.004 npad=0 nw= dw= w0=0.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =0.004
+.R  	time error
+.TP
+.I float  
+.B dw
+.B =
+.R  	Frequency sampling (for modeling)
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stability parameter
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	If y, modeling; if n, migration
+.TP
+.I int    
+.B npad
+.B =0
+.R  	padding on offset wavenumber
+.TP
+.I int    
+.B nr
+.B =1
+.R  	maximum number of references
+.TP
+.I int    
+.B nt
+.B =1
+.R  	taper size
+.TP
+.I int    
+.B nw
+.B =
+.R  	Length of frequency axis (for modeling)
+.TP
+.I file   
+.B slowness
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B w0
+.B =0.
+.R  	Frequency origin (for modeling)
+.SH SOURCE
+.I system/seismic/Mdsr2.c
+.SH VERSION
+4.2-git

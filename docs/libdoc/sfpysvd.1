@@ -1,0 +1,30 @@
+.TH sfpysvd 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpysvd \- Perform SVD on a matrix using SCIPY.
+.SH SYNOPSIS
+.B sfpysvd < fin.rsf > fout.rsf > lout.rsf > rout.rsf vectors=n left= right=
+.SH COMMENTS
+
+REQUIRES the PYTHON API, NUMPY AND SCIPY
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B left
+.B =
+.R  	File to store left singular vectors
+.TP
+.I string 
+.B right
+.B =
+.R  	File to store right singular vectors
+.TP
+.I bool   
+.B vectors
+.B =n
+.R  [y/n]	Output singular vectors?
+.SH SOURCE
+.I user/godwinj/Mpysvd.py
+.SH VERSION
+4.2-git

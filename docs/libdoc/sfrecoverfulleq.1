@@ -1,0 +1,26 @@
+.TH sfrecoverfulleq 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrecoverfulleq \- Recover all equivalent Q values according to reference point and non-zero point. 
+.SH SYNOPSIS
+.B sfrecoverfulleq < inp.rsf > out.rsf zpo=zpo.rsf zeropo=zeropo.rsf verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.TP
+.I string 
+.B zeropo
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B zpo
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/yliu/Mrecoverfulleq.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,51 @@
+.TH sfmodtraceq 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmodtraceq \- Generate single trace with Q attenuation for viscoelastic media. 
+.SH SYNOPSIS
+.B sfmodtraceq > out.rsf at= q= verb=n n1=1000 d1=0.001 o1=0. nc=1 fm=50
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B at
+.B =
+.R  	(at=[at1,at2,...] layer quality factor)  [nc]
+.TP
+.I float  
+.B d1
+.B =0.001
+.R  	sampling on time axis
+.TP
+.I int    
+.B fm
+.B =50
+.R  	dominant frequency of Ricker wavelet
+.TP
+.I int    
+.B n1
+.B =1000
+.R  	size of time axis
+.TP
+.I int    
+.B nc
+.B =1
+.R  	number of layer
+.TP
+.I float  
+.B o1
+.B =0.
+.R  	origin on time axis
+.TP
+.I ints   
+.B q
+.B =
+.R  	(q=[q1,q2,...] layer quality factor)  [nc]
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	basic parameters
+.SH SOURCE
+.I user/yliu/Mmodtraceq.c
+.SH VERSION
+4.2-git

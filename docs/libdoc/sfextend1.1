@@ -1,0 +1,21 @@
+.TH sfextend1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfextend1 \- 
+.SH SYNOPSIS
+.B sfextend1 < loga.rsf > log_eo.rsf num=
+.SH COMMENTS
+Dataset padding - maintains dataset dims.
+
+Pads dataset by first and last nonzero sample. This helps reduce artifacts introduced by PP well log interpolation.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B num
+.B =
+.R  	Number of samples
+.SH SOURCE
+.I user/sbader/Mextend1.py
+.SH VERSION
+4.2-git

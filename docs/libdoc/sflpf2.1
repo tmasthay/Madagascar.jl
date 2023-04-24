@@ -1,0 +1,41 @@
+.TH sflpf2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflpf2 \- 2D Local prediction filter. 
+.SH SYNOPSIS
+.B sflpf2 < dat.rsf match=mat.rsf > flt.rsf pred=pre.rsf niter=100 verb=y pef= lag=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B lag
+.B =
+.R  	file with PEF lags (optional)
+.TP
+.I file   
+.B match
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I string 
+.B pef
+.B =
+.R  	signal PEF file (optional)
+.TP
+.I string 
+.B pred
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mlpf2.c
+.SH VERSION
+4.2-git

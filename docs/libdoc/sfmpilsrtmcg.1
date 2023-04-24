@@ -1,0 +1,156 @@
+.TH sfmpilsrtmcg 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmpilsrtmcg \- 2-D Low-rank One-step Least-square Pre-stack Reverse-Time-Migration using CG in the complex domain (both img and data are complex valued)
+.SH SYNOPSIS
+.B sfmpilsrtmcg src=Fsrc.rsf left=left.rsf right=right.rsf leftb=leftb.rsf rightb=rightb.rsf vel=Fvel.rsf start=Fstart.rsf verb=n niter=1 mode=0 illum=n roll=n shtbgn= sht0=shtbgn shtend= shtint= spz= gpz= gpl= snapinter=1 srctrunc=0.4 rectz=1 rectx=1 repeat=0 top=40 bot=40 lft=40 rht=40 pad1=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B bot
+.B =40
+.R  
+.TP
+.I int    
+.B gpl
+.B =
+.R  
+.TP
+.I int    
+.B gpz
+.B =
+.R  
+.TP
+.I bool   
+.B illum
+.B =n
+.R  [y/n]	if n, no source illumination applied
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B leftb
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B lft
+.B =40
+.R  
+.TP
+.I int    
+.B mode
+.B =0
+.R  
+.TP
+.I int    
+.B niter
+.B =1
+.R  
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I int    
+.B rectx
+.B =1
+.R  
+.TP
+.I int    
+.B rectz
+.B =1
+.R  
+.TP
+.I int    
+.B repeat
+.B =0
+.R  	abc parameters
+.TP
+.I int    
+.B rht
+.B =40
+.R  	Set I/O file
+.TP
+.I file   
+.B right
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rightb
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B roll
+.B =n
+.R  [y/n]	if n, receiver is independent of source location and gpl=nx
+.TP
+.I int    
+.B sht0
+.B =shtbgn
+.R  	actual shot origin on grid
+.TP
+.I int    
+.B shtbgn
+.B =
+.R  
+.TP
+.I int    
+.B shtend
+.B =
+.R  
+.TP
+.I int    
+.B shtint
+.B =
+.R  
+.TP
+.I int    
+.B snapinter
+.B =1
+.R  	snap interval
+.TP
+.I int    
+.B spz
+.B =
+.R  
+.TP
+.I file   
+.B src
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B srctrunc
+.B =0.4
+.R  
+.TP
+.I string 
+.B start
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B top
+.B =40
+.R  
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/jsun/Mmpilsrtmcg.c
+.SH VERSION
+4.2-git

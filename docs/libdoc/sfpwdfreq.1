@@ -1,0 +1,56 @@
+.TH sfpwdfreq 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpwdfreq \- frequency response of PWD operator 
+.SH SYNOPSIS
+.B sfpwdfreq > out.rsf n1=50 order=1 o3=20 d3=30 n3=1 iir=n opwd=y radius=1.0 interp=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d3
+.B =30
+.R  	dip angle increment
+.TP
+.I bool   
+.B iir
+.B =n
+.R  [y/n]	y: iir; n: fir
+.TP
+.I string 
+.B interp
+.B =
+.R  	interpolation method: maxflat lagrange bspline
+.TP
+.I int    
+.B n1
+.B =50
+.R  	samples in frequency domain between (0:f_c]
+.TP
+.I int    
+.B n3
+.B =1
+.R  	number dip angle
+.TP
+.I float  
+.B o3
+.B =20
+.R  	first dip angle
+.TP
+.I bool   
+.B opwd
+.B =y
+.R  [y/n]	y: circle interpolating pwd; n: line interpolating pwd
+.TP
+.I int    
+.B order
+.B =1
+.R  	order of PWD
+.TP
+.I float  
+.B radius
+.B =1.0
+.R  	radius for circle interpolating pwd
+.SH SOURCE
+.I user/chen/Mpwdfreq.c
+.SH VERSION
+4.2-git

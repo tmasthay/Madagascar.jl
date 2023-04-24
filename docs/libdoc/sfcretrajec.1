@@ -1,0 +1,60 @@
+.TH sfcretrajec 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcretrajec \- Calculate CRE trajectory on CMP x Offset plane given zero-offset CRS parameters (RN, RNIP, BETA)
+.SH SYNOPSIS
+.B sfcretrajec < in.rsf param=par.rsf > out.rsf nm0= om0= dm0= nt0= ot0= dt0= verb=0
+.SH COMMENTS
+
+Programmer: Rodolfo A. C. Neves (Dirack) 31/08/2019
+
+Email:  rodolfo_profissional@hotmail.com 
+
+License: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>. 
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dm0
+.B =
+.R  	Central CMPs sampling in parameters file (Km)
+.TP
+.I float  
+.B dt0
+.B =
+.R  	t0s sampling in parameters file (s)
+.TP
+.I int    
+.B nm0
+.B =
+.R  	Number of central CMPs in parameters file
+.TP
+.I int    
+.B nt0
+.B =
+.R  	Number of t0s in parameters file
+.TP
+.I float  
+.B om0
+.B =
+.R  	First central CMP coordinate in parameters file (Km)
+.TP
+.I float  
+.B ot0
+.B =
+.R  	First t0 coordinate in parameters file (s)
+.TP
+.I file   
+.B param
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =0
+.R  [y/n]	1: active mode; 0: quiet mode
+.SH SOURCE
+.I user/dirack/Mcretrajec.c
+.SH VERSION
+4.2-git

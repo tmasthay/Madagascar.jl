@@ -1,0 +1,31 @@
+.TH sfhalfthr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhalfthr \- Half thresholding using exact-value or percentile thresholding.
+.SH SYNOPSIS
+.B sfhalfthr < in.rsf > out.rsf other=other.rsf ifverb=0 ifperc=1 thr=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B ifperc
+.B =1
+.R  	0, exact-value thresholding; 1, percentile thresholding.
+.TP
+.I int    
+.B ifverb
+.B =0
+.R  	0, not print threshold value; 1, print threshold value.
+.TP
+.I string 
+.B other
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B thr
+.B =
+.R  	thresholding level
+.SH SOURCE
+.I user/chenyk/Mhalfthr.c
+.SH VERSION
+4.2-git

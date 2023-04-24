@@ -1,0 +1,41 @@
+.TH sfopame2dckzz 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfopame2dckzz \- 2-D opam for elastic wave modeling and vector field decompostion */
+.SH SYNOPSIS
+.B sfopame2dckzz < vel.rsf fft=fft.rsf left=left.rsf > right.rsf seed=time(NULL eps=1.e-4 npk=20 dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B dt
+.B =
+.R  	time step
+.TP
+.I        
+.B eps
+.B =1.e-4
+.R  	tolerance
+.TP
+.I file   
+.B fft
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.SH SOURCE
+.I user/junyan/Mopame2dckzz.cc
+.SH VERSION
+4.2-git

@@ -1,0 +1,61 @@
+.TH sffacttieikonal 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffacttieikonal \- Fast sweeping factored TTI eikonal solver (2D) 
+.SH SYNOPSIS
+.B sffacttieikonal < vzf.rsf > time.rsf niter=4 nfpi=3 fac=1 optloc=n zshot=0. yshot=o2 + 0.5*(n2-1)*d2 epsilon= delta= theta= shotfile=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B delta
+.B =
+.R  
+.TP
+.I string 
+.B epsilon
+.B =
+.R  
+.TP
+.I int    
+.B fac
+.B =1
+.R  	Type of factorization: (0)Additive, (1)Multiplicative
+.TP
+.I int    
+.B nfpi
+.B =3
+.R  	number of fixed-point iterations
+.TP
+.I int    
+.B niter
+.B =4
+.R  	number of sweeping iterations
+.TP
+.I bool   
+.B optloc
+.B =n
+.R  [y/n]	Selects optimal location for homogeneous medium parameter
+.TP
+.I string 
+.B shotfile
+.B =
+.R  	File with shot locations (n2=number of shots, n1=3)
+.TP
+.I string 
+.B theta
+.B =
+.R  
+.TP
+.I float  
+.B yshot
+.B =o2 + 0.5*(n2-1)*d2
+.R  
+.TP
+.I float  
+.B zshot
+.B =0.
+.R  	Shot location (used if no shotfile)
+.SH SOURCE
+.I user/uwaheed/Mfacttieikonal.c
+.SH VERSION
+4.2-git

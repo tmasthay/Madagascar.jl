@@ -1,0 +1,19 @@
+.TH sfcmatmult3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcmatmult3 \- Multiplication of two complex matrices for 3D data.
+.SH SYNOPSIS
+.B sfcmatmult3 < in.rsf > out.rsf mat=mat.rsf
+.SH COMMENTS
+I(n1,n2,f)*I(n2,n3,f)=D(n1,n3,f)
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B mat
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/gchliu/Mcmatmult3.c
+.SH VERSION
+4.2-git

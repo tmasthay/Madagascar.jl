@@ -1,0 +1,31 @@
+.TH sfnlm1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfnlm1 \- 1D non-local median filtering. 
+.SH SYNOPSIS
+.B sfnlm1 < in.rsf > out.rsf t=5 f=2 h=0.5 boundary=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B boundary
+.B =n
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I int    
+.B f
+.B =2
+.R  	radio of similarity window
+.TP
+.I float  
+.B h
+.B =0.5
+.R  	degree of filtering
+.TP
+.I int    
+.B t
+.B =5
+.R  	radio of search window
+.SH SOURCE
+.I user/chenyk/Mnlm1.c
+.SH VERSION
+4.2-git

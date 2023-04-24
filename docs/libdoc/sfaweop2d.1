@@ -1,0 +1,46 @@
+.TH sfaweop2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfaweop2d \- 2D AWE modeling 
+.SH SYNOPSIS
+.B sfaweop2d sou=Fs.rsf rec=Fr.rsf vel=Fvel.rsf < Fd.rsf > Fm.rsf verb=n fsrf=n dabc=n adj=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I bool   
+.B dabc
+.B =n
+.R  [y/n]	Absorbing BC
+.TP
+.I bool   
+.B fsrf
+.B =n
+.R  [y/n]	free surface
+.TP
+.I string 
+.B rec
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B sou
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/psava/Maweop2d.c
+.SH VERSION
+4.2-git

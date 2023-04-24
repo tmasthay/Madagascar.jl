@@ -1,0 +1,20 @@
+.TH sffowler1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffowler1 \- 2-D velocity-domain DMO (Fowler DMO).
+.SH SYNOPSIS
+.B sffowler1 < inp.rsf > out.rsf eps=0.01
+.SH COMMENTS
+
+Input: 2-D cosft of constant-velocity stacks (v,w,k).
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.SH SOURCE
+.I system/seismic/Mfowler1.c
+.SH VERSION
+4.2-git

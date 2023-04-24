@@ -1,0 +1,52 @@
+.TH sfgetcregather 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfgetcregather \- Build CRE gather given CMP X Offset CRE trajectory coordinates and interpolated data cube
+.SH SYNOPSIS
+.B sfgetcregather < in.rsf cremh=cremh.rsf > out.rsf m=out_m.rsf nm0= nt0= aperture=1 verb=0
+.SH COMMENTS
+
+This program searches for the closest trace to the CRE trajectory to build the CRE Gather for each (m, h) pair given in the interpolated data cube. 
+
+Programmer: Rodolfo A. C. Neves (Dirack) 04/09/2019
+
+Email:  rodolfo_profissional@hotmail.com  
+
+License: GPL-3.0 <https://www.gnu.org/licenses/gpl-3.0.txt>.
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B aperture
+.B =1
+.R  	Number of traces to put in a CRE Gather
+.TP
+.I file   
+.B cremh
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B m
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B nm0
+.B =
+.R  	Number of central CMPs in cremh file
+.TP
+.I int    
+.B nt0
+.B =
+.R  	Number of t0s in cremh file
+.TP
+.I bool   
+.B verb
+.B =0
+.R  [y/n]	1: active mode; 0: quiet mode
+.SH SOURCE
+.I user/dirack/Mgetcregather.c
+.SH VERSION
+4.2-git

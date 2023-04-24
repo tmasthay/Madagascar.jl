@@ -1,0 +1,32 @@
+.TH sffitcrs 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffitcrs \- 
+.SH SYNOPSIS
+.B sffitcrs < in.rsf > out_tcrs_params.rsf tcrs=
+.SH COMMENTS
+
+Input: T[m][h][t] and its sf-file  m[], Nm h[], Nh 
+Output: a(3) three CRS parameters: a(0) m + a(1)m^2 + a(2) h^2
+
+H_11 = 2 Nx Sum(m^2)
+H_12 = 2 Nx Sum(m^4)
+H_13 = 2 Sum(x^2) Sum(m)
+
+H_22 = 2 Nx Sum(m^4)
+H_23 = 2 Sum(x^2) Sum(m^2)
+
+H_33 = 2 Nm Sum(x^2)
+
+da = - grad H^{-1}
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B tcrs
+.B =
+.R  
+.SH SOURCE
+.I user/roman/Mfitcrs.c
+.SH VERSION
+4.2-git

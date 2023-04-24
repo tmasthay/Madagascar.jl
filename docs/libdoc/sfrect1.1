@@ -1,0 +1,31 @@
+.TH sfrect1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrect1 \- 1-D covariance estimator. 
+.SH SYNOPSIS
+.B sfrect1 < inp.rsf > rct.rsf niter=100 verb=y eps=0.0f rect#=(1,1,...)
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.0f
+.R  	regularization
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I int    
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/fomels/Mrect1.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,28 @@
+.TH sfsmoothderw 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsmoothderw \- Convert input to its derivative using LS and shaping regularization
+.SH SYNOPSIS
+.B sfsmoothderw < data.rsf > modl.rsf weight=weight.rsf niter=100 rect#=(1,1,...)
+.SH COMMENTS
+* applied to causint_lop 
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B niter
+.B =100
+.R  	maximum number of iterations
+.TP
+.I string 
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I string 
+.B weight
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/fomels/Msmoothderw.c
+.SH VERSION
+4.2-git

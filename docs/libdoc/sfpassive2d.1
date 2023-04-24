@@ -1,0 +1,66 @@
+.TH sfpassive2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpassive2d \- 2-D passive seismic RTM and its adjoint 
+.SH SYNOPSIS
+.B sfpassive2d < in.rsf > out.rsf velocity=vel.rsf wave=wave.rsf verb=n adj=n pas=n abc=n snap=0 depth=0 nt= dt= cb=0.0f
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B abc
+.B =n
+.R  [y/n]	absorbing boundary condition
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag, 0: modeling, 1: migration
+.TP
+.I float  
+.B cb
+.B =0.0f
+.R  
+.TP
+.I int    
+.B depth
+.B =0
+.R  	surface
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I bool   
+.B pas
+.B =n
+.R  [y/n]	passive flag, 0: exploding reflector rtm, 1: passive seismic imaging
+.TP
+.I int    
+.B snap
+.B =0
+.R  	wavefield snapshot flag
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I file   
+.B wave
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/jsun/Mpassive2d.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,31 @@
+.TH sfnsmooth1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfnsmooth1 \- 1-D non-stationary smoothing. 
+.SH SYNOPSIS
+.B sfnsmooth1 < in.rsf > out.rsf rect=rect.rsf sift=sift.rsf adj=n repeat=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	Adjoint flag
+.TP
+.I file   
+.B rect
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	repeat filtering several times
+.TP
+.I string 
+.B sift
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/fomels/Mnsmooth1.c
+.SH VERSION
+4.2-git

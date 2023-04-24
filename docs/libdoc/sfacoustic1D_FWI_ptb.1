@@ -1,0 +1,46 @@
+.TH sfacoustic1D_FWI_ptb 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfacoustic1D_FWI_ptb \- 1-D acoustic FWI with Perturbation method
+.SH SYNOPSIS
+.B sfacoustic1D_FWI_ptb < Frec.rsf vel=Fvel.rsf src=Fsrc.rsf > Fvel_recover.rsf verb=n sx= rx= niter= damp=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B damp
+.B =
+.R  	damping factor
+.TP
+.I int    
+.B niter
+.B =
+.R  	iteration number
+.TP
+.I int    
+.B rx
+.B =
+.R  	reciever position
+.TP
+.I file   
+.B src
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B sx
+.B =
+.R  	source position
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/carrot/Macoustic1D_FWI_ptb.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,49 @@
+.TH sfepsf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfepsf \- 1-D and 2-D edge-preserving smoothing (EPS) filter. 
+.SH SYNOPSIS
+.B sfepsf < in.rsf > out.rsf nfw1= nfw2=1 boundary=n verb=n weight=n sigma=3. type=
+.SH COMMENTS
+1D filter (nfw2=1); 2D filter (otherwise)
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B boundary
+.B =n
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I int    
+.B nfw1
+.B =
+.R  	filter-window length in n1 direction (positive and odd integer)
+.TP
+.I int    
+.B nfw2
+.B =1
+.R  	filter-window length in n2 direction (default=1, 1D case)
+.TP
+.I float  
+.B sigma
+.B =3.
+.R  	Gaussian weight radius (only for stack)
+.TP
+.I string 
+.B type
+.B =
+.R  	[stack,median] filter choice, the default is stack (mean)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I bool   
+.B weight
+.B =n
+.R  [y/n]	Gaussian weight flag (only for stack)
+.SH SOURCE
+.I user/yliu/Mepsf.c
+.SH VERSION
+4.2-git

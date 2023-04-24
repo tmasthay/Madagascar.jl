@@ -1,0 +1,26 @@
+.TH sfzerotrace 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfzerotrace \- Zero part of traces in order to make aliasing 
+.SH SYNOPSIS
+.B sfzerotrace < in.rsf > out.rsf beg=o2 j=2 l=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B beg
+.B =o2
+.R  	zero part beginning point
+.TP
+.I int    
+.B j
+.B =2
+.R  	jump step between two consecutive zero parts
+.TP
+.I int    
+.B l
+.B =1
+.R  	length of each zero part
+.SH SOURCE
+.I user/chenyk/Mzerotrace.c
+.SH VERSION
+4.2-git

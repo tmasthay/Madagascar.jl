@@ -1,0 +1,106 @@
+.TH sfwexmva 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwexmva \- 3-D S/R WEMVA with extended split-step 
+.SH SYNOPSIS
+.B sfwexmva slo=Bs.rsf < Pi.rsf < Ps.rsf swfl=Bws.rsf rwfl=Bwr.rsf cc=Fc.rsf verb=y adj= feic= eps=0.01 nrmax=1 dtmax=0.004 pmx=0 pmy=0 tmx=0 tmy=0 nhx=0 nhy=0 nhz=0 nht=0 dht=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B adj
+.B =
+.R  	y=ADJ Back-projection; n=FWD Forward Scattering
+.TP
+.I file   
+.B cc
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dht
+.B =
+.R  
+.TP
+.I float  
+.B dtmax
+.B =0.004
+.R  	max time error
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stability parameter
+.TP
+.I int    
+.B feic
+.B =
+.R  	extended I.C. flag
+.TP
+.I int    
+.B nht
+.B =0
+.R  	number of lags on the t axis
+.TP
+.I int    
+.B nhx
+.B =0
+.R  	number of lags on the x axis
+.TP
+.I int    
+.B nhy
+.B =0
+.R  	number of lags on the y axis
+.TP
+.I int    
+.B nhz
+.B =0
+.R  	number of lags on the z axis
+.TP
+.I int    
+.B nrmax
+.B =1
+.R  	max number of refs
+.TP
+.I int    
+.B pmx
+.B =0
+.R  	padding on x
+.TP
+.I int    
+.B pmy
+.B =0
+.R  	padding on y
+.TP
+.I file   
+.B rwfl
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B slo
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B swfl
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B tmx
+.B =0
+.R  	taper on x
+.TP
+.I int    
+.B tmy
+.B =0
+.R  	taper on y
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/cwp/Mwexmva.c
+.SH VERSION
+4.2-git

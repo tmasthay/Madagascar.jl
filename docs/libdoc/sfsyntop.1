@@ -1,0 +1,31 @@
+.TH sfsyntop 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsyntop \- Make synthetic topography map. 
+.SH SYNOPSIS
+.B sfsyntop mod=mod.rsf > syn.rsf mask=mask.rsf n1=100 n2=100
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B mask
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B mod
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B n1
+.B =100
+.R  
+.TP
+.I int    
+.B n2
+.B =100
+.R  	data dimensions
+.SH SOURCE
+.I user/gee/Msyntop.c
+.SH VERSION
+4.2-git

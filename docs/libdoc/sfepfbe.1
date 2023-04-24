@@ -1,0 +1,31 @@
+.TH sfepfbe 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfepfbe \- Bi-Exponential Edge Preserving Smoothing 
+.SH SYNOPSIS
+.B sfepfbe < in.rsf > out.rsf twod=n sigma=1.0 lamda=0.8 kernel=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B kernel
+.B =
+.R  	similarity: gaussian
+.TP
+.I float  
+.B lamda
+.B =0.8
+.R  	lamda
+.TP
+.I float  
+.B sigma
+.B =1.0
+.R  	normalizing parameter
+.TP
+.I bool   
+.B twod
+.B =n
+.R  [y/n]	y, 2D smoothing
+.SH SOURCE
+.I user/chen/Mepfbe.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,31 @@
+.TH sfdsmooth 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdsmooth \- Multi-dimensional triangle smoothing - derivative. 
+.SH SYNOPSIS
+.B sfdsmooth < in.rsf > out.rsf ider=0 repeat=1 nderiv=6 rect#=(1,1,...)
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B ider
+.B =0
+.R  	direction of the derivative (0 means no derivative)
+.TP
+.I int    
+.B nderiv
+.B =6
+.R  	derivative filter accuracy
+.TP
+.I int    
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	repeat smoothing several times
+.SH SOURCE
+.I system/generic/Mdsmooth.c
+.SH VERSION
+4.2-git

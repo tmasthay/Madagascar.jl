@@ -1,0 +1,34 @@
+.TH sfsort 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsort \- Sort a float/complex vector by absolute values.
+.SH SYNOPSIS
+.B sfsort < in.rsf > out.rsf memsize=sf_memsize() ascmode=n dim=dim
+.SH COMMENTS
+
+Written by: Gilles Hennenfent & Henryk Modzelewski, UBC
+Created: February 2006
+
+January 2016 program of the month:
+http://ahay.org/blog/2016/01/16/program-of-the-month-sfsort/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B ascmode
+.B =n
+.R  [y/n]	y=ascending; n=descending
+.TP
+.I int    
+.B dim
+.B =dim
+.R  	maximum dimension
+.TP
+.I int    
+.B memsize
+.B =sf_memsize()
+.R  	Max amount of RAM (in Mb) to be used
+.SH SOURCE
+.I user/slim/Msort.c
+.SH VERSION
+4.2-git

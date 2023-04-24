@@ -1,0 +1,51 @@
+.TH sflaps3d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflaps3d \- OpenMP lagged-products in the time-domain 
+.SH SYNOPSIS
+.B sflaps3d < Fs.rsf ur=Fr.rsf cc=Fc.rsf > Fi.rsf verb=n buf=n nhx=0 nhy=0 nhz=0 nht=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B buf
+.B =n
+.R  [y/n]
+.TP
+.I file   
+.B cc
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nht
+.B =0
+.R  	number of lags on the t axis
+.TP
+.I int    
+.B nhx
+.B =0
+.R  	number of lags on the x axis
+.TP
+.I int    
+.B nhy
+.B =0
+.R  	number of lags on the y axis
+.TP
+.I int    
+.B nhz
+.B =0
+.R  	number of lags on the z axis
+.TP
+.I file   
+.B ur
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/psava/Mlaps3d.c
+.SH VERSION
+4.2-git

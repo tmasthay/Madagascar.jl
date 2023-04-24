@@ -1,0 +1,126 @@
+.TH sffatomoomp 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffatomoomp \- First-arrival Traveltime Tomography (OMP) 
+.SH SYNOPSIS
+.B sffatomoomp < sinp.rsf > sout.rsf shot=shot.rsf recv=recv.rsf reco=reco.rsf topo=topo.rsf prec=prec.rsf grad=grad.rsf rayd=rayd.rsf time=time.rsf misnorm=norm.rsf velocity=y shape=n verb=n order=2 seg=3 niter=1 stiter=100 nstep=10 eps=0. weight=n pow=2. tol=1.e-6 rect#=(1,1,...) what=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	regularization parameter (for both Ticknov and Shaping)
+.TP
+.I string 
+.B grad
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B misnorm
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B niter
+.B =1
+.R  	number of slowness inversion iterations
+.TP
+.I int    
+.B nstep
+.B =10
+.R  	number of linesearch
+.TP
+.I int    
+.B order
+.B =2
+.R  	fast marching accuracy order
+.TP
+.I float  
+.B pow
+.B =2.
+.R  	power raised for data weighting
+.TP
+.I string 
+.B prec
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B rayd
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B reco
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I string 
+.B recv
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B seg
+.B =3
+.R  	maximum number of segments of topography
+.TP
+.I bool   
+.B shape
+.B =n
+.R  [y/n]	regularization (default Tikhnov)
+.TP
+.I string 
+.B shot
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B stiter
+.B =100
+.R  	number of inner CG iterations (for both Ticknov and Shaping)
+.TP
+.I string 
+.B time
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B tol
+.B =1.e-6
+.R  	tolerance for shaping regularization
+.TP
+.I string 
+.B topo
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B velocity
+.B =y
+.R  [y/n]	if y, the input is velocity; n, slowness squared
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I bool   
+.B weight
+.B =n
+.R  [y/n]	data weighting
+.TP
+.I string 
+.B what
+.B =
+.R  	what to compute (default tomography)
+.SH SOURCE
+.I user/llisiw/Mfatomoomp.c
+.SH VERSION
+4.2-git

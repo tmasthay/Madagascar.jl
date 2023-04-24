@@ -1,0 +1,46 @@
+.TH sfgpurayt 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfgpurayt \- Parallel shortest path ray tracing
+.SH SYNOPSIS
+.B sfgpurayt < in.rsf > out.rsf ray=rayout.rsf ctime=ctimeout.rsf sx=0 sz=0 bs=16 ord=3 dx=1.0f ray= ctime=
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B bs
+.B =16
+.R  	Cuda block is a square with bs*bs threads. Must divide dimensions of in.rsf, bs >= 1 (int)
+.TP
+.I        
+.B ctime
+.B =
+.R  	Output rsf file for computation time. Empty for no computation time output.
+.TP
+.I        
+.B dx
+.B =1.0f
+.R  	Horizontal and vertical separation between nodes, dx > 0.0 (float)
+.TP
+.I        
+.B ord
+.B =3
+.R  	Forward star has (ord*ord-1) nodes, ord >= 1 (int)
+.TP
+.I        
+.B ray
+.B =
+.R  	Output file for a sfgraph compatible ray file. Empty for no ray output.
+.TP
+.I        
+.B sx
+.B =0
+.R  	Horizontal node source coordinate (int)
+.TP
+.I        
+.B sz
+.B =0
+.R  	Vertical node source coordinate (int)
+.SH SOURCE
+.I user/jmonsegny/Mgpurayt.cu
+.SH VERSION
+4.2-git

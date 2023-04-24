@@ -1,0 +1,115 @@
+.TH sfpygraph 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpygraph \- graph by python
+.SH SYNOPSIS
+.B sfpygraph < input.rsf < xfile.rsf pclip=100 plotfat=1 markint=10 plotcol=0,1,2,3,4,5,6,7 dash=0 symbol=None legend=None x=None usetex=n min1=x1[0] max1=x1[n1-1] min2=min2 max2=max2 label1= unit1=None label2= unit2=None wantlegend=y wherelegend=1 format=pdf
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B dash
+.B =0
+.R  	dash styles 
+ 0	solid line 
+ 1	dash line 
+ 2	dotted line 
+ 3	dash dot
+.TP
+.I string 
+.B format
+.B =pdf
+.R  
+.TP
+.I string 
+.B label1
+.B =
+.R  
+.TP
+.I string 
+.B label2
+.B =
+.R  
+.TP
+.I string 
+.B legend
+.B =None
+.R  	legends
+.TP
+.I int    
+.B markint
+.B =10
+.R  	mark symbol interval
+.TP
+.I float  
+.B max1
+.B =x1[n1-1]
+.R  
+.TP
+.I float  
+.B max2
+.B =max2
+.R  
+.TP
+.I float  
+.B min1
+.B =x1[0]
+.R  
+.TP
+.I float  
+.B min2
+.B =min2
+.R  
+.TP
+.I float  
+.B pclip
+.B =100
+.R  	clip percent
+.TP
+.I string 
+.B plotcol
+.B =0,1,2,3,4,5,6,7
+.R  	plot color
+.TP
+.I int    
+.B plotfat
+.B =1
+.R  	plot line width
+.TP
+.I string 
+.B symbol
+.B =None
+.R  	mark symbols
+.TP
+.I string 
+.B unit1
+.B =None
+.R  
+.TP
+.I string 
+.B unit2
+.B =None
+.R  
+.TP
+.I bool   
+.B usetex
+.B =n
+.R  [y/n]	use tex symbol
+.TP
+.I bool   
+.B wantlegend
+.B =y
+.R  [y/n]
+.TP
+.I int    
+.B wherelegend
+.B =1
+.R  
+.TP
+.I string 
+.B x
+.B =None
+.R  	xpos
+.SH SOURCE
+.I user/chen/Mpygraph.py
+.SH VERSION
+4.2-git

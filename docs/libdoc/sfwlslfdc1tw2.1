@@ -1,0 +1,96 @@
+.TH sfwlslfdc1tw2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwlslfdc1tw2 \- None
+.SH SYNOPSIS
+.B sfwlslfdc1tw2 < velf.rsf > outm.rsf sx=fsx.rsf Mwatpw=Mwatpwfile.rsf wfun=Mwfun.rsf Mapp=Mappfile.rsf tp=Mtpfile.rsf waw=Mwawfile.rsf seed=time(NULL f0=15 a0=0.0001 taper=true tpa=0.0 tpb=0.0 eps=1.e-4 npk=20 dt= weight=true size=6
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Mapp
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B Mwatpw
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B a0
+.B =0.0001
+.R  	weight parameters
+.TP
+.I        
+.B dt
+.B =
+.R  	time step
+.TP
+.I        
+.B eps
+.B =1.e-4
+.R  	tolerance
+.TP
+.I        
+.B f0
+.B =15
+.R  	dominant frequency
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.TP
+.I        
+.B size
+.B =6
+.R  	stencil length
+.TP
+.I file   
+.B sx
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B taper
+.B =true
+.R  
+.TP
+.I file   
+.B tp
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B tpa
+.B =0.0
+.R  	taper for stability
+.TP
+.I        
+.B tpb
+.B =0.0
+.R  
+.TP
+.I file   
+.B waw
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B weight
+.B =true
+.R  
+.TP
+.I file   
+.B wfun
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/fangg/Mwlslfdc1tw2.cc
+.SH VERSION
+4.2-git

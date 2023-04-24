@@ -1,0 +1,111 @@
+.TH sfshpwstack 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfshpwstack \- Recursive stacking by plane-wave construction. 
+.SH SYNOPSIS
+.B sfshpwstack < cmp.rsf velocity=velocity.rsf > stack.rsf dip=dip.rsf offset=offset.rsf half=y slowness=n verb=n eps=0.01 velocity=0.0f nmo=n order=1 mode=1 h0=0. eps1=0.01 jump=1 niter=10 restart=niter tol=1e-5 flo= fhi= nplo=6 nphi=6
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I float  
+.B eps1
+.B =0.01
+.R  	stretch regularization
+.TP
+.I float  
+.B fhi
+.B =
+.R  	High frequency in band, default is Nyquist
+.TP
+.I float  
+.B flo
+.B =
+.R  	Low frequency in band, default is 0
+.TP
+.I float  
+.B h0
+.B =0.
+.R  	reference offset
+.TP
+.I bool   
+.B half
+.B =y
+.R  [y/n]	if y, the second axis is half-offset instead of full offset
+.TP
+.I int    
+.B jump
+.B =1
+.R  	subsampling
+.TP
+.I int    
+.B mode
+.B =1
+.R  	1: predict backward, 2: predict forward then backward
+.TP
+.I int    
+.B niter
+.B =10
+.R  	number of iterations
+.TP
+.I bool   
+.B nmo
+.B =n
+.R  [y/n]	if y, apply constant velocity NMO
+.TP
+.I int    
+.B nphi
+.B =6
+.R  	number of poles for high cutoff
+.TP
+.I int    
+.B nplo
+.B =6
+.R  	number of poles for low cutoff
+.TP
+.I string 
+.B offset
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I int    
+.B restart
+.B =niter
+.R  	GMRES memory
+.TP
+.I bool   
+.B slowness
+.B =n
+.R  [y/n]	if y, use slowness instead of velocity
+.TP
+.I float  
+.B tol
+.B =1e-5
+.R  	GMRES tolerance
+.TP
+.I float  
+.B velocity
+.B =0.0f
+.R  	constant velocity
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/kregimbal/Mshpwstack.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,46 @@
+.TH sfbrfault 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfbrfault \- Bridge fault zones with smooth transition 
+.SH SYNOPSIS
+.B sfbrfault < in.rsf slip=slip.rsf > out.rsf shift=shift.rsf mask=mask.rsf replace=n mode=y width=9 order=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B mask
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B mode
+.B =y
+.R  [y/n]
+.TP
+.I int    
+.B order
+.B =1
+.R  
+.TP
+.I bool   
+.B replace
+.B =n
+.R  [y/n]
+.TP
+.I file   
+.B shift
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B slip
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B width
+.B =9
+.R  
+.SH SOURCE
+.I user/zhiguang/Mbrfault.c
+.SH VERSION
+4.2-git

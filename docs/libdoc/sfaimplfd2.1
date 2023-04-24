@@ -1,0 +1,26 @@
+.TH sfaimplfd2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfaimplfd2 \- Implicit solution of 2-D acoustic wave equation. 
+.SH SYNOPSIS
+.B sfaimplfd2 < vel.rsf > usol.rsf src=src.rsf niter=10 fourth=y
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B fourth
+.B =y
+.R  [y/n]	Higher order flag
+.TP
+.I int    
+.B niter
+.B =10
+.R  	Number of solver iterations
+.TP
+.I string 
+.B src
+.B =
+.R  	Source wavelet (auxiliary input file name)
+.SH SOURCE
+.I user/petsc/Maimplfd2.c
+.SH VERSION
+4.2-git

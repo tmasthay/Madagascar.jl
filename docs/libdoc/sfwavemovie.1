@@ -1,0 +1,91 @@
+.TH sfwavemovie 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwavemovie \- Helmholtz factorization 
+.SH SYNOPSIS
+.B sfwavemovie > out.rsf imp=imp.rsf nz=96 nx=48 nt=12 nw=2 init=1 v=1. dz=1. dx=2. lambda=nz*dz/4. sixth=0.0833 gamma=0.667 epsdamp=0.01 padfactor=1024 nfilt=nx+2 impresp=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dx
+.B =2.
+.R  
+.TP
+.I float  
+.B dz
+.B =1.
+.R  
+.TP
+.I float  
+.B epsdamp
+.B =0.01
+.R  
+.TP
+.I float  
+.B gamma
+.B =0.667
+.R  
+.TP
+.I file   
+.B imp
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B impresp
+.B =n
+.R  [y/n]
+.TP
+.I int    
+.B init
+.B =1
+.R  
+.TP
+.I float  
+.B lambda
+.B =nz*dz/4.
+.R  
+.TP
+.I int    
+.B nfilt
+.B =nx+2
+.R  
+.TP
+.I int    
+.B nt
+.B =12
+.R  
+.TP
+.I int    
+.B nw
+.B =2
+.R  
+.TP
+.I int    
+.B nx
+.B =48
+.R  
+.TP
+.I int    
+.B nz
+.B =96
+.R  
+.TP
+.I int    
+.B padfactor
+.B =1024
+.R  
+.TP
+.I float  
+.B sixth
+.B =0.0833
+.R  
+.TP
+.I float  
+.B v
+.B =1.
+.R  
+.SH SOURCE
+.I user/gee/Mwavemovie.c
+.SH VERSION
+4.2-git

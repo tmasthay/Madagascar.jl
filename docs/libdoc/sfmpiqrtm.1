@@ -1,0 +1,209 @@
+.TH sfmpiqrtm 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmpiqrtm \- 2-D Low-rank One-step Least Pre-stack Reverse-Time-Migration in the complex domain (both img and data are complex valued)
+.SH SYNOPSIS
+.B sfmpiqrtm src=Fsrc.rsf left=left.rsf right=right.rsf leftb=leftb.rsf rightb=rightb.rsf vel=Fvel.rsf norm=Fnorm.rsf tmpwf=Ftmpwf.rsf tmpwfb=Ftmpwfb.rsf verb=n adj=y mode= illum=n roll=n stable=0 sdiv=n reg=0.0f niter=100 eps=SF_EPS perc=0.1 freq_scal=n eps=SF_EPS perc=0.1 shtbgn= sht0=shtbgn shtend= shtint= spz= gpz= gpl= snapinter=1 srctrunc=0.4 rectz=1 rectx=1 repeat=0 top=40 bot=40 lft=40 rht=40 shtid=0 pad1=1
+.SH COMMENTS
+img :  crosscorrelation with source normalization (stdout)
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	migration
+.TP
+.I int    
+.B bot
+.B =40
+.R  
+.TP
+.I float  
+.B eps
+.B =SF_EPS
+.R  	padding
+.TP
+.I bool   
+.B freq_scal
+.B =n
+.R  [y/n]	frequency amplitude spectrum scaling
+.TP
+.I int    
+.B gpl
+.B =
+.R  
+.TP
+.I int    
+.B gpz
+.B =
+.R  
+.TP
+.I bool   
+.B illum
+.B =n
+.R  [y/n]	if n, no source illumination applied
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B leftb
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B lft
+.B =40
+.R  
+.TP
+.I int    
+.B mode
+.B =
+.R  
+.TP
+.I int    
+.B niter
+.B =100
+.R  	smooth division maximum iterations
+.TP
+.I string 
+.B norm
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I float  
+.B perc
+.B =0.1
+.R  	percentage of maximum for padding
+.TP
+.I int    
+.B rectx
+.B =1
+.R  
+.TP
+.I int    
+.B rectz
+.B =1
+.R  
+.TP
+.I float  
+.B reg
+.B =0.0f
+.R  	regularization
+.TP
+.I int    
+.B repeat
+.B =0
+.R  	abc parameters
+.TP
+.I int    
+.B rht
+.B =40
+.R  	shot output id
+.TP
+.I file   
+.B right
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rightb
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B roll
+.B =n
+.R  [y/n]	if n, receiver is independent of source location and gpl=nx
+.TP
+.I bool   
+.B sdiv
+.B =n
+.R  [y/n]	smooth division
+.TP
+.I int    
+.B sht0
+.B =shtbgn
+.R  	actual shot origin on grid
+.TP
+.I int    
+.B shtbgn
+.B =
+.R  
+.TP
+.I int    
+.B shtend
+.B =
+.R  
+.TP
+.I int    
+.B shtid
+.B =0
+.R  	Set I/O file
+.TP
+.I int    
+.B shtint
+.B =
+.R  
+.TP
+.I int    
+.B snapinter
+.B =1
+.R  	snap interval
+.TP
+.I int    
+.B spz
+.B =
+.R  
+.TP
+.I file   
+.B src
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B srctrunc
+.B =0.4
+.R  
+.TP
+.I int    
+.B stable
+.B =0
+.R  	stable = 0 -> conventional imaging condition; 1 -> stable imaging condition for Q-compensation with global nomalization; 2 -> shot-by-shot normalization; 3 -> snapshot-by-snapshot compensation (most intensive); 4 -> deconvolution imaging condition
+.TP
+.I string 
+.B tmpwf
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B tmpwfb
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B top
+.B =40
+.R  
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/jsun/Mmpiqrtm.c
+.SH VERSION
+4.2-git

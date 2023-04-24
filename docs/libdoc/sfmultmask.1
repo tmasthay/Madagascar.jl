@@ -1,0 +1,41 @@
+.TH sfmultmask 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmultmask \- Create a data mask using multiple muting curve from MRKE 
+.SH SYNOPSIS
+.B sfmultmask < in.rsf mask=mask.rsf > out.rsf start=n smooth=n nw=0 shift=n verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nw
+.B =0
+.R  	smoothing window length must be odd
+.TP
+.I bool   
+.B shift
+.B =n
+.R  [y/n]	shift
+.TP
+.I bool   
+.B smooth
+.B =n
+.R  [y/n]	smoothed mask [raised cosine]
+.TP
+.I bool   
+.B start
+.B =n
+.R  [y/n]	mask from starting sample to index value in mask
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/lcasasan/Mmultmask.c
+.SH VERSION
+4.2-git

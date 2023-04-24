@@ -1,0 +1,51 @@
+.TH sftimerev2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftimerev2d \- 2-D correlative time reversal imaging of passive seismic data 
+.SH SYNOPSIS
+.B sftimerev2d < in.rsf > out.rsf velocity=vel.rsf wave=wave.rsf verb=n abc=n snap=0 depth=0 ngrp=1 cb=0.0f
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B abc
+.B =n
+.R  [y/n]	absorbing boundary condition
+.TP
+.I float  
+.B cb
+.B =0.0f
+.R  
+.TP
+.I int    
+.B depth
+.B =0
+.R  	geophone depth
+.TP
+.I int    
+.B ngrp
+.B =1
+.R  	number of groups
+.TP
+.I int    
+.B snap
+.B =0
+.R  	wavefield snapshot flag
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I file   
+.B wave
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/jsun/Mtimerev2d.c
+.SH VERSION
+4.2-git

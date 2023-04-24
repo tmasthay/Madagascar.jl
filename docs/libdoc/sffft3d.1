@@ -1,0 +1,36 @@
+.TH sffft3d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffft3d \- 3D FFT with centering and Hermitian scaling  
+.SH SYNOPSIS
+.B sffft3d < Fi.rsf > Fo.rsf ompchunk=1 verb=n inv=n cnt=n axis=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B axis
+.B =0
+.R  	FFT axis or axes
+.TP
+.I bool   
+.B cnt
+.B =n
+.R  [y/n]	centering
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	forward/inverse
+.TP
+.I int    
+.B ompchunk
+.B =1
+.R  	OpenMP data chunk size
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/psava/Mfft3d.c
+.SH VERSION
+4.2-git

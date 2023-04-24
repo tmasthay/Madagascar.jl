@@ -1,0 +1,26 @@
+.TH sfdespike3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdespike3 \- Remove spikes in by sliding 3-D medians. 
+.SH SYNOPSIS
+.B sfdespike3 < in.rsf > out.rsf wide1=5 wide2=5 wide3=5
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B wide1
+.B =5
+.R  
+.TP
+.I int    
+.B wide2
+.B =5
+.R  
+.TP
+.I int    
+.B wide3
+.B =5
+.R  	sliding window width
+.SH SOURCE
+.I user/gee/Mdespike3.c
+.SH VERSION
+4.2-git

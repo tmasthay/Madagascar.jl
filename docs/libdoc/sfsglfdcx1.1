@@ -1,0 +1,36 @@
+.TH sfsglfdcx1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsglfdcx1 \- 1D Lowrank FD coefficient of d/dx on staggered grid
+.SH SYNOPSIS
+.B sfsglfdcx1 < velf.rsf > outm.rsf seed=time(NULL eps=1.e-4 npk=20 dt= size=6
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B dt
+.B =
+.R  	time step
+.TP
+.I        
+.B eps
+.B =1.e-4
+.R  	tolerance
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.TP
+.I        
+.B size
+.B =6
+.R  	stencil length
+.SH SOURCE
+.I user/fangg/Msglfdcx1.cc
+.SH VERSION
+4.2-git

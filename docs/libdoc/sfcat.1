@@ -1,0 +1,102 @@
+.TH sfcat 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcat \- Concatenate datasets. 
+.SH SYNOPSIS
+.B sfcat > out.rsf order= space= axis=3 nspace=(int) (ni/(20*nin) + 1) o= d= [<file0.rsf] file1.rsf file2.rsf ... 
+.SH COMMENTS
+sfmerge inserts additional space between merged data.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B axis
+.B =3
+.R  	Axis being merged
+.TP
+.I float  
+.B d
+.B =
+.R  	axis sampling
+.TP
+.I int    
+.B nspace
+.B =(int) (ni/(20*nin) + 1)
+.R  	if space=y, number of traces to insert
+.TP
+.I float  
+.B o
+.B =
+.R  	axis origin
+.TP
+.I ints   
+.B order
+.B =
+.R  	concatenation order  [nin]
+.TP
+.I bool   
+.B space
+.B =
+.R  [y/n]	Insert additional space.
+	   y is default for sfmerge, n is default for sfcat
+.SH USED IN
+.TP
+.I bei/conj/causint
+.TP
+.I bei/dpmv/yalei
+.TP
+.I bei/dwnc/sigmoid
+.TP
+.I bei/ft1/autocor
+.TP
+.I bei/ft1/brad
+.TP
+.I bei/ft1/ft2d
+.TP
+.I bei/krch/sep73
+.TP
+.I bei/sg/toldi
+.TP
+.I bei/trimo/all
+.TP
+.I bei/vela/stack
+.TP
+.I bei/vela/strat
+.TP
+.I carrot/test/modeling
+.TP
+.I chen/test/wavmod
+.TP
+.I cup/rna2d/real
+.TP
+.I cup/rna2d/shot
+.TP
+.I cup/rna2d/simple
+.TP
+.I cup/rna3d/real
+.TP
+.I cwp/geo2006TimeShiftImagingCondition/flat
+.TP
+.I cwp/geo2006TimeShiftImagingCondition/zicig
+.TP
+.I cwp/geo2007StereographicImagingCondition/flat4
+.TP
+.I cwp/geo2007StereographicImagingCondition/sigsbee2
+.TP
+.I cwp/geo2008InterferometricImagingCondition/sact1
+.TP
+.I cwp/geo2008InterferometricImagingCondition/sigs2
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2allA
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2oneA
+.TP
+24 more examples listed in:
+.TP
+/home/mlouboutin3/Research/madagascar//share/doc/madagascar/html/sfcat.html
+.SH SOURCE
+.I system/main/cat.c
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfcat
+.SH VERSION
+4.2-git

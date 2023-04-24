@@ -1,0 +1,34 @@
+.TH sfdiptaper 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdiptaper \- Aperture optimization for migrated gathers in the dip-angle domain.
+.SH SYNOPSIS
+.B sfdiptaper < dipFile.rsf > taperFile.rsf dz=20.f greyarea=10.f
+.SH COMMENTS
+
+Estimates a constructive imaging part of a reflection event in the dip-angle domain.
+Basing on the estimation defines a stacking weight for every migrated sample.
+
+Input:
+dipFile.rsf - dips esitimated in constant-dip subimages. The dips are in degree (!).
+A positive dip corresponds to an ascending boundary, a negative dip - to a descending boundary.
+A constant-dip subimage consists of migrated traces correspondig to the same dip-angle.
+
+Output:
+taperFile.rsf - optimal weights for the migrated samples
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dz
+.B =20.f
+.R  	half of a migrated wave length
+.TP
+.I float  
+.B greyarea
+.B =10.f
+.R  	width of event tail taper (in degree)
+.SH SOURCE
+.I user/aklokov/Mdiptaper.c
+.SH VERSION
+4.2-git

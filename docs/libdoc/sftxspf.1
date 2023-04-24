@@ -1,0 +1,26 @@
+.TH sftxspf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftxspf \- Streaming prediction filter in t-x domain. 
+.SH SYNOPSIS
+.B sftxspf < in.rsf > out.rsf a= lambda1= lambda2=
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	Get filter size from input, a0 is 2M+1, a1 is N in equation 3  [dim]
+.TP
+.I float  
+.B lambda1
+.B =
+.R  	Regularization in t direction, lambda_t in equations 1 and 5
+.TP
+.I float  
+.B lambda2
+.B =
+.R  	Regularization in x direction, lambda_x in equations 1 and 5
+.SH SOURCE
+.I user/yliu/Mtxspf.c
+.SH VERSION
+4.2-git

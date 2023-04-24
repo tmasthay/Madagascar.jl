@@ -1,0 +1,106 @@
+.TH sfcij2moveout 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcij2moveout \- Converting interval Cij to interval/effective moveout coefficients in 3D layered orthorhombic with possible phimuthal rotation (Sripanich and Fomel, 2016) 
+.SH SYNOPSIS
+.B sfcij2moveout > a11o.rsf a12o=a12o.rsf a22o=a22o.rsf a1111o=a1111o.rsf a1112o=a1112o.rsf a1122o=a1122o.rsf a1222o=a1222o.rsf a2222o=a2222o.rsf < C11.rsf c55=C55.rsf c33=C33.rsf c66=C66.rsf c12=C12.rsf c13=C13.rsf c23=C23.rsf c22=C22.rsf c44=C44.rsf phi=Phi.rsf scalecij=1 scalequartic=n eff=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B a1111o
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B a1112o
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B a1122o
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B a1222o
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B a12o
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B a2222o
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B a22o
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B c12
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c13
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c22
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c23
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c33
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c44
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c55
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c66
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B eff
+.B =n
+.R  [y/n]	Output effective parameters instead of interval
+.TP
+.I file   
+.B phi
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B scalecij
+.B =1
+.R  	Scaling of input Cij in case of GPa or km^2/s^2
+.TP
+.I bool   
+.B scalequartic
+.B =n
+.R  [y/n]	Scaling the output quartic coefficients y--multiplied by 2 t0^2 (t0 = two-way) to look at the property of the layer -> input for GMA
+.SH SOURCE
+.I user/zone/Mcij2moveout.c
+.SH VERSION
+4.2-git

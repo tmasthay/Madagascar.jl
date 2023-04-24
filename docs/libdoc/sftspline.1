@@ -1,0 +1,31 @@
+.TH sftspline 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftspline \- Helix filters for spline in tension 
+.SH SYNOPSIS
+.B sftspline > flt.rsf tension=0. niter=20 eps=FLT_EPSILON lag=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =FLT_EPSILON
+.R  	tolerance for filter compressing
+.TP
+.I string 
+.B lag
+.B =
+.R  
+.TP
+.I int    
+.B niter
+.B =20
+.R  	number of iterations
+.TP
+.I float  
+.B tension
+.B =0.
+.R  	spline tension
+.SH SOURCE
+.I user/gee/Mtspline.c
+.SH VERSION
+4.2-git

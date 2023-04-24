@@ -1,0 +1,25 @@
+.TH sflpad2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflpad2 \- 2D pad and interleave traces.
+.SH SYNOPSIS
+.B sflpad2 < in.rsf > out.rsf mask=mask.rsf jump=2
+.SH COMMENTS
+
+Each initial trace is followed by "jump" zero traces.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B jump
+.B =2
+.R  	aliasing
+.TP
+.I file   
+.B mask
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/yliu/Mlpad2.c
+.SH VERSION
+4.2-git

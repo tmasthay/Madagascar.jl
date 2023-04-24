@@ -1,0 +1,123 @@
+.TH sfewefd2dtti 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfewefd2dtti \- elastic time-domain FD modeling 
+.SH SYNOPSIS
+.B sfewefd2dtti < Fwav.rsf ccc=Fccc.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf den=Fden.rsf ompchunk=1 ompnth=0 verb=n snap=n free=n ssou=n opot=n nbell=1 jdata=1 jsnap=nt nq1=sf_n(az) nq2=sf_n(ax) oq1=sf_o(az) oq2=sf_o(ax)
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B ccc
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B free
+.B =n
+.R  [y/n]	free surface flag
+.TP
+.I int    
+.B jdata
+.B =1
+.R  
+.TP
+.I int    
+.B jsnap
+.B =nt
+.R  
+.TP
+.I int    
+.B nbell
+.B =1
+.R  	bell size
+.TP
+.I int    
+.B nq1
+.B =sf_n(az)
+.R  
+.TP
+.I int    
+.B nq2
+.B =sf_n(ax)
+.R  
+.TP
+.I int    
+.B ompchunk
+.B =1
+.R  	OpenMP data chunk size
+.TP
+.I int    
+.B ompnth
+.B =0
+.R  	OpenMP available threads
+.TP
+.I bool   
+.B opot
+.B =n
+.R  [y/n]	output potential
+.TP
+.I float  
+.B oq1
+.B =sf_o(az)
+.R  
+.TP
+.I float  
+.B oq2
+.B =sf_o(ax)
+.R  
+.TP
+.I file   
+.B rec
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B snap
+.B =n
+.R  [y/n]	wavefield snapshots flag
+.TP
+.I file   
+.B sou
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B ssou
+.B =n
+.R  [y/n]	stress source
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I file   
+.B wfl
+.B =
+.R  	auxiliary output file name
+.SH USED IN
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2allA
+.TP
+.I cwp/geo2008IsotropicAngleDomainElasticRTM/marm2oneA
+.TP
+.I cwp/geo2009TTIModeSeparation/fold
+.TP
+.I cwp/geo2009TTIModeSeparation/marmousi2
+.TP
+.I cwp/geo2009VTIModeSeparation/separate2
+.TP
+.I cwp/geo2009VTIModeSeparation/separate3
+.TP
+.I cwp/geo2009VTIModeSeparation/separate5
+.TP
+.I cwp/geo2009VTIModeSeparation/sigsbee
+.SH SOURCE
+.I user/jyan/Mewefd2dtti.c
+.SH VERSION
+4.2-git

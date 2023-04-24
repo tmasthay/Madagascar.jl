@@ -1,0 +1,71 @@
+.TH sfwexwfl 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwexwfl \- 3-D wavefield extrapolation with extended SSF 
+.SH SYNOPSIS
+.B sfwexwfl slo=Fs.rsf < Fd.rsf > Fw.rsf verb=n eps=0.01 datum=0 inv=1 causal=n nrmax=1 dtmax=0.004 pmx=0 pmy=0 tmx=0 tmy=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B causal
+.B =n
+.R  [y/n]	causality flag
+.TP
+.I int    
+.B datum
+.B =0
+.R  	datuming flag
+.TP
+.I float  
+.B dtmax
+.B =0.004
+.R  	max time error
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stability parameter
+.TP
+.I int    
+.B inv
+.B =1
+.R  	down/upward flag
+.TP
+.I int    
+.B nrmax
+.B =1
+.R  	maximum references
+.TP
+.I int    
+.B pmx
+.B =0
+.R  	padding on x
+.TP
+.I int    
+.B pmy
+.B =0
+.R  	padding on y
+.TP
+.I file   
+.B slo
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B tmx
+.B =0
+.R  	taper on x
+.TP
+.I int    
+.B tmy
+.B =0
+.R  	taper on y
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/cwp/Mwexwfl.c
+.SH VERSION
+4.2-git

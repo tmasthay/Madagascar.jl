@@ -1,0 +1,86 @@
+.TH sfkhshot 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfkhshot \- Kirchhoff shot migration 
+.SH SYNOPSIS
+.B sfkhshot < Fin.rsf > Fout.rsf ttfile=Ftt.rsf verb=n theta=30. dtheta=theta/3 df=5. fmax=.5/d1 ntaper=11 tmin=3*d1 xs= nx=n2t ox=o2t dx=d2t nz=n1t oz=o1t dz=d1t
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B df
+.B =5.
+.R  	anti-aliasing sampling
+.TP
+.I float  
+.B dtheta
+.B =theta/3
+.R  	taper zone
+.TP
+.I float  
+.B dx
+.B =d2t
+.R  
+.TP
+.I float  
+.B dz
+.B =d1t
+.R  	checking dimensions
+.TP
+.I float  
+.B fmax
+.B =.5/d1
+.R  
+.TP
+.I int    
+.B ntaper
+.B =11
+.R  
+.TP
+.I int    
+.B nx
+.B =n2t
+.R  
+.TP
+.I int    
+.B nz
+.B =n1t
+.R  
+.TP
+.I float  
+.B ox
+.B =o2t
+.R  
+.TP
+.I float  
+.B oz
+.B =o1t
+.R  
+.TP
+.I float  
+.B theta
+.B =30.
+.R  	maximum dip
+.TP
+.I float  
+.B tmin
+.B =3*d1
+.R  
+.TP
+.I file   
+.B ttfile
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B xs
+.B =
+.R  	image parameters
+.SH SOURCE
+.I user/effsilva/Mkhshot.c
+.SH VERSION
+4.2-git

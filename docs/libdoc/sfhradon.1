@@ -1,0 +1,87 @@
+.TH sfhradon 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhradon \- Time domain high-resolution hyperbolic Radon transform. 
+.SH SYNOPSIS
+.B sfhradon < in.rsf > out.rsf vel=vel.rsf offset=offset.rsf inv=y adj=n solver=n v0= dv= nv= N1=10 N2=3 verb=0 h0= dh= nh=
+.SH COMMENTS
+m(tau,p) = \sum_{ih=1}^{nh} d(tau=\sqrt{tau^2+h[ih]^2/p^2),h}
+inv=true do inverse
+adj=true do adjoint
+inv=false && adj=false do forward
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B N1
+.B =10
+.R  	CG Iterations (Internal loop)
+.TP
+.I int    
+.B N2
+.B =3
+.R  	Update of weights for the sparse solution, N1 = 1 LS , N2 > 3 for High Res (Sparse) solution
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if implement the adjoint transform instead of the inverse transform
+.TP
+.I float  
+.B dh
+.B =
+.R  
+.TP
+.I float  
+.B dv
+.B =
+.R  
+.TP
+.I float  
+.B h0
+.B =
+.R  
+.TP
+.I bool   
+.B inv
+.B =y
+.R  [y/n]	if implement the inverse transform
+.TP
+.I int    
+.B nh
+.B =
+.R  
+.TP
+.I int    
+.B nv
+.B =
+.R  
+.TP
+.I string 
+.B offset
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B solver
+.B =n
+.R  [y/n]	if use Madagascar bigsolver, default is not
+.TP
+.I float  
+.B v0
+.B =
+.R  
+.TP
+.I string 
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B verb
+.B =0
+.R  	If output the debugging process
+.SH SOURCE
+.I user/chenyk/Mhradon.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,56 @@
+.TH sfspiralsort 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfspiralsort \- Sort microseismic surface array recording traces with a given epicenter along a spiral shape R = r0 + d(a-a0). 
+.SH SYNOPSIS
+.B sfspiralsort < in.rsf x=x_file.rsf y=y_file.rsf > out.rsf dist=dist_file.rsf theta=theta_file.rsf epi_x= epi_y= radius0=1.0 angle0=0.0 dr=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B angle0
+.B =0.0
+.R  	Starting angle of spiral.
+.TP
+.I file   
+.B dist
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B dr
+.B =
+.R  	Spiral interval parameter.
+.TP
+.I float  
+.B epi_x
+.B =
+.R  	referenced epicenter coordinate x.
+.TP
+.I float  
+.B epi_y
+.B =
+.R  	referenced epicenter coordinate y.
+.TP
+.I float  
+.B radius0
+.B =1.0
+.R  	Starting radius of spiral.
+.TP
+.I file   
+.B theta
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B x
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B y
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/yunzhi/Mspiralsort.c
+.SH VERSION
+4.2-git

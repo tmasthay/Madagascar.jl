@@ -1,0 +1,48 @@
+.TH sfhelicon 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhelicon \- Multidimensional convolution and deconvolution by helix transform. 
+.SH SYNOPSIS
+.B sfhelicon < in.rsf filt=filt.rsf > out.rsf n= adj=n div=n lag=
+.SH COMMENTS
+
+May 2014 program of the month:
+http://ahay.org/blog/2014/05/13/program-of-the-month-sfhelicon/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if y, do adjoint operation
+.TP
+.I bool   
+.B div
+.B =n
+.R  [y/n]	if y, do inverse operation (deconvolution)
+.TP
+.I file   
+.B filt
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B lag
+.B =
+.R  	file with filter lags
+.TP
+.I ints   
+.B n
+.B =
+.R  	 [dim]
+.SH USED IN
+.TP
+.I cup/rna2d/real
+.TP
+.I cup/rna2d/shot
+.TP
+.I cup/rna2d/simple
+.SH SOURCE
+.I user/gee/Mhelicon.c
+.SH VERSION
+4.2-git

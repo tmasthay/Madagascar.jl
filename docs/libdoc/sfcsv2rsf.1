@@ -1,0 +1,89 @@
+.TH sfcsv2rsf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcsv2rsf \- Convert a delimited-text ASCII file to RSF binary floating point or int.
+.SH SYNOPSIS
+.B sfcsv2rsf delimiter=, dtype=float verb=n debug=n trunc=n header=n o1=0. o2=0. d1=1. d2=1. unit1=unknown unit2=unknown label1=unknown label2=unknown
+.SH COMMENTS
+Zeros will be added if number of elements is not the same in each row.
+n1 and n2 are computed automatically. For consistency with sfdisfil and
+sfmatmult, output is C-style order (row-first), i.e. rows in input file
+become dimension-1 columns in output. Output encoding is native. If n2=1 in
+output, the second dimension will not be written to the header.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d1
+.B =1.
+.R  
+.TP
+.I float  
+.B d2
+.B =1.
+.R  
+.TP
+.I bool   
+.B debug
+.B =n
+.R  [y/n]	Extra verbosity for debugging
+.TP
+.I string 
+.B delimiter
+.B =,
+.R  	Separator between values in input file
+.TP
+.I string 
+.B dtype
+.B =float
+.R  	Input type
+.TP
+.I bool   
+.B header
+.B =n
+.R  [y/n]	If the first line is a header
+.TP
+.I string 
+.B label1
+.B =unknown
+.R  
+.TP
+.I string 
+.B label2
+.B =unknown
+.R  
+.TP
+.I float  
+.B o1
+.B =0.
+.R  
+.TP
+.I float  
+.B o2
+.B =0.
+.R  
+.TP
+.I bool   
+.B trunc
+.B =n
+.R  [y/n]	Truncate or add zeros if nr elems in rows differs
+.TP
+.I string 
+.B unit1
+.B =unknown
+.R  
+.TP
+.I string 
+.B unit2
+.B =unknown
+.R  
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	Whether to echo n1, n2, infill/truncation
+.SH SOURCE
+.I user/ivlad/Mcsv2rsf.py
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfcsv2rsf
+.SH VERSION
+4.2-git

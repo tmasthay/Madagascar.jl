@@ -1,0 +1,46 @@
+.TH sfsttimefreq 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsttimefreq \- Time-frequency analysis using streaming attributes. 
+.SH SYNOPSIS
+.B sfsttimefreq < time.rsf > timefreq.rsf mask=mask.rsf nw= dw= w0=0. lambda=1.0f window_size=50 phase=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dw
+.B =
+.R  	f	requency step
+.TP
+.I float  
+.B lambda
+.B =1.0f
+.R  	smoothing parameter
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nw
+.B =
+.R  	number of frequencies
+.TP
+.I bool   
+.B phase
+.B =n
+.R  [y/n]	output phase instead of amplitude
+.TP
+.I float  
+.B w0
+.B =0.
+.R  	first frequency
+.TP
+.I int    
+.B window_size
+.B =50
+.R  	window_size
+.SH SOURCE
+.I user/fomels/Msttimefreq.c
+.SH VERSION
+4.2-git

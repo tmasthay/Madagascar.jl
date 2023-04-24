@@ -1,0 +1,26 @@
+.TH sfhelmrhs 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhelmrhs \- Reconstruct right-hand side from wavefield. 
+.SH SYNOPSIS
+.B sfhelmrhs < in.rsf > out.rsf model=modl.rsf uts=0 order=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B model
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B order
+.B =
+.R  	discretization scheme (default optimal 9-point)
+.TP
+.I int    
+.B uts
+.B =0
+.R  	number of OMP threads
+.SH SOURCE
+.I user/sparse/Mhelmrhs.c
+.SH VERSION
+4.2-git

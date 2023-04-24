@@ -1,0 +1,51 @@
+.TH sfpwcascade 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpwcascade \- Plane-wave smoothing by box cascade. 
+.SH SYNOPSIS
+.B sfpwcascade < inp.rsf dip=dip.rsf > out.rsf verb=n eps=0.01 edge=n order=1 rect=0 pclip=50. cycle=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B cycle
+.B =1
+.R  	number of cycles
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B edge
+.B =n
+.R  [y/n]	preserve edges
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I float  
+.B pclip
+.B =50.
+.R  	percentage clip for the gradient
+.TP
+.I int    
+.B rect
+.B =0
+.R  	smoothing radius
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/pwd/Mpwcascade.c
+.SH VERSION
+4.2-git

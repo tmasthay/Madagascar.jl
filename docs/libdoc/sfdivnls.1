@@ -1,0 +1,41 @@
+.TH sfdivnls 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdivnls \- 2D divn by stationary LS 
+.SH SYNOPSIS
+.B sfdivnls < inp.rsf den=den.rsf > out.rsf rect1=0 rect2=0 rect3=0 tls=n angle=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B angle
+.B =n
+.R  [y/n]	angle or slope
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B rect1
+.B =0
+.R  
+.TP
+.I int    
+.B rect2
+.B =0
+.R  
+.TP
+.I int    
+.B rect3
+.B =0
+.R  	smoothing radius
+.TP
+.I bool   
+.B tls
+.B =n
+.R  [y/n]	total least squares
+.SH SOURCE
+.I user/chen/Mdivnls.c
+.SH VERSION
+4.2-git

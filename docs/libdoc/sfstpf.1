@@ -1,0 +1,26 @@
+.TH sfstpf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfstpf \- Streaming prediction filter 
+.SH SYNOPSIS
+.B sfstpf < dat.rsf match=mat.rsf > flt.rsf pred=pre.rsf lambda=1.0f
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B lambda
+.B =1.0f
+.R  	smoothing parameter
+.TP
+.I file   
+.B match
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B pred
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/fomels/Mstpf.c
+.SH VERSION
+4.2-git

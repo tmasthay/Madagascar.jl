@@ -1,0 +1,156 @@
+.TH sfttirtmsa 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfttirtmsa \- 2-D TTI FFD RTM: MPI + OMP
+.SH SYNOPSIS
+.B sfttirtmsa geo=geo.rsf velx=velx.rsf velz=velz.rsf yita=yita.rsf source=source.rsf seta=seta.rsf opt=y de=y dt= nt= isz= irz=isz jr=1 jm=20 tskip=1000 sht=0 nr= err=0.00001 nbt=102 nbb=102 nbl=128 nbr=127 ct=0.02 cb=0.02 cl=0.02 cr=0.02 ratio=2.0 left=nr*3/2*jr right=nr/2*jr
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B cb
+.B =0.02
+.R  	decaying parameter
+.TP
+.I float  
+.B cl
+.B =0.02
+.R  	decaying parameter
+.TP
+.I float  
+.B cr
+.B =0.02
+.R  	decaying parameter
+.TP
+.I float  
+.B ct
+.B =0.02
+.R  	decaying parameter
+.TP
+.I bool   
+.B de
+.B =y
+.R  [y/n]	in angle
+.TP
+.I float  
+.B dt
+.B =
+.R  	time step size
+.TP
+.I float  
+.B err
+.B =0.00001
+.R  	error control
+.TP
+.I file   
+.B geo
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B irz
+.B =isz
+.R  	receiver depth
+.TP
+.I int    
+.B isz
+.B =
+.R  	source depth
+.TP
+.I int    
+.B jm
+.B =20
+.R  	snap sampling
+.TP
+.I int    
+.B jr
+.B =1
+.R  	receiver sampling
+.TP
+.I int    
+.B left
+.B =nr*3/2*jr
+.R  	left
+.TP
+.I int    
+.B nbb
+.B =102
+.R  	boundary nodes
+.TP
+.I int    
+.B nbl
+.B =128
+.R  	boundary nodes
+.TP
+.I int    
+.B nbr
+.B =127
+.R  	boundary nodes
+.TP
+.I int    
+.B nbt
+.B =102
+.R  	boundary nodes
+.TP
+.I int    
+.B nr
+.B =
+.R  	streamer total length
+.TP
+.I int    
+.B nt
+.B =
+.R  	total time length
+.TP
+.I bool   
+.B opt
+.B =y
+.R  [y/n]	optimal padding
+.TP
+.I float  
+.B ratio
+.B =2.0
+.R  	v0/vmax
+.TP
+.I int    
+.B right
+.B =nr/2*jr
+.R  	right
+.TP
+.I file   
+.B seta
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B sht
+.B =0
+.R  	time shift
+.TP
+.I file   
+.B source
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B tskip
+.B =1000
+.R  	time skipped
+.TP
+.I file   
+.B velx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B velz
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B yita
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/songxl/Mttirtmsa.c
+.SH VERSION
+4.2-git

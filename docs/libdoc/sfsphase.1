@@ -1,0 +1,31 @@
+.TH sfsphase 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsphase \- Smooth estimate of instantaneous phase. 
+.SH SYNOPSIS
+.B sfsphase < in.rsf > out.rsf niter=100 order=10 ref=1. rect#=(1,1,...)
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I int    
+.B order
+.B =10
+.R  	Hilbert transformer order
+.TP
+.I int    
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I float  
+.B ref
+.B =1.
+.R  	Hilbert transformer reference (0.5 < ref <= 1)
+.SH SOURCE
+.I user/yliu/Msphase.c
+.SH VERSION
+4.2-git

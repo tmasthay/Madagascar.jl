@@ -1,0 +1,101 @@
+.TH sfpamti2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpamti2d \- Modeling of pure acoustic wave in 3-D transversely isotropic media with psuedo-analytic method 
+.SH SYNOPSIS
+.B sfpamti2d > out.rsf vel=vel.rsf sigma=fsigma.rsf delta=fdelta.rsf seta=fseta.rsf < source.rsf opt=1 dt= nt= isx= isz= nbt=44 nbb=44 nxl=44 nxr=44 czt=0.01 czb=0.01 cxl=0.01 cxr=0.01 snap=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B cxl
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B cxr
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B czb
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B czt
+.B =0.01
+.R  	decaying parameter
+.TP
+.I file   
+.B delta
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I int    
+.B isx
+.B =
+.R  
+.TP
+.I int    
+.B isz
+.B =
+.R  
+.TP
+.I int    
+.B nbb
+.B =44
+.R  
+.TP
+.I int    
+.B nbt
+.B =44
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I int    
+.B nxl
+.B =44
+.R  
+.TP
+.I int    
+.B nxr
+.B =44
+.R  	assume ABC pars are the same
+.TP
+.I int    
+.B opt
+.B =1
+.R  	if y, determine optimal size for efficiency
+.TP
+.I file   
+.B seta
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B sigma
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B snap
+.B =1
+.R  
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/junyan/Mpamti2d.c
+.SH VERSION
+4.2-git

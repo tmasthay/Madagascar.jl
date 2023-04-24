@@ -1,0 +1,51 @@
+.TH sftxpscan 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftxpscan \- Velocity analysis using T-X-P domain. 
+.SH SYNOPSIS
+.B sftxpscan < cmp.rsf > scan.rsf v0= dv= nv= extend=4 mute=12 str=0.5 smin=1.0 smax=2.0
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dv
+.B =
+.R  	step in velocity
+.TP
+.I int    
+.B extend
+.B =4
+.R  	trace extension
+.TP
+.I int    
+.B mute
+.B =12
+.R  	mute zone
+.TP
+.I int    
+.B nv
+.B =
+.R  	number of scanned velocities
+.TP
+.I float  
+.B smax
+.B =2.0
+.R  	maximum heterogeneity
+.TP
+.I float  
+.B smin
+.B =1.0
+.R  	minimum heterogeneity
+.TP
+.I float  
+.B str
+.B =0.5
+.R  	maximum stretch allowed
+.TP
+.I float  
+.B v0
+.B =
+.R  	first scanned velocity
+.SH SOURCE
+.I system/seismic/Mtxpscan.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,41 @@
+.TH sfctscigadj 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfctscigadj \- Correcting time-shift gathers and its adjoint 
+.SH SYNOPSIS
+.B sfctscigadj < Ftg.rsf Fdertau=Fdertau.rsf > Fcg.rsf Fder0=Fder0.rsf velocity=Fvel.rsf adj=y dt=0.001 pad=100
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Fder0
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B Fdertau
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]
+.TP
+.I float  
+.B dt
+.B =0.001
+.R  
+.TP
+.I int    
+.B pad
+.B =100
+.R  	files
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/zhiguang/Mctscigadj.c
+.SH VERSION
+4.2-git

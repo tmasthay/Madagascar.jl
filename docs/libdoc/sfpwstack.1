@@ -1,0 +1,36 @@
+.TH sfpwstack 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpwstack \- Recursive stacking by plane-wave construction. 
+.SH SYNOPSIS
+.B sfpwstack < inp.rsf dip=dip.rsf > out.rsf verb=n eps=0.01 order=1 mode=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I int    
+.B mode
+.B =1
+.R  	1: predict backward, 2: predict forward then backward
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/pwd/Mpwstack.c
+.SH VERSION
+4.2-git

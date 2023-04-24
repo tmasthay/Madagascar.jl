@@ -1,0 +1,66 @@
+.TH sffrt 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffrt \- Frequency domain Radon transform. 
+.SH SYNOPSIS
+.B sffrt < in.rsf > out.rsf ref=ref.rsf curv=0 inv=n mtd=0 mu=0.05 eta=0.05 niter=5 np=0 op=0 dp=0 x0=maxoff
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B curv
+.B =0
+.R  	0: linear; 1:parabolic
+.TP
+.I float  
+.B dp
+.B =0
+.R  	stepout interval
+.TP
+.I float  
+.B eta
+.B =0.05
+.R  	eta: for fhrt, fcrt
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, perform inverse operation
+.TP
+.I int    
+.B mtd
+.B =0
+.R  	0: fart; 1:firt; 2:fhrt; 3:fcrt
+.TP
+.I float  
+.B mu
+.B =0.05
+.R  	mu: for firt, fhrt, fcrt
+.TP
+.I int    
+.B niter
+.B =5
+.R  	sparse iterations: for fhrt, fcrt
+.TP
+.I int    
+.B np
+.B =0
+.R  	stepout number
+.TP
+.I float  
+.B op
+.B =0
+.R  	first stepout (moveout at "ref")
+.TP
+.I file   
+.B ref
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B x0
+.B =maxoff
+.R  	reference offset
+.SH SOURCE
+.I user/chen/Mfrt.c
+.SH VERSION
+4.2-git

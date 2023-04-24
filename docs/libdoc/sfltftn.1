@@ -1,0 +1,76 @@
+.TH sfltftn 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfltftn \- Non-stationary local time-frequency transform (NLTFT). 
+.SH SYNOPSIS
+.B sfltftn < in.rsf > out.rsf basis=basis.rsf mask=mask.rsf weight=weight.rsf inv=n verb=n nw= dw= w0=0. rect=10 rectf=5 niter=100 alpha=0. shift#=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B alpha
+.B =0.
+.R  	frequency adaptivity
+.TP
+.I string 
+.B basis
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B dw
+.B =
+.R  	frequency step
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, do inverse transform
+.TP
+.I string 
+.B mask
+.B =
+.R  	data weight (auxiliary input file name)
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of inversion iterations
+.TP
+.I int    
+.B nw
+.B =
+.R  	number of frequencies
+.TP
+.I int    
+.B rect
+.B =10
+.R  	smoothing radius (in time, samples)
+.TP
+.I int    
+.B rectf
+.B =5
+.R  	smoothing radius (in frequency, samples)
+.TP
+.I string 
+.B shift#
+.B =
+.R  	shifting of the smoothing stencil in #-th dimension /auxiliary input file/
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B w0
+.B =0.
+.R  	first frequency
+.TP
+.I string 
+.B weight
+.B =
+.R  	model weight (auxiliary input file name)
+.SH SOURCE
+.I user/chenyk/Mltftn.c
+.SH VERSION
+4.2-git

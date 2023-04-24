@@ -1,0 +1,111 @@
+.TH sfawefd2d_fo 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfawefd2d_fo \- Finite-difference time-domain (FDTD) wave propagation modeling in lossless acoustic 2D media.
+.SH SYNOPSIS
+.B sfawefd2d_fo < Fwav.rsf vel=Fvel.rsf den=Fden.rsf sou=Fsou.rsf rec=Frec.rsf > Fdat.rsf datvz=Fdatvz.rsf wfl=Fwfl.rsf verb=n snap=n free=n expl=n dabc=n recvz=n srctype=1 jdata=1 jsnap=nt nqz=sf_n(az) nqx=sf_n(ax) oqz=sf_o(az) oqx=sf_o(ax)
+.SH COMMENTS
+
+This program fdelmodc can be used to model waves conforming the 2D wave equation in different media.
+This program computes a solution of the 2D acoustic wave equation
+defined through the first-order linearized systems of Newton's and Hooke's law.
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B dabc
+.B =n
+.R  [y/n]	absorbing BC
+.TP
+.I file   
+.B datvz
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B expl
+.B =n
+.R  [y/n]	exploding reflector
+.TP
+.I bool   
+.B free
+.B =n
+.R  [y/n]	free surface flag
+.TP
+.I int    
+.B jdata
+.B =1
+.R  
+.TP
+.I int    
+.B jsnap
+.B =nt
+.R  
+.TP
+.I int    
+.B nqx
+.B =sf_n(ax)
+.R  
+.TP
+.I int    
+.B nqz
+.B =sf_n(az)
+.R  
+.TP
+.I float  
+.B oqx
+.B =sf_o(ax)
+.R  
+.TP
+.I float  
+.B oqz
+.B =sf_o(az)
+.R  
+.TP
+.I file   
+.B rec
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B recvz
+.B =n
+.R  [y/n]	vertical particle velocity data
+.TP
+.I bool   
+.B snap
+.B =n
+.R  [y/n]	wavefield snapshots flag
+.TP
+.I file   
+.B sou
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B srctype
+.B =1
+.R  	------------------------------------------------------------
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I file   
+.B wfl
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/fbroggin/Mawefd2d_fo.c
+.SH VERSION
+4.2-git

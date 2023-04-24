@@ -1,0 +1,32 @@
+.TH sfsizes 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsizes \- Display the size of RSF files.
+.SH SYNOPSIS
+.B sfsizes files=y human=n su=n file1.rsf file2.rsf ...
+.SH COMMENTS
+Prints the element size, number of elements, and number of bytes
+for a list of RSF files.  Non-RSF files are ignored.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B files
+.B =y
+.R  [y/n]	If y, print size of each file.  If n, print only total.
+.TP
+.I bool   
+.B human
+.B =n
+.R  [y/n]	If y, print human-readable file size.  If n, print byte count.
+.TP
+.I bool   
+.B su
+.B =n
+.R  [y/n]	Same for Seismic Unix
+.SH SOURCE
+.I user/jennings/Msizes.c
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfsizes
+.SH VERSION
+4.2-git

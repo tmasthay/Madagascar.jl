@@ -1,0 +1,41 @@
+.TH sftvmf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftvmf \- 1D Time-varying median filtering. 
+.SH SYNOPSIS
+.B sftvmf < in.rsf > out.rsf boundary=n nfw= alpha=2 beta=0 gamma=2 delta=4
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B alpha
+.B =2
+.R  	time-varying window parameter "alpha" (default=2)
+.TP
+.I int    
+.B beta
+.B =0
+.R  	time-varying window parameter "beta" (default=0)
+.TP
+.I bool   
+.B boundary
+.B =n
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I int    
+.B delta
+.B =4
+.R  	time-varying window parameter "delta" (default=4)
+.TP
+.I int    
+.B gamma
+.B =2
+.R  	time-varying window parameter "gamma" (default=2)
+.TP
+.I int    
+.B nfw
+.B =
+.R  	reference filter-window length (>delta, positive and odd integer)
+.SH SOURCE
+.I user/yliu/Mtvmf.c
+.SH VERSION
+4.2-git

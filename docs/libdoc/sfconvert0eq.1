@@ -1,0 +1,25 @@
+.TH sfconvert0eq 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfconvert0eq \- Convert equivalent Q value from reference layer to t0 location. 
+.SH SYNOPSIS
+.B sfconvert0eq < inp.rsf > out.rsf repos=repos.rsf verb=n
+.SH COMMENTS
+
+Ignore this step if selecting t0 as the reference layer in module "sflcfs".
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B repos
+.B =
+.R  	Position of reference point (auxiliary input file name)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/yliu/Mconvert0eq.c
+.SH VERSION
+4.2-git

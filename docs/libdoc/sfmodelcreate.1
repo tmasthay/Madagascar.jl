@@ -1,0 +1,66 @@
+.TH sfmodelcreate 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmodelcreate \- Create a dipping layer model for HTI testing purposes.  Has fixed velocity structure, but can change dip of layer and degree of anisotropy.
+.SH SYNOPSIS
+.B sfmodelcreate < Fu.rsf > Fc.rsf ompchunk=1 verb=y aniso=n allaniso=n ein=.1 din=.1 gin=.2 rho=2. d=n3/6. a=1 b=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B a
+.B =1
+.R  	Parameter in dipping plane: ax+by+cz+d=0
+.TP
+.I bool   
+.B allaniso
+.B =n
+.R  [y/n]	flag (y/N) whether entire model is anisotropic
+.TP
+.I bool   
+.B aniso
+.B =n
+.R  [y/n]	flag (y/N) for anisotropic layer #2
+.TP
+.I float  
+.B b
+.B =1
+.R  	Parameter in dipping plane: ax+by+cz+d=0
+.TP
+.I float  
+.B d
+.B =n3/6.
+.R  	Parameter in dipping plane: ax+by+cz+d=0
+.TP
+.I float  
+.B din
+.B =.1
+.R  	delta anisotropy parameter
+.TP
+.I float  
+.B ein
+.B =.1
+.R  	epsilon anisotropy parameter
+.TP
+.I float  
+.B gin
+.B =.2
+.R  	gamma anisotropy parameter
+.TP
+.I int    
+.B ompchunk
+.B =1
+.R  	set the omp chunk size
+.TP
+.I float  
+.B rho
+.B =2.
+.R  	Background Density model
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbose or note (Y/n)
+.SH SOURCE
+.I user/jeff/Mmodelcreate.c
+.SH VERSION
+4.2-git

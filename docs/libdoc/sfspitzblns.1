@@ -1,0 +1,67 @@
+.TH sfspitzblns 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfspitzblns \- Missing data interpolation in 2-D using F-X Prediction Error Filters
+.SH SYNOPSIS
+.B sfspitzblns < in.rsf > out.rsf w1=n1 w2=n2 k1=1 k2=1 order=3 ntraces=1 f1=0.0 f2=1.0 verb=n norm=y
+.SH COMMENTS
+based on Seismic trace interpolation in the F-X domain
+S.Spitz Geophysics 56, 785(1991). 
+
+Uses 2D Patching. 
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B f1
+.B =0.0
+.R  	lower  frequency in band limited signal >= 0.0
+.TP
+.I float  
+.B f2
+.B =1.0
+.R  	higher frequency in band limited signal <= 1.0  (normalized nyquist)
+.TP
+.I int    
+.B k1
+.B =1
+.R  	number of patches along the first dimension
+.TP
+.I int    
+.B k2
+.B =1
+.R  	number of patches along the second dimension
+.TP
+.I bool   
+.B norm
+.B =y
+.R  [y/n]	output normalization flag
+.TP
+.I int    
+.B ntraces
+.B =1
+.R  	number of traces to be interpolated
+.TP
+.I int    
+.B order
+.B =3
+.R  	linear PEF order
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I int    
+.B w1
+.B =n1
+.R  	lenght of patch along the first dimension
+.TP
+.I int    
+.B w2
+.B =n2
+.R  	lenght of patch along the second dimension
+.SH SOURCE
+.I user/lcasasan/Mspitzblns.c
+.SH VERSION
+4.2-git

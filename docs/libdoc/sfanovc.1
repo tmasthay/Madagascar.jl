@@ -1,0 +1,85 @@
+.TH sfanovc 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfanovc \- Oriented anisotropy continuation: shifted hyperbola travel-time approximation. 
+.SH SYNOPSIS
+.B sfanovc < in.rsf > out.rsf eps=0.1 nv=1 lagrange=n plus=y debug=y isotr=n testwarp=n full=n v0= ns=1 ds= s0= smax= epsr=0.001 s0=
+.SH COMMENTS
+
+Axis order: t, p, x
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B debug
+.B =y
+.R  [y/n]	Implement debugger: add it later
+.TP
+.I float  
+.B ds
+.B =
+.R  	s step size
+.TP
+.I float  
+.B eps
+.B =0.1
+.R  	stretch regularization
+.TP
+.I float  
+.B epsr
+.B =0.001
+.R  	damper for root
+.TP
+.I bool   
+.B full
+.B =n
+.R  [y/n]	full accuracy flag - considers all (s-1) terms in any power
+.TP
+.I bool   
+.B isotr
+.B =n
+.R  [y/n]	Implement debugger: add it later
+.TP
+.I bool   
+.B lagrange
+.B =n
+.R  [y/n]	Use Lagrangian method
+.TP
+.I int    
+.B ns
+.B =1
+.R  	s steps
+.TP
+.I int    
+.B nv
+.B =1
+.R  	number of velocity steps
+.TP
+.I bool   
+.B plus
+.B =y
+.R  [y/n]	Plus or minus in coefficients: I have two versions
+.TP
+.I float  
+.B s0
+.B =
+.R  	start
+.TP
+.I float  
+.B smax
+.B =
+.R  
+.TP
+.I bool   
+.B testwarp
+.B =n
+.R  [y/n]	Implement debugger: add it later
+.TP
+.I float  
+.B v0
+.B =
+.R  
+.SH SOURCE
+.I system/seismic/Manovc.c
+.SH VERSION
+4.2-git

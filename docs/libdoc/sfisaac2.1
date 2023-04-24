@@ -1,0 +1,121 @@
+.TH sfisaac2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfisaac2 \- 2D Bending ray tracing in multi-layered media
+.SH SYNOPSIS
+.B sfisaac2 < refl.rsf > xrefl.rsf aniso=vti.rsf layer= velocity= xgradient= zgradient= xref= zref= velocity= xinitial= number= xs= xr= vstatus= min=(xx[0]<xx[nr2+1])? xx[0]:xx[nr2+1] max=(xx[0]>xx[nr2+1])? xx[0]:xx[nr2+1] niter=100 debug=n tol=0.000001/v_inp[0] ns=2 ns2=nr2+2 ds=1 s0=0 order=3
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B aniso
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B debug
+.B =n
+.R  [y/n]	Debug flag
+.TP
+.I float  
+.B ds
+.B =1
+.R  	Step increment
+.TP
+.I floats 
+.B layer
+.B =
+.R  	Layer sequence [nr2+1]
+.TP
+.I float  
+.B max
+.B =(xx[0]>xx[nr2+1])? xx[0]:xx[nr2+1]
+.R  	The maximum boundary if not entered, set to max(xs,xr)
+.TP
+.I float  
+.B min
+.B =(xx[0]<xx[nr2+1])? xx[0]:xx[nr2+1]
+.R  	The minimum boundary if not entered, set to min(xs,xr)
+.TP
+.I int    
+.B niter
+.B =100
+.R  	The number of iterations
+.TP
+.I int    
+.B ns
+.B =2
+.R  	Dimension of output reflection points (x,z)
+.TP
+.I int    
+.B ns2
+.B =nr2+2
+.R  	Dimension of output reflection points (the number of points)
+.TP
+.I int    
+.B number
+.B =
+.R  	Number of intersecting points [nr2]
+.TP
+.I int    
+.B order
+.B =3
+.R  	Interpolation order
+.TP
+.I float  
+.B s0
+.B =0
+.R  	Staring position
+.TP
+.I double 
+.B tol
+.B =0.000001/v_inp[0]
+.R  	Assign a default value for tolerance
+.TP
+.I floats 
+.B velocity
+.B =
+.R  	Assign velocity km/s [N-1]
+.TP
+.I int    
+.B vstatus
+.B =
+.R  	Velocity status (0 for constant v, 1 for gradient v, and 2 for VTI)
+.TP
+.I floats 
+.B xgradient
+.B =
+.R  	Assign x-gradient [N-1]
+.TP
+.I floats 
+.B xinitial
+.B =
+.R  	 [nr2]
+.TP
+.I float  
+.B xr
+.B =
+.R  	Receiver
+.TP
+.I floats 
+.B xref
+.B =
+.R  	Assign x-reference point [N-1]
+.TP
+.I float  
+.B xs
+.B =
+.R  	Source
+.TP
+.I floats 
+.B zgradient
+.B =
+.R  	Assign z-gradient  [N-1]
+.TP
+.I floats 
+.B zref
+.B =
+.R  	Assign z-reference point [N-1]
+.SH SOURCE
+.I user/zone/Misaac2.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,41 @@
+.TH sflocov 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflocov \- Local covariance filter 
+.SH SYNOPSIS
+.B sflocov < inp.rsf > out.rsf na=1 nb=1 a0= b0= a1=a0 b1=b0
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B a0
+.B =
+.R  
+.TP
+.I float  
+.B a1
+.B =a0
+.R  
+.TP
+.I float  
+.B b0
+.B =
+.R  
+.TP
+.I float  
+.B b1
+.B =b0
+.R  
+.TP
+.I int    
+.B na
+.B =1
+.R  
+.TP
+.I int    
+.B nb
+.B =1
+.R  
+.SH SOURCE
+.I user/fomels/Mlocov.c
+.SH VERSION
+4.2-git

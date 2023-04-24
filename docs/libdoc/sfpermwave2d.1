@@ -1,0 +1,46 @@
+.TH sfpermwave2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpermwave2d \- Wavefield Extrapolation for 2D PERM 
+.SH SYNOPSIS
+.B sfpermwave2d < data.rsf > image.rsf wavelet=wavelet_file.rsf left=left.rsf right=right.rsf mig=n nz= dz= imageit=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dz
+.B =
+.R  
+.TP
+.I int    
+.B imageit
+.B =0
+.R  	time for extracting image
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B mig
+.B =n
+.R  [y/n]	if n, modeling; if y, migration
+.TP
+.I int    
+.B nz
+.B =
+.R  	depth axis
+.TP
+.I file   
+.B right
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B wavelet
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/hwang/Mpermwave2d.c
+.SH VERSION
+4.2-git

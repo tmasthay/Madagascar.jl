@@ -1,0 +1,94 @@
+.TH sfnmo 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfnmo \- Normal moveout.
+.SH SYNOPSIS
+.B sfnmo < cmp.rsf velocity=velocity.rsf > nmod.rsf s=het.rsf offset=offset.rsf mask=msk.rsf half=y str=0.5 mute=12 CDPtype= slowness=n squared=n h0=0. extend=4 a=
+.SH COMMENTS
+
+Compatible with sfvscan.
+
+April 2013 program of the month:
+http://ahay.org/blog/2013/04/08/program-of-the-month-sfnmo/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B CDPtype
+.B =
+.R  
+.TP
+.I string 
+.B a
+.B =
+.R  
+.TP
+.I int    
+.B extend
+.B =4
+.R  	trace extension
+.TP
+.I float  
+.B h0
+.B =0.
+.R  	reference offset
+.TP
+.I bool   
+.B half
+.B =y
+.R  [y/n]	if y, the second axis is half-offset instead of full offset
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B mute
+.B =12
+.R  	mute zone
+.TP
+.I string 
+.B offset
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B s
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B slowness
+.B =n
+.R  [y/n]	if y, use slowness instead of velocity
+.TP
+.I bool   
+.B squared
+.B =n
+.R  [y/n]	if y, the slowness or velocity is squared
+.TP
+.I float  
+.B str
+.B =0.5
+.R  	maximum stretch allowed
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I bei/dpmv/krchdmo
+.TP
+.I bei/vela/strat
+.TP
+.I bei/vela/vscan
+.TP
+.I bei/wvs/vscan
+.TP
+.I data/alaska/line31-81-m8r
+.SH SOURCE
+.I system/seismic/Mnmo.c
+.SH VERSION
+4.2-git

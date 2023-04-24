@@ -1,0 +1,34 @@
+.TH sfdix 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdix \- Convert RMS to interval velocity using LS and shaping regularization. 
+.SH SYNOPSIS
+.B sfdix < vrms.rsf > vint.rsf weight=weight.rsf vrmsout=vout.rsf niter=100 rect#=(1,1,...)
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B niter
+.B =100
+.R  	maximum number of iterations
+.TP
+.I string 
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I string 
+.B vrmsout
+.B =
+.R  	optionally, output predicted vrms (auxiliary output file name)
+.TP
+.I string 
+.B weight
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I bei/vela/vscan
+.SH SOURCE
+.I user/fomels/Mdix.c
+.SH VERSION
+4.2-git

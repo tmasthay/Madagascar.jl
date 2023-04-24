@@ -1,0 +1,37 @@
+name: CI-Madagascar
+
+on:
+  # Trigger the workflow on push to master or pull request
+  # to be merged in master
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Julia ${{ matrix.version }} - ${{ matrix.os }} - ${{ matrix.arch }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        version: ['1.6', '1.7', '1.8']
+        os: [ubuntu-latest]
+        arch: [x64]
+
+    steps:
+      - name: Checkout Madagascar
+        uses: actions/checkout@v3
+
+      - name: Setup julia
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: ${{ matrix.version }}
+          arch: ${{ matrix.arch }}
+
+      - name: Run tests
+        uses: julia-actions/julia-runtest@latest

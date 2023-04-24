@@ -1,0 +1,35 @@
+.TH sfheatimplitest 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfheatimplitest \- Solving 1-D heat equation using implicit finite difference 
+.SH SYNOPSIS
+.B sfheatimplitest > out.rsf nt= dt= nx= dx=
+.SH COMMENTS
+\partial(u)/\partial(t)=a^2\partial^2(u)/\partial(x^2), 0<x<l & t>0,
+u(0,t)=u(l,t)=0, t>0, 
+u(x,0)=f(x), 0<=x<=l.  
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  	temporal sampling
+.TP
+.I float  
+.B dx
+.B =
+.R  	spatial sampling
+.TP
+.I int    
+.B nt
+.B =
+.R  	number of temporal points
+.TP
+.I int    
+.B nx
+.B =
+.R  	number of spatial points
+.SH SOURCE
+.I user/chenyk/Mheatimplitest.c
+.SH VERSION
+4.2-git

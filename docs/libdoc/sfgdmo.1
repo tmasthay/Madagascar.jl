@@ -1,0 +1,35 @@
+.TH sfgdmo 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfgdmo \- Gardner's DMO for regularly sampled 2-D data (slow method) 
+.SH SYNOPSIS
+.B sfgdmo < in.rsf > out.rsf eps=0.01 nb=171 b0=-85 db=1
+.SH COMMENTS
+
+The input/ouput is (time,offset,midpoint).
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B b0
+.B =-85
+.R  	first angle
+.TP
+.I float  
+.B db
+.B =1
+.R  	angle increment
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.TP
+.I int    
+.B nb
+.B =171
+.R  	number of angles
+.SH SOURCE
+.I system/seismic/Mgdmo.c
+.SH VERSION
+4.2-git

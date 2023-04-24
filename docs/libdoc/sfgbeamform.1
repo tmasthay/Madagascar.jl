@@ -1,0 +1,26 @@
+.TH sfgbeamform 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfgbeamform \- 2-D lateral smoothing. 
+.SH SYNOPSIS
+.B sfgbeamform < in.rsf > out.rsf rect=3 adj=y repeat=2
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	adjoint flag
+.TP
+.I int    
+.B rect
+.B =3
+.R  	smoothing radius
+.TP
+.I int    
+.B repeat
+.B =2
+.R  	triangle convolutions
+.SH SOURCE
+.I user/fomels/Mgbeamform.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,49 @@
+.TH sfhist2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhist2 \- Compute a 2-D histogram of integer- or float-valued input data
+.SH SYNOPSIS
+.B sfhist2 < in.rsf inp2=inp2.rsf > out.rsf n1= o1= d1= n2= o2= d2=
+.SH COMMENTS
+The output grid is not centered on the bins; it marks their "left edge".
+I.e., the first sample holds the number of values between o1 and o1+d1
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d1
+.B =
+.R  	histogram sampling for dimension 1
+.TP
+.I float  
+.B d2
+.B =
+.R  	histogram sampling for dimension 2
+.TP
+.I file   
+.B inp2
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B n1
+.B =
+.R  	number of histogram samples in dimension 1
+.TP
+.I int    
+.B n2
+.B =
+.R  	number of histogram samples in dimension 2
+.TP
+.I float  
+.B o1
+.B =
+.R  	histogram origin for dimension 1
+.TP
+.I float  
+.B o2
+.B =
+.R  	histogram origin for dimension 2
+.SH SOURCE
+.I user/ivlad/Mhist2.c
+.SH VERSION
+4.2-git

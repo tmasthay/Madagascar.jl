@@ -1,0 +1,81 @@
+.TH sfpathmin-mov 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpathmin-mov \- Program for iteratively determining the optimal path through a cost function input array.  Input file's second dimension is a parameter that can vary along the path, and the first dimension is "time", or a coordinate that the output path, R(t), will be a function of. Dimensions greater than 2 in the input array represent additional panels to calculate the path through. To use this program for picking a path maximizing an objective function, first transform the objective function lpha by exp(-1*lpha) and feed the resulting output to this program. Path integral minimization is in the manner of "Path Optimization with Application to Tunneling", Dorothea M. Einarsdottir, Andri Arnaldsson, Finnbogi Oskarsson, and Hannes Jonsson, 2010 
+.SH SYNOPSIS
+.B sfpathmin-mov < _in.rsf > _out.rsf k=1 kink=1 lr=.3 g=.1 knots=11 niter=10 damp=.5 shove=1000 movie= aniso1=D[1]/D[0] dorder=6 srad=2 nsmooth=1 eps=0.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B aniso1
+.B =D[1]/D[0]
+.R  	anisotropy of 2nd axis relative to first
+.TP
+.I float  
+.B damp
+.B =.5
+.R  	if the path goes out of bounds, we reflect and dampen the rate of change by this much
+.TP
+.I int    
+.B dorder
+.B =6
+.R  	derivative order (stencil size) for gradient (dS) calculation
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	if the change and gradient are simultaneously lower than this, terminate  early
+.TP
+.I float  
+.B g
+.B =.1
+.R  	scale the momentum for updating the path at each iteration by how much before applying?
+.TP
+.I float  
+.B k
+.B =1
+.R  	stiffness relative to attraction
+.TP
+.I float  
+.B kink
+.B =1
+.R  	resistance to kinks
+.TP
+.I int    
+.B knots
+.B =11
+.R  	number of knots
+.TP
+.I float  
+.B lr
+.B =.3
+.R  	learning rate
+.TP
+.I int    
+.B movie
+.B =
+.R  
+.TP
+.I int    
+.B niter
+.B =10
+.R  	number of iterations
+.TP
+.I int    
+.B nsmooth
+.B =1
+.R  	number of input panel gradient (dS) smoothings
+.TP
+.I float  
+.B shove
+.B =1000
+.R  	size of initial random lateral shove
+.TP
+.I int    
+.B srad
+.B =2
+.R  	smoothing radius for input panel gradient (dS)
+.SH SOURCE
+.I user/luke/Mpathmin-mov.c
+.SH VERSION
+4.2-git

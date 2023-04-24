@@ -1,0 +1,39 @@
+.TH sfhandvel2rsf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhandvel2rsf \- Converts 2D/3D velocity files from handvel.txt to handvel.rsf
+.SH SYNOPSIS
+.B sfhandvel2rsf n1= o1= d1=
+.SH COMMENTS
+
+- sfhandvel2rsf < handvels.txt o1=0 d1=.001 n1=3000 > handvel.rsf
+
+- The program converts time samples from ms to s
+
+- The rsf output file will have traces equal to the number
+of CMP locations in handvel.txt. You need to interploate
+between traces for a denser grid e.g. using sfremap1
+
+- This program uses sfspline for interpolation. 
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d1
+.B =
+.R  	sampling in the first axis
+.TP
+.I int    
+.B n1
+.B =
+.R  	size of the first axis
+.TP
+.I float  
+.B o1
+.B =
+.R  	origin of the first axis
+.SH SOURCE
+.I user/salah/Mhandvel2rsf.py
+.SH VERSION
+4.2-git

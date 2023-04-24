@@ -1,0 +1,51 @@
+.TH sfrandrefl 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrandrefl \- Simple synthetics with random reflectivity. 
+.SH SYNOPSIS
+.B sfrandrefl > mod.rsf vpvs=vpvs.rsf fo= nr= n1=3501 d1=0.001 o1=0.0 tscale=1. func=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d1
+.B =0.001
+.R  	time sampling
+.TP
+.I floats 
+.B fo
+.B =
+.R  	 [3]
+.TP
+.I string 
+.B func
+.B =
+.R  	type of vpvs function
+.TP
+.I int    
+.B n1
+.B =3501
+.R  	time length
+.TP
+.I int    
+.B nr
+.B =
+.R  	number of reflectors
+.TP
+.I float  
+.B o1
+.B =0.0
+.R  	time origin
+.TP
+.I float  
+.B tscale
+.B =1.
+.R  	maximum time
+.TP
+.I file   
+.B vpvs
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I system/seismic/Mrandrefl.c
+.SH VERSION
+4.2-git

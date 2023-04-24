@@ -1,0 +1,66 @@
+.TH sfitrack2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfitrack2d \- Datuming by 2D Green functions in constant media 
+.SH SYNOPSIS
+.B sfitrack2d cnn=Fnn.rsf cff=Fff.rsf < Fwin.rsf > Fwou.rsf verb=n velo=1.0 fast=y nin=y nou=y ox=0.0 oz=0.0 angMAX=90.0 gauANG=0.3*angMAX
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B angMAX
+.B =90.0
+.R  
+.TP
+.I file   
+.B cff
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B cnn
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B fast
+.B =y
+.R  [y/n]	fast execution
+.TP
+.I float  
+.B gauANG
+.B =0.3*angMAX
+.R  
+.TP
+.I bool   
+.B nin
+.B =y
+.R  [y/n]
+.TP
+.I bool   
+.B nou
+.B =y
+.R  [y/n]	------------------------------------------------------------
+.TP
+.I float  
+.B ox
+.B =0.0
+.R  
+.TP
+.I float  
+.B oz
+.B =0.0
+.R  
+.TP
+.I float  
+.B velo
+.B =1.0
+.R  	medium velocity
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/psava/Mitrack2d.c
+.SH VERSION
+4.2-git

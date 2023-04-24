@@ -1,0 +1,29 @@
+.TH sfpp2psang 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpp2psang \- Transform PP angle gathers to PS angle gathers. 
+.SH SYNOPSIS
+.B sfpp2psang < in.rsf > out.rsf vpvs=vpvs.rsf nw=4 inv=n
+.SH COMMENTS
+* (designed for absolute offsets)
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, do inverse transform
+.TP
+.I int    
+.B nw
+.B =4
+.R  	accuracy level
+.TP
+.I file   
+.B vpvs
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I system/seismic/Mpp2psang.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,31 @@
+.TH sfdipflt 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdipflt \- 2D dip filter 
+.SH SYNOPSIS
+.B sfdipflt < in.rsf > out.rsf dip=dip.rsf nf=1 interp= filt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B filt
+.B =
+.R  	filter type: [median],mean
+.TP
+.I string 
+.B interp
+.B =
+.R  	interpolation method: [nearest],linear
+.TP
+.I int    
+.B nf
+.B =1
+.R  	filter length
+.SH SOURCE
+.I user/chen/Mdipflt.c
+.SH VERSION
+4.2-git

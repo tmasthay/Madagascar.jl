@@ -1,0 +1,31 @@
+.TH sfstcontrib 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfstcontrib \- Contribution weighting using streaming attributes. 
+.SH SYNOPSIS
+.B sfstcontrib < gath.rsf stack=stck.rsf weight=wght.rsf > outp.rsf eps=1.0f w0=0.0f
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =1.0f
+.R  	regularization parameter
+.TP
+.I file   
+.B stack
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B w0
+.B =0.0f
+.R  	initial weight
+.TP
+.I file   
+.B weight
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/fomels/Mstcontrib.c
+.SH VERSION
+4.2-git

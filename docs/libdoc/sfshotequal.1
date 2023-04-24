@@ -1,0 +1,31 @@
+.TH sfshotequal 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfshotequal \- sfshotequal projects amplitudes of each shot to Z-score distribution
+.SH SYNOPSIS
+.B sfshotequal < in.rsf > out.rsf mask=msk.rsf scaler=scl.rsf verb=n amp=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B amp
+.B =
+.R  	Exclude amplitudes greater than amp && less than -amp for statistics computations
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B scaler
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/salah/Mshotequal.c
+.SH VERSION
+4.2-git

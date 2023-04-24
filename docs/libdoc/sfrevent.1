@@ -1,0 +1,71 @@
+.TH sfrevent 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrevent \- Compute reflection event 
+.SH SYNOPSIS
+.B sfrevent < reflFile.rsf deriv=derivFile.rsf > dataFile.rsf tn=1001 hn=51 sn=1 to=0.f ho=0.f so=0.f td=0.004f hd=0.05f sd=0.025f eps=0.5 * hStep vel=2.f
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B deriv
+.B =
+.R  	first derivative estimated along the reflection boundary (auxiliary input file name)
+.TP
+.I float  
+.B eps
+.B =0.5 * hStep
+.R  	receiver position accuracy (in km)
+.TP
+.I float  
+.B hd
+.B =0.05f
+.R  	step in offset (in km)
+.TP
+.I int    
+.B hn
+.B =51
+.R  	number of offsets
+.TP
+.I float  
+.B ho
+.B =0.f
+.R  	start offset (in s)
+.TP
+.I float  
+.B sd
+.B =0.025f
+.R  	step in source position (in km)
+.TP
+.I int    
+.B sn
+.B =1
+.R  	number of sources
+.TP
+.I float  
+.B so
+.B =0.f
+.R  	start source position (in s)
+.TP
+.I float  
+.B td
+.B =0.004f
+.R  	step in time (in s)
+.TP
+.I int    
+.B tn
+.B =1001
+.R  	number of time samples
+.TP
+.I float  
+.B to
+.B =0.f
+.R  	start time (in s)
+.TP
+.I float  
+.B vel
+.B =2.f
+.R  	constant velocity value (in km/s)
+.SH SOURCE
+.I user/aklokov/Mrevent.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,41 @@
+.TH sfabalance 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfabalance \- Amplitude balancing. 
+.SH SYNOPSIS
+.B sfabalance < in.rsf other=ref.rsf > out.rsf weight=weight.rsf reverse=y niter=100 order=100 ref=1.
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I int    
+.B order
+.B =100
+.R  	Hilbert transformer order
+.TP
+.I file   
+.B other
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B ref
+.B =1.
+.R  	Hilbert transformer reference (0.5 < ref <= 1)
+.TP
+.I bool   
+.B reverse
+.B =y
+.R  [y/n]	reverse weight
+.TP
+.I string 
+.B weight
+.B =
+.R  	optional weight output (auxiliary output file name)
+.SH SOURCE
+.I user/fomels/Mabalance.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,21 @@
+.TH sfzcwt 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfzcwt \- Improve signal resolution using zero-crossing of wavelet transform. 
+.SH SYNOPSIS
+.B sfzcwt < in.rsf > out.rsf maxscale=5 outscale=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B maxscale
+.B =5
+.R  	The maximum decomposition scale (default=5)
+.TP
+.I int    
+.B outscale
+.B =1
+.R  	The output scale (default=1)
+.SH SOURCE
+.I user/yliu/Mzcwt.c
+.SH VERSION
+4.2-git

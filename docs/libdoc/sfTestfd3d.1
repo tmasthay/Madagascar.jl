@@ -1,0 +1,54 @@
+.TH sfTestfd3d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfTestfd3d \- 3D acoustic time-domain FD modeling
+.SH SYNOPSIS
+.B sfTestfd3d < Fv.rsf > Fw.rsf verb=n verb=n frsf=n nt= kt= ns=1 nb=30 dt= fm=20
+.SH COMMENTS
+4th order in space, 2nd order in time, sponge absorbing boundary condition.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I float  
+.B fm
+.B =20
+.R  
+.TP
+.I bool   
+.B frsf
+.B =n
+.R  [y/n]	free surface or not
+.TP
+.I int    
+.B kt
+.B =
+.R  	record wavefield at time kt
+.TP
+.I int    
+.B nb
+.B =30
+.R  
+.TP
+.I int    
+.B ns
+.B =1
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/pyang/MTestfd3d.c
+.SH VERSION
+4.2-git

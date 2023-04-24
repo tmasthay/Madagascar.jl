@@ -1,0 +1,131 @@
+.TH sfmpicfftrtm 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmpicfftrtm \- Lowrank decomposition for 3-D isotropic wave propagation. 
+.SH SYNOPSIS
+.B sfmpicfftrtm verb=false migr=false roll=false dabc=false snap=false mute=false sill=false nb=0 cb=1.0 nbell=1 jsnap=100 jump=1 seed=time(NULL npk=20 eps=1.e-4 media=0 taper=0 thres=1 sou_t0=0. vel_w=1500. revolve_snaps=64 info=0 sht_set=0 sht_num=sht_num_total
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B cb
+.B =1.0
+.R  	abc strength
+.TP
+.I        
+.B dabc
+.B =false
+.R  	absorbing boundary
+.TP
+.I        
+.B eps
+.B =1.e-4
+.R  	tolerance/accuracy
+.TP
+.I        
+.B info
+.B =0
+.R  	verbosity of output info about revolve
+.TP
+.I        
+.B jsnap
+.B =100
+.R  	snapshot interval
+.TP
+.I        
+.B jump
+.B =1
+.R  	subsampling rate for lowrank decomposition
+.TP
+.I        
+.B media
+.B =0
+.R  	media: 0-> iso, 1-> tti
+.TP
+.I        
+.B migr
+.B =false
+.R  	adjoint(migration) flag
+.TP
+.I        
+.B mute
+.B =false
+.R  	mute first arrival (modeling or imaging)
+.TP
+.I        
+.B nb
+.B =0
+.R  	abc width
+.TP
+.I        
+.B nbell
+.B =1
+.R  	source position z
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B revolve_snaps
+.B =64
+.R  	maximum num of snapshots allowed to be saved
+.TP
+.I        
+.B roll
+.B =false
+.R  	rolling v.s. fixed-spread acquisition geometry
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.TP
+.I        
+.B sht_num
+.B =sht_num_total
+.R  	shot number to process
+.TP
+.I        
+.B sht_set
+.B =0
+.R  	starting shot index
+.TP
+.I        
+.B sill
+.B =false
+.R  	source illumination for rtm
+.TP
+.I        
+.B snap
+.B =false
+.R  	output wavefield snapshots
+.TP
+.I        
+.B sou_t0
+.B =0.
+.R  	source delay
+.TP
+.I        
+.B taper
+.B =0
+.R  	tapering interval for tti
+.TP
+.I        
+.B thres
+.B =1
+.R  	tapering threshold for tti
+.TP
+.I        
+.B vel_w
+.B =1500.
+.R  	water velocity
+.TP
+.I        
+.B verb
+.B =false
+.R  	verbosity
+.SH SOURCE
+.I user/jsun/Mmpicfftrtm.cc
+.SH VERSION
+4.2-git

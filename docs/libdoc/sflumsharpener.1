@@ -1,0 +1,26 @@
+.TH sflumsharpener 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflumsharpener \- 1D LUM sharpener filter
+.SH SYNOPSIS
+.B sflumsharpener < in.rsf > out.rsf nfw= nclip=(nfw+1)/2 boundary=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B boundary
+.B =n
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I int    
+.B nclip
+.B =(nfw+1)/2
+.R  	tuning parameter (1 <= nclip <= (nfw+1)/2, the default is (nfw+1)/2)
+.TP
+.I int    
+.B nfw
+.B =
+.R  	filter-window length (positive and odd integer)
+.SH SOURCE
+.I user/yliu/Mlumsharpener.c
+.SH VERSION
+4.2-git

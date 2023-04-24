@@ -1,0 +1,31 @@
+.TH sfimpl1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfimpl1 \- 1-D anisotropic diffusion.
+.SH SYNOPSIS
+.B sfimpl1 < in.rsf > out.rsf rect1= tau=0.1 pclip=50. up=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B pclip
+.B =50.
+.R  	percentage clip for the gradient
+.TP
+.I float  
+.B rect1
+.B =
+.R  	smoothing radius
+.TP
+.I float  
+.B tau
+.B =0.1
+.R  	smoothing time
+.TP
+.I bool   
+.B up
+.B =n
+.R  [y/n]	smoothing style
+.SH SOURCE
+.I system/generic/Mimpl1.c
+.SH VERSION
+4.2-git

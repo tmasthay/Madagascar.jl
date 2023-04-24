@@ -1,0 +1,101 @@
+.TH sfffd0 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfffd0 \- 2-D FFD zero-offset migration: MPI + OMP
+.SH SYNOPSIS
+.B sfffd0 vel=vel.rsf < source.rsf > output.rsf opt=y jr=1 r0=0 jm=20 err=0.00001 alpha=-0.7 nbt=44 nbb=44 nbl=44 nbr=44 ct=0.01 cb=0.01 cl=0.01 cr=0.01 ax=2.0 az=2.0 factor=2.0/3.0
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B alpha
+.B =-0.7
+.R  
+.TP
+.I float  
+.B ax
+.B =2.0
+.R  	suppress HF parameter
+.TP
+.I float  
+.B az
+.B =2.0
+.R  	suppress HF parameter
+.TP
+.I float  
+.B cb
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B cl
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B cr
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B ct
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B err
+.B =0.00001
+.R  
+.TP
+.I float  
+.B factor
+.B =2.0/3.0
+.R  	suppress HF parameter
+.TP
+.I int    
+.B jm
+.B =20
+.R  
+.TP
+.I int    
+.B jr
+.B =1
+.R  
+.TP
+.I int    
+.B nbb
+.B =44
+.R  
+.TP
+.I int    
+.B nbl
+.B =44
+.R  
+.TP
+.I int    
+.B nbr
+.B =44
+.R  
+.TP
+.I int    
+.B nbt
+.B =44
+.R  
+.TP
+.I bool   
+.B opt
+.B =y
+.R  [y/n]
+.TP
+.I int    
+.B r0
+.B =0
+.R  
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/songxl/Mffd0.c
+.SH VERSION
+4.2-git

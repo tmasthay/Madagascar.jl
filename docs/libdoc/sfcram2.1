@@ -1,0 +1,106 @@
+.TH sfcram2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcram2 \- 2-D angle-domain Kirchhoff migration based on escape tables. 
+.SH SYNOPSIS
+.B sfcram2 < esct.rsf data=data.rsf vz=vz.rsf > oimag.rsf imap=oimap.rsf smap=osmap.rsf dipagath=dimag.rsf dipimap=dimap.rsf dipsmap=dsmap.rsf full=fimag.rsf mute=n sqsmb=n oazmin=180.0 oazmax=180.0 dazmin=180.0 dazmax=180.0 ts=3 th=5 vconst=1.5 smax=10*fabsf (ds) hmax=20*fabsf (dh)
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B data
+.B =
+.R  	Processed prestack data (auxiliary input file name)
+.TP
+.I float  
+.B dazmax
+.B =180.0
+.R  	Maximum allowed dip angle (abs.value) at z max
+.TP
+.I float  
+.B dazmin
+.B =180.0
+.R  	Maximum allowed dip angle (abs.value) at z min
+.TP
+.I string 
+.B dipagath
+.B =
+.R  	Dip angle gathers (angle, z, x) (auxiliary output file name)
+.TP
+.I string 
+.B dipimap
+.B =
+.R  	Dip gathers illumination (angle, z, x) (auxiliary output file name)
+.TP
+.I string 
+.B dipsmap
+.B =
+.R  	Dip gathers semblance (angle, z, x) (auxiliary output file name)
+.TP
+.I string 
+.B full
+.B =
+.R  	Full image (scattering angle, dip angle, z, x) (auxiliary output file name)
+.TP
+.I float  
+.B hmax
+.B =20*fabsf (dh)
+.R  	Maximum allowed width of the receiver ray branch
+.TP
+.I string 
+.B imap
+.B =
+.R  	Scattering gathers illumination (angle, z, x) (auxiliary output file name)
+.TP
+.I bool   
+.B mute
+.B =n
+.R  [y/n]	y - mute signal in constant z plane before stacking
+.TP
+.I float  
+.B oazmax
+.B =180.0
+.R  	Maximum allowed scattering angle at z max
+.TP
+.I float  
+.B oazmin
+.B =180.0
+.R  	Maximum allowed scattering angle at z min
+.TP
+.I string 
+.B smap
+.B =
+.R  	Scattering gathers semblance (angle, z, x) (auxiliary output file name)
+.TP
+.I float  
+.B smax
+.B =10*fabsf (ds)
+.R  	Maximum allowed width of the shot ray branch
+.TP
+.I bool   
+.B sqsmb
+.B =n
+.R  [y/n]	y - output energy traces instead of semblance
+.TP
+.I int    
+.B th
+.B =5
+.R  	Tapering length at the edges of the receiver direction
+.TP
+.I int    
+.B ts
+.B =3
+.R  	Tapering length at the edges of the source direction
+.TP
+.I float  
+.B vconst
+.B =1.5
+.R  	Constant velocity, if vz= is not used
+.TP
+.I string 
+.B vz
+.B =
+.R  	Velocity model for amplitude weights (auxiliary input file name)
+.SH SOURCE
+.I user/cram/Mcram2.c
+.SH VERSION
+4.2-git

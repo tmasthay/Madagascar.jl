@@ -1,0 +1,26 @@
+.TH sfnmow 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfnmow \- Least-squares fitting of t^2-t_0^2 surfaces for elliptical slowness matrix, W.
+.SH SYNOPSIS
+.B sfnmow < inp.rsf > out.rsf offset=offset.rsf half=y nw=3
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B half
+.B =y
+.R  [y/n]	if y, the second axis is half-offset instead of full offset
+.TP
+.I int    
+.B nw
+.B =3
+.R  
+.TP
+.I string 
+.B offset
+.B =
+.R  	If offset file is provided, it must be of the form:(auxiliary input file name)
+.SH SOURCE
+.I system/seismic/Mnmow.c
+.SH VERSION
+4.2-git

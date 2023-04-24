@@ -1,0 +1,36 @@
+.TH sfcsmooth 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcsmooth \- Multi-dimensional triangle smoothing for complex data. 
+.SH SYNOPSIS
+.B sfcsmooth < in.rsf > out.rsf repeat=1 adj=n rect#=(1,1,...) diff#=(n,n,...)
+.SH COMMENTS
+
+January 2012 program of the month:
+http://ahay.org/blog/2012/01/01/program-of-the-month-sfsmooth/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	run in the adjoint mode
+.TP
+.I bool   
+.B diff#
+.B =(n,n,...)
+.R  [y/n]	differentiation on #-th axis
+.TP
+.I int    
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	repeat filtering several times
+.SH SOURCE
+.I system/generic/Mcsmooth.c
+.SH VERSION
+4.2-git

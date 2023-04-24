@@ -1,0 +1,31 @@
+.TH sfsimilarity2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsimilarity2 \- Local similarity measure between two datasets (alternative form). 
+.SH SYNOPSIS
+.B sfsimilarity2 < in.rsf > out.rsf other=other.rsf verb=y niter=20 rect#=(1,1,...)
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B niter
+.B =20
+.R  	maximum number of iterations
+.TP
+.I file   
+.B other
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/fomels/Msimilarity2.c
+.SH VERSION
+4.2-git

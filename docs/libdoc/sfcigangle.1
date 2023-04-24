@@ -1,0 +1,36 @@
+.TH sfcigangle 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcigangle \- src-receiver to angle gathers 
+.SH SYNOPSIS
+.B sfcigangle < dist.rsf time=time.rsf dept=dept.rsf > imag.rsf data=data.rsf nalpha=90 tolz=1.f
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B data
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B dept
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nalpha
+.B =90
+.R  
+.TP
+.I file   
+.B time
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B tolz
+.B =1.f
+.R  	surface depth
+.SH SOURCE
+.I user/roman/Mcigangle.c
+.SH VERSION
+4.2-git

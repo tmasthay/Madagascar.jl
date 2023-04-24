@@ -1,0 +1,71 @@
+.TH sfnpef 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfnpef \- Estimate Non-stationary PEF in N dimensions.
+.SH SYNOPSIS
+.B sfnpef < in.rsf > flt.rsf maskin=mask.rsf pch=patch.rsf filt=reg.rsf a= center= gap= niter=100 epsilon=0.01 lag= maskout= filt_pch= filt_lag=
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	 [dim]
+.TP
+.I ints   
+.B center
+.B =
+.R  	 [dim]
+.TP
+.I float  
+.B epsilon
+.B =0.01
+.R  	regularization parameter
+.TP
+.I file   
+.B filt
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B filt_lag
+.B =
+.R  	input file for double-helix filter lags
+.TP
+.I string 
+.B filt_pch
+.B =
+.R  
+.TP
+.I ints   
+.B gap
+.B =
+.R  	 [dim]
+.TP
+.I string 
+.B lag
+.B =
+.R  	output file for filter lags
+.TP
+.I string 
+.B maskin
+.B =
+.R  	optional input mask file (auxiliary input file name)
+.TP
+.I string 
+.B maskout
+.B =
+.R  	optional output mask file
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I string 
+.B pch
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/gee/Mnpef.c
+.SH VERSION
+4.2-git

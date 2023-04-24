@@ -1,0 +1,61 @@
+.TH sfdzest2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdzest2d \- Estimation of depth-delay of common-image gathers 
+.SH SYNOPSIS
+.B sfdzest2d Fp=Fp.rsf < Fnp.rsf > Fs.rsf adj=n inv=n shape=n niter=100 eps1=0. rect1=3 rect2=3 seed=0 eps2=1e3
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Fp
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	if adj=y, adjoint operator
+.TP
+.I float  
+.B eps1
+.B =0.
+.R  	shaping regularization parameter
+.TP
+.I float  
+.B eps2
+.B =1e3
+.R  	regularization parameter in model constraint
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if inv=y, perform inversion
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I int    
+.B rect1
+.B =3
+.R  	shaping smoothing parameter in 1st axis
+.TP
+.I int    
+.B rect2
+.B =3
+.R  	shaping smoothing parameter in 2nd axis
+.TP
+.I int    
+.B seed
+.B =0
+.R  	index of reference trace
+.TP
+.I bool   
+.B shape
+.B =n
+.R  [y/n]	if shape=y, use projection method
+.SH SOURCE
+.I user/zhiguang/Mdzest2d.c
+.SH VERSION
+4.2-git

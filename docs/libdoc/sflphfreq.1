@@ -1,0 +1,51 @@
+.TH sflphfreq 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflphfreq \- frequency response of linear phase approximators 
+.SH SYNOPSIS
+.B sflphfreq > out.rsf m=1 n=1 iir=y n1=50 o2=0.1 d2=0.3 n2=1 interp=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d2
+.B =0.3
+.R  	phase shift increment
+.TP
+.I bool   
+.B iir
+.B =y
+.R  [y/n]	y:iir,  n:fir
+.TP
+.I string 
+.B interp
+.B =
+.R  	interpolation method: maxflat lagrange bspline
+.TP
+.I int    
+.B m
+.B =1
+.R  	b[-m, ... ,n]
+.TP
+.I int    
+.B n
+.B =1
+.R  	b[-m, ... ,n]
+.TP
+.I int    
+.B n1
+.B =50
+.R  	samples in frequency domain between (0:f_c]
+.TP
+.I int    
+.B n2
+.B =1
+.R  	number of phase shift
+.TP
+.I float  
+.B o2
+.B =0.1
+.R  	first phase shift
+.SH SOURCE
+.I user/chen/Mlphfreq.c
+.SH VERSION
+4.2-git

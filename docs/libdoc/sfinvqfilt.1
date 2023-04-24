@@ -1,0 +1,26 @@
+.TH sfinvqfilt 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfinvqfilt \- Inverse Q filtering by using equivalent Q value in time-frequency domain. 
+.SH SYNOPSIS
+.B sfinvqfilt < inp.rsf > out.rsf eqt=eqt.rsf verb=n gim=20
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B eqt
+.B =
+.R  	equivalent quality: eqt (auxiliary input file name)
+.TP
+.I int    
+.B gim
+.B =20
+.R  	GIM
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/yliu/Minvqfilt.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,41 @@
+.TH sfcfftwave1dd 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcfftwave1dd \- 1-D complex lowrank FFT wave extrapolation using complex to complex fft using initial condition
+.SH SYNOPSIS
+.B sfcfftwave1dd < Fw.rsf > Fo.rsf left=left.rsf right=right.rsf prop=prop.rsf sub=n nt= dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I file   
+.B prop
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B right
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B sub
+.B =n
+.R  [y/n]	if -1 is included in the matrix
+.SH SOURCE
+.I user/jsun/Mcfftwave1dd.c
+.SH VERSION
+4.2-git

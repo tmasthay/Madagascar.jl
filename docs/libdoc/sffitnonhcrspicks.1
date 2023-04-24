@@ -1,0 +1,46 @@
+.TH sffitnonhcrspicks 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffitnonhcrspicks \- 
+.SH SYNOPSIS
+.B sffitnonhcrspicks < in.rsf > out_tcrs.rsf A1= A2= B=
+.SH COMMENTS
+Compute fitting of Non-hyperbolic CRS to first-arrivals T[m][h].
+
+Input: T[m][h] arrivals and in its sf-file  m[], Nm h[], Nh 
+
+parameters:
+
+A1
+A2
+B
+
+FF = F(t0,t02,A1,A2,m-h)*F(t0,t02,A1,A2,m+h);
+
+t2 = 0.5 * (F(t0, t02, A1, A2, m) + (2*B+A1*A1-A2)*h*h + sqrt(FF) );
+
+Output: 
+tcrs=filname - t[m][h] crs surface
+prints three CRS parameters a[3] where: t[m][h] = a(0) m + a(1)m^2 + a(2) h^2
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B A1
+.B =
+.R  
+.TP
+.I float  
+.B A2
+.B =
+.R  
+.TP
+.I float  
+.B B
+.B =
+.R  	memory allocations
+.SH SOURCE
+.I user/roman/Mfitnonhcrspicks.c
+.SH VERSION
+4.2-git

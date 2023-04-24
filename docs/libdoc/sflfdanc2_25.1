@@ -1,0 +1,41 @@
+.TH sflfdanc2_25 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflfdanc2_25 \- 2D high-order TTI Lowrank FD coefficient
+.SH SYNOPSIS
+.B sflfdanc2_25 < velz.rsf > outm.rsf seed=time(NULL eps=1.e-6 npk=50 dt= size=17 de=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B de
+.B =1
+.R  	stencil length
+.TP
+.I        
+.B dt
+.B =
+.R  	time step
+.TP
+.I        
+.B eps
+.B =1.e-6
+.R  	tolerance
+.TP
+.I        
+.B npk
+.B =50
+.R  	maximum rank
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.TP
+.I        
+.B size
+.B =17
+.R  	stencil length
+.SH SOURCE
+.I user/songxl/Mlfdanc2_25.cc
+.SH VERSION
+4.2-git

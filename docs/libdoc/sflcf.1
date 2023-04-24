@@ -1,0 +1,66 @@
+.TH sflcf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflcf \- Estimate local centroid frequency. 
+.SH SYNOPSIS
+.B sflcf < in.rsf > out.rsf trange=trange.rsf brange=brange.rsf avef=avef.rsf var2=var2.rsf tflo=tflo.rsf tfhi=tfhi.rsf tfme=tfme.rsf verb=n niter=100 eps=0.0f rect#=(10,10,...)
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B avef
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B brange
+.B =
+.R  	data weight (auxiliary input file name)
+.TP
+.I float  
+.B eps
+.B =0.0f
+.R  
+.TP
+.I int    
+.B niter
+.B =100
+.R  	regularization
+.TP
+.I int    
+.B rect#
+.B =(10,10,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I string 
+.B tfhi
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B tflo
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B tfme
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B trange
+.B =
+.R  	data weight (auxiliary input file name)
+.TP
+.I string 
+.B var2
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	smoothing radius
+.SH SOURCE
+.I user/yliu/Mlcf.c
+.SH VERSION
+4.2-git

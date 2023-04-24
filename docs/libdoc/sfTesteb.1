@@ -1,0 +1,61 @@
+.TH sfTesteb 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfTesteb \- Demo for effective boundary saving in regular grid
+.SH SYNOPSIS
+.B sfTesteb < Fv.rsf > Fw1.rsf back=Fw2.rsf nb=20 nt= dt= fm=20.0 ft=0 jt=1 ns=1 ng=nx
+.SH COMMENTS
+The sponge absorbing boundary condition is applied for simplicity!
+2N-order FD: effective boundary needs N points on each side!
+Note: In this demo, 2N=4 (N=2). 
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B back
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B dt
+.B =
+.R  	time sampling interval
+.TP
+.I float  
+.B fm
+.B =20.0
+.R  	dominant freq of Ricker wavelet
+.TP
+.I int    
+.B ft
+.B =0
+.R  	first recorded time
+.TP
+.I int    
+.B jt
+.B =1
+.R  	time interval
+.TP
+.I int    
+.B nb
+.B =20
+.R  	thickness of sponge ABC
+.TP
+.I int    
+.B ng
+.B =nx
+.R  	number of receivers
+.TP
+.I int    
+.B ns
+.B =1
+.R  	number of shots
+.TP
+.I int    
+.B nt
+.B =
+.R  	number of time steps
+.SH SOURCE
+.I user/pyang/MTesteb.c
+.SH VERSION
+4.2-git

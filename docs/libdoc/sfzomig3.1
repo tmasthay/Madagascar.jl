@@ -1,0 +1,113 @@
+.TH sfzomig3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfzomig3 \- 3-D zero-offset modeling/migration with extended SSF 
+.SH SYNOPSIS
+.B sfzomig3 slo=Fs.rsf < Fd.rsf > Fw.rsf < Fi.rsf ompchunk=1 ompnth=0 verb=n eps=0.01 inv=n causal=n twoway=y nrmax=1 dtmax=0.004 pmx=0 pmy=0 tmx=0 tmy=0 nw= dw= ow=0. mode=
+.SH COMMENTS
+
+May 2019 program of the month:
+http://ahay.org/blog/2019/05/06/program-of-the-month-sfzomig3/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B causal
+.B =n
+.R  [y/n]	y=causal; n=anti-causal
+.TP
+.I float  
+.B dtmax
+.B =0.004
+.R  	time error
+.TP
+.I float  
+.B dw
+.B =
+.R  
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stability parameter
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	y=modeling; n=migration
+.TP
+.I string 
+.B mode
+.B =
+.R  
+.TP
+.I int    
+.B nrmax
+.B =1
+.R  	maximum references
+.TP
+.I int    
+.B nw
+.B =
+.R  
+.TP
+.I int    
+.B ompchunk
+.B =1
+.R  	OpenMP data chunk size
+.TP
+.I int    
+.B ompnth
+.B =0
+.R  	OpenMP available threads
+.TP
+.I float  
+.B ow
+.B =0.
+.R  
+.TP
+.I int    
+.B pmx
+.B =0
+.R  	padding on x
+.TP
+.I int    
+.B pmy
+.B =0
+.R  	padding on y
+.TP
+.I file   
+.B slo
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B tmx
+.B =0
+.R  	taper on x
+.TP
+.I int    
+.B tmy
+.B =0
+.R  	taper on y
+.TP
+.I bool   
+.B twoway
+.B =y
+.R  [y/n]	two-way traveltime
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH USED IN
+.TP
+.I cwp/geo2007StereographicImagingCondition/sigsbee2
+.TP
+.I cwp/geo2008NumericWEMVAoperators/flatWEMVA
+.TP
+.I cwp/geo2008NumericWEMVAoperators/saltWEMVA
+.SH SOURCE
+.I user/psava/Mzomig3.c
+.SH VERSION
+4.2-git

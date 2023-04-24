@@ -1,0 +1,71 @@
+.TH sfpwddiffuse 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpwddiffuse \- Anisotropic diffusion by regularized inversion. Instead of a gradient PWDs in inline and crossline directions are used. 3D. 
+.SH SYNOPSIS
+.B sfpwddiffuse < in.rsf dip=dip.rsf vx=fvx.rsf vy=fvy.rsf > out.rsf order=1 nj1=1 nj2=1 sm=y niter=10 repeat=1 eps=1. adj=n test=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag - when test=y
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =1.
+.R  	regularization parameter
+.TP
+.I int    
+.B niter
+.B =10
+.R  	number of conjugate-gradient iterations
+.TP
+.I int    
+.B nj1
+.B =1
+.R  	antialiasing iline
+.TP
+.I int    
+.B nj2
+.B =1
+.R  	antialiasing xline
+.TP
+.I int    
+.B order
+.B =1
+.R  [1,2,3]	accuracy order
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	number of smoothing iterations
+.TP
+.I bool   
+.B sm
+.B =y
+.R  [y/n]	if perform PWD filtering
+.TP
+.I bool   
+.B test
+.B =n
+.R  [y/n]	test - applied in either forward or adjoint mode (no inversion)
+.TP
+.I file   
+.B vx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vy
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/dmerzlikin/Mpwddiffuse.c
+.SH VERSION
+4.2-git

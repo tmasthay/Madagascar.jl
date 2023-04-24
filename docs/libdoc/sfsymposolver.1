@@ -1,0 +1,30 @@
+.TH sfsymposolver 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsymposolver \- Symmetric positive definite matrix equation solver using square root method (cholesky decomposition method)
+.SH SYNOPSIS
+.B sfsymposolver < in.rsf rhs=rhs.rsf > out.rsf verb=n n=
+.SH COMMENTS
+Ax=d-> LL'x=d -> Ly=d -> L'x=y -> x
+Input is the down triangle of A.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B n
+.B =
+.R  
+.TP
+.I file   
+.B rhs
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/chenyk/Msymposolver.c
+.SH VERSION
+4.2-git

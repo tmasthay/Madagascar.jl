@@ -1,0 +1,61 @@
+.TH sfrtft 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrtft \- Ricker time-frequency transform. 
+.SH SYNOPSIS
+.B sfrtft < in.rsf > out.rsf basis=basis.rsf mask=mask.rsf inv=n verb=n nw= dw= w0=0. rect=10 niter=100 alpha=0.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B alpha
+.B =0.
+.R  	frequency adaptivity
+.TP
+.I string 
+.B basis
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B dw
+.B =
+.R  	frequency step
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, do inverse transform
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of inversion iterations
+.TP
+.I int    
+.B nw
+.B =
+.R  	number of frequencies
+.TP
+.I int    
+.B rect
+.B =10
+.R  	smoothing radius
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I float  
+.B w0
+.B =0.
+.R  	first frequency
+.SH SOURCE
+.I user/yliu/Mrtft.c
+.SH VERSION
+4.2-git

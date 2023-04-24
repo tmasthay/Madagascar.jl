@@ -1,0 +1,31 @@
+.TH sfbspvel2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfbspvel2 \- B-spline coefficients for a 2-D (an)isotropic velocity model. 
+.SH SYNOPSIS
+.B sfbspvel2 < velz.rsf > out.rsf vx=velx.rsf eta=eta.rsf theta=theta.rsf verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B eta
+.B =
+.R  	Anellipticity (auxiliary input file name)
+.TP
+.I string 
+.B theta
+.B =
+.R  	Tilt angle (auxiliary input file name)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I string 
+.B vx
+.B =
+.R  	Horizontal velocity (auxiliary input file name)
+.SH SOURCE
+.I user/cram/Mbspvel2.c
+.SH VERSION
+4.2-git

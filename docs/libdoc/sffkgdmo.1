@@ -1,0 +1,45 @@
+.TH sffkgdmo 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffkgdmo \- FK-domain Gardner's DMO for regularly sampled 2-D data 
+.SH SYNOPSIS
+.B sffkgdmo < in.rsf > out.rsf inv=y shot=n eps=0.01 nb=85 db=1 xi=1
+.SH COMMENTS
+
+The input/ouput is (offset,logstretch frequency, midpoint/shot wavenumber).
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B db
+.B =1
+.R  	angle increment
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.TP
+.I bool   
+.B inv
+.B =y
+.R  [y/n]	inversion flag
+.TP
+.I int    
+.B nb
+.B =85
+.R  	number of angles
+.TP
+.I bool   
+.B shot
+.B =n
+.R  [y/n]	if shot gathers instead of midpoint gathers
+.TP
+.I float  
+.B xi
+.B =1
+.R  	continuation paremeter
+.SH SOURCE
+.I system/seismic/Mfkgdmo.c
+.SH VERSION
+4.2-git

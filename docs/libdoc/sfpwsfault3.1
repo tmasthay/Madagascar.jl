@@ -1,0 +1,61 @@
+.TH sfpwsfault3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpwsfault3 \- 3-D fault detection from plane-wave spray. 
+.SH SYNOPSIS
+.B sfpwsfault3 < inp.rsf dip=dip.rsf > out.rsf verb=n eps=0.01 ns2= ns3= niter=20 perc=98. fact=0.5 order=1 type=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I float  
+.B fact
+.B =0.5
+.R  	factor for sharpen
+.TP
+.I int    
+.B niter
+.B =20
+.R  	number of iterations
+.TP
+.I int    
+.B ns2
+.B =
+.R  
+.TP
+.I int    
+.B ns3
+.B =
+.R  	spray radius
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I float  
+.B perc
+.B =98.
+.R  	percentage for sharpen, default is 98
+.TP
+.I string 
+.B type
+.B =
+.R  	[difference,sharpen_similarity] calculation type, the default is difference
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/yliu/Mpwsfault3.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,71 @@
+.TH sfdiplet 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdiplet \- 2-D Seislet frame 
+.SH SYNOPSIS
+.B sfdiplet < in.rsf > out.rsf dips=dip.rsf mask=mask.rsf inv=n eps=0.01 verb=y twhole=y decomp=n ncycle=0 niter=1 perc=50.0 order=1 type=
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B decomp
+.B =n
+.R  [y/n]	do decomposition
+.TP
+.I file   
+.B dips
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, do inverse transform
+.TP
+.I string 
+.B mask
+.B =
+.R  	(optional) data mask file (auxiliary input file name)
+.TP
+.I int    
+.B ncycle
+.B =0
+.R  	number of iterations
+.TP
+.I int    
+.B niter
+.B =1
+.R  	number of Bregman iterations
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I float  
+.B perc
+.B =50.0
+.R  	percentage for sharpening
+.TP
+.I bool   
+.B twhole
+.B =y
+.R  [y/n]	threshold flag, if y, whole model, otherwise, each component
+.TP
+.I string 
+.B type
+.B =
+.R  	wavelet type (haar,linear,biorthogonal), default is linear
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/pwd/Mdiplet.c
+.SH VERSION
+4.2-git

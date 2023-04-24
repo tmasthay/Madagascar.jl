@@ -487,8 +487,7 @@ end
 rsf_write(file::Union{String, RSFFile}, dat::AbstractArray; n=nothing, d=nothing,
           o=nothing, l=nothing, u=nothing) = rsf_write(file, dat, n, d, o, l, u)
 
-function rsf_write(dat::AbstractArray, n=nothing, d=nothing, o=nothing,
-                   l=nothing, u=nothing)
+function rsf_write(dat::AbstractArray, n, d, o, l, u)
     tag = temporary_rsf()
     rsf_write(tag, dat, n, d, o, l, u)
     return tag
@@ -542,8 +541,7 @@ for (F, S) = [ (Symbol(p), p) for p in progs ]
     @eval export $F
     @eval begin
         progname = $S
-        manfile = joinpath(Madagascar.RSFROOT, "share", "man", "man1",
-                            progname*".1")
+        manfile = joinpath(@__DIR__, "../docs", "libdoc", progname*".1")
         if isfile(manfile)
             old_stdout = stdout
             (rout, wout) = redirect_stdout()

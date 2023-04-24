@@ -1,0 +1,156 @@
+.TH sflrtti2de 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflrtti2de \- 2-D two-components wavefield modeling using original elastic displacement wave equation in TTI media by lowrank method. 
+.SH SYNOPSIS
+.B sflrtti2de < Fvp0.rsf pleft=Fpl.rsf pright=Fpr.rsf sleft=Fsl.rsf sright=Fsr.rsf > Fo1.rsf Elasticz=Fo2.rsf Pwavez=Fpz.rsf Pwavex=Fpx.rsf Swavez=Fsz.rsf Swavex=Fsx.rsf nt=301 dt=0.001 abc=n nbt= nbb=nbt nbl=nbt nbr=nbt ct= cb=ct cl=ct cr=ct isx=nx/2 isz=nz/2 t0=0.04 f0=30.0 A=1.0 cmplx=n sep=n pad1=1 src=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B A
+.B =1.0
+.R  	wavelet amplitude
+.TP
+.I file   
+.B Elasticz
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B Pwavex
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B Pwavez
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B Swavex
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B Swavez
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B abc
+.B =n
+.R  [y/n]	absorbing flag
+.TP
+.I float  
+.B cb
+.B =ct
+.R  
+.TP
+.I float  
+.B cl
+.B =ct
+.R  
+.TP
+.I bool   
+.B cmplx
+.B =n
+.R  [y/n]	use complex FFT
+.TP
+.I float  
+.B cr
+.B =ct
+.R  
+.TP
+.I float  
+.B ct
+.B =
+.R  
+.TP
+.I float  
+.B dt
+.B =0.001
+.R  	absorbing boundary condition
+.TP
+.I float  
+.B f0
+.B =30.0
+.R  	wavelet peak freq
+.TP
+.I int    
+.B isx
+.B =nx/2
+.R  
+.TP
+.I int    
+.B isz
+.B =nz/2
+.R  
+.TP
+.I int    
+.B nbb
+.B =nbt
+.R  
+.TP
+.I int    
+.B nbl
+.B =nbt
+.R  
+.TP
+.I int    
+.B nbr
+.B =nbt
+.R  
+.TP
+.I int    
+.B nbt
+.B =
+.R  
+.TP
+.I int    
+.B nt
+.B =301
+.R  
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I file   
+.B pleft
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B pright
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B sep
+.B =n
+.R  [y/n]	output separated wavefields
+.TP
+.I file   
+.B sleft
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B src
+.B =1
+.R  	source mode: 1 - exploding force; 2 - equil-energy force
+.TP
+.I file   
+.B sright
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B t0
+.B =0.04
+.R  	wavelet time lag
+.SH SOURCE
+.I user/jsun/Mlrtti2de.c
+.SH VERSION
+4.2-git

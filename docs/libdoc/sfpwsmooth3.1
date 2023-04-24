@@ -1,0 +1,61 @@
+.TH sfpwsmooth3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpwsmooth3 \- 3-D structural-oriented smoothing using plane-wave spray and weighted stacking. 
+.SH SYNOPSIS
+.B sfpwsmooth3 < inp.rsf dip=dip.rsf > out.rsf verb=n eps=0.01 ns2= ns3= bilat=n gauss=n ax= bx= order=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B ax
+.B =
+.R  	Gaussian weight for the range distance
+.TP
+.I bool   
+.B bilat
+.B =n
+.R  [y/n]	if y, bilateral smoothing
+.TP
+.I float  
+.B bx
+.B =
+.R  	exponential weight for the domain distance
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization
+.TP
+.I bool   
+.B gauss
+.B =n
+.R  [y/n]	if y, gaussian weight; otherwise, triangle weight
+.TP
+.I int    
+.B ns2
+.B =
+.R  	spray radius (inline)
+.TP
+.I int    
+.B ns3
+.B =
+.R  	spray radius (crossline)
+.TP
+.I int    
+.B order
+.B =1
+.R  	accuracy order
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/yliu/Mpwsmooth3.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,56 @@
+.TH sfmatch1d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmatch1d \- 1D Least-Sqaure Adaptive Matched-Filter for Multiple Suppression 
+.SH SYNOPSIS
+.B sfmatch1d < in.rsf > out.rsf multiple=multiple.rsf w1=9 order=w1-2 w2=3 eps=0.01 verb=n transient=n method=
+.SH COMMENTS
+	x = argmin || d - M x ||^2 
+
+	The Program uses internal (icaf.c) or transient convolution (tcaf.c)
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	dumping parameter
+.TP
+.I string 
+.B method
+.B =
+.R  	method to use (old,new)
+.TP
+.I string 
+.B multiple
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B order
+.B =w1-2
+.R  	matchied-filter order
+.TP
+.I bool   
+.B transient
+.B =n
+.R  [y/n]	transient convolution [y/n]
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.TP
+.I int    
+.B w1
+.B =9
+.R  	data window length along 1st dimentions (time/depth)
+.TP
+.I int    
+.B w2
+.B =3
+.R  	data window length along 1st dimentions (time/depth)
+.SH SOURCE
+.I user/lcasasan/Mmatch1d.c
+.SH VERSION
+4.2-git

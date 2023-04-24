@@ -1,0 +1,96 @@
+.TH sfzortmgmres 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfzortmgmres \- 2-D FFT-based zero-offset exploding reflector modeling/migration linear operator 
+.SH SYNOPSIS
+.B sfzortmgmres < data.rsf > image.rsf snaps=snaps.rsf leftf=leftf.rsf rightf=rightf.rsf leftb=leftb.rsf rightb=rightb.rsf gmres=n niter=10 mem=20 timer=n verb=n snap=0 pad1=1 gpz=0 nz= dz= nt= dt= nt= dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  	time sampling
+.TP
+.I float  
+.B dz
+.B =
+.R  	depth sampling
+.TP
+.I bool   
+.B gmres
+.B =n
+.R  [y/n]
+.TP
+.I int    
+.B gpz
+.B =0
+.R  	geophone surface
+.TP
+.I file   
+.B leftb
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B leftf
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B mem
+.B =20
+.R  
+.TP
+.I int    
+.B niter
+.B =10
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  	time samples
+.TP
+.I int    
+.B nz
+.B =
+.R  	depth samples
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I file   
+.B rightb
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rightf
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B snap
+.B =0
+.R  	interval for snapshots
+.TP
+.I file   
+.B snaps
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B timer
+.B =n
+.R  [y/n]
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/jsun/Mzortmgmres.c
+.SH VERSION
+4.2-git

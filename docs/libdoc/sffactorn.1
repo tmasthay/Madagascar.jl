@@ -1,0 +1,56 @@
+.TH sffactorn 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffactorn \- Missing data interpolation with 3-D plane-wave filter. 
+.SH SYNOPSIS
+.B sffactorn < in.rsf > out.rsf dip=dip.rsf mask=mask.rsf eps=0.001 nt= nx= npx=100 npy=100 niter=10 miter=10
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B eps
+.B =0.001
+.R  
+.TP
+.I file   
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B miter
+.B =10
+.R  	number of interpolation iterations
+.TP
+.I int    
+.B niter
+.B =10
+.R  	number of factorization iterations
+.TP
+.I int    
+.B npx
+.B =100
+.R  
+.TP
+.I int    
+.B npy
+.B =100
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I int    
+.B nx
+.B =
+.R  
+.SH SOURCE
+.I user/gee/Mfactorn.c
+.SH VERSION
+4.2-git

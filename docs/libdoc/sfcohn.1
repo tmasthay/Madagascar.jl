@@ -1,0 +1,81 @@
+.TH sfcohn 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcohn \- Coherence calculations in the presence of structural dip
+.SH SYNOPSIS
+.B sfcohn < in.rsf > out.rsf idip=idip.rsf xdip=xdip.rsf ntw=5 nxw=5 nyw=5 twod=y verb=y op1=-2.0 dp1=0.5 np1=9 op2=-2.0 dp2=0.5 np2=9 mode=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dp1
+.B =0.5
+.R  
+.TP
+.I float  
+.B dp2
+.B =0.5
+.R  
+.TP
+.I string 
+.B idip
+.B =
+.R  	inline dip (auxiliary output file name)
+.TP
+.I string 
+.B mode
+.B =
+.R  	coherence mode: c1, c2, c3
+.TP
+.I int    
+.B np1
+.B =9
+.R  	inline slope
+.TP
+.I int    
+.B np2
+.B =9
+.R  	xline slope
+.TP
+.I int    
+.B ntw
+.B =5
+.R  	half window size for coherence
+.TP
+.I int    
+.B nxw
+.B =5
+.R  	half window size for coherence
+.TP
+.I int    
+.B nyw
+.B =5
+.R  	half window size for coherence
+.TP
+.I float  
+.B op1
+.B =-2.0
+.R  
+.TP
+.I float  
+.B op2
+.B =-2.0
+.R  
+.TP
+.I bool   
+.B twod
+.B =y
+.R  [y/n]	y: only twod coherence
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	verbosity
+.TP
+.I string 
+.B xdip
+.B =
+.R  	crossline dip (auxiliary output file name)
+.SH SOURCE
+.I user/pyang/Mcohn.c
+.SH VERSION
+4.2-git

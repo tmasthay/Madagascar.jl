@@ -1,0 +1,66 @@
+.TH sfescrt2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfescrt2 \- Escape tables by ray tracing with escape equations in 2-D. 
+.SH SYNOPSIS
+.B sfescrt2 < spdom.rsf > out.rsf traj=traj.rsf vspl=vspline.rsf na=360 df=0.25 md=SF_HUGE aper=SF_HUGE nc=0 parab=y verb=n nt=1001 dt=0.001
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B aper
+.B =SF_HUGE
+.R  	Maximum aperture in x and y directions from current point (default - up to model boundaries)
+.TP
+.I float  
+.B df
+.B =0.25
+.R  	< Maximum distance to travel per step (fraction of the cell size) >
+.TP
+.I float  
+.B dt
+.B =0.001
+.R  	Time sampling
+.TP
+.I float  
+.B md
+.B =SF_HUGE
+.R  	Maximum distance for a ray to travel (default - up to model boundaries)
+.TP
+.I int    
+.B na
+.B =360
+.R  	Number of phase angles
+.TP
+.I int    
+.B nc
+.B =0
+.R  	Number of threads to use for ray tracing (OMP_NUM_THREADS by default)
+.TP
+.I int    
+.B nt
+.B =1001
+.R  	Number of time samples for each trajectory
+.TP
+.I bool   
+.B parab
+.B =y
+.R  [y/n]	y - use parabolic approximation of trajectories, n - straight line
+.TP
+.I string 
+.B traj
+.B =
+.R  	Trajectory output (auxiliary output file name)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I string 
+.B vspl
+.B =
+.R  	Spline coefficients for velocity model (auxiliary input file name)
+.SH SOURCE
+.I user/cram/Mescrt2.c
+.SH VERSION
+4.2-git

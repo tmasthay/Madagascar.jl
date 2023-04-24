@@ -1,0 +1,96 @@
+.TH sfmpistack 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmpistack \- stacks rsf files of the same dimensionality using mpi 
+.SH SYNOPSIS
+.B sfmpistack mode=0 verb=n seq=n nf= jf=1 of=0 shots= prefix= oname=
+.SH COMMENTS
+
+Mode specifies whether to add, multiply, divide or subtract.
+
+mode=0 - add
+mode=1 - multiply
+
+If useprefix is set, then:
+
+assume that files are commonly named sequentially, e.g.:
+
+File001.rsf
+File002.rsf
+File003.rsf ...
+FileN.rsf
+
+Such that all files can be represented as a prefix, which 
+is a printf like statement that will be evaluated for all
+files to be included in a range.
+
+For the above example the prefix would be:
+
+prefix="File%03d.rsf" 
+
+The nf, jf, and of parameters specify a range of numbers to evaluate the 
+prefix for, giving the program filenames to be used for summing
+together.  For example:  
+
+nf=10,of=0,jf=1 --> (0,1,2,3,4,5,6,7,8,9,10)
+nf=10,of=5,jf=2 --> (5,7,9,11,13,15,17,19,21,23)
+
+If there are more files than processes, then this program will subdivide
+the files onto various processes, and run multiple rounds until
+everything is done.
+
+This program does not care about dimensionality!  It treats every file
+as a 1D array and writes out a 1D array, and then modifies the header
+to match the input file size.  
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B jf
+.B =1
+.R  	delta between files
+.TP
+.I int    
+.B mode
+.B =0
+.R  	operation for stack
+.TP
+.I int    
+.B nf
+.B =
+.R  	number of files to stack
+.TP
+.I int    
+.B of
+.B =0
+.R  	origin of files
+.TP
+.I string 
+.B oname
+.B =
+.R  	name of output file
+.TP
+.I string 
+.B prefix
+.B =
+.R  	printf like prefix (printf like prefix)
+.TP
+.I bool   
+.B seq
+.B =n
+.R  [y/n]	not sequentially ordered files
+.TP
+.I string 
+.B shots
+.B =
+.R  
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/cwp/Mmpistack.c
+.SH VERSION
+4.2-git

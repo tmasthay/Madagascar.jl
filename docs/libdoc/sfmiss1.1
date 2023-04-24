@@ -1,0 +1,31 @@
+.TH sfmiss1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmiss1 \- Missing data interpolation in 1-D. 
+.SH SYNOPSIS
+.B sfmiss1 < in.rsf > out.rsf filtin=filt.rsf niter=n1 diter=niter step=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B diter
+.B =niter
+.R  	iteration step
+.TP
+.I string 
+.B filtin
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =n1
+.R  	number of iterations
+.TP
+.I string 
+.B step
+.B =
+.R  	linear solver type
+.SH SOURCE
+.I user/gee/Mmiss1.c
+.SH VERSION
+4.2-git

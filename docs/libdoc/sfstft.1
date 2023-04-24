@@ -1,0 +1,36 @@
+.TH sfstft 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfstft \- Short-time Fourier transform (STFT). 
+.SH SYNOPSIS
+.B sfstft < in.rsf > out.rsf inv=n window=n sym=n opt=y ntw=7
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]	if y, perform inverse transform
+.TP
+.I int    
+.B ntw
+.B =7
+.R  	time-window length
+.TP
+.I bool   
+.B opt
+.B =y
+.R  [y/n]	if y, determine optimal size for efficiency
+.TP
+.I bool   
+.B sym
+.B =n
+.R  [y/n]	if y, apply symmetric scaling to make the FFT operator Hermitian
+.TP
+.I bool   
+.B window
+.B =n
+.R  [y/n]	if y, add Hanning window
+.SH SOURCE
+.I user/yliu/Mstft.c
+.SH VERSION
+4.2-git

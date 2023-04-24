@@ -1,0 +1,41 @@
+.TH sfmutter3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmutter3 \- 3D muting of scalor or vector data 
+.SH SYNOPSIS
+.B sfmutter3 < Finp.rsf sou=Fsou.rsf rec=Frec.rsf > Fout.rsf verb=n t0=0 velw=1.5 eps=1000.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =1000.
+.R  	decay parameter
+.TP
+.I file   
+.B rec
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B sou
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B t0
+.B =0
+.R  	source delay time
+.TP
+.I float  
+.B velw
+.B =1.5
+.R  	water velocity
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/jsun/Mmutter3.c
+.SH VERSION
+4.2-git

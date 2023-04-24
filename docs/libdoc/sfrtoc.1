@@ -1,0 +1,41 @@
+.TH sfrtoc 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrtoc \- Convert real data to complex (by adding zero imaginary part).
+.SH SYNOPSIS
+.B sfrtoc < real.rsf > cmplx.rsf pair=n
+.SH COMMENTS
+
+See also: sfcmplx
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B pair
+.B =n
+.R  [y/n]	y - use odd elements for real part and even ones for imaginary part
+.SH USED IN
+.TP
+.I bei/ft1/autocor
+.TP
+.I bei/ft1/brad
+.TP
+.I bei/ft1/plane4
+.TP
+.I cwp/geo2008NumericWEMVAoperators/flatWEMVA
+.TP
+.I cwp/geo2008NumericWEMVAoperators/saltWEMVA
+.TP
+.I cwp/geo2009TTIModeSeparation/tti3
+.TP
+.I cwp/geo2011WideAzimuthAngleDecomposition/seam357
+.TP
+.I cwp/pept2011MicroearthquakeMonitoring/saf1
+.TP
+.I cwp/pept2011MicroearthquakeMonitoring/saf3
+.SH SOURCE
+.I system/main/rtoc.c
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfrtoc
+.SH VERSION
+4.2-git

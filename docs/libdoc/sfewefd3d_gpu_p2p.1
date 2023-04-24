@@ -1,0 +1,86 @@
+.TH sfewefd3d_gpu_p2p 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfewefd3d_gpu_p2p \- 3D elastic time-domain FD modeling with GPU (For use in single node with one or more GPUs)
+.SH SYNOPSIS
+.B sfewefd3d_gpu_p2p < Fwav.rsf ccc=Fccc.rsf den=Fden.rsf sou=Fsou.rsf rec=Frec.rsf wfl=Fwfl.rsf > Fdat.rsf ngpu=1 verb=n snap=n free=n ssou=n dabc=n interp=y nbell=5 jdata=1 jsnap=nt
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B ccc
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B dabc
+.B =n
+.R  [y/n]	absorbing BC
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B free
+.B =n
+.R  [y/n]	free surface flag
+.TP
+.I bool   
+.B interp
+.B =y
+.R  [y/n]	perform linear interpolation on receiver data
+.TP
+.I int    
+.B jdata
+.B =1
+.R  	extract receiver data every jdata time steps
+.TP
+.I int    
+.B jsnap
+.B =nt
+.R  	save wavefield every jsnap time steps
+.TP
+.I int    
+.B nbell
+.B =5
+.R  	bell size
+.TP
+.I int    
+.B ngpu
+.B =1
+.R  	how many local GPUs to use
+.TP
+.I file   
+.B rec
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B snap
+.B =n
+.R  [y/n]	wavefield snapshots flag
+.TP
+.I file   
+.B sou
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B ssou
+.B =n
+.R  [y/n]	stress source
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I file   
+.B wfl
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/rweiss/Mewefd3d_gpu_p2p.cu
+.SH VERSION
+4.2-git

@@ -1,0 +1,76 @@
+.TH sfewdlr3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfewdlr3 \- None
+.SH SYNOPSIS
+.B sfewdlr3 < c11.rsf c14=c14.rsf theta=q1.rsf verb=false tilt=false tric=false seed=time(NULL eps=1.e-6 npk=20 nb=0 dt=1.e-3 tau=1.e-1 mode=0 jump=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B c14
+.B =
+.R  	auxiliary input file name
+.TP
+.I        
+.B dt
+.B =1.e-3
+.R  	time step size
+.TP
+.I        
+.B eps
+.B =1.e-6
+.R  	tolerance
+.TP
+.I        
+.B jump
+.B =1
+.R  	jump step for reduced lowrank decomposition
+.TP
+.I        
+.B mode
+.B =0
+.R  	wavefield decomposition mode (0->slow S, 1->fast S, 2->P)
+.TP
+.I        
+.B nb
+.B =0
+.R  	boundary padding
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.TP
+.I        
+.B tau
+.B =1.e-1
+.R  	smoothing radius
+.TP
+.I file   
+.B theta
+.B =
+.R  	auxiliary input file name
+.TP
+.I        
+.B tilt
+.B =false
+.R  	tilting of TTI
+.TP
+.I        
+.B tric
+.B =false
+.R  	triclinic anisotropy
+.TP
+.I        
+.B verb
+.B =false
+.R  	verbosity flag
+.SH SOURCE
+.I user/jsun/Mewdlr3.cc
+.SH VERSION
+4.2-git

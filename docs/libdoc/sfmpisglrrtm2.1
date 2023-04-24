@@ -1,0 +1,191 @@
+.TH sfmpisglrrtm2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmpisglrrtm2 \- Paralleled stagger-grid lowrank RTM modified based on sfsglfdrtm2 (serial program)
+.SH SYNOPSIS
+.B sfmpisglrrtm2 img2=Fimg2.rsf fvel=Ffvel.rsf fden=Ffden.rsf bvel=Fbvel.rsf bden=Fbden.rsf record=Frcd.rsf tmpfwf=Ftmpfwf.rsf tmpbwf=Ftmpbwf.rsf Gx=FGx.rsf Gz=FGz.rsf sxx=Fsxx.rsf sxz=Fsxz.rsf szx=Fszx.rsf szz=Fszz.rsf verb=y wantrecord=n wantwf=n onlyrecord=n srcdecay=y srcrange=3 srctrunc=0.2 srcalpha=0.5 pmlsize=30 nfd= pmld0=200 shtnmb= shtinv= shtbgn=0 snapturn=1 ginv=1 wfinv=1 spz=6 gp=0 ntau=1 dtau=wfdt tau0=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Gx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gz
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B bden
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B bvel
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dtau
+.B =wfdt
+.R  
+.TP
+.I file   
+.B fden
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B fvel
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B ginv
+.B =1
+.R  
+.TP
+.I int    
+.B gp
+.B =0
+.R  
+.TP
+.I file   
+.B img2
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B nfd
+.B =
+.R  
+.TP
+.I int    
+.B ntau
+.B =1
+.R  
+.TP
+.I bool   
+.B onlyrecord
+.B =n
+.R  [y/n]
+.TP
+.I float  
+.B pmld0
+.B =200
+.R  
+.TP
+.I int    
+.B pmlsize
+.B =30
+.R  
+.TP
+.I file   
+.B record
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B shtbgn
+.B =0
+.R  
+.TP
+.I int    
+.B shtinv
+.B =
+.R  
+.TP
+.I int    
+.B shtnmb
+.B =
+.R  
+.TP
+.I int    
+.B snapturn
+.B =1
+.R  
+.TP
+.I int    
+.B spz
+.B =6
+.R  
+.TP
+.I float  
+.B srcalpha
+.B =0.5
+.R  
+.TP
+.I bool   
+.B srcdecay
+.B =y
+.R  [y/n]
+.TP
+.I int    
+.B srcrange
+.B =3
+.R  
+.TP
+.I float  
+.B srctrunc
+.B =0.2
+.R  
+.TP
+.I file   
+.B sxx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B sxz
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B szx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B szz
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B tau0
+.B =0
+.R  
+.TP
+.I file   
+.B tmpbwf
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B tmpfwf
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]
+.TP
+.I bool   
+.B wantrecord
+.B =n
+.R  [y/n]
+.TP
+.I bool   
+.B wantwf
+.B =n
+.R  [y/n]
+.TP
+.I int    
+.B wfinv
+.B =1
+.R  
+.SH SOURCE
+.I user/zhiguang/Mmpisglrrtm2.c
+.SH VERSION
+4.2-git

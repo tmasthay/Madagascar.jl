@@ -1,0 +1,41 @@
+.TH sfdespike1-ed 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfdespike1-ed \- Despike filter:
+.SH SYNOPSIS
+.B sfdespike1-ed < in.rsf > out.rsf window=20 sigma=3.0
+.SH COMMENTS
+move outliers values to the tolerance
+parameter. The mean is calculated with moving
+windows 
+
+Example:
+
+
+if (a>3sigma) a=3sigma
+
+outlier
+* *              ^
+*    *            |
+*      *           |
+*        *          *
+****          * * * * *  *****
+
+
+
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B sigma
+.B =3.0
+.R  
+.TP
+.I int    
+.B window
+.B =20
+.R  
+.SH SOURCE
+.I user/ediazp/Mdespike1-ed.c
+.SH VERSION
+4.2-git

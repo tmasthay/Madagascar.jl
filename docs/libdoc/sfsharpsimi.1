@@ -1,0 +1,36 @@
+.TH sfsharpsimi 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsharpsimi \- Sharpen similarity measure between two datasets. 
+.SH SYNOPSIS
+.B sfsharpsimi < in.rsf > out.rsf other=other.rsf eps=0.01 niter=20 perc=98. verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	regularization parameter
+.TP
+.I int    
+.B niter
+.B =20
+.R  	number of iterations
+.TP
+.I file   
+.B other
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B perc
+.B =98.
+.R  	percentage for sharpen, default is 98
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Msharpsimi.c
+.SH VERSION
+4.2-git

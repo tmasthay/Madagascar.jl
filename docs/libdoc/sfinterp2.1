@@ -1,0 +1,41 @@
+.TH sfinterp2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfinterp2 \- Multiple-arrival interpolation. 
+.SH SYNOPSIS
+.B sfinterp2 < in.rsf size=size.rsf > out.rsf grid=grid.rsf sx=0. sz=0. nw=4 plane=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B grid
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nw
+.B =4
+.R  	Interpolation accuracy
+.TP
+.I int    
+.B plane
+.B =0
+.R  	0: point-source, 4: plane-wave
+.TP
+.I file   
+.B size
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B sx
+.B =0.
+.R  
+.TP
+.I float  
+.B sz
+.B =0.
+.R  	Shot coordinates
+.SH SOURCE
+.I user/fomels/Minterp2.c
+.SH VERSION
+4.2-git Minterp2.c 4084 2009-01-22 21:39:08Z sfomel

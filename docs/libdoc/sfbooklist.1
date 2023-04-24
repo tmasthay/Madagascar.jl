@@ -1,0 +1,97 @@
+.TH sfbooklist 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfbooklist \- List properties of Madagascar example book directories.
+.SH SYNOPSIS
+.B sfbooklist levels=3 list= timer= rsfproj= size=1024**2 uses= nofetch=y public=n private=n local=n command= skipfile=
+.SH COMMENTS
+Scan a directory tree (or list of directory trees) to a given depth,
+inventory the contents, and optionally execute a command in each leaf.
+
+The inventory and optional command occurs only at the specified depth
+(default 3), not the intervening depths.  Directories named .svn are
+skipped.  Only directories containing an SConstruct file are listed or
+executed.
+
+Optional directory filters controlling inventory or command execution
+may be specified based on existence of .rsfproj file, sf programs used,
+type of external data required, and total rsf data-file size of the
+completed example.  A an optional input text file may also be specified
+containing a list of examples to skip.
+
+The optional command is executed in /bin/sh.
+
+Examples (from within $RSFSRC):
+
+sfbooklist book                         # inventory of book
+sfbooklist levels=2 book/geostats       # inventory of book/geostats
+sfbooklist command=scons book           # build examples with default filters
+sfbooklist size=5 command=scons book    # build examples smaller than 5MB
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B command
+.B =
+.R  	command to execute in each directory, default = none
+.TP
+.I int    
+.B levels
+.B =3
+.R  	directory search depth
+.TP
+.I string 
+.B list
+.B =
+.R  	how much to list [all,filter,none], default = all
+.TP
+.I bool   
+.B local
+.B =n
+.R  [y/n]	fetch-local-data filter
+.TP
+.I bool   
+.B nofetch
+.B =y
+.R  [y/n]	fetch-no-data filter
+.TP
+.I bool   
+.B private
+.B =n
+.R  [y/n]	fetch-private-data filter
+.TP
+.I bool   
+.B public
+.B =n
+.R  [y/n]	fetch-public-data filter
+.TP
+.I string 
+.B rsfproj
+.B =
+.R  	rsfproj filter [yes,no,both], default = yes
+.TP
+.I int    
+.B size
+.B =1024**2
+.R  	max data size filter (MB)
+.TP
+.I string 
+.B skipfile
+.B =
+.R  	file with list of directories to skip
+.TP
+.I string 
+.B timer
+.B =
+.R  	output execution time [log,file,none], default = none
+.TP
+.I string 
+.B uses
+.B =
+.R  	uses filter, default = any
+.SH SOURCE
+.I user/jennings/Mbooklist.py
+.SH DOCUMENTATION
+.BR http://ahay.org/wiki/Guide_to_madagascar_programs#sfbooklist
+.SH VERSION
+4.2-git

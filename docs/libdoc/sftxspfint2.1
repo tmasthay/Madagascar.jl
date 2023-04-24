@@ -1,0 +1,41 @@
+.TH sftxspfint2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftxspfint2 \- Missing data interpolation using t-x streaming prediction filter with causal structure. 
+.SH SYNOPSIS
+.B sftxspfint2 < in.rsf > out.rsf known=known.rsf a= lambda1= lambda2= var=0.0f seed=time(NULL)
+.SH PARAMETERS
+.PD 0
+.TP
+.I ints   
+.B a
+.B =
+.R  	 [dim]
+.TP
+.I file   
+.B known
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B lambda1
+.B =
+.R  	Regularization in t direction
+.TP
+.I float  
+.B lambda2
+.B =
+.R  	Regularization in x direction
+.TP
+.I int    
+.B seed
+.B =time(NULL)
+.R  	random seed
+.TP
+.I float  
+.B var
+.B =0.0f
+.R  	noise variance
+.SH SOURCE
+.I user/yliu/Mtxspfint2.c
+.SH VERSION
+4.2-git

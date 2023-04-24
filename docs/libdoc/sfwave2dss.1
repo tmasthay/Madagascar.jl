@@ -1,0 +1,46 @@
+.TH sfwave2dss 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfwave2dss \- 1-D finite-difference wave extrapolation 
+.SH SYNOPSIS
+.B sfwave2dss < inp.rsf > out.rsf vel=vel.rsf grad1=grad1.rsf grad2=grad2.rsf sl=nx/2 what=2 nb1=20 nb2=20
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B grad1
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B grad2
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nb1
+.B =20
+.R  	x boundary nodes
+.TP
+.I int    
+.B nb2
+.B =20
+.R  	z boundary nodes
+.TP
+.I int    
+.B sl
+.B =nx/2
+.R  	source location
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B what
+.B =2
+.R  	2nd or 4th order for FD
+.SH SOURCE
+.I user/songxl/Mwave2dss.c
+.SH VERSION
+4.2-git

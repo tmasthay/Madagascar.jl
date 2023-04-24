@@ -1,0 +1,32 @@
+.TH sfnpyCorr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfnpyCorr \- 
+.SH SYNOPSIS
+.B sfnpyCorr < Fa.rsf flt=Fb.rsf > Fc.rsf norm=n nc=100
+.SH COMMENTS
+Implements corr(a,b) along the fast axis 
+a [file] : is taken from stdin
+b [file] : is taken from  "flt"
+Requires both files to have the same sampling interval
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B flt
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nc
+.B =100
+.R  	number of correlation lags
+.TP
+.I bool   
+.B norm
+.B =n
+.R  [y/n]	normalize output
+.SH SOURCE
+.I user/ediazp/MnpyCorr.py
+.SH VERSION
+4.2-git

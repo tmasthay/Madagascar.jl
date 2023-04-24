@@ -1,0 +1,46 @@
+.TH sfgroll 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfgroll \- Add linear-chirp ground-roll noise to the data 
+.SH SYNOPSIS
+.B sfgroll < in.rsf > out.rsf begf=10. endf=5. theta=0.2 alpha=0.1 beg1=0. beg2=0. rep=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B alpha
+.B =0.1
+.R  	width parameter of ground roll
+.TP
+.I float  
+.B beg1
+.B =0.
+.R  	radial beginning point at first axis
+.TP
+.I float  
+.B beg2
+.B =0.
+.R  	radial beginning point at second axis
+.TP
+.I float  
+.B begf
+.B =10.
+.R  	beginning frequency of ground roll
+.TP
+.I float  
+.B endf
+.B =5.
+.R  	ending frequency of ground roll
+.TP
+.I bool   
+.B rep
+.B =n
+.R  [y/n]	if y, replace data with noise
+.TP
+.I float  
+.B theta
+.B =0.2
+.R  	direction of central ground roll
+.SH SOURCE
+.I user/yliu/Mgroll.c
+.SH VERSION
+4.2-git

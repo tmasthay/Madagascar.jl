@@ -1,0 +1,51 @@
+.TH sfinmo 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfinmo \- Inverse normal moveout. 
+.SH SYNOPSIS
+.B sfinmo < cmp.rsf velocity=velocity.rsf > nmod.rsf offset=offset.rsf mask=msk.rsf half=y slowness=n h0=0. eps=0.01
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.TP
+.I float  
+.B h0
+.B =0.
+.R  	reference offset
+.TP
+.I bool   
+.B half
+.B =y
+.R  [y/n]	if y, the second axis is half-offset instead of full offset
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B offset
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B slowness
+.B =n
+.R  [y/n]	if y, use slowness instead of velocity
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.SH USED IN
+.TP
+.I bei/vela/strat
+.TP
+.I data/alaska/line31-81-m8r
+.SH SOURCE
+.I system/seismic/Minmo.c
+.SH VERSION
+4.2-git

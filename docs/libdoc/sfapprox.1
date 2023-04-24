@@ -1,0 +1,41 @@
+.TH sfapprox 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfapprox \- Illustrating non-hyperbolic approximations 
+.SH SYNOPSIS
+.B sfapprox > out.rsf np=300 nq=300 dp=1./(np-1) dq=4./(nq-1) dist= appr=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B appr
+.B =
+.R  	approximation type
+.TP
+.I string 
+.B dist
+.B =
+.R  	distribution type
+.TP
+.I float  
+.B dp
+.B =1./(np-1)
+.R  
+.TP
+.I float  
+.B dq
+.B =4./(nq-1)
+.R  
+.TP
+.I int    
+.B np
+.B =300
+.R  
+.TP
+.I int    
+.B nq
+.B =300
+.R  
+.SH SOURCE
+.I user/fomels/Mapprox.c
+.SH VERSION
+4.2-git

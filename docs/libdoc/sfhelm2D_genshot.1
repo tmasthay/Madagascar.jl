@@ -1,0 +1,86 @@
+.TH sfhelm2D_genshot 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhelm2D_genshot \- Generate shot file for Helmholtz solver. 
+.SH SYNOPSIS
+.B sfhelm2D_genshot > out.rsf fmag=fmag.rsf n1=1 n2=1 ns=1 d1=0.1 d2=0.1 nw=1 dw=1.0 ow=1.0 nsource=1 dsource=0 srcz= srcx0= srcdx= mag=1.0
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B d1
+.B =0.1
+.R  
+.TP
+.I float  
+.B d2
+.B =0.1
+.R  
+.TP
+.I int    
+.B dsource
+.B =0
+.R  
+.TP
+.I float  
+.B dw
+.B =1.0
+.R  
+.TP
+.I string 
+.B fmag
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B mag
+.B =1.0
+.R  
+.TP
+.I int    
+.B n1
+.B =1
+.R  
+.TP
+.I int    
+.B n2
+.B =1
+.R  
+.TP
+.I int    
+.B ns
+.B =1
+.R  
+.TP
+.I int    
+.B nsource
+.B =1
+.R  
+.TP
+.I int    
+.B nw
+.B =1
+.R  
+.TP
+.I float  
+.B ow
+.B =1.0
+.R  
+.TP
+.I int    
+.B srcdx
+.B =
+.R  
+.TP
+.I int    
+.B srcx0
+.B =
+.R  
+.TP
+.I int    
+.B srcz
+.B =
+.R  
+.SH SOURCE
+.I user/hzhu/Mhelm2D_genshot.c
+.SH VERSION
+4.2-git

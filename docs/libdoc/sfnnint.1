@@ -1,0 +1,76 @@
+.TH sfnnint 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfnnint \- Natural neighbor interpolation (2-D) 
+.SH SYNOPSIS
+.B sfnnint < ord.rsf coord=coord.rsf > grid.rsf velocity=vel.rsf n1= n2= d1= d2= o1=0. o2=0. order=2 vel=y dist=n voro=n repeat=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B coord
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B d1
+.B =
+.R  
+.TP
+.I float  
+.B d2
+.B =
+.R  	sampling
+.TP
+.I bool   
+.B dist
+.B =n
+.R  [y/n]	if output distance
+.TP
+.I int    
+.B n1
+.B =
+.R  
+.TP
+.I int    
+.B n2
+.B =
+.R  	dimensions
+.TP
+.I float  
+.B o1
+.B =0.
+.R  
+.TP
+.I float  
+.B o2
+.B =0.
+.R  	origin
+.TP
+.I int    
+.B order
+.B =2
+.R  [1,2]	Accuracy order for distance calculation
+.TP
+.I int    
+.B repeat
+.B =1
+.R  
+.TP
+.I bool   
+.B vel
+.B =y
+.R  [y/n]	if y, the input is velocity; n, slowness squared
+.TP
+.I string 
+.B velocity
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B voro
+.B =n
+.R  [y/n]	if output Voronoi diagram
+.SH SOURCE
+.I user/fomels/Mnnint.c
+.SH VERSION
+4.2-git

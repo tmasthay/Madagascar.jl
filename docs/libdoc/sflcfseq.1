@@ -1,0 +1,26 @@
+.TH sflcfseq 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflcfseq \- Estimate equivalent Q value based on a reference layer by using Local centroid frequency shift (LCFS) method. 
+.SH SYNOPSIS
+.B sflcfseq < inp.rsf > out.rsf var2=var2.rsf repos=repos.rsf verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B repos
+.B =
+.R  	Position of reference point (auxiliary input file name)
+.TP
+.I string 
+.B var2
+.B =
+.R  	variance (auxiliary input file name)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/yliu/Mlcfseq.c
+.SH VERSION
+4.2-git

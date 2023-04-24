@@ -1,0 +1,39 @@
+.TH sfkarlistinterp 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfkarlistinterp \- n-D IST interpolation using a general Lp-norm optimization
+.SH SYNOPSIS
+.B sfkarlistinterp < in.rsf > out.rsf mask=Fmask.rsf verb=n niter=100 pclip=10. n#=
+.SH COMMENTS
+Note: acquistion geometry illustrated by mask operator
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B n#
+.B =
+.R  	size of #-th axis
+.TP
+.I int    
+.B niter
+.B =100
+.R  	total number iterations
+.TP
+.I float  
+.B pclip
+.B =10.
+.R  	starting data clip percentile (default is 99)
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/karl/Mkarlistinterp.c
+.SH VERSION
+4.2-git

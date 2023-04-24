@@ -1,0 +1,108 @@
+.TH sftahread 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftahread \- Read Trace And Header from separate files, combine, write to pipe
+.SH SYNOPSIS
+.B sftahread < infile.rsf > out.rsf verbose=1 makeheader=n input= headers=
+.SH COMMENTS
+
+tah is the abbreviation of Trace And Header.  Madagascar programs 
+that begin with sftah are designed to:
+1- read trace and headers from separate rsf files and write them to 
+standard output (ie sftahread)
+2- filter programs that read and write standard input/output and 
+process the tah data (eg sftahnmo, sftahstack)
+3- read tah data from standard input and write separate rsf files for 
+the trace and headers data (ie sftahwrite)
+
+These programs allow Seismic Unix (su) like processing in Madagascar.  
+Some programs have su like names.
+
+Some programs in this suite are sftahread, sftahgethw, sftahhdrmath, 
+and sftahwrite.
+
+EXAMPLE:
+
+sftahread \
+verbose=1 \
+input=npr3_gathers.rsf \
+| sftahnmo \
+verbose=1  \
+tnmo=0,.373,.619,.826,.909,1.017,1.132,1.222,1.716,3.010 \
+vnmo=9086,10244,11085,10803,10969,11578,12252,12669,14590,17116 \
+| sftahstack key=iline,xline verbose=1 \
+| sftahwrite \
+verbose=1                           \
+label2="xline" o2=1 n2=188 d2=1   \
+label3="iline" o3=1 n3=345 d3=1   \
+output=mappedstack.rsf \
+>/dev/null
+
+sfgrey <mappedstack.rsf | sfpen
+
+In this example the cmp sorted prestack data, npr3_gathers.rsf,  are 
+read by sftahread.  The headers are in the file npr3_gathers_hdr.rsf, 
+the headers parameter default.  The headers are merged with the trace 
+amplitudes and the tah data sent down the pipe for nmo and stack.  The 
+sftahwrite writes the trace data to mappedstack.rsf and the headers 
+are written to the file mappedstack_hdr.rsf.  The order of the data in
+the output file is defined by the iline and xline trace headers, so the 
+data order is (time,xline,iline).  Finally, the output volume is
+displayed using sfgrey.
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B headers
+.B =
+.R  	
+
+     Trace header file name.  Default is the input data file
+     name, with the final .rsf changed to _hdr.rsf
+.TP
+.I string 
+.B input
+.B =
+.R  	
+
+     Input file for traces amplitudes.  You can list a file here, has the 
+     input file name will be used to compute the name of the header files.
+
+     The input trace amplitudes can also be read from standard input by
+     just supplying standard input and omitting this paramater,  This 
+     is useful it you wish to do sopme initial processing of the input
+     rsf file containing the trace amplitudes.  This is useful if you need 
+     to change input axis labels to use the makeheader=yes.
+.TP
+.I bool   
+.B makeheader
+.B =n
+.R  [y/n]	
+
+     Option to load headers using the input file axis labels.  If axis 
+     label2 through label9 match a header key then that coordinate is
+     loaded to the traces header.  This can be used to load the source
+     coordinate to the sx header location.  This may require changing
+     the axis label because Madagascar axis labels are not the same as
+     segy trace headers.  for example axis 2 coordiante can be loaded in
+     sx trace header by:
+        <spike.rsf sfput label2=sx \
+           | sftahread headers=spike_hdr.rsf makeheader=y \ 
+           | sftahgethw key=sx >/dev/null
+.TP
+.I int    
+.B verbose
+.B =1
+.R  	
+
+     flag to control amount of print
+     0 terse, 1 informative, 2 chatty, 3 debug
+.SH USED IN
+.TP
+.I data/boem-g3d1206-002a/displayin
+.TP
+.I data/bpvelanal2004/firstlook
+.SH SOURCE
+.I user/karl/Mtahread.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,26 @@
+.TH sfshape 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfshape \- Non-stationary smoothing by shaping regularization. 
+.SH SYNOPSIS
+.B sfshape < inp.rsf > out.rsf limit=lim.rsf niter=100 rect#=(1,1,...)
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B limit
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I int    
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.SH SOURCE
+.I user/fomels/Mshape.c
+.SH VERSION
+4.2-git

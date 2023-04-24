@@ -1,0 +1,46 @@
+.TH sfeikfswp 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfeikfswp \- Fast sweeping eikonal solver (2-D/3-D). 
+.SH SYNOPSIS
+.B sfeikfswp < vel.rsf > time.rsf vel=y niter=2 zshot=0. yshot=o2 + 0.5*(n2-1)*d2 xshot=o3 + 0.5*(n3-1)*d3 shotfile= horizon=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B horizon
+.B =
+.R  	File with a reflection interface
+.TP
+.I int    
+.B niter
+.B =2
+.R  	number of sweeping iterations
+.TP
+.I string 
+.B shotfile
+.B =
+.R  	File with shot locations (n2=number of shots, n1=3)
+.TP
+.I bool   
+.B vel
+.B =y
+.R  [y/n]	if y, the input is velocity; n - slowness
+.TP
+.I float  
+.B xshot
+.B =o3 + 0.5*(n3-1)*d3
+.R  
+.TP
+.I float  
+.B yshot
+.B =o2 + 0.5*(n2-1)*d2
+.R  
+.TP
+.I float  
+.B zshot
+.B =0.
+.R  	Shot location (used if no shotfile)
+.SH SOURCE
+.I user/bash/Meikfswp.c
+.SH VERSION
+4.2-git

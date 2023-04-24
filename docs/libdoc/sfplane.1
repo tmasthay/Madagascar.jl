@@ -1,0 +1,36 @@
+.TH sfplane 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfplane \- Generating plane waves with steering filters. 
+.SH SYNOPSIS
+.B sfplane < inp.rsf > out.rsf p=0.7 a1=2 b1=1 hyp=n lag=
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B a1
+.B =2
+.R  	filter length
+.TP
+.I int    
+.B b1
+.B =1
+.R  	denominator length
+.TP
+.I bool   
+.B hyp
+.B =n
+.R  [y/n]	generate hyperbolas
+.TP
+.I string 
+.B lag
+.B =
+.R  
+.TP
+.I float  
+.B p
+.B =0.7
+.R  	plane wave slope
+.SH SOURCE
+.I user/fomels/Mplane.c
+.SH VERSION
+4.2-git

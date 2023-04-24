@@ -1,0 +1,26 @@
+.TH sfgaussmooth 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfgaussmooth \- Recursive Gaussian smoothing on the fast axis. 
+.SH SYNOPSIS
+.B sfgaussmooth < in.rsf > out.rsf der=n rect=1 repeat=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B der
+.B =n
+.R  [y/n]	compute derivative
+.TP
+.I float  
+.B rect
+.B =1
+.R  	smoothing radius
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	repeat filtering several times
+.SH SOURCE
+.I user/fomels/Mgaussmooth.c
+.SH VERSION
+4.2-git

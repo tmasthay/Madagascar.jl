@@ -1,0 +1,59 @@
+.TH sfmpifwi 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmpifwi \- Time domain full waveform inversion using MPI parallel programming 
+.SH SYNOPSIS
+.B sfmpifwi vinit=vinit.rsf shots=shots.rsf grads=grads.rsf illums=illums.rsf objs=objs.rsf verb=y precon=n niter=100 rbell=2
+.SH COMMENTS
+Note: 	Clayton-Enquist absorbing boundary condition (A2) is applied!
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B grads
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B illums
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I file   
+.B objs
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B precon
+.B =n
+.R  [y/n]	precondition or not
+.TP
+.I int    
+.B rbell
+.B =2
+.R  	radius of bell smooth
+.TP
+.I file   
+.B shots
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =y
+.R  [y/n]	vebosity
+.TP
+.I file   
+.B vinit
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/pyang/Mmpifwi.c
+.SH VERSION
+4.2-git

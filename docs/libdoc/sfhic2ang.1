@@ -1,0 +1,141 @@
+.TH sfhic2ang 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfhic2ang \- angle decomposition of CIPs 
+.SH SYNOPSIS
+.B sfhic2ang < Fcip.rsf > Fang.rsf vel=Fvel.rsf nor=Fnor.rsf tlt=Ftlt.rsf ani=Fani.rsf verb=n anis=n adj=y nth=90 oth=0 dth=1. nph=360 oph=-180 dph=1. nhx=1 ohx=0 dhx=1. nhy=1 ohy=0 dhy=1. nht=1 oht=0. dht=1. nps=251 ops=-25 dps=0.2
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	adj flag
+.TP
+.I file   
+.B ani
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B anis
+.B =n
+.R  [y/n]	anisotropy flag
+.TP
+.I float  
+.B dht
+.B =1.
+.R  
+.TP
+.I float  
+.B dhx
+.B =1.
+.R  
+.TP
+.I float  
+.B dhy
+.B =1.
+.R  
+.TP
+.I float  
+.B dph
+.B =1.
+.R  
+.TP
+.I float  
+.B dps
+.B =0.2
+.R  
+.TP
+.I float  
+.B dth
+.B =1.
+.R  
+.TP
+.I int    
+.B nht
+.B =1
+.R  
+.TP
+.I int    
+.B nhx
+.B =1
+.R  
+.TP
+.I int    
+.B nhy
+.B =1
+.R  
+.TP
+.I file   
+.B nor
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B nph
+.B =360
+.R  
+.TP
+.I int    
+.B nps
+.B =251
+.R  
+.TP
+.I int    
+.B nth
+.B =90
+.R  
+.TP
+.I float  
+.B oht
+.B =0.
+.R  
+.TP
+.I float  
+.B ohx
+.B =0
+.R  
+.TP
+.I float  
+.B ohy
+.B =0
+.R  
+.TP
+.I float  
+.B oph
+.B =-180
+.R  
+.TP
+.I float  
+.B ops
+.B =-25
+.R  
+.TP
+.I float  
+.B oth
+.B =0
+.R  
+.TP
+.I file   
+.B tlt
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH USED IN
+.TP
+.I cwp/geo2011WideAzimuthAngleDecomposition/flatEICangle
+.TP
+.I cwp/geo2011WideAzimuthAngleDecomposition/seam357
+.SH SOURCE
+.I user/psava/Mhic2ang.c
+.SH VERSION
+4.2-git

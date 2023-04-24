@@ -1,0 +1,26 @@
+.TH sfradius 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfradius \- Estimate smoothing radius (min = 1) 
+.SH SYNOPSIS
+.B sfradius < in.rsf freq=freq.rsf > out.rsf c=1. maxrad=1000.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B c
+.B =1.
+.R  
+.TP
+.I file   
+.B freq
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B maxrad
+.B =1000.
+.R  
+.SH SOURCE
+.I user/sgreer/Mradius.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,38 @@
+.TH sfsplit 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsplit \- Splits file into slices along the last dimension
+.SH SYNOPSIS
+.B sfsplit verb=n inp= outdir=(out_basenm+ivlad.ext nthick=1
+.SH COMMENTS
+Usage:
+
+sfsplit inp=file.rsf outdir=[file_split.rsf] nthick=[1]
+
+Parameter nthick gives the maximum thickness of a slice. The last slice may
+be thinner.
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B inp
+.B =
+.R  	ifile.rsf
+.TP
+.I int    
+.B nthick
+.B =1
+.R  	slice thickness
+.TP
+.I string 
+.B outdir
+.B =(out_basenm+ivlad.ext
+.R  
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]
+.SH SOURCE
+.I user/ivlad/Msplit.py
+.SH VERSION
+4.2-git

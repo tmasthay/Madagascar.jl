@@ -1,0 +1,56 @@
+.TH sfpwdtensor 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpwdtensor \- structure tensor estimation based on plane wave destruction. 
+.SH SYNOPSIS
+.B sfpwdtensor < in.rsf in2=in2.rsf in3=in3.rsf > out.rsf out2=out2.rsf uver=uver.rsf uhor=uhor.rsf vver=vver.rsf vhor=vhor.rsf eps=0.00001 normalize=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.00001
+.R  
+.TP
+.I file   
+.B in2
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B in3
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B normalize
+.B =n
+.R  [y/n]
+.TP
+.I file   
+.B out2
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B uhor
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B uver
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B vhor
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B vver
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/dmerzlikin/Mpwdtensor.c
+.SH VERSION
+4.2-git

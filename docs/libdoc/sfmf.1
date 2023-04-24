@@ -1,0 +1,26 @@
+.TH sfmf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmf \- 1D median filtering. 
+.SH SYNOPSIS
+.B sfmf < in.rsf > out.rsf nfw= boundary=n
+.SH COMMENTS
+
+January 2015 program of the month:
+http://ahay.org/blog/2015/01/30/program-of-the-month-sfmf/
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B boundary
+.B =n
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I int    
+.B nfw
+.B =
+.R  	filter-window length (positive and odd integer)
+.SH SOURCE
+.I user/yliu/Mmf.c
+.SH VERSION
+4.2-git

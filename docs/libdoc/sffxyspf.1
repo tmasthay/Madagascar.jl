@@ -1,0 +1,53 @@
+.TH sffxyspf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sffxyspf \- 3D f-x-y streaming prediction filter (SPF) for interpolation/denoising.  
+.SH SYNOPSIS
+.B sffxyspf < inp.rsf > out.rsf mask=msk.rsf verb=n type=1 lambda1= lambda2= lambda3= na1= na2=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B lambda1
+.B =
+.R  	lambda1
+.TP
+.I float  
+.B lambda2
+.B =
+.R  	lambda2
+.TP
+.I float  
+.B lambda3
+.B =
+.R  	lambda3
+.TP
+.I file   
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B na1
+.B =
+.R  	fiter size along x axis
+.TP
+.I int    
+.B na2
+.B =
+.R  	fiter size along y axis
+.TP
+.I int    
+.B type
+.B =1
+.R  	default = 1,
+     1 : denoise with noncausul filter desin
+     2 : interpolation with causul filter design
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	default=false, verbosity flag
+.SH SOURCE
+.I user/yliu/Mfxyspf.c
+.SH VERSION
+4.2-git

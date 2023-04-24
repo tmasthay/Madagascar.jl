@@ -1,0 +1,41 @@
+.TH sflrmf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflrmf \- Local radial median filtering. 
+.SH SYNOPSIS
+.B sflrmf < in.rsf > out.rsf nfw= boundary=n vmin= vmax= tmin= tmax=
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B boundary
+.B =n
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I int    
+.B nfw
+.B =
+.R  	filter window of median filter
+.TP
+.I float  
+.B tmax
+.B =
+.R  	zero-offset time for mimumum velocity
+.TP
+.I float  
+.B tmin
+.B =
+.R  	zero-offset time for maximum velocity
+.TP
+.I float  
+.B vmax
+.B =
+.R  	maximum velocity
+.TP
+.I float  
+.B vmin
+.B =
+.R  	minimum velocity
+.SH SOURCE
+.I user/yliu/Mlrmf.c
+.SH VERSION
+4.2-git

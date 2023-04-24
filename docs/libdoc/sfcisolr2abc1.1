@@ -1,0 +1,86 @@
+.TH sfcisolr2abc1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcisolr2abc1 \- Complex lowrank decomposition for 2-D isotropic wave propagation with absorbing boundaries. 
+.SH SYNOPSIS
+.B sfcisolr2abc1 < vel.rsf fft=fft.rsf left=left.rsf > right.rsf seed=time(NULL eps=1.e-4 npk=20 dt= rev=false nbt=0 nbb=0 nbl=0 nbr=0 ct=0.0 cb=0.0 cl=0.0 cr=0.0
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B cb
+.B =0.0
+.R  
+.TP
+.I        
+.B cl
+.B =0.0
+.R  
+.TP
+.I        
+.B cr
+.B =0.0
+.R  
+.TP
+.I        
+.B ct
+.B =0.0
+.R  
+.TP
+.I        
+.B dt
+.B =
+.R  	time step
+.TP
+.I        
+.B eps
+.B =1.e-4
+.R  	tolerance
+.TP
+.I file   
+.B fft
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B nbb
+.B =0
+.R  
+.TP
+.I        
+.B nbl
+.B =0
+.R  
+.TP
+.I        
+.B nbr
+.B =0
+.R  
+.TP
+.I        
+.B nbt
+.B =0
+.R  
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B rev
+.B =false
+.R  	reversal
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.SH SOURCE
+.I user/jsun/Mcisolr2abc1.cc
+.SH VERSION
+4.2-git

@@ -1,0 +1,151 @@
+.TH sfitxmo3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfitxmo3 \- Forward and inverse normal moveout with interval velocity. 
+.SH SYNOPSIS
+.B sfitxmo3 < inp.rsf > out.rsf c11=C11.rsf c22=C22.rsf c33=C33.rsf c44=C44.rsf c55=C55.rsf c66=C66.rsf c12=C12.rsf c13=C13.rsf c23=C23.rsf velocity=velocity.rsf time=testtime.rsf x=testx.rsf y=testy.rsf cij=n inv=n nx= dx= x0=0. ny= dy= y0=0. npx= dpx= px0=0. npy= dpy= py0=0. eps=0.01
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B c11
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c12
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c13
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c22
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c23
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c33
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c44
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c55
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B c66
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B cij
+.B =n
+.R  [y/n]
+.TP
+.I float  
+.B dpx
+.B =
+.R  	x slope sampling
+.TP
+.I float  
+.B dpy
+.B =
+.R  	y slope sampling
+.TP
+.I float  
+.B dx
+.B =
+.R  	x offset sampling
+.TP
+.I float  
+.B dy
+.B =
+.R  	y offset sampling
+.TP
+.I float  
+.B eps
+.B =0.01
+.R  	stretch regularization
+.TP
+.I bool   
+.B inv
+.B =n
+.R  [y/n]
+.TP
+.I int    
+.B npx
+.B =
+.R  	x slope samples
+.TP
+.I int    
+.B npy
+.B =
+.R  	y slope samples
+.TP
+.I int    
+.B nx
+.B =
+.R  	x offset samples
+.TP
+.I int    
+.B ny
+.B =
+.R  	y offset samples
+.TP
+.I float  
+.B px0
+.B =0.
+.R  	x first slope
+.TP
+.I float  
+.B py0
+.B =0.
+.R  	y first slope
+.TP
+.I file   
+.B time
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B velocity
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B x
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B x0
+.B =0.
+.R  	x first offset
+.TP
+.I file   
+.B y
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B y0
+.B =0.
+.R  	y first offset
+.SH SOURCE
+.I system/seismic/Mitxmo3.c
+.SH VERSION
+4.2-git

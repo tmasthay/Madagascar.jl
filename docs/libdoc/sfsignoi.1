@@ -1,0 +1,56 @@
+.TH sfsignoi 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsignoi \- Signal and noise separation (N-dimensional). 
+.SH SYNOPSIS
+.B sfsignoi < dat.rsf > signoi.rsf sfilt=spef.rsf nfilt=npef.rsf epsilon= niter=20 spitz=n prec=n verb=n slag= nlag=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B epsilon
+.B =
+.R  	regularization parameter
+.TP
+.I file   
+.B nfilt
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =20
+.R  	number of iterations
+.TP
+.I string 
+.B nlag
+.B =
+.R  
+.TP
+.I bool   
+.B prec
+.B =n
+.R  [y/n]	if use preconditioning with Spitz
+.TP
+.I file   
+.B sfilt
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B slag
+.B =
+.R  
+.TP
+.I bool   
+.B spitz
+.B =n
+.R  [y/n]	if use Spitz method
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/gee/Msignoi.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,26 @@
+.TH sfcicold2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcicold2d \- Conventional IC 2D 
+.SH SYNOPSIS
+.B sfcicold2d < Fs.rsf ur=Fr.rsf > Fi.rsf verb=n isreversed=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B isreversed
+.B =n
+.R  [y/n]	received wavefield
+.TP
+.I file   
+.B ur
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/psava/Mcicold2d.c
+.SH VERSION
+4.2-git

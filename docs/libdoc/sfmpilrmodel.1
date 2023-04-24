@@ -1,0 +1,131 @@
+.TH sfmpilrmodel 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmpilrmodel \- One-step lowrank modeling 
+.SH SYNOPSIS
+.B sfmpilrmodel Fwfld=Fwfld.rsf Fpadvel=Fvel.rsf wantwf=n pad1=1 nb= srctrunc=0.4 rectx=2 rectz=2 repeat=2 scalet=1 snap=100 snapshot=0 ns= ds= s0= rnx= nr=rnx ndr=1 nr0=0 gpz= spx= spz= path1= path2=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Fpadvel
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Fwfld
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B ds
+.B =
+.R  	shot interval
+.TP
+.I int    
+.B gpz
+.B =
+.R  	depth of geophone
+.TP
+.I int    
+.B nb
+.B =
+.R  	boundary width
+.TP
+.I int    
+.B ndr
+.B =1
+.R  	receiver interval
+.TP
+.I int    
+.B nr
+.B =rnx
+.R  	receiver number
+.TP
+.I int    
+.B nr0
+.B =0
+.R  	receiver origin
+.TP
+.I int    
+.B ns
+.B =
+.R  	shot number
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I string 
+.B path1
+.B =
+.R  	path of left matrices './mat/left'
+.TP
+.I string 
+.B path2
+.B =
+.R  	path of right matrices './mat/left'
+.TP
+.I int    
+.B rectx
+.B =2
+.R  	source smoothing in x-direction
+.TP
+.I int    
+.B rectz
+.B =2
+.R  	source smoothing in z-direction
+.TP
+.I int    
+.B repeat
+.B =2
+.R  	repeat numbers of source smoothing
+.TP
+.I int    
+.B rnx
+.B =
+.R  	coverage area of one shot
+.TP
+.I float  
+.B s0
+.B =
+.R  	shot origin
+.TP
+.I int    
+.B scalet
+.B =1
+.R  	wavefield storage interval
+.TP
+.I int    
+.B snap
+.B =100
+.R  	wavefield output interval when wantwf=y
+.TP
+.I int    
+.B snapshot
+.B =0
+.R  	print out the wavefield snapshots of this shot
+.TP
+.I int    
+.B spx
+.B =
+.R  	horizontal location of source
+.TP
+.I int    
+.B spz
+.B =
+.R  	depth of source
+.TP
+.I float  
+.B srctrunc
+.B =0.4
+.R  	source truncation
+.TP
+.I bool   
+.B wantwf
+.B =n
+.R  [y/n]	want wavefield or not
+.SH SOURCE
+.I user/zhiguang/Mmpilrmodel.c
+.SH VERSION
+4.2-git

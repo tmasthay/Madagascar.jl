@@ -1,0 +1,156 @@
+.TH sfcram3 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcram3 \- 3-D angle-domain Kirchhoff migration based on escape tables. 
+.SH SYNOPSIS
+.B sfcram3 < esct.rsf data=data.rsf ddaemon=ddaemon.rsf survey=survey.rsf vz=vz.rsf > imag.rsf hits=hits.rsf agath=oimag.rsf imap=oimap.rsf smap=osmap.rsf dipagath=dimag.rsf dipimap=dimap.rsf dipsmap=dsmap.rsf amp=y extrap=n mute=n outaz=y inorm=n oazmin=180.0 oazmax=180.0 dazmin=180.0 dazmax=180.0 dbx=10.0*dx dby=10.0*dy dxm=5.0*dx dym=5.0*dy armin=0.01*dy*dx armax=100.0*dy*dx np=1 vconst=1.5 nc=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B agath
+.B =
+.R  	Scattering angle gathers (angle, azimuth, z, x, y) (auxiliary output file name)
+.TP
+.I bool   
+.B amp
+.B =y
+.R  [y/n]	n - do not apply amplitude correction weights
+.TP
+.I float  
+.B armax
+.B =100.0*dy*dx
+.R  	Maximum allowed area for an exit ray branch
+.TP
+.I float  
+.B armin
+.B =0.01*dy*dx
+.R  	Minimum allowed area for an exit ray branch
+.TP
+.I string 
+.B data
+.B =
+.R  	Processed prestack data (auxiliary input file name)
+.TP
+.I float  
+.B dazmax
+.B =180.0
+.R  	Maximum allowed dip angle at z max
+.TP
+.I float  
+.B dazmin
+.B =180.0
+.R  	Maximum allowed dip angle at z min
+.TP
+.I float  
+.B dbx
+.B =10.0*dx
+.R  	Size of search bins in x
+.TP
+.I float  
+.B dby
+.B =10.0*dy
+.R  	Size of search bins in y
+.TP
+.I string 
+.B ddaemon
+.B =
+.R  	Daemon for distributed data storage (auxiliary input file name)
+.TP
+.I string 
+.B dipagath
+.B =
+.R  	Dip angle gathers (angle, azimuth, z, x, y) (auxiliary output file name)
+.TP
+.I string 
+.B dipimap
+.B =
+.R  	Dip gathers illumination (angle, azimuth, z, x, y) (auxiliary output file name)
+.TP
+.I string 
+.B dipsmap
+.B =
+.R  	Dip gathers energy (angle, azimuth, z, x, y) (auxiliary output file name)
+.TP
+.I float  
+.B dxm
+.B =5.0*dx
+.R  	Taper length in x
+.TP
+.I float  
+.B dym
+.B =5.0*dy
+.R  	Taper length in y
+.TP
+.I bool   
+.B extrap
+.B =n
+.R  [y/n]	y - extrapolate migrated samples in gathers
+.TP
+.I string 
+.B hits
+.B =
+.R  	Image illumination (z, x, y) (auxiliary output file name)
+.TP
+.I string 
+.B imap
+.B =
+.R  	SCattering gathers illumination (angle, azimuth, z, x, y) (auxiliary output file name)
+.TP
+.I bool   
+.B inorm
+.B =n
+.R  [y/n]	y - normalize gathers for illumination
+.TP
+.I bool   
+.B mute
+.B =n
+.R  [y/n]	y - mute signal in constant z plane before stacking
+.TP
+.I int    
+.B nc
+.B =0
+.R  	Number of threads to use for ray tracing (OMP_NUM_THREADS by default)
+.TP
+.I int    
+.B np
+.B =1
+.R  	number of image points to buffer before accessing data
+.TP
+.I float  
+.B oazmax
+.B =180.0
+.R  	Maximum allowed scattering angle at z max
+.TP
+.I float  
+.B oazmin
+.B =180.0
+.R  	Maximum allowed scattering angle at z min
+.TP
+.I bool   
+.B outaz
+.B =y
+.R  [y/n]	n - stack azimuth direction before output
+.TP
+.I string 
+.B smap
+.B =
+.R  	Scattering gathers energy (angle, azimuth, z, x, y) (auxiliary output file name)
+.TP
+.I string 
+.B survey
+.B =
+.R  	Survey info for input data (auxiliary input file name)
+.TP
+.I float  
+.B vconst
+.B =1.5
+.R  	Constant velocity, if vz= is not used
+.TP
+.I string 
+.B vz
+.B =
+.R  	Velocity model for amplitude weights (auxiliary input file name)
+.SH SOURCE
+.I user/cram/Mcram3.c
+.SH VERSION
+4.2-git

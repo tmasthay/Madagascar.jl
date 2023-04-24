@@ -1,0 +1,26 @@
+.TH sfrpslow2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrpslow2 \- Full angle-dependent slowness volume for 3-D reduced phase space. 
+.SH SYNOPSIS
+.B sfrpslow2 < spdom.rsf > out.rsf vspl=vspline.rsf na=360 verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B na
+.B =360
+.R  	Number of phase angles
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I string 
+.B vspl
+.B =
+.R  	Spline coefficients for velocity model (auxiliary input file name)
+.SH SOURCE
+.I user/cram/Mrpslow2.c
+.SH VERSION
+4.2-git

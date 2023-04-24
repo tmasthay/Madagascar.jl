@@ -1,0 +1,46 @@
+.TH sfmmssrc 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmmssrc \- Source for the method of manufactured solution 
+.SH SYNOPSIS
+.B sfmmssrc < Fvel.rsf > Fsrc.rsf mslt=Fslt.rsf nt= dt= slx=nx*dx*0.5 slz=nz*dz*0.5 alpha=1.0e-2 beta=1.0
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B alpha
+.B =1.0e-2
+.R  	source parameter
+.TP
+.I float  
+.B beta
+.B =1.0
+.R  	source parameter
+.TP
+.I float  
+.B dt
+.B =
+.R  	time step
+.TP
+.I file   
+.B mslt
+.B =
+.R  	auxiliary output file name
+.TP
+.I int    
+.B nt
+.B =
+.R  	number of time step
+.TP
+.I float  
+.B slx
+.B =nx*dx*0.5
+.R  	center of source location: x
+.TP
+.I float  
+.B slz
+.B =nz*dz*0.5
+.R  	center of source location: z
+.SH SOURCE
+.I user/fangg/Mmmssrc.c
+.SH VERSION
+4.2-git

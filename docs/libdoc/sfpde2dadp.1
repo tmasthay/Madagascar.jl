@@ -1,0 +1,86 @@
+.TH sfpde2dadp 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpde2dadp \- Numerical solution of linear pde 2-d (X-Z-a) for phase space escape positions, angle and traveltime 
+.SH SYNOPSIS
+.B sfpde2dadp < in.rsf > out.rsf slow=slow.rsf slowz=slowz.rsf slowx=slowx.rsf iq= method= method_2d= niter=100 ixsmooth= izsmooth= xsmooth= zsmooth= is_xinf= is_zinf= tol=0.000002*nx*nz cvgce=
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B cvgce
+.B =
+.R  	output file for convergence
+.TP
+.I int    
+.B iq
+.B =
+.R  	switch for escape variable 0=x, 1=a, 2=t, 3=z
+.TP
+.I int    
+.B is_xinf
+.B =
+.R  
+.TP
+.I int    
+.B is_zinf
+.B =
+.R  
+.TP
+.I int    
+.B ixsmooth
+.B =
+.R  
+.TP
+.I int    
+.B izsmooth
+.B =
+.R  
+.TP
+.I int    
+.B method
+.B =
+.R  
+.TP
+.I int    
+.B method_2d
+.B =
+.R  
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of Gauss-Seidel iterations
+.TP
+.I file   
+.B slow
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B slowx
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B slowz
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B tol
+.B =0.000002*nx*nz
+.R  	accuracy tolerance
+.TP
+.I float  
+.B xsmooth
+.B =
+.R  
+.TP
+.I float  
+.B zsmooth
+.B =
+.R  
+.SH SOURCE
+.I user/browaeys/Mpde2dadp.c
+.SH VERSION
+4.2-git

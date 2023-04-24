@@ -1,0 +1,46 @@
+.TH sfclfd2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfclfd2 \- 2-D Fourth-order Optimized Finite-difference wave extrapolation 
+.SH SYNOPSIS
+.B sfclfd2 > out.rsf vel=vel.rsf < source.rsf G=G.rsf dt= nt= isx= isz= size=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B G
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I int    
+.B isx
+.B =
+.R  
+.TP
+.I int    
+.B isz
+.B =
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I int    
+.B size
+.B =
+.R  
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/jsun/Mclfd2.c
+.SH VERSION
+4.2-git

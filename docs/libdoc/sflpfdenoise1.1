@@ -1,0 +1,36 @@
+.TH sflpfdenoise1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sflpfdenoise1 \- 1D denoising using edge-preserving local polynomial fitting (ELPF). 
+.SH SYNOPSIS
+.B sflpfdenoise1 < in.rsf > out.rsf nfw= rect= boundary=n niter=100 verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B boundary
+.B =n
+.R  [y/n]	if y, boundary is data, whereas zero
+.TP
+.I int    
+.B nfw
+.B =
+.R  	filter-window length (positive and odd integer)
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I int    
+.B rect
+.B =
+.R  	local smoothing radius
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mlpfdenoise1.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,49 @@
+.TH sfederiv3d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfederiv3d \- 
+.SH SYNOPSIS
+.B sfederiv3d ccc=Fccc.rsf < Fspk.rsf zdel=Fzdel.rsf xdel=Fxdel.rsf ydel=Fydel.rsf verb=n stat=y domain=
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B ccc
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B domain
+.B =
+.R  
+.TP
+.I bool   
+.B stat
+.B =y
+.R  [y/n]	stationary operator
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I file   
+.B xdel
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B ydel
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B zdel
+.B =
+.R  	auxiliary output file name
+.SH USED IN
+.TP
+.I cwp/geo2009TTIModeSeparation/tti3
+.SH SOURCE
+.I user/jyan/Mederiv3d.c
+.SH VERSION
+4.2-git

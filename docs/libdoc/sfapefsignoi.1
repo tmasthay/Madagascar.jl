@@ -1,0 +1,36 @@
+.TH sfapefsignoi 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfapefsignoi \- Signal and noise separation using adaptive PEFs. 
+.SH SYNOPSIS
+.B sfapefsignoi < in.rsf sfilt=sfilt.rsf nfilt=nfilt.rsf > out.rsf niter=100 eps=0. verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B eps
+.B =0.
+.R  	regularization parameter
+.TP
+.I file   
+.B nfilt
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	Number of iterations
+.TP
+.I file   
+.B sfilt
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Mapefsignoi.c
+.SH VERSION
+4.2-git

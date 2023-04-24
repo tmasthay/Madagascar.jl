@@ -1,0 +1,36 @@
+.TH sfcflow 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcflow \- Fast mean-curvature flow. 
+.SH SYNOPSIS
+.B sfcflow < in.rsf > out.rsf rect=3 order=3 tol=0.1 niter=100 band=1.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B band
+.B =1.
+.R  	narrow band
+.TP
+.I int    
+.B niter
+.B =100
+.R  	number of iterations
+.TP
+.I int    
+.B order
+.B =3
+.R  	interpolation order
+.TP
+.I int    
+.B rect
+.B =3
+.R  	smoothing radius
+.TP
+.I float  
+.B tol
+.B =0.1
+.R  	error tolerance
+.SH SOURCE
+.I user/fomels/Mcflow.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,196 @@
+.TH sfopoti2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfopoti2d \- Modeling of pure acoustic wave in 2-D transversely isotropic meida using optimized pseudo-Laplacian operator 
+.SH SYNOPSIS
+.B sfopoti2d > out.rsf vel=vel.rsf sigma=fsigma.rsf delta=fdelta.rsf seta=fseta.rsf < source.rsf Gxxl=Gxxl.rsf Gxxr=Gxxr.rsf Gzzl=Gzzl.rsf Gzzr=Gzzr.rsf Gxxxxl=Gxxxxl.rsf Gxxxxr=Gxxxxr.rsf Gzzzzl=Gzzzzl.rsf Gzzzzr=Gzzzzr.rsf Gxzzzl=Gxzzzl.rsf Gxzzzr=Gxzzzr.rsf Gxxxzl=Gxxxzl.rsf Gxxxzr=Gxxxzr.rsf Gxxzzl=Gxxzzl.rsf Gxxzzr=Gxxzzr.rsf opt=1 dt= nt= isx= isz= nbt=30 nbb=30 nxl=30 nxr=30 czt=0.01 czb=0.01 cxl=0.01 cxr=0.01 ax=5.0 az=5.0 factor=5.0/6.0 cmplx=n pad1=1 snap=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Gxxl
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gxxr
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gxxxxl
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gxxxxr
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gxxxzl
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gxxxzr
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gxxzzl
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gxxzzr
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gxzzzl
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gxzzzr
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gzzl
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gzzr
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gzzzzl
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B Gzzzzr
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B ax
+.B =5.0
+.R  	suppress HF parameter
+.TP
+.I float  
+.B az
+.B =5.0
+.R  	suppress HF parameter
+.TP
+.I bool   
+.B cmplx
+.B =n
+.R  [y/n]	use complex FFT
+.TP
+.I float  
+.B cxl
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B cxr
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B czb
+.B =0.01
+.R  	decaying parameter
+.TP
+.I float  
+.B czt
+.B =0.01
+.R  	decaying parameter
+.TP
+.I file   
+.B delta
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B dt
+.B =
+.R  
+.TP
+.I float  
+.B factor
+.B =5.0/6.0
+.R  	suppress HF parameter
+.TP
+.I int    
+.B isx
+.B =
+.R  
+.TP
+.I int    
+.B isz
+.B =
+.R  
+.TP
+.I int    
+.B nbb
+.B =30
+.R  
+.TP
+.I int    
+.B nbt
+.B =30
+.R  
+.TP
+.I int    
+.B nt
+.B =
+.R  
+.TP
+.I int    
+.B nxl
+.B =30
+.R  
+.TP
+.I int    
+.B nxr
+.B =30
+.R  	assume ABC pars are the same
+.TP
+.I int    
+.B opt
+.B =1
+.R  	if y, determine optimal size for efficiency
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I file   
+.B seta
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B sigma
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B snap
+.B =1
+.R  
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/junyan/Mopoti2d.c
+.SH VERSION
+4.2-git

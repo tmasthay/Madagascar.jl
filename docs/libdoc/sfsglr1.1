@@ -1,0 +1,116 @@
+.TH sfsglr1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsglr1 \- 1-D lowrank wave propagation on staggered grid
+.SH SYNOPSIS
+.B sfsglr1 vel=Fvel.rsf den=Fden.rsf < Fsrc.rsf > Fo.rsf rec=Frec.rsf left=left.rsf right=right.rsf fft=Ffft.rsf ic=Fic.rsf presrc=Fpsrc.rsf velsrc=Fvsrc.rsf preinit=Fpint.rsf velinit=Fvint.rsf verb=n srcmms=n slx= srcdecay=y srcrange=10 srctrunc=100 cmplx=n pad1=1 inject=y gdep=0.0
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B cmplx
+.B =n
+.R  [y/n]	use complex FFT
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B fft
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B gdep
+.B =0.0
+.R  	depth of geophone (meter)
+.TP
+.I file   
+.B ic
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B inject
+.B =y
+.R  [y/n]	=y inject source; =n initial condition
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I file   
+.B preinit
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B presrc
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rec
+.B =
+.R  	auxiliary output file name
+.TP
+.I file   
+.B right
+.B =
+.R  	auxiliary input file name
+.TP
+.I float  
+.B slx
+.B =
+.R  	source location in x
+.TP
+.I bool   
+.B srcdecay
+.B =y
+.R  [y/n]	source decay
+.TP
+.I bool   
+.B srcmms
+.B =n
+.R  [y/n]	use MMS source
+.TP
+.I int    
+.B srcrange
+.B =10
+.R  	source decay range
+.TP
+.I float  
+.B srctrunc
+.B =100
+.R  	trunc source after srctrunc time (s)
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B velinit
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B velsrc
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/fangg/Msglr1.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,28 @@
+.TH sfrmrf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrmrf \- Recursively removes all RSF headers in a directory (associated binaries too)
+.SH SYNOPSIS
+.B sfrmrf verb=n dir= rec=n
+.SH COMMENTS
+Missing binaries do not cause failure.
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B dir
+.B =
+.R  	Directory with files
+.TP
+.I bool   
+.B rec
+.B =n
+.R  [y/n]	Whether to go down recursively
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	Display headers and binaries being deleted
+.SH SOURCE
+.I user/ivlad/Mrmrf.py
+.SH VERSION
+4.2-git

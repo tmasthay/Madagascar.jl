@@ -1,0 +1,26 @@
+.TH sfnconv 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfnconv \- Non-stationary convolution 
+.SH SYNOPSIS
+.B sfnconv < inp.rsf filt=flt.rsf > out.rsf lag=(ntau+1)/2 adj=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =n
+.R  [y/n]	adjoint flag
+.TP
+.I file   
+.B filt
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B lag
+.B =(ntau+1)/2
+.R  	filter lag
+.SH SOURCE
+.I user/fomels/Mnconv.c
+.SH VERSION
+4.2-git

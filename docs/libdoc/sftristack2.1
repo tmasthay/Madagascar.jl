@@ -1,0 +1,31 @@
+.TH sftristack2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sftristack2 \- 2-D resampling with triangle weights. 
+.SH SYNOPSIS
+.B sftristack2 < in.rsf > out.rsf adj=y rect1=1 rect2=1 gauss=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	adjoint flag
+.TP
+.I bool   
+.B gauss
+.B =n
+.R  [y/n]	use pseudo-gaussian
+.TP
+.I int    
+.B rect1
+.B =1
+.R  
+.TP
+.I int    
+.B rect2
+.B =1
+.R  	smoothing radius
+.SH SOURCE
+.I user/fomels/Mtristack2.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,41 @@
+.TH sfcompensatexf 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcompensatexf \- Complex-valued compensation (between two wavefields) 
+.SH SYNOPSIS
+.B sfcompensatexf < Fnum.rsf den=Fden.rsf > Fres.rsf verb=n cmplx=y niter=1 perc=0.1 pad1=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B cmplx
+.B =y
+.R  [y/n]	use complex i/o
+.TP
+.I file   
+.B den
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =1
+.R  	number of iterations
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I float  
+.B perc
+.B =0.1
+.R  	precentage (of max) for protection when dividing
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/jsun/Mcompensatexf.c
+.SH VERSION
+4.2-git

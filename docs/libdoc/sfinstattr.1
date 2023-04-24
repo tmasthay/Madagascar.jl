@@ -1,0 +1,46 @@
+.TH sfinstattr 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfinstattr \- Estimate of instantaneous attributes. 
+.SH SYNOPSIS
+.B sfinstattr < in.rsf > out.rsf order=10 ref=1. hertz=y hires=n der2=n verb=n type=
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B der2
+.B =n
+.R  [y/n]	if y, compute 2nd-order derivative to use with hires=y
+.TP
+.I bool   
+.B hertz
+.B =y
+.R  [y/n]	if y, convert output to Hertz
+.TP
+.I bool   
+.B hires
+.B =n
+.R  [y/n]	if y, compute high resolution instantaneous attributes
+.TP
+.I int    
+.B order
+.B =10
+.R  	Hilbert transformer order
+.TP
+.I float  
+.B ref
+.B =1.
+.R  	Hilbert transformer reference (0.5 < ref <= 1)
+.TP
+.I string 
+.B type
+.B =
+.R  	[amplitude,phase,frequency] attribute type, the default is amplitude
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/yliu/Minstattr.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,66 @@
+.TH sfsic 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfsic \- Local slant stacks I.C. 
+.SH SYNOPSIS
+.B sfsic < Fs.rsf ur=Fr.rsf > Fi.rsf ompchunk=1 verb=n nbuf=1 sig=1.0 na=1 oa=0.0 da=1.0 nl=1 dl=1. ol=0.
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B da
+.B =1.0
+.R  
+.TP
+.I float  
+.B dl
+.B =1.
+.R  
+.TP
+.I int    
+.B na
+.B =1
+.R  
+.TP
+.I int    
+.B nbuf
+.B =1
+.R  	buffer size
+.TP
+.I int    
+.B nl
+.B =1
+.R  
+.TP
+.I float  
+.B oa
+.B =0.0
+.R  
+.TP
+.I float  
+.B ol
+.B =0.
+.R  
+.TP
+.I int    
+.B ompchunk
+.B =1
+.R  	OpenMP data chunk size
+.TP
+.I float  
+.B sig
+.B =1.0
+.R  
+.TP
+.I file   
+.B ur
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.SH SOURCE
+.I user/psava/Msic.c
+.SH VERSION
+4.2-git

@@ -1,0 +1,66 @@
+.TH sfescfgrid2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfescfgrid2 \- Solution of escape equations by Gauss-Seidel solver on full grid for 2-D (an)isotropic media. 
+.SH SYNOPSIS
+.B sfescfgrid2 < spdom.rsf > out.rsf vspl=vspline.rsf na=360 mdist=SF_HUGE thresh=1e-6 morder=ESC2_MORDER niter=nx atraced=n mtraced=n cmix=n tracebc=y verb=n
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B atraced
+.B =n
+.R  [y/n]	true - output map of all traced points
+.TP
+.I bool   
+.B cmix
+.B =n
+.R  [y/n]	true - check for color mixing
+.TP
+.I float  
+.B mdist
+.B =SF_HUGE
+.R  	Maximum distance between points in F-D stencil
+.TP
+.I int    
+.B morder
+.B =ESC2_MORDER
+.R  	Maximum order in F-D stencil
+.TP
+.I bool   
+.B mtraced
+.B =n
+.R  [y/n]	true - output map of points traced because of mdist criterion
+.TP
+.I int    
+.B na
+.B =360
+.R  	Number of phase angles
+.TP
+.I int    
+.B niter
+.B =nx
+.R  	Maximum number of Gauss-Seidel iterations
+.TP
+.I float  
+.B thresh
+.B =1e-6
+.R  	Convergence threshold
+.TP
+.I bool   
+.B tracebc
+.B =y
+.R  [y/n]	n - do not trace B.C. points
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I string 
+.B vspl
+.B =
+.R  	Spline coefficients for velocity model (auxiliary input file name)
+.SH SOURCE
+.I user/cram/Mescfgrid2.c
+.SH VERSION
+4.2-git

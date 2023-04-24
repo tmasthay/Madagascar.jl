@@ -1,0 +1,31 @@
+.TH sfexpd 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfexpd \- Expand 2D data corret version with true spatial cooridinates  
+.SH SYNOPSIS
+.B sfexpd > out.rsf < in.rsf left=0.5*nx right=0.5*nx top=0 bottom=0
+.SH PARAMETERS
+.PD 0
+.TP
+.I int    
+.B bottom
+.B =0
+.R  
+.TP
+.I int    
+.B left
+.B =0.5*nx
+.R  
+.TP
+.I int    
+.B right
+.B =0.5*nx
+.R  
+.TP
+.I int    
+.B top
+.B =0
+.R  
+.SH SOURCE
+.I user/chenyk/Mexpd.c
+.SH VERSION
+4.2-git

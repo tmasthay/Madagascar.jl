@@ -1,0 +1,136 @@
+.TH sfzfraclr2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfzfraclr2 \- Complex lowrank decomposition for 2-D viscoacoustic isotropic wave propagation. 
+.SH SYNOPSIS
+.B sfzfraclr2 < vel.rsf fft=fft.rsf left=left.rsf > right.rsf seed=time(NULL eps=1.e-4 npk=20 dt= w0= rev=false mode=0 compen=false taper=0.2 cutoff=250. vmax=6000. sign=0 avg=false gamma= abc=0 nbt=0 nbb=0 nbl=0 nbr=0 ct=0.0 cb=0.0 cl=0.0 cr=0.0
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B abc
+.B =0
+.R  
+.TP
+.I        
+.B avg
+.B =false
+.R  	whether use average value of gamma
+.TP
+.I        
+.B cb
+.B =0.0
+.R  
+.TP
+.I        
+.B cl
+.B =0.0
+.R  
+.TP
+.I        
+.B compen
+.B =false
+.R  	compensate attenuation, only works if mode=0,1 (viscoacoustic)
+.TP
+.I        
+.B cr
+.B =0.0
+.R  
+.TP
+.I        
+.B ct
+.B =0.0
+.R  
+.TP
+.I        
+.B cutoff
+.B =250.
+.R  	cutoff frequency
+.TP
+.I        
+.B dt
+.B =
+.R  	time step
+.TP
+.I        
+.B eps
+.B =1.e-4
+.R  	tolerance
+.TP
+.I file   
+.B fft
+.B =
+.R  	auxiliary input file name
+.TP
+.I        
+.B gamma
+.B =
+.R  
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B mode
+.B =0
+.R  	mode of propagation: 0 is viscoacoustic (default); 1 is loss-dominated; 2 is dispersion dominated; 3 is acoustic
+.TP
+.I        
+.B nbb
+.B =0
+.R  
+.TP
+.I        
+.B nbl
+.B =0
+.R  
+.TP
+.I        
+.B nbr
+.B =0
+.R  
+.TP
+.I        
+.B nbt
+.B =0
+.R  
+.TP
+.I        
+.B npk
+.B =20
+.R  	maximum rank
+.TP
+.I        
+.B rev
+.B =false
+.R  	reverse propagation
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.TP
+.I        
+.B sign
+.B =0
+.R  	sign of solution: 0 is positive, 1 is negative
+.TP
+.I        
+.B taper
+.B =0.2
+.R  	taper ratio for tukey window
+.TP
+.I        
+.B vmax
+.B =6000.
+.R  	maximum velocity
+.TP
+.I        
+.B w0
+.B =
+.R  	reference frequency
+.SH SOURCE
+.I user/jsun/Mzfraclr2.cc
+.SH VERSION
+4.2-git

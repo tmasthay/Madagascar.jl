@@ -1,0 +1,51 @@
+.TH sfpermlr1 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfpermlr1 \- Lowrank decomposition for prestack exploding reflector in v(z). 
+.SH SYNOPSIS
+.B sfpermlr1 < vel.rsf fft=fft.rsf left=left.rsf right=right.rsf size=size.rsf seed=time(NULL eps=1.e-4 npk=5 dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I        
+.B dt
+.B =
+.R  	time step
+.TP
+.I        
+.B eps
+.B =1.e-4
+.R  	tolerance
+.TP
+.I file   
+.B fft
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B npk
+.B =5
+.R  	maximum rank
+.TP
+.I file   
+.B right
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B seed
+.B =time(NULL
+.R  
+.TP
+.I file   
+.B size
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/fomels/Mpermlr1.cc
+.SH VERSION
+4.2-git

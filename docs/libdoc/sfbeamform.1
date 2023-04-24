@@ -1,0 +1,36 @@
+.TH sfbeamform 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfbeamform \- 2-D beam forming. 
+.SH SYNOPSIS
+.B sfbeamform < in.rsf dip=dip.rsf > out.rsf rect=3 adj=y gauss=n order=1
+.SH PARAMETERS
+.PD 0
+.TP
+.I bool   
+.B adj
+.B =y
+.R  [y/n]	adjoint flag
+.TP
+.I file   
+.B dip
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B gauss
+.B =n
+.R  [y/n]	use pseudo-gaussian
+.TP
+.I int    
+.B order
+.B =1
+.R  	PWD accuracy order
+.TP
+.I int    
+.B rect
+.B =3
+.R  	smoothing radius
+.SH SOURCE
+.I user/pwd/Mbeamform.c
+.SH VERSION
+4.2-git

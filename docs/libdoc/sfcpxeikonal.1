@@ -1,0 +1,211 @@
+.TH sfcpxeikonal 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcpxeikonal \- Iterative complex eikonal solver 
+.SH SYNOPSIS
+.B sfcpxeikonal < in.rsf > out.rsf vel=vel.rsf witer=witer.rsf dwiter=dwiter.rsf dwsiter=dwsiter.rsf rhsiter=rhsiter.rsf upiter=upiter.rsf operiter=operiter.rsf matriter=matriter.rsf matiiter=matiiter.rsf x0iter=x0iter.rsf liniter=liniter.rsf titer=titer.rsf wtiter=wtiter.rsf gamiter=gamiter.rsf preciter=preciter.rsf maskr=maskr.rsf maski=maski.rsf ref=ref.rsf wght=wght.rsf cray=cray.rsf velocity=y verb=n niter=1 cgiter=200 nstep=10 tol=1.e-8 wupg=y term=n smooth=n repeat=1 reg=n eps=1.e-2 namda=0.1 alpha=1. pvar=y recom=y rect#=(1,1,...) symm= prec= bound=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B alpha
+.B =1.
+.R  	exponential scaling of preconditioning
+.TP
+.I string 
+.B bound
+.B =
+.R  	avoid overshoot when update (default add)
+.TP
+.I int    
+.B cgiter
+.B =200
+.R  	number of conjugate gradient iterations
+.TP
+.I string 
+.B cray
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B dwiter
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B dwsiter
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B eps
+.B =1.e-2
+.R  	stable division of preconditioner
+.TP
+.I string 
+.B gamiter
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B liniter
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B maski
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B maskr
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B matiiter
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B matriter
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B namda
+.B =0.1
+.R  	regularization parameter (Ticknov)
+.TP
+.I int    
+.B niter
+.B =1
+.R  	number of iterations
+.TP
+.I int    
+.B nstep
+.B =10
+.R  	number of linesearch
+.TP
+.I string 
+.B operiter
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B prec
+.B =
+.R  	rhs preconditioning (default angle)
+.TP
+.I string 
+.B preciter
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B pvar
+.B =y
+.R  [y/n]	allow preconditioning to change over iterations
+.TP
+.I bool   
+.B recom
+.B =y
+.R  [y/n]	recompute initial R according to w estimated from I
+.TP
+.I int    
+.B rect#
+.B =(1,1,...)
+.R  	smoothing radius on #-th axis
+.TP
+.I file   
+.B ref
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B reg
+.B =n
+.R  [y/n]	regularization (Ticknov)
+.TP
+.I int    
+.B repeat
+.B =1
+.R  	number of smoothings
+.TP
+.I string 
+.B rhsiter
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B smooth
+.B =n
+.R  [y/n]	smooth update after conjugate-gradient
+.TP
+.I string 
+.B symm
+.B =
+.R  	right-hand side evaluation L_R*I or L_I*R (default both)
+.TP
+.I bool   
+.B term
+.B =n
+.R  [y/n]	early termination if line-search failure
+.TP
+.I string 
+.B titer
+.B =
+.R  	auxiliary output file name
+.TP
+.I float  
+.B tol
+.B =1.e-8
+.R  	thresholding for gradient scaling
+.TP
+.I string 
+.B upiter
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B velocity
+.B =y
+.R  [y/n]	if y, the input is velocity; n, slowness squared
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity flag
+.TP
+.I string 
+.B wght
+.B =
+.R  	auxiliary input file name
+.TP
+.I string 
+.B witer
+.B =
+.R  	auxiliary output file name
+.TP
+.I string 
+.B wtiter
+.B =
+.R  	auxiliary output file name
+.TP
+.I bool   
+.B wupg
+.B =y
+.R  [y/n]	compute w for angle preconditioning
+.TP
+.I string 
+.B x0iter
+.B =
+.R  	auxiliary output file name
+.SH SOURCE
+.I user/llisiw/Mcpxeikonal.c
+.SH VERSION
+4.2-git

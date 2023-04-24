@@ -1,0 +1,34 @@
+.TH sfmwni2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfmwni2d \- 2-D bandlimited minimum weighted-norm interpolation (MWNI) 
+.SH SYNOPSIS
+.B sfmwni2d < Fin.rsf mask=Fmask.rsf > Fout.rsf verb=n niter=100 tol=1.0e-6
+.SH COMMENTS
+implemented with conjugate gradient least squares (CGLS) method
+
+.SH PARAMETERS
+.PD 0
+.TP
+.I string 
+.B mask
+.B =
+.R  	auxiliary input file name
+.TP
+.I int    
+.B niter
+.B =100
+.R  	total number iterations
+.TP
+.I float  
+.B tol
+.B =1.0e-6
+.R  	iteration tolerance
+.TP
+.I bool   
+.B verb
+.B =n
+.R  [y/n]	verbosity
+.SH SOURCE
+.I user/pyang/Mmwni2d.c
+.SH VERSION
+4.2-git

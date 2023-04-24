@@ -1,0 +1,96 @@
+.TH sfrwe2d 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfrwe2d \- None
+.SH SYNOPSIS
+.B sfrwe2d rwf=rwfile.rsf swf=swfile.rsf vel=velfile.rsf rays=rays.rsf image=imfile.rsf Rimage=Rimage.rsf forward=0. nref=256 verbose=n kinematic=y norm=1 nsx=3 nsz=3 xmin=ax%o xmax=(ax%n-1 zmax=(az%n-1 dxx=ax%d
+.SH PARAMETERS
+.PD 0
+.TP
+.I file   
+.B Rimage
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B dxx
+.B =ax%d
+.R  	call from_par("dzz",dzz,az%d)
+.TP
+.I        
+.B forward
+.B =0.
+.R  	Forward scattering option
+.TP
+.I file   
+.B image
+.B =
+.R  	auxiliary output file name
+.TP
+.I        
+.B kinematic
+.B =y
+.R  	Kinematic approximation
+.TP
+.I        
+.B norm
+.B =1
+.R  	Whether (1) or not (0) to normalize by gnorm
+.TP
+.I        
+.B nref
+.B =256
+.R  	starting number of points for calculating reference velocities
+.TP
+.I        
+.B nsx
+.B =3
+.R  
+.TP
+.I        
+.B nsz
+.B =3
+.R  
+.TP
+.I file   
+.B rays
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B rwf
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B swf
+.B =
+.R  	auxiliary input file name
+.TP
+.I file   
+.B vel
+.B =
+.R  	auxiliary input file name
+.TP
+.I        
+.B verbose
+.B =n
+.R  	level of verbosity
+.TP
+.I        
+.B xmax
+.B =(ax%n-1
+.R  
+.TP
+.I        
+.B xmin
+.B =ax%o
+.R  	call from_par("zmin",zmin,az%o)
+.TP
+.I        
+.B zmax
+.B =(az%n-1
+.R  
+.SH SOURCE
+.I user/jeff/Mrwe2d.f90
+.SH VERSION
+4.2-git

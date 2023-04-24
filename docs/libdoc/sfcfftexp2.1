@@ -1,0 +1,51 @@
+.TH sfcfftexp2 1  "APRIL 2023" Madagascar "Madagascar Manuals"
+.SH NAME
+sfcfftexp2 \- 2-D FFT-based zero-offset exploding reflector modeling/migration  
+.SH SYNOPSIS
+.B sfcfftexp2 < data.rsf > image.rsf left=left.rsf right=right.rsf mig=n pad1=1 nz= dz= nt= dt=
+.SH PARAMETERS
+.PD 0
+.TP
+.I float  
+.B dt
+.B =
+.R  	time sampling (if modeling)
+.TP
+.I float  
+.B dz
+.B =
+.R  	depth sampling (if migration)
+.TP
+.I file   
+.B left
+.B =
+.R  	auxiliary input file name
+.TP
+.I bool   
+.B mig
+.B =n
+.R  [y/n]	if n, modeling; if y, migration
+.TP
+.I int    
+.B nt
+.B =
+.R  	time samples (if modeling)
+.TP
+.I int    
+.B nz
+.B =
+.R  	depth samples (if migration)
+.TP
+.I int    
+.B pad1
+.B =1
+.R  	padding factor on the first axis
+.TP
+.I file   
+.B right
+.B =
+.R  	auxiliary input file name
+.SH SOURCE
+.I user/jsun/Mcfftexp2.c
+.SH VERSION
+4.2-git

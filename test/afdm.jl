@@ -5,13 +5,11 @@ c1 = +16.f0/12.f0
 c2 = - 1.f0/12.f0
 
 verb = Madagascar.getbool("verb", false) # verbosity
-vel = Madagascar.getstring("vel")
-ref = Madagascar.getstring("ref")
 
 # Read file data and axes
-ww, nw, dw, ow, lw, uw = Madagascar.rsf_read("in")
-vv, nv, dv, ov, lv, uv = Madagascar.rsf_read(vel)
-rr, nr, dr, or, lr, ur = Madagascar.rsf_read(ref)
+ww, nw, dw, ow, lw, uw = sfspike(n1=1001, k1=200, d1=0.001) |> x->sfricker1(x, frequency=10) |> rsf_read
+vv, nv, dv, ov, lv, uv = sfmath(n1=501, n2=501, d1=0.01, d2=0.01, label1=:Z, label2=:X, unit1=:km, unit2=:km, output="1+0.2*x1+0.1*x2") |> rsf_read
+rr, nr, dr, or, lr, ur = sfspike(vv; nsp=3, k1=(100,200,300), k2=(100,300,200), mag=(1,-1,2)) |> rsf_read
 
 nt = nw[]
 dt = dw[]
@@ -73,7 +71,9 @@ function run_afdm()
 
         Madagascar.floatwrite(vec(uo), nz*nx, Fo)
     end
+    @show extrema(um)
 end
+
 @fastmath @inbounds run_afdm()
 
 if verb

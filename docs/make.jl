@@ -7,4 +7,4 @@ makedocs(sitename="Madagascar julia wrapper",
              "Home" => "index.md",
          ])
 
-deploydocs(repo="github.com/mloubout/Madagascar.jl")
+deploydocs(repo="github.com/mloubout/Madagascar.jl", devbranch="main")

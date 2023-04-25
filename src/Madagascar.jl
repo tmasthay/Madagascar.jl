@@ -175,6 +175,7 @@ end
 function floatread(arr::Array{Float32,1},size::Integer,file::RSFFile)
     size::Csize_t = size
     @ccall libdrsf.sf_floatread(arr::Ptr{Cfloat}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
+    return nothing
 end
 
 function complexread(arr::Array{ComplexF32,1},size::Integer,file::RSFFile)
@@ -205,6 +206,7 @@ end
 function floatwrite(arr::Array{Float32,1},size::Integer,file::RSFFile)
     size::Csize_t = size
     @ccall libdrsf.sf_floatwrite(arr::Ptr{Cfloat}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
+    return nothing
 end
 
 function complexwrite(arr::Array{ComplexF32,1},size::Integer,file::RSFFile)

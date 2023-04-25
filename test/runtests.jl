@@ -48,7 +48,7 @@ dat, = rsf_read(inp)
 @test Madagascar.histfloat(inp, "o1") ≈ 0
 @test Madagascar.histstring(inp, "label1") == ""
 @test Madagascar.histstring(inp, "unit1") == ""
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_inp_uchar.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_inp_uchar.rsf`)
 
 println("output uchar")
 out = Madagascar.output("$(@__DIR__)/test_out_uchar.rsf")
@@ -81,12 +81,12 @@ Madagascar.close(out)
 
 old_stdout = stdout
 (rout, wout) = redirect_stdout()
-run(pipeline(`$(Madagascar.RSF_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_uchar.rsf", stdout=wout))
+run(pipeline(`$(Madagascar.Madagascar_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_uchar.rsf", stdout=wout))
 data = String(readavailable(rout))
 close(rout)
 redirect_stdout(old_stdout)
 @test data == "   0:    1    2 \n"
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_out_uchar.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_out_uchar.rsf`)
 
 println("input char")
 run(pipeline(`echo "a bA?"`, stdout="$(@__DIR__)/test_inp_char.txt"))
@@ -102,7 +102,7 @@ dat, = rsf_read(inp)
 @test Madagascar.histfloat(inp, "o1") ≈ 0
 @test Madagascar.histstring(inp, "label1") == ""
 @test Madagascar.histstring(inp, "unit1") == ""
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_inp_char.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_inp_char.rsf`)
 
 println("output char")
 out = Madagascar.output("$(@__DIR__)/test_out_char.rsf")
@@ -135,18 +135,18 @@ Madagascar.close(out)
 
 old_stdout = stdout
 (rout, wout) = redirect_stdout()
-run(pipeline(`$(Madagascar.RSF_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_char.rsf", stdout=wout))
+run(pipeline(`$(Madagascar.Madagascar_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_char.rsf", stdout=wout))
 data = String(readavailable(rout))
 close(rout)
 redirect_stdout(old_stdout)
 @test data == "   0:    1    2 \n"
-run(`$(Madagascar.RSF_jll.sfrm()) test_out_char.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) test_out_char.rsf`)
 
 println("input int")
-run(pipeline(pipeline(`$(Madagascar.RSF_jll.sfspike()) n1=2 k1=1,2,2
+run(pipeline(pipeline(`$(Madagascar.Madagascar_jll.sfspike()) n1=2 k1=1,2,2
                                n2=3 k2=1,2,3
                                nsp=3 mag=1,4,2`,
-                      `$(Madagascar.RSF_jll.sfdd())  type=int`),
+                      `$(Madagascar.Madagascar_jll.sfdd())  type=int`),
              stdout="$(@__DIR__)/test_inp_int.rsf"))
 inp = Madagascar.input("test_inp_int.rsf")
 @test Madagascar.size(inp) == (2, 3)
@@ -165,7 +165,7 @@ dat, = rsf_read(inp)
 @test Madagascar.histstring(inp, "label2") == "Distance"
 @test Madagascar.histstring(inp, "unit1") == "s"
 @test Madagascar.histstring(inp, "unit2") == "km"
-run(`$(Madagascar.RSF_jll.sfrm()) test_inp_int.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) test_inp_int.rsf`)
 
 println("output int")
 out = Madagascar.output("$(@__DIR__)/test_out_int.rsf")
@@ -198,16 +198,16 @@ Madagascar.close(out)
 
 old_stdout = stdout
 (rout, wout) = redirect_stdout()
-run(pipeline(`$(Madagascar.RSF_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_int.rsf", stdout=wout))
+run(pipeline(`$(Madagascar.Madagascar_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_int.rsf", stdout=wout))
 data = String(readavailable(rout))
 close(rout)
 redirect_stdout(old_stdout)
 @test data == "   0:    1    2 \n"
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_out_int.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_out_int.rsf`)
 
 
 println("input float")
-run(pipeline(`$(Madagascar.RSF_jll.sfspike()) n1=2 k1=1,2,2
+run(pipeline(`$(Madagascar.Madagascar_jll.sfspike()) n1=2 k1=1,2,2
                       n2=3 k2=1,2,3
                       nsp=3 mag=1,4,2 out=stdout`,
              stdout="$(@__DIR__)/test_inp_float.rsf"))
@@ -227,7 +227,7 @@ dat, = rsf_read(inp)
 @test Madagascar.histstring(inp, "label2") == "Distance"
 @test Madagascar.histstring(inp, "unit1") == "s"
 @test Madagascar.histstring(inp, "unit2") == "km"
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_inp_float.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_inp_float.rsf`)
 
 println("output float")
 out = Madagascar.output("$(@__DIR__)/test_out_float.rsf")
@@ -258,19 +258,19 @@ Madagascar.close(out)
 
 old_stdout = stdout
 (rout, wout) = redirect_stdout()
-run(pipeline(`$(Madagascar.RSF_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_float.rsf", stdout=wout))
+run(pipeline(`$(Madagascar.Madagascar_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_float.rsf", stdout=wout))
 data = String(readavailable(rout))
 close(rout)
 redirect_stdout(old_stdout)
 @test data == "   0:           1.5          2.5\n"
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_out_float.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_out_float.rsf`)
 
 println("input complex")
-run(pipeline(pipeline(`$(Madagascar.RSF_jll.sfspike()) n1=2 k1=1,2,2
+run(pipeline(pipeline(`$(Madagascar.Madagascar_jll.sfspike()) n1=2 k1=1,2,2
                                n2=3 k2=1,2,3
                                nsp=3 mag=1,4,2`,
-                      `$(Madagascar.RSF_jll.sfrtoc())`,
-                      `$(Madagascar.RSF_jll.sfmath()) output='input + I' out=stdout`),
+                      `$(Madagascar.Madagascar_jll.sfrtoc())`,
+                      `$(Madagascar.Madagascar_jll.sfmath()) output='input + I' out=stdout`),
     stdout="$(@__DIR__)/test_inp_complex.rsf"))
 inp = Madagascar.input("$(@__DIR__)/test_inp_complex.rsf")
 @test Madagascar.size(inp) == (2, 3)
@@ -288,7 +288,7 @@ dat, = rsf_read(inp)
 @test Madagascar.histstring(inp, "label2") == "Distance"
 @test Madagascar.histstring(inp, "unit1") == "s"
 @test Madagascar.histstring(inp, "unit2") == "km"
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_inp_complex.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_inp_complex.rsf`)
 
 println("output complex")
 out = Madagascar.output("$(@__DIR__)/test_out_complex.rsf")
@@ -321,18 +321,18 @@ Madagascar.close(out)
 
 old_stdout = stdout
 (rout, wout) = redirect_stdout()
-run(pipeline(`$(Madagascar.RSF_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_complex.rsf", stdout=wout))
+run(pipeline(`$(Madagascar.Madagascar_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_complex.rsf", stdout=wout))
 data = String(readavailable(rout))
 close(rout)
 redirect_stdout(old_stdout)
 @test data == "   0:        0.5,         1i         2,         1i\n"
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_out_complex.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_out_complex.rsf`)
 
 println("input short")
-run(pipeline(pipeline(`$(Madagascar.RSF_jll.sfspike()) n1=2 k1=1,2,2
+run(pipeline(pipeline(`$(Madagascar.Madagascar_jll.sfspike()) n1=2 k1=1,2,2
                                n2=3 k2=1,2,3
                                nsp=3 mag=1,4,2`,
-                      `$(Madagascar.RSF_jll.sfdd())  type=short out=stdout`),
+                      `$(Madagascar.Madagascar_jll.sfdd())  type=short out=stdout`),
     stdout="$(@__DIR__)/test_inp_short.rsf"))
 inp = Madagascar.input("$(@__DIR__)/test_inp_short.rsf")
 @test Madagascar.size(inp) == (2, 3)
@@ -350,7 +350,7 @@ dat, = rsf_read(inp)
 @test Madagascar.histstring(inp, "label2") == "Distance"
 @test Madagascar.histstring(inp, "unit1") == "s"
 @test Madagascar.histstring(inp, "unit2") == "km"
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_inp_short.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_inp_short.rsf`)
 
 println("output short")
 out = Madagascar.output("$(@__DIR__)/test_out_short.rsf")
@@ -383,12 +383,12 @@ Madagascar.close(out)
 
 old_stdout = stdout
 (rout, wout) = redirect_stdout()
-run(pipeline(`$(Madagascar.RSF_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_short.rsf", stdout=wout))
+run(pipeline(`$(Madagascar.Madagascar_jll.sfdisfil())`, stdin="$(@__DIR__)/test_out_short.rsf", stdout=wout))
 data = String(readavailable(rout))
 close(rout)
 redirect_stdout(old_stdout)
 @test data == "   0:    5    2 \n"
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_out_short.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_out_short.rsf`)
 
 println("prog")
 println("    read")
@@ -452,7 +452,7 @@ dat, n, d, o, l, u = rsf_read("$(@__DIR__)/test_write.rsf")
 @test o ≈ [0]
 @test l == ["Time"]
 @test u == ["s"]
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_write.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_write.rsf`)
 
 sfspike(;n1=1) |> x -> rsf_write(x, "$(@__DIR__)/test_write.rsf")
 dat, n, d, o, l, u = rsf_read("$(@__DIR__)/test_write.rsf")
@@ -462,7 +462,7 @@ dat, n, d, o, l, u = rsf_read("$(@__DIR__)/test_write.rsf")
 @test o ≈ [0]
 @test l == ["Time"]
 @test u == ["s"]
-run(`$(Madagascar.RSF_jll.sfrm()) $(@__DIR__)/test_write.rsf`)
+run(`$(Madagascar.Madagascar_jll.sfrm()) $(@__DIR__)/test_write.rsf`)
 
 dat, n, d, o, l, u = rsf_write([5 2; 3 4], d=[0.1, 0.2], o=[1,2], l=["t", "x"],
                                u=["s", "m"]) |> rsf_read

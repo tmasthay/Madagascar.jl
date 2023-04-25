@@ -32,14 +32,14 @@ module Madagascar
 
 using Libdl
 
-using RSF_jll
-import RSF_jll: libdrsf
+using Madagascar_jll
+import Madagascar_jll: libdrsf
 
 export rsf_read,
        rsf_write
 
 # Lib paths
-RSFROOT = RSF_jll.artifact_dir
+RSFROOT = Madagascar_jll.artifact_dir
 
 # librsf
 
@@ -466,13 +466,13 @@ function rsf_write(name::String, dat::AbstractArray, n=nothing, d=nothing,
     # dummy input of the correct type.
     old_stdin = stdin
     (rin, win) = redirect_stdin()
-    RSF_jll.sfspike() do spike
+    Madagascar_jll.sfspike() do spike
         if eltype(dat) <: Int16
-            pipe = pipeline(`$spike n1=1`, `$(RSF_jll.sfdd()) type=short`)
+            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfdd()) type=short`)
         elseif eltype(dat) <: Complex
-            pipe = pipeline(`$spike n1=1`, `$(RSF_jll.sfrtoc()) out=stdout`)
+            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfrtoc()) out=stdout`)
         elseif eltype(dat) <: Integer
-            pipe = pipeline(`$spike n1=1`, `$(RSF_jll.sfdd()) type=int`)
+            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfdd()) type=int`)
         else
             pipe = `$spike n1=1 out=stdout`
         end
@@ -498,7 +498,7 @@ rsf_write(dat::AbstractArray; n=nothing, d=nothing, o=nothing, l=nothing,
 
 function rsf_write(file::RSFFile, tag::String)
     fname = String[file.tag, tag]
-    RSF_jll.sfmv() do sfmv
+    Madagascar_jll.sfmv() do sfmv
         run(`$sfmv $fname`)
     end
 end
@@ -522,7 +522,7 @@ end
 
 function delete_rsf(tag::String)
     fname = String[tag]
-    return run(`$(RSF_jll.sfrm()) $fname`, wait=false)
+    return run(`$(Madagascar_jll.sfrm()) $fname`, wait=false)
 end
 
 function temporary_rsf()
@@ -571,7 +571,7 @@ $manpage"""
         function ($F)(;kwargs...)
             out_tag = temporary_rsf()
             args = process_args(;kwargs...)
-            RSF_jll.$F() do exe
+            Madagascar_jll.$F() do exe
                 pipe = `$exe $args`
                 run(pipeline(pipe, stdout=out_tag))
             end
@@ -582,7 +582,7 @@ $manpage"""
     @eval function ($F)(in_file::RSFFile; kwargs...)
         out_tag = temporary_rsf()
         args = process_args(;kwargs...)
-        RSF_jll.$F() do exe
+        Madagascar_jll.$F() do exe
             pipe = `$exe $args`
             run(pipeline(pipe, stdin=in_file.tag, stdout=out_tag))
         end

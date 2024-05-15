@@ -28,7 +28,7 @@ dout = [dz dx dt]
 oout = [oz ox ot]
 lout = [lz lx lt]
 uout = [uz ux ut]
-Fo = Madagascar.output("out")
+Fo = Madagascar.output("afdm")
 for i in 1:length(nout)
     Madagascar.putint(Fo, "n$i", nout[i])
     Madagascar.putfloat(Fo, "d$i", dout[i])
@@ -64,11 +64,10 @@ function run_afdm()
         # scale by velocity
         ud = @. ud * vv * vv
 
-	# time step
+	    # time step
         up = @. 2f0uo - um + ud * dt2
         um = uo
         uo = up
-
         Madagascar.floatwrite(vec(uo), nz*nx, Fo)
     end
     @show extrema(um)

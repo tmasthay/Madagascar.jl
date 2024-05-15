@@ -468,20 +468,23 @@ function rsf_write(name::String, dat::AbstractArray, n=nothing, d=nothing,
     # dummy input of the correct type.
     old_stdin = stdin
     (rin, win) = redirect_stdin()
+    old_stdout = stdout
+    (rout, wout) = redirect_stdout()
     Madagascar_jll.sfspike() do spike
         if eltype(dat) <: Int16
-            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfdd()) type=short`)
+            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfdd()) type=short out=$wout`)
         elseif eltype(dat) <: Complex
-            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfrtoc()) out=stdout`)
+            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfrtoc()) out=$wout`)
         elseif eltype(dat) <: Integer
-            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfdd()) type=int`)
+            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfdd()) type=int out=$wout`)
         else
-            pipe = `$spike n1=1 out=stdout`
+            pipe = `$spike n1=1 out=$wout`
         end
         Base.wait(run(pipeline(pipe, stdout=win), wait=false))
     end
     redirect_stdin(old_stdin)
     rsf_read((rin, win))
+    redirect_stdout(old_stdout)
 
     rsf_write(output(name), dat, n, d, o, l, u)
 end

@@ -36,16 +36,19 @@ jobs:
           arch: ${{ matrix.arch }}
 
       - name: Fetch Madagascar source
-        run: git clone https://github.com/ahay/src.git
+        run: |
+          mkdir $HOME/mad_iso
+          cd $HOME/mad_iso
+          git clone https://github.com/ahay/src.git
 
       - name: Build Madagascar
         run: |
-          cd src
-          PREFIX=$HOME/madagascar
+          cd $HOME/mad_iso/src
+          PREFIX=$HOME/madagascar_build
           INC=$PREFIX/include
           BIN=$PREFIX/bin
           LIB=$PREFIX/lib
-          ./configure --prefix=$HOME/madagascar \
+          ./configure --prefix=$PREFIX \
             cc=$(which gcc) \
             cxx=$(which g++) \
             CAIROPATH=$INC/cairo \
@@ -55,7 +58,7 @@ jobs:
           make install
         
       - name: Source Madagascar env
-        run: source $HOME/madagascar/env.sh
+        run: source $HOME/mad_iso/src/env.sh
 
       - name: Run tests
         uses: julia-actions/julia-runtest@latest

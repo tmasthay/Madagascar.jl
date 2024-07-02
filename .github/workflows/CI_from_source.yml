@@ -1,0 +1,61 @@
+name: CI-Madagascar
+
+on:
+  # Trigger the workflow on push to master or pull request
+  # to be merged in master
+  push:
+    branches:
+      - main
+      - devel
+  pull_request:
+    branches:
+      - main
+      - devel
+
+jobs:
+  test:
+    name: Julia ${{ matrix.version }} - ${{ matrix.os }} - ${{ matrix.arch }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        version: ['1.8']
+        os: [ubuntu-latest]
+        arch: [x64]
+
+    steps:
+      - name: Checkout Madagascar
+        uses: actions/checkout@v3
+
+      - name: Setup julia
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: ${{ matrix.version }}
+          arch: ${{ matrix.arch }}
+
+      - name: Fetch Madagascar source
+        run: git clone https://github.com/ahay/src.git
+
+      - name: Build Madagascar
+        run: |
+          cd src
+          PREFIX=$HOME/madagascar
+          INC=$PREFIX/include
+          BIN=$PREFIX/bin
+          LIB=$PREFIX/lib
+          ./configure --prefix=$HOME/madagascar \
+            cc=$(which gcc) \
+            cxx=$(which g++) \
+            CAIROPATH=$INC/cairo \
+            FFMPEGPATH=$INC/libavcodec \
+            AR=$(which ar) 
+          make -j$(nproc)
+          make install
+        
+      - name: Source Madagascar env
+        run: source $HOME/madagascar/env.sh
+
+      - name: Run tests
+        uses: julia-actions/julia-runtest@latest

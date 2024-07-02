@@ -39,6 +39,7 @@ if "RSFROOT" in keys(ENV)
     include("Madagascar_from_source.jl")
 else
     println("Using precompiled Madagascar")
+    using Libdl
     include("Madagascar_precompiled.jl")
 end
 

@@ -28,7 +28,7 @@ julia> data
 julia> sfspike(n1=2) |> x -> sfwindow(x; n1=1) |> x -> rsf_write(x, "spike.rsf")
 ```
 """
-using Libdl
+# using Libdl
 
 using Madagascar_jll
 import Madagascar_jll: libdrsf
@@ -563,6 +563,7 @@ end
 progs = filter(x -> startswith(x, "sf"),
     readdir(joinpath(RSFROOT, "bin")))
 for (F, S) = [(Symbol(p), p) for p in progs]
+    println("Generating function for $F")
     @eval export $F
     @eval begin
         progname = $S
@@ -626,6 +627,4 @@ for (F, S) = [(Symbol(p), p) for p in progs]
     @eval function ($F)(tag::String; kwargs...)
         return $F(input(tag); kwargs...)
     end
-end
-
 end

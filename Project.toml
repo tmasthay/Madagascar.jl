@@ -8,7 +8,6 @@ Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 Madagascar_jll = "aa2f55ac-b14e-51ec-b6ff-9716116fc184"
 
 [compat]
-Madagascar_jll = "1"
 julia = "1.8"
 
 [extras]
@@ -17,4 +16,3 @@ TimerOutputs = "a759f4b9-e2f1-59dc-863e-4aeb61b1ea8f"
 
 [targets]
 test = ["Test", "TimerOutputs"]
-

@@ -1,33 +1,4 @@
-"""
-    m8r.jl
-
-Julia interface to Madagascar
-
-Built on the C API, the Julia API provides most lower level functions for
-reading, writing and manipulating various types of RSF files. It also provides
-higher level read and write functions, documented in `?rsf_read` and
-`?rsf_write`.
-
-The Julia API also provides searmless access to Madagascar programs. These can
-be accessed as Julia functions. For example, see `?sfwindow`. These functions
-can be piped to each other using Julia's currying (function composition)
-operator `|>`. See examples below.
-
-# Examples
-
-## Piping to variable
-```julia-repl
-julia> data = sfspike(n1=2) |> x -> sfwindow(x; n1=1) |> rsf_read
-
-julia> data
-(Float32[1.0], [1], Float32[0.004], Float32[0.0], String["Time"], String["s"])
-```
-
-## Piping to disk
-```julia-repl
-julia> sfspike(n1=2) |> x -> sfwindow(x; n1=1) |> x -> rsf_write(x, "spike.rsf")
-```
-"""
+using Libdl
 
 if haskey(ENV, "RSFROOT")
     RSFROOT = ENV["RSFROOT"]
@@ -35,12 +6,15 @@ else
     RSFROOT = nothing
 end
 
-#if Libdl.find_library("libdrsf") == ""
-#push!(Libdl.DL_LOAD_PATH, joinpath(RSFROOT, "lib"))
-#if Libdl.find_library("libdrsf") == ""
-#throw("Cannot find C api. Make sure RSFROOT/lib is in LD_LIBRARY_PATH")
-#end
-#end
+println("RSFROOT = ", RSFROOT)
+if Libdl.find_library("libdrsf") == ""
+    push!(Libdl.DL_LOAD_PATH, joinpath(RSFROOT, "lib"))
+    println("Libdl.find_library(\"libdrsf\") = ", Libdl.find_library("libdrsf"))
+    if Libdl.find_library("libdrsf") == ""
+        throw("Cannot find C api. Make sure RSFROOT/lib is in LD_LIBRARY_PATH")
+    end
+end
+libdrsf = dlpath(dlopen("libdrsf"))
 
 struct RSFFile
     tag::String
@@ -57,7 +31,7 @@ function __init__()
     else
         append!(argv, ARGS)
     end
-    ccall((:sf_init, "libdrsf"), Cvoid, (Int32, Ptr{Ptr{UInt8}}), length(argv), argv)
+    ccall((:sf_init, libdrsf), Cvoid, (Int32, Ptr{Ptr{UInt8}}), length(argv), argv)
 end
 
 function input(tag::String; temp=false)
@@ -66,45 +40,45 @@ function input(tag::String; temp=false)
             throw("SystemError: unable to read file $tag")
         end
     end
-    rsf = ccall((:sf_input, "libdrsf"), Ptr{UInt8}, (Ptr{UInt8},), tag)
+    rsf = ccall((:sf_input, libdrsf), Ptr{UInt8}, (Ptr{UInt8},), tag)
     RSFFile(tag, rsf, temp)
 end
 
 function output(tag::String)
-    rsf = ccall((:sf_output, "libdrsf"), Ptr{UInt8}, (Ptr{UInt8},), tag)
+    rsf = ccall((:sf_output, libdrsf), Ptr{UInt8}, (Ptr{UInt8},), tag)
     RSFFile(tag, rsf)
 end
 
 function gettype(file::RSFFile)
-    return ccall((:sf_gettype, "libdrsf"), Cuint, (Ptr{UInt8},), file.rsf) + 1
+    return ccall((:sf_gettype, libdrsf), Cuint, (Ptr{UInt8},), file.rsf) + 1
 end
 
 function getform(file::RSFFile)
-    return ccall((:sf_getform, "libdrsf"), Cuint, (Ptr{UInt8},), file.rsf) + 1
+    return ccall((:sf_getform, libdrsf), Cuint, (Ptr{UInt8},), file.rsf) + 1
 end
 
 function esize(file::RSFFile)
-    return ccall((:sf_esize, "libdrsf"), Csize_t, (Ptr{UInt8},), file.rsf)
+    return ccall((:sf_esize, libdrsf), Csize_t, (Ptr{UInt8},), file.rsf)
 end
 
 function setformat(file::RSFFile, format::String)
-    ccall((:sf_setformat, "libdrsf"), Cvoid, (Ptr{UInt8}, Ptr{UInt8}), file.rsf, format)
+    ccall((:sf_setformat, libdrsf), Cvoid, (Ptr{UInt8}, Ptr{UInt8}), file.rsf, format)
 end
 
 function histint(file::RSFFile, name::String)
     val = Cint[0]
-    ccall((:sf_histint, "libdrsf"), Bool, (Ptr{UInt8}, Ptr{UInt8}, Ref{Cint}), file.rsf, name, val)
+    ccall((:sf_histint, libdrsf), Bool, (Ptr{UInt8}, Ptr{UInt8}, Ref{Cint}), file.rsf, name, val)
     return convert(Int, val[])
 end
 
 function histfloat(file::RSFFile, name::String)
     val = Cfloat[0]
-    ccall((:sf_histfloat, "libdrsf"), Bool, (Ptr{UInt8}, Ptr{UInt8}, Ref{Cfloat}), file.rsf, name, val)
+    ccall((:sf_histfloat, libdrsf), Bool, (Ptr{UInt8}, Ptr{UInt8}, Ref{Cfloat}), file.rsf, name, val)
     return convert(Float32, val[])
 end
 
 function histstring(file::RSFFile, name::String)
-    val = ccall((:sf_histstring, "libdrsf"), Ptr{Cchar}, (Ptr{UInt8}, Ptr{UInt8}), file.rsf, name)
+    val = ccall((:sf_histstring, libdrsf), Ptr{Cchar}, (Ptr{UInt8}, Ptr{UInt8}), file.rsf, name)
     if val == C_NULL
         return ""
     end
@@ -113,20 +87,20 @@ end
 
 function getint(name::String, val::Integer)
     val = Cint[val]
-    ccall((:sf_getint, "libdrsf"), Bool, (Ptr{UInt8}, Ref{Cint}), name, val)
+    ccall((:sf_getint, libdrsf), Bool, (Ptr{UInt8}, Ref{Cint}), name, val)
     return convert(Int, val[])
 end
 getint(name::String; val::Integer=0) = getint(name, val)
 
 function getfloat(name::String, val::Real)
     val = Cfloat[val]
-    ccall((:sf_getfloat, "libdrsf"), Bool, (Ptr{UInt8}, Ref{Cfloat}), name, val)
+    ccall((:sf_getfloat, libdrsf), Bool, (Ptr{UInt8}, Ref{Cfloat}), name, val)
     return convert(Float32, val[])
 end
 getfloat(name::String; val::Real=0) = getfloat(name, val)
 
 function getstring(name::String, val::String)
-    v = ccall((:sf_getstring, "libdrsf"), Ptr{Cchar}, (Ptr{UInt8},), name)
+    v = ccall((:sf_getstring, libdrsf), Ptr{Cchar}, (Ptr{UInt8},), name)
     if v == C_NULL
         return val
     end
@@ -136,92 +110,92 @@ getstring(name::String; val::String="") = getstring(name, val)
 
 function getbool(name::String, val::Bool)
     val = Bool[val]
-    ccall((:sf_getbool, "libdrsf"), Bool, (Ptr{UInt8}, Ref{Bool}), name, val)
+    ccall((:sf_getbool, libdrsf), Bool, (Ptr{UInt8}, Ref{Bool}), name, val)
     return val[]
 end
 getbool(name::String; val::Bool=true) = getbool(name, val)
 
 function leftsize(file::RSFFile, dim::Integer)
     dim::Cint = dim
-    ccall((:sf_leftsize, "libdrsf"), Culonglong, (Ptr{UInt8}, Cint), file.rsf, dim)
+    ccall((:sf_leftsize, libdrsf), Culonglong, (Ptr{UInt8}, Cint), file.rsf, dim)
 end
 
 function ucharread(arr::Array{UInt8,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_ucharread, "libdrsf"), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_ucharread, libdrsf), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function charread(arr::Array{UInt8,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_charread, "libdrsf"), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_charread, libdrsf), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function intread(arr::Array{Int32,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_intread, "libdrsf"), Cvoid, (Ptr{Cint}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_intread, libdrsf), Cvoid, (Ptr{Cint}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function floatread(arr::Array{Float32,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_floatread, "libdrsf"), Cvoid, (Ptr{Cfloat}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_floatread, libdrsf), Cvoid, (Ptr{Cfloat}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function complexread(arr::Array{ComplexF32,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_complexread, "libdrsf"), Cvoid, (Ptr{ComplexF32}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_complexread, libdrsf), Cvoid, (Ptr{ComplexF32}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function shortread(arr::Array{Int16,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_shortread, "libdrsf"), Cvoid, (Ptr{Cshort}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_shortread, libdrsf), Cvoid, (Ptr{Cshort}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function ucharwrite(arr::Array{UInt8,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_ucharwrite, "libdrsf"), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_ucharwrite, libdrsf), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function charwrite(arr::Array{UInt8,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_charwrite, "libdrsf"), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_charwrite, libdrsf), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function intwrite(arr::Array{Int32,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_intwrite, "libdrsf"), Cvoid, (Ptr{Cint}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_intwrite, libdrsf), Cvoid, (Ptr{Cint}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function floatwrite(arr::Array{Float32,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_floatwrite, "libdrsf"), Cvoid, (Ptr{Cfloat}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_floatwrite, libdrsf), Cvoid, (Ptr{Cfloat}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function complexwrite(arr::Array{ComplexF32,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_complexwrite, "libdrsf"), Cvoid, (Ptr{ComplexF32}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_complexwrite, libdrsf), Cvoid, (Ptr{ComplexF32}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function shortwrite(arr::Array{Int16,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    ccall((:sf_complexwrite, "libdrsf"), Cvoid, (Ptr{Cshort}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
+    ccall((:sf_complexwrite, libdrsf), Cvoid, (Ptr{Cshort}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function putint(file::RSFFile, name::String, val::Integer)
     val::Cint = val
-    ccall((:sf_putint, "libdrsf"), Cvoid, (Ptr{UInt8}, Ptr{UInt8}, Cint), file.rsf, name, val)
+    ccall((:sf_putint, libdrsf), Cvoid, (Ptr{UInt8}, Ptr{UInt8}, Cint), file.rsf, name, val)
 end
 
 function putfloat(file::RSFFile, name::String, val::Real)
     val::Cfloat = val
-    ccall((:sf_putfloat, "libdrsf"), Cvoid, (Ptr{UInt8}, Ptr{UInt8}, Cfloat), file.rsf, name, val)
+    ccall((:sf_putfloat, libdrsf), Cvoid, (Ptr{UInt8}, Ptr{UInt8}, Cfloat), file.rsf, name, val)
 end
 
 function putstring(file::RSFFile, name::String, val::String)
-    ccall((:sf_putstring, "libdrsf"), Cvoid, (Ptr{UInt8}, Ptr{UInt8}, Ptr{UInt8}), file.rsf, name, val)
+    ccall((:sf_putstring, libdrsf), Cvoid, (Ptr{UInt8}, Ptr{UInt8}, Ptr{UInt8}), file.rsf, name, val)
 end
 
 function close(file::RSFFile)
-    ccall((:sf_fileclose, "libdrsf"), Cvoid, (Ptr{UInt8},), file.rsf)
+    ccall((:sf_fileclose, libdrsf), Cvoid, (Ptr{UInt8},), file.rsf)
 end
 
 """

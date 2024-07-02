@@ -36,6 +36,7 @@ export rsf_read,
 
 if "RSFROOT" in keys(ENV)
     println("Using Madagascar built from source, RSFROOT=$(ENV["RSFROOT"])")
+    # using Libdl
     include("Madagascar_from_source.jl")
 else
     println("Using precompiled Madagascar")

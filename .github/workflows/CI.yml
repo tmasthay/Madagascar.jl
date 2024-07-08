@@ -20,8 +20,8 @@ jobs:
 
       matrix:
         version: ['1.8']
-        os: [ubuntu-latest]
-        arch: [x64]
+        os: [ubuntu-latest, macos-latest]
+        arch: [x64, arm64]
 
     steps:
       - name: Checkout Madagascar
@@ -32,6 +32,18 @@ jobs:
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
+
+      - name: Build Madagascar
+        run: |
+          mad_url="https://github.com/ahay/src.git"
+          branch_name=$(git ls-remote $mad_url | grep -E "madagascar-[0-9]+\.[0-9]+" | tail -n 1 | awk '{print $2}')
+          branch_name=$(echo $branch_name | sed 's|refs/heads/||')
+          git clone --single-branch --branch $branch_name $mad_url
+          cd src
+          ./configure --prefix=$HOME/madagascar 
+          make -j$(nproc)
+          make install
+          source env.sh
 
       - name: Run tests
         uses: julia-actions/julia-runtest@latest

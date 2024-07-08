@@ -1,3 +1,5 @@
+module Madagascar
+
 using Libdl
 export rsf_read,
     rsf_write
@@ -566,4 +568,6 @@ if RSFROOT ≠ nothing
             return $F(input(tag); kwargs...)
         end
     end
+end
+
 end

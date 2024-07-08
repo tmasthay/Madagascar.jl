@@ -1,3 +1,5 @@
+module Madagascar
+
 using Libdl
 export rsf_read,
     rsf_write
@@ -169,7 +171,7 @@ end
 
 function intwrite(arr::Array{Int32,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    @ccall libdrsf.sf_intwrite(arr::Ptr{Cint},size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
+    @ccall libdrsf.sf_intwrite(arr::Ptr{Cint}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
     return nothing
 end
 
@@ -202,7 +204,7 @@ function putfloat(file::RSFFile, name::String, val::Real)
     return nothing
 end
 
-function putstring(file::RSFFile,name::String,val::String)
+function putstring(file::RSFFile, name::String, val::String)
     @ccall libdrsf.sf_putstring(file.rsf::Ptr{UInt8}, name::Ptr{UInt8}, val::Ptr{UInt8})::Cvoid
     return nothing
 end
@@ -565,21 +567,18 @@ if RSFROOT ≠ nothing
             progpath = joinpath(RSFROOT, "bin", $S)
             pipe = `$progpath $args`
             run(pipeline(pipe, stdin=in_file.tag, stdout=out_tag))
+            if in_file.temp
+                delete_rsf(in_file.tag)
+            end
+            return input(out_tag; temp=true)
         end
-        if in_file.temp
-            delete_rsf(in_file.tag)
+        @eval function ($F)(dat::AbstractArray, n=nothing, d=nothing, o=nothing,
+            l=nothing, u=nothing; kwargs...)
+            return rsf_write(dat, n, d, o, l, u) |> x -> $F(x; kwargs...)
         end
-        return input(out_tag; temp=true)
-    end
-    
-    @eval function ($F)(dat::AbstractArray, n=nothing, d=nothing, o=nothing,
-        l=nothing, u=nothing; kwargs...)
-        out = rsf_write(dat, n, d, o, l, u) |> x -> $F(x; kwargs...)
-        return out
-    end
-    
-    @eval function ($F)(tag::String; kwargs...)
-        return $F(input(tag); kwargs...)
+        @eval function ($F)(tag::String; kwargs...)
+            return $F(input(tag); kwargs...)
+        end
     end
 end
 

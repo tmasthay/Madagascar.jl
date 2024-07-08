@@ -482,4 +482,4 @@ dat, n, d, o, l, u = rsf_write([5 2; 3 4], nothing, [0.1, 0.2], [1, 2], ["t", "x
 @test u == ["s", "m"]
 
 
-println("all good!")
+println("All tests passed!")

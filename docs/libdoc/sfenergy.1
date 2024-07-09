@@ -1,21 +1,0 @@
-.TH sfenergy 1  "APRIL 2023" Madagascar "Madagascar Manuals"
-.SH NAME
-sfenergy \- 
-.SH SYNOPSIS
-.B sfenergy < input.rsf > log_eo.rsf wind=
-.SH COMMENTS
-Estimate energy of input
-
-E(t) = \sum\limits_{k=(t-rac{R}{2})}^{(t+rac{R}{2})}A(k)^2
-
-.SH PARAMETERS
-.PD 0
-.TP
-.I int    
-.B wind
-.B =
-.R  	Rolling window size
-.SH SOURCE
-.I user/sbader/Menergy.py
-.SH VERSION
-4.2-git

@@ -1,5 +1,6 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+Madagascar = "de1a7838-e64b-4715-8e96-f45059f9a2fe"
 
 [compat]
 Documenter = "0.25"

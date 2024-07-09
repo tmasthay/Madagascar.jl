@@ -1,6 +1,10 @@
 module Madagascar
 
 using Libdl
+
+using Madagascar_jll
+import Madagascar_jll: libdrsf
+
 export rsf_read,
     rsf_write
 
@@ -69,7 +73,7 @@ end
 
 function histint(file::RSFFile, name::String)
     val = Cint[0]
-    @ccall libdrsf.sf_histint(file.rsf::Ptr{UInt8}, name::Ptr{UInt8}, val::Ptr{Cint})::Bool
+    ccall((:sf_histint, libdrsf), Bool, (Ptr{UInt8}, Ptr{UInt8}, Ref{Cint}), file.rsf, name, val)
     return convert(Int, val[])
 end
 
@@ -124,20 +128,17 @@ end
 
 function ucharread(arr::Array{UInt8,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    @ccall libdrsf.sf_ucharread(arr::Ptr{UInt8}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
-    return nothing
+    ccall((:sf_ucharread, libdrsf), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function charread(arr::Array{UInt8,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    @ccall libdrsf.sf_charread(arr::Ptr{UInt8}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
-    return nothing
+    ccall((:sf_charread, libdrsf), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function intread(arr::Array{Int32,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    @ccall libdrsf.sf_intread(arr::Ptr{Cint}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
-    return nothing
+    ccall((:sf_intread, libdrsf), Cvoid, (Ptr{Cint}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function floatread(arr::Array{Float32,1}, size::Integer, file::RSFFile)
@@ -147,32 +148,27 @@ end
 
 function complexread(arr::Array{ComplexF32,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    @ccall libdrsf.sf_complexread(arr::Ptr{ComplexF32}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
-    return nothing
+    ccall((:sf_complexread, libdrsf), Cvoid, (Ptr{ComplexF32}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function shortread(arr::Array{Int16,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    @ccall libdrsf.sf_shortread(arr::Ptr{Cshort}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
-    return nothing
+    ccall((:sf_shortread, libdrsf), Cvoid, (Ptr{Cshort}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function ucharwrite(arr::Array{UInt8,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    @ccall libdrsf.sf_ucharwrite(arr::Ptr{UInt8}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
-    return nothing
+    ccall((:sf_ucharwrite, libdrsf), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function charwrite(arr::Array{UInt8,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    @ccall libdrsf.sf_charwrite(arr::Ptr{UInt8}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
-    return nothing
+    ccall((:sf_charwrite, libdrsf), Cvoid, (Ptr{UInt8}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function intwrite(arr::Array{Int32,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    @ccall libdrsf.sf_intwrite(arr::Ptr{Cint}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
-    return nothing
+    ccall((:sf_intwrite, libdrsf), Cvoid, (Ptr{Cint}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function floatwrite(arr::Array{Float32,1}, size::Integer, file::RSFFile)
@@ -182,31 +178,26 @@ end
 
 function complexwrite(arr::Array{ComplexF32,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    @ccall libdrsf.sf_complexwrite(arr::Ptr{ComplexF32}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
-    return nothing
+    ccall((:sf_complexwrite, libdrsf), Cvoid, (Ptr{ComplexF32}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function shortwrite(arr::Array{Int16,1}, size::Integer, file::RSFFile)
     size::Csize_t = size
-    @ccall libdrsf.sf_shortwrite(arr::Ptr{Cshort}, size::Csize_t, file.rsf::Ptr{UInt8})::Cvoid
-    return nothing
+    ccall((:sf_complexwrite, libdrsf), Cvoid, (Ptr{Cshort}, Csize_t, Ptr{UInt8}), arr, size, file.rsf)
 end
 
 function putint(file::RSFFile, name::String, val::Integer)
     val::Cint = val
-    @ccall libdrsf.sf_putint(file.rsf::Ptr{UInt8}, name::Ptr{UInt8}, val::Cint)::Cvoid
-    return nothing
+    ccall((:sf_putint, libdrsf), Cvoid, (Ptr{UInt8}, Ptr{UInt8}, Cint), file.rsf, name, val)
 end
 
 function putfloat(file::RSFFile, name::String, val::Real)
     val::Cfloat = val
-    @ccall libdrsf.sf_putfloat(file.rsf::Ptr{UInt8}, name::Ptr{UInt8}, val::Cfloat)::Cvoid
-    return nothing
+    ccall((:sf_putfloat, libdrsf), Cvoid, (Ptr{UInt8}, Ptr{UInt8}, Cfloat), file.rsf, name, val)
 end
 
 function putstring(file::RSFFile, name::String, val::String)
-    @ccall libdrsf.sf_putstring(file.rsf::Ptr{UInt8}, name::Ptr{UInt8}, val::Ptr{UInt8})::Cvoid
-    return nothing
+    ccall((:sf_putstring, libdrsf), Cvoid, (Ptr{UInt8}, Ptr{UInt8}, Ptr{UInt8}), file.rsf, name, val)
 end
 
 function close(file::RSFFile)
@@ -444,17 +435,18 @@ function rsf_write(name::String, dat::AbstractArray, n=nothing, d=nothing,
     # dummy input of the correct type.
     old_stdin = stdin
     (rin, win) = redirect_stdin()
-    Madagascar_jll.sfspike() do spike
-        if eltype(dat) <: Int16
-            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfdd()) type=short`)
-        elseif eltype(dat) <: Complex
-            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfrtoc()) `)
-        elseif eltype(dat) <: Integer
-            pipe = pipeline(`$spike n1=1`, `$(Madagascar_jll.sfdd()) type=int`)
-        else
-            pipe = pipeline(`$spike n1=1`, stdout=win)
-        end
-        Base.wait(run(pipeline(pipe, stdout=win), wait=false))
+    spike = joinpath(RSFROOT, "bin", "sfspike")
+    if eltype(dat) <: Int16
+        dd = joinpath(RSFROOT, "bin", "sfdd")
+        pipe = pipeline(`$spike n1=1`, `$dd type=short`)
+    elseif eltype(dat) <: Complex
+        rtoc = joinpath(RSFROOT, "bin", "sfrtoc")
+        pipe = pipeline(`$spike n1=1`, `$rtoc out=stdout`)
+    elseif eltype(dat) <: Integer
+        dd = joinpath(RSFROOT, "bin", "sfdd")
+        pipe = pipeline(`$spike n1=1`, `$dd type=int`)
+    else
+        pipe = `$spike n1=1 out=stdout`
     end
     Base.wait(run(pipeline(pipe, stdout=win), wait=false))
     redirect_stdin(old_stdin)

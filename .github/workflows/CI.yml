@@ -54,7 +54,9 @@ jobs:
 
       - name: Check RSFROOT
         run: | 
-          echo $RSFROOT
+          echo "RSFROOT=$RSFROOT"
+          source $HOME/madagascar/share/madagascar/etc/env.sh
+          echo "RSFROOT=$RSFROOT"
 
       - name: Run tests
         uses: julia-actions/julia-runtest@latest

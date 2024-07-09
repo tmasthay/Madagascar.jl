@@ -22,6 +22,9 @@ struct RSFFile
 end
 RSFFile(tag, rsf) = RSFFile(tag, rsf, false)
 
+Base.display(f::RSFFile) = f.temp ? println("temp: $(f.tag)") : println("$(f.tag)")
+
+
 function __init__()
     src = Base.source_path()
     argv = src == nothing ? ["julia"] : [basename(src)]

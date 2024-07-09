@@ -52,5 +52,9 @@ jobs:
           make install
           source $HOME/madagascar/share/madagascar/etc/env.sh
 
+      - name: Check RSFROOT
+        run: | 
+          echo $RSFROOT
+
       - name: Run tests
         uses: julia-actions/julia-runtest@latest

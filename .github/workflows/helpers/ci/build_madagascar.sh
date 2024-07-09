@@ -9,7 +9,7 @@ cd $MAD_SRC_PATH
 #     In github runner, this will not be the case.
 #     This is for fast local testing for debugging purposes
 if [ -d "$MAD_SRC_PATH/src" ]; then
-    echo "Madagascar source already exists. Exiting..."
+    echo "Madagascar source already exists in path $MAD_SRC_PATH. Exiting..."
     exit 0
 else
     git clone --single-branch --branch $MAD_BRANCH_NAME $MAD_URL

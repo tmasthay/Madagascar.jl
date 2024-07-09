@@ -35,4 +35,4 @@ makedocs(
     pages=Any["Home"=>"index.md"],
 )
 
-deploydocs(repo="github.com/tmasthay/Madagascar.jl", devbranch="main")
+deploydocs(repo="github.com/mloubot/Madagascar.jl", devbranch="main")

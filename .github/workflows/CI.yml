@@ -45,7 +45,7 @@ jobs:
           ./configure --prefix=$HOME/madagascar 
           make -j$(nproc)
           make install
-          source env.sh
+          source src/env.sh
 
       - name: Run tests
         uses: julia-actions/julia-runtest@latest

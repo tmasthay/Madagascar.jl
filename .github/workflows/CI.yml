@@ -38,25 +38,7 @@ jobs:
           arch: ${{ matrix.arch }}
 
       - name: Build Madagascar
-        run: |
-          mkdir -p mad_src
-          cd mad_src
-          mad_url="https://github.com/ahay/src.git"
-          # branch_name=$(git ls-remote $mad_url | grep -E "madagascar-[0-9]+\.[0-9]+" | tail -n 1 | awk '{print $2}')
-          # branch_name=$(echo $branch_name | sed 's|refs/heads/||')
-          branch_name="master"
-          git clone --single-branch --branch $branch_name $mad_url
-          cd src
-          ./configure --prefix=$HOME/madagascar 
-          make -j$(nproc)
-          make install
-          source $HOME/madagascar/share/madagascar/etc/env.sh
-
-      - name: Check RSFROOT
-        run: | 
-          echo "RSFROOT=$RSFROOT"
-          source $HOME/madagascar/share/madagascar/etc/env.sh
-          echo "RSFROOT=$RSFROOT"
+        run: ./.github/workflows/helpers/ci/build_madagascar.sh
 
       - name: Run tests
-        uses: julia-actions/julia-runtest@latest
+        run: ./.github/workflows/helpers/ci/run_tests.sh

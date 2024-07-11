@@ -1,7 +1,7 @@
 using Pkg
 
 Pkg.add("Libdl")
-Pkg.add("Madagascar_jll")
+# Pkg.add("Madagascar_jll")
 # if Sys.islinux()
 #     println("Linux detected: Adding Madagascar_jll dependency.")
 #     Pkg.add("Madagascar_jll")
